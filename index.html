@@ -6,9 +6,9 @@
 <title>The Life You Choose</title>
 <meta name="description" content="The Made Real Blueprint: a practical, step-by-step route from the picture of a different life to a real one. Phase 1 helps you choose; the Portugal Edition helps you build it. Two lives, built from the ground up: Bali, then Portugal.">
 <link rel="icon" href="images/mark.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hankengrotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
 <style>
 :root{
   --pine:#2C3B2F; --sand:#F3ECE0; --ochre:#8F5410; --granite:#1C1E1B; --white:#FFFFFF;
@@ -317,7 +317,7 @@ footer a{color:#E6DECF}
 .bonus-bar{background:var(--pine);color:var(--sand);border-radius:4px;padding:16px 20px;margin:28px 0 24px;font-size:17px}
 .bonus-bar b{color:var(--ochre-light)}
 .options{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.option{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px;display:flex;flex-direction:column}
+.option{scroll-margin-top:88px;background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px;display:flex;flex-direction:column}
 .option.main{border:2px solid var(--pine)}
 .option h3{font-size:28px}
 .option .for{font-size:16px;color:var(--stone)}
@@ -717,7 +717,7 @@ footer a{color:#E6DECF}
     <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal, other places, and changes at home. Already sure about Portugal? Take the whole Blueprint: it starts with Phase 1 too, because a clear picture of the life you want helps you judge every choice that follows. Still unsure? Send me a message.</p></details>
     <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal, because that is where I live and what I know well.</p></details>
     <details><summary>What exactly do I receive, and how?</summary><p>Straight after payment you receive all the workbooks included in your choice <span class="todo">as PDF downloads? confirm</span>, and a link to book your meetings. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
-    <details><summary>How do the two meetings work?</summary><p>They are online video calls with me of 1.5 hours each: two with Phase 1, four with the whole Blueprint. You use them for what helps you most: your workbook results, doubts, challenges or next steps. You book them yourself when you are ready. Short questions in between can go by email or WhatsApp.</p></details>
+    <details><summary>How do the personal meetings work?</summary><p>They are online video calls with me of 1.5 hours each: two with Phase 1, four with the whole Blueprint. You use them for what helps you most: your workbook results, doubts, challenges or next steps. You book them yourself when you are ready. Short questions in between can go by email or WhatsApp.</p></details>
     <details><summary>Can I start with Phase 1 and upgrade later?</summary><p>Yes. The price you paid for Phase 1 counts towards the whole Blueprint, and you get the two extra meetings, so you have four in total.</p></details>
     <details><summary>I already know what I want. Can I skip ahead?</summary><p>With the whole Blueprint, a short check tells you where to start: at Picture, Explore, Decide or Prepare. Most people still gain from reading Step 1 briefly, because your picture helps you judge every choice after it.</p></details>
     <details><summary>How much time does it take?</summary><p>About two to three hours a week. Short, regular sessions work better than one long weekend. <span class="todo">typical time for Phase 1, after the test group</span></p></details>
@@ -753,7 +753,7 @@ footer a{color:#E6DECF}
       </div>
       <div><label for="message">Your message</label><textarea id="message" name="message" required placeholder="What pulls you towards a different life?"></textarea></div>
       <label class="check"><input type="checkbox" name="updates" value="yes"> Send me an occasional update when something new is ready.</label>
-      <label class="check"><input type="checkbox" name="consent" required> I agree that my details are used to answer my message. <a href="#" class="todo">Privacy note</a></label>
+      <label class="check"><input type="checkbox" name="consent" required> I agree that my details are used to answer my message. <a href="privacy.html" target="_blank" rel="noopener">Privacy note</a></label>
       <input type="hidden" name="_subject" value="New message from the website">
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <div><button class="btn btn-primary" type="submit">Send message</button></div>
@@ -777,7 +777,7 @@ footer a{color:#E6DECF}
     </div>
     <div>
       <p style="margin-top:0">The Made Real Blueprint gives practical guidance based on personal experience. It is not legal, tax, immigration or financial advice. Always check current rules with the official source or a qualified professional.</p>
-      <p>© 2026 The Life You Choose · <a href="#" class="todo">Privacy</a> · <a href="#" class="todo">Terms</a></p>
+      <p>© 2026 The Life You Choose · <a href="privacy.html">Privacy</a> · <a href="#" class="todo">Terms</a></p>
     </div>
   </div>
 </footer>
