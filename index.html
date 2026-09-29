@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Life You Choose</title>
-<meta name="description" content="The Made Real Blueprint, Portugal Edition. A practical blueprint to turn your picture of a different life into a real one, step by step. Two lives, built from the ground up: Bali, then Portugal.">
+<meta name="description" content="The Made Real Blueprint: a practical, step-by-step route from the picture of a different life to a real one. Phase 1 helps you choose; the Portugal Edition helps you build it. Two lives, built from the ground up: Bali, then Portugal.">
 <link rel="icon" href="images/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,6 +251,92 @@ footer a{color:#E6DECF}
 .know b{color:var(--pine);display:block;font-size:19px;font-family:var(--serif);font-weight:500}
 .soon{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--sage);color:var(--stone);padding:2px 8px;border-radius:20px;margin-left:6px}
 .quote{font-family:var(--serif);font-size:clamp(22px,2.6vw,28px);line-height:1.35;color:var(--pine);margin:0;border-left:3px solid var(--ochre);padding-left:20px}
+
+/* v3 additions */
+.head-actions{display:flex;align-items:center;gap:10px}
+.btn-small{padding:9px 16px;font-size:14px;white-space:nowrap}
+.menu-btn{display:none;width:42px;height:42px;border:1px solid var(--rule);background:var(--white);border-radius:3px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
+.menu-btn span{display:block;width:20px;height:2px;background:var(--pine)}
+@media (max-width:1100px){
+  .menu-btn{display:flex}
+  nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
+  nav.links.open a{padding:12px 0;border-bottom:1px solid var(--rule);font-size:17px}
+}
+@media (max-width:520px){ header.top .btn-small{display:none} }
+.bonus-line{margin:18px 0 0;font-size:16px;color:var(--pine)}
+.bonus-line span{display:inline-block;background:var(--pine);color:var(--sand);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-right:8px}
+.ochre{color:var(--ochre)}
+.stuck{margin:36px 0 8px;border-top:2px solid var(--pine)}
+.stuck-head,.stuck-row{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.stuck-head{padding:12px 0;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
+.stuck-head span:last-child{color:var(--moss)}
+.stuck-row{padding:16px 0;border-top:1px solid var(--rule)}
+.stuck-row p{margin:0;font-size:17px}
+.stuck-row p:first-child{font-family:var(--serif);font-size:20px;color:var(--granite)}
+.stuck-row p:last-child{color:var(--pine);padding-left:18px;border-left:3px solid var(--moss)}
+@media (max-width:700px){ .stuck-head{display:none} .stuck-row{grid-template-columns:1fr;gap:10px} }
+.routes-sec{background:var(--pine);padding:clamp(56px,8vw,96px) 0}
+.routes-sec h2{color:var(--sand)} .routes-sec .eyebrow{color:var(--ochre-light)}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:12px}
+.route-card{display:flex;flex-direction:column;background:var(--sand);border-radius:4px;padding:28px;text-decoration:none;color:var(--granite);border:2px solid transparent;transition:border-color .15s,transform .15s}
+.route-card:hover{border-color:var(--ochre-light);transform:translateY(-2px)}
+.route-card .says{font-family:var(--serif);font-size:24px;line-height:1.3;color:var(--pine);margin-bottom:14px}
+.route-card .tag,.option .tag{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ochre);margin-bottom:10px}
+.route-card p{font-size:16px}
+.route-card .more{margin-top:auto;font-weight:600;color:var(--pine)}
+@media (max-width:760px){ .routes{grid-template-columns:1fr} }
+.previews{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+@media (max-width:900px){ .previews{grid-template-columns:1fr} }
+.wb{margin:0}
+.wb-page{background:var(--white);border:1px solid var(--rule);border-radius:3px;box-shadow:0 10px 30px rgba(28,30,27,.10);padding:28px 26px;font-size:14px;line-height:1.5}
+.wb-page p{margin:0 0 10px}
+.wb-step{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+.wb-page h4{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--pine);margin:0 0 4px}
+.wb-sub{font-family:var(--serif);font-style:italic;color:var(--stone);font-size:16px}
+.wb-table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:13px}
+.wb-table th{background:var(--pine);color:var(--sand);text-align:left;padding:6px 8px;font-weight:600}
+.wb-table td{border:1px solid var(--rule);padding:6px 8px;vertical-align:top}
+.wb-table td:first-child{background:var(--sage)}
+.wb-table.money td:nth-child(2){white-space:nowrap}
+.wb-table.money td:nth-child(3){width:22%}
+.wb-now{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--moss);margin-top:6px !important}
+.wb-example{background:var(--sand);border-left:3px solid var(--stone);padding:10px 12px}
+.wb-lines{border-bottom:1px solid var(--rule);height:64px;background:repeating-linear-gradient(transparent 0 31px,var(--rule) 31px 32px);color:var(--stone);font-style:italic;padding-top:6px}
+.wb-note{font-size:12px;color:var(--stone)}
+.wb figcaption{font-size:15px;margin-top:14px;color:var(--granite)}
+.wb figcaption b{color:var(--pine)}
+.soon.bonus{background:var(--pine);color:var(--sand)}
+.lesson{background:var(--sand);border-left:3px solid var(--ochre);padding:24px 26px;border-radius:0 4px 4px 0}
+.lesson p{font-size:16px;margin:0 0 10px}
+.lesson b{color:var(--pine)}
+.fullstory{margin-top:40px;border-top:1px solid var(--rule);padding-top:18px}
+.fullstory summary{cursor:pointer;font-family:var(--serif);font-size:22px;color:var(--pine);list-style:none}
+.fullstory summary::-webkit-details-marker{display:none}
+.fullstory summary::after{content:" +";color:var(--ochre)}
+.fullstory[open] summary::after{content:" –"}
+.bonus-bar{background:var(--pine);color:var(--sand);border-radius:4px;padding:16px 20px;margin:28px 0 24px;font-size:17px}
+.bonus-bar b{color:var(--ochre-light)}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.option{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:30px;display:flex;flex-direction:column}
+.option.main{border:2px solid var(--pine)}
+.option h3{font-size:28px}
+.option .for{font-size:16px;color:var(--stone)}
+.option .price{font-family:var(--serif);font-size:42px;color:var(--pine);margin:6px 0 16px;line-height:1}
+.option .price small{font-family:var(--sans);font-size:14px;color:var(--stone)}
+.option .list-head{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--moss);margin:8px 0 6px}
+.option ul{padding-left:20px;margin:0 0 12px;font-size:16px}
+.option li{margin-bottom:6px}
+.option .btn{margin-top:auto;text-align:center}
+@media (max-width:860px){ .options{grid-template-columns:1fr} }
+.upgrade{margin-top:20px;background:var(--white);border-left:3px solid var(--ochre);padding:16px 20px}
+.upgrade p{margin:0;max-width:none}
+.meetings{margin-top:20px;background:var(--white);border-radius:4px;padding:24px 26px}
+.meetings ul{padding-left:20px;margin:6px 0 0}
+.meetings li{margin-bottom:6px;font-size:16px}
+.small-print{font-size:14px;color:var(--stone);margin-top:18px}
+.future{margin-top:28px;padding-top:20px;border-top:1px solid #C9C6B3;font-size:16px;max-width:none}
+.btn-light{background:var(--sand);color:var(--pine);border-color:var(--sand)}
+.btn-light:hover{background:var(--white)}
 </style>
 </head>
 <body>
@@ -263,14 +349,19 @@ footer a{color:#E6DECF}
       <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <nav class="links" aria-label="Main">
-      <a href="#stand">What we stand for</a>
+    <nav class="links" id="menu" aria-label="Main">
+      <a href="#routes">Which one fits you?</a>
+      <a href="#inside">What you get</a>
       <a href="#story">My story</a>
-      <a href="#blueprint">The Blueprint</a>
-      <a href="#next">What's next</a>
+      <a href="#options">Options and prices</a>
+      <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
     </nav>
-    <!-- Later: "Register to join the Community" button (on hold, see notes) -->
+    <div class="head-actions">
+      <a class="btn btn-primary btn-small" href="#options">See the options</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <!-- Later: "Register to join the Community" (on hold) -->
   </div>
 </header>
 
@@ -280,9 +371,13 @@ footer a{color:#E6DECF}
 <section class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow">The Made Real Blueprint · Portugal Edition</p>
+      <p class="eyebrow">The Made Real Blueprint</p>
       <h1>You have a picture of a different life. Let's make it <em>real</em>.</h1>
-      <p class="lead" style="margin-top:24px">Maybe more sun. More time. More freedom. A garden, a project, a slower day. This Blueprint helps you turn that picture into a real life, one clear step at a time.</p>
+      <p class="lead" style="margin-top:24px">Maybe more sun. More time. A garden, a project, a slower day. The Made Real Blueprint helps you work through the decisions and practical steps between that picture and a real life: what you want, where it can happen, what it costs, and how to build it.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#routes">See the options</a>
+      </div>
+      <p class="bonus-line"><span>Launch bonus</span> Two personal meetings with me, 1.5 hours each.</p>
       <p class="descriptor">Two lives, built from the ground up: Bali, then Portugal. The method, written down.</p>
     </div>
     <figure>
@@ -294,125 +389,70 @@ footer a{color:#E6DECF}
 
 <!-- 2 RECOGNITION -->
 <section class="familiar">
-  <div class="wrap narrow">
-    <p class="eyebrow">Sound familiar?</p>
-    <h2>The thought keeps coming back.</h2>
-    <p class="lead">On a grey Monday morning. On holiday, when you catch yourself looking at house prices. Late at night, when the house is quiet. <em class="thought">What if I just did it?</em></p>
-    <p>And then the questions arrive.</p>
-    <ul class="questions">
-      <li>Where do I even start?</li>
-      <li>Can I really afford it?</li>
-      <li>What if I choose the wrong place?</li>
-      <li>What will my family say?</li>
-      <li>What if I regret it?</li>
-    </ul>
-    <p>So the picture goes back in the drawer. Not because you do not want it, but because nobody showed you the first step. And next year, the same thought comes back.</p>
-    <p class="turn">I know that feeling. I had it for years. Then I learned to turn it into decisions, a plan and a real life. Twice. This Blueprint shows you how, one step at a time.</p>
-  </div>
-</section>
-
-<!-- 3 WHAT WE STAND FOR -->
-<section class="band-pine" id="stand">
   <div class="wrap">
-    <p class="eyebrow">What we stand for</p>
-    <p class="statement">A life is chosen and built. Not inherited, and not drifted into.</p>
-    <p class="lead" style="color:#E6DECF">The life you live today is the result of choices, and you can make different ones. Not by dreaming harder, but by deciding, planning and building, one step at a time.</p>
-    <div class="pvm">
-      <div><h3>Our purpose</h3><p>To inspire and help people realise the life they truly want, by sharing real experience and practical knowledge, creating clear plans together, and providing the connections, tools and guidance that help them make it happen.</p></div>
-      <div><h3>Our vision</h3><p>A world where more people live a life they chose, not one they drifted into, and then help others do the same.</p></div>
-      <div><h3>Our mission</h3><p>A practical blueprint that helps people realise the life they want in Portugal, built on real experience of moving, projects, financial planning and making connections. Made so it can be adapted to other places and your own focus.</p></div>
+    <div class="narrow">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>The thought keeps coming back.</h2>
+      <p class="lead">On a grey Monday morning. On holiday, when you catch yourself looking at house prices. Late at night, when the house is quiet. <em class="thought">What if I just did it?</em></p>
+      <p>Wanting a different life is the easy part. Turning it into decisions is where most people get stuck.</p>
     </div>
+    <div class="stuck">
+      <div class="stuck-head"><span>What gets in the way</span><span>What the Blueprint helps you do</span></div>
+      <div class="stuck-row"><p>You collect ideas, videos and house listings, but you have no way to judge them.</p><p>Write down what you really want first, so you can judge every option against it.</p></div>
+      <div class="stuck-row"><p>Every source says something different, and you do not know what applies to you.</p><p>Work with information that shows its source and date, and know which professional to ask.</p></div>
+      <div class="stuck-row"><p>You are not sure you can afford it.</p><p>Make a first honest money check, with a worked example next to it.</p></div>
+      <div class="stuck-row"><p>It is hard to talk about with your partner or family.</p><p>Use conversation prompts to find out what each of you really needs.</p></div>
+      <div class="stuck-row"><p>You keep putting it off, because it all feels too big.</p><p>Take one step at a time, each with a clear result, and talk it through with me.</p></div>
+    </div>
+    <p class="turn narrow">Moving is not the only good answer. Sometimes the best choice is a real change right where you are. What matters is that you choose, instead of drifting. I know that feeling of being stuck. I had it for years.</p>
   </div>
 </section>
 
-<!-- 4 MY STORY -->
-<section id="story">
+<!-- 3 TWO ROUTES -->
+<section class="routes-sec" id="routes">
   <div class="wrap">
-    <div class="split">
-      <div>
-        <p class="eyebrow">Who I am</p>
-        <h2>I'm Mwata. I have built a life abroad twice.</h2>
-        <p class="lead">I had a good job and a comfortable home, but I felt that something was missing. Work kept me so busy that I rarely stopped long enough to understand what it was. The feeling did not go away.</p>
-        <ol class="timeline">
-          <li><span class="when">2020</span><h3>Selling the house</h3><p>I sold my house in the Netherlands to travel the world. Then COVID stopped those plans. A course helped me get clear about what I really wanted.</p></li>
-          <li><span class="when">Bali</span><h3>Two bags, a new life</h3><p>During a two-month sabbatical in Bali, I finally had room to think. I wrote down a life near the sea, in a warm climate, where I could run my own business and help people. Back home, I left my job, sold what I still owned and moved to Bali with two bags. I started a consultancy, bought a house, and later an inspection business of my own.</p></li>
-          <li><span class="when">Four years later</span><h3>A new picture</h3><p>Bali changed, and so did I. I missed being creative: building things and working in a garden. A YouTube channel about living more self-sufficiently set me thinking about another move.</p></li>
-          <li><span class="when">April 2024</span><h3>The third plot</h3><p>I travelled through Portugal in a campervan, exploring the regions and visiting plots I had shortlisted. I had not planned to buy on that trip. But when I saw the third plot, I knew it was the one.</p></li>
-          <li><span class="when">August 2024</span><h3>Signing</h3><p>I signed the purchase agreement. By the end of that year, the land was officially mine.</p></li>
-          <li class="now"><span class="when">Today</span><h3>Living it</h3><p>I live on my land in rural central Portugal, surrounded by nature, with enough projects to keep me creative for years. It is not finished, and it does not have to be. It is real.</p></li>
-        </ol>
-      </div>
-      <div class="story-photos">
-        <img class="a" src="images/bali-inspection.jpg" alt="Mwata on a building site in Bali, reading construction drawings." loading="lazy">
-        <div class="pair">
-          <img src="images/campervan.jpg" alt="A campervan parked on a cliff above the Atlantic Ocean in Portugal." loading="lazy">
-          <img src="images/harvest-basket.jpg" alt="A basket of freshly harvested vegetables from the garden." loading="lazy">
-        </div>
-        <p class="cap">Inspecting a build in Bali · the campervan trip through Portugal · the first harvest.</p>
-      </div>
+    <p class="eyebrow">Which one sounds like you?</p>
+    <h2>Two ways to start.</h2>
+    <div class="routes">
+      <a class="route-card" href="#options">
+        <p class="says">"I want something different, but I need to work out what and where."</p>
+        <p class="tag">Phase 1 · Choose it · Steps 1 to 3</p>
+        <p>You work out what you really want, explore where it can happen, check the money, and make a considered decision. For Portugal, Bali, somewhere else, or changes at home.</p>
+        <span class="more">See Phase 1 →</span>
+      </a>
+      <a class="route-card main" href="#options">
+        <p class="says">"I want to build my life in Portugal, and I need a practical route."</p>
+        <p class="tag">The whole Blueprint · Portugal Edition · Steps 1 to 8</p>
+        <p>From checking your direction to preparing, moving, settling and building your life in Portugal. Phase 1 is included: choosing Portugal does not always mean you know what life you want there, and that picture helps you judge every choice after it.</p>
+        <span class="more">See the whole Blueprint →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- 5 PROOF -->
-<section class="proof">
-  <div class="wrap">
-    <p class="eyebrow">Proof before promises</p>
-    <h2>Same land. Two years apart.</h2>
-    <p class="lead">No big promises. I show you what happened when I followed these steps myself, including the parts that took longer than planned.</p>
-    <div class="before-after">
-      <figure>
-        <img src="images/land-2024.jpg" alt="Aerial view in 2024: a roofless granite ruin surrounded by long grass, rocks and shrubs." loading="lazy" width="1600" height="900">
-        <figcaption><b>April 2024.</b> The plot as I found it: a ruin, rocks and long grass.</figcaption>
-      </figure>
-      <figure>
-        <img src="images/land-2026.jpg" alt="Aerial view in April 2026: the renovated stone house, a path and rows of young blueberry plants." loading="lazy" width="1600" height="900">
-        <figcaption><b>April 2026.</b> The house renovated, the land cleared, and the first blueberries in the ground.</figcaption>
-      </figure>
-    </div>
-    <div class="photo-row">
-      <img src="images/house-renovation.jpg" alt="The granite house under renovation, with scaffolding against the walls." loading="lazy">
-      <img src="images/house-today.jpg" alt="The renovated granite house with a dark roof and a wooden terrace." loading="lazy">
-      <img src="images/garden.jpg" alt="Raised vegetable beds in the new garden." loading="lazy">
-      <img src="images/harvest-fruit.jpg" alt="A bowl of fresh blueberries, strawberries and cherries held up in front of the view." loading="lazy">
-    </div>
-    <p class="cap">It is still work in progress, but the idea of two years ago has been made real.</p>
-  </div>
-</section>
-
-<!-- 6 THE BLUEPRINT -->
-<section id="blueprint">
+<!-- 4 OUTCOMES, METHOD, PREVIEWS -->
+<section id="inside">
   <div class="wrap">
     <div class="split">
       <div>
-        <p class="eyebrow">The Made Real Blueprint · Portugal Edition</p>
-        <h2>The guide I wish I had.</h2>
-        <blockquote class="quote" style="margin-top:28px">"I did not need someone to decide what my life should be. I needed someone who could tell me what to check first."</blockquote>
+        <p class="eyebrow">What you work towards</p>
+        <h2>Imagine the day you <em class="ochre">know</em>.</h2>
+        <p class="lead">No more going round in circles. Phase 1 ends with a clear answer and a next step. Each step gives you something you made yourself.</p>
       </div>
-      <div>
-        <p class="lead">When I began building a life abroad, I could find help with individual parts of the process. A course helped me get clearer about what I wanted, and an agent helped me find land. But I could not find anyone to guide me from that first idea through all the decisions that followed.</p>
-        <p>I had to work out which country, what kind of company to set up, which bank, which plot of land, and which builder. I often wished I could talk it through with someone who had been there before.</p>
-        <p>I made this Blueprint to be that guide. Many courses stop when you are clear about what you want. This Blueprint goes further: through the practical work of building a life that actually exists, not just a plan on paper.</p>
-      </div>
+      <ul class="know">
+        <li><b>A written direction.</b> Your picture of a new life, in your own words: My Working Direction.</li>
+        <li><b>A researched shortlist.</b> Places that fit that life, what you found out, and why the others do not fit.</li>
+        <li><b>A first money check.</b> What the change could cost, what comes in, and how long your savings could cover a gap. Plus a list of what you still need to check.</li>
+        <li><b>A considered decision.</b> Go, not yet, or no, with your next steps. One you can explain to the people you love.</li>
+      </ul>
     </div>
-
-    <h3 style="margin-top:64px">What makes it different</h3>
-    <div class="diff">
-      <div class="card"><h3>Your life first, the place second.</h3><p>You start with the life you want, not with a country or a visa.</p></div>
-      <div class="card"><h3>Staying can be the best outcome.</h3><p>Sometimes a real change in the country you live in already gives you most of what you want. That is a success, not a failure.</p></div>
-      <div class="card"><h3>Honest numbers, early and simple.</h3><p>Start with a straightforward money check, with an example alongside it.</p></div>
-      <div class="card"><h3>Clear decisions.</h3><p>Before you move, you check five green lights: money, papers, people, place, and your Plan B.</p></div>
-      <div class="card"><h3>The important things run through the whole journey.</h3><p>Money, work, language and the people in your life are not separate topics. You start early and keep working on them.</p></div>
-      <div class="card"><h3>Real experience, not theory.</h3><p>You learn from what worked for me and what did not. You choose your own way.</p></div>
-    </div>
-    <div class="not-this"><p>Not a coaching programme. Not a relocation agency. A practical route: choose it, build it, live it. A blueprint with personal guidance.</p></div>
 
     <!-- Route -->
-    <h3 style="margin-top:80px">Your route: three phases, eight steps</h3>
+    <h3 style="margin-top:72px">The route: three phases, eight steps</h3>
     <p class="muted">Each step answers one big question and gives you a practical result to work with.</p>
     <div class="route">
       <div class="phase choose">
-        <div class="ph">Choose it · steps 1–3</div>
+        <div class="ph">Choose it · steps 1–3 · Phase 1</div>
         <p class="ph-text">Decide honestly what you want, and where. Deciding not to move is a real choice too.</p>
         <div class="steps">
           <div class="step"><span class="num">1</span><h4>Picture</h4><p class="q">What life do I really want?</p><span class="out">My Working Direction</span></div>
@@ -439,169 +479,246 @@ footer a{color:#E6DECF}
       </div>
     </div>
     <div class="outcomes">
-      <p><strong>Two good outcomes.</strong> Steps 1 to 3 work for any destination, including staying where you are. If you decide to stay, you leave with a clear plan to change your life at home. If you decide to move, Steps 4 to 8 guide you through building your new life in Portugal.</p>
+      <p><strong>Two good outcomes.</strong> Phase 1 works for any destination, including staying where you are. If you decide to stay, you leave with a clear plan to change your life at home. If you decide on Portugal, Steps 4 to 8 guide you through building your new life there.</p>
     </div>
+
+    <!-- Previews -->
+    <h3 style="margin-top:80px">Look inside</h3>
+    <p class="muted">Two exercises from the Step 1 workbook, shortened. Every exercise explains the idea first, shows a made-up example, and then asks you to apply it to your own life.</p>
+    <div class="previews">
+      <figure class="wb">
+        <div class="wb-page">
+          <p class="wb-step">Step 1 · Picture · Part 1</p>
+          <h4>1.2 A normal day in your new life</h4>
+          <p class="wb-sub">Not a holiday. A normal Tuesday. Because most days are normal days.</p>
+          <p>We use an ordinary day because that is what most of your life will be. It gives you a useful question: would I enjoy the everyday life that comes with it?</p>
+          <table class="wb-table">
+            <tr><th>Too vague to plan</th><th>Detailed enough to plan</th></tr>
+            <tr><td>"A house with a view"</td><td>"Coffee on the terrace, looking at olive trees, before anyone else is awake"</td></tr>
+            <tr><td>"Close to family"</td><td>"My sister can come for dinner without booking a flight"</td></tr>
+          </table>
+          <p class="wb-now">Now you</p>
+          <p>Describe this day from morning to evening. Include an ordinary detail you would not put in a holiday brochure: housework, rain, or an hour when nothing much happens.</p>
+          <p class="wb-example"><b>Made-up example (Maria, 46):</b> I wake up at 7, without an alarm. From my window, I see olive trees. I drink coffee outside. In the morning, I work online for my clients for four hours. In the afternoon, I work in the garden or go to the market in the village. Two afternoons a week are for paperwork and cleaning, and I don't enjoy them. I go to bed tired, but happy.</p>
+          <div class="wb-lines"><span>I wake up…</span></div>
+        </div>
+        <figcaption><b>What it helps you make:</b> a picture concrete enough to test against a real house, job or town. It becomes the measuring stick for every later choice.</figcaption>
+      </figure>
+      <figure class="wb">
+        <div class="wb-page">
+          <p class="wb-step">Step 1 · Picture · Part 3</p>
+          <h4>3.5 A first money check</h4>
+          <p class="wb-sub">Do I have money left each month, and if not, how long do my savings cover the gap?</p>
+          <p>That second number is your runway. Runway turns worry into a plan: "I am short 400 a month and have 40 months to work with" gives you a timescale for action.</p>
+          <table class="wb-table money">
+            <tr><th></th><th>Example</th><th>Me</th></tr>
+            <tr><td>1. Confirmed income per month</td><td>€1,600</td><td></td></tr>
+            <tr><td>2. Costs per month in my new life</td><td>€2,000</td><td></td></tr>
+            <tr><td>3. Left over or short</td><td>€400 short</td><td></td></tr>
+            <tr><td>4. Savings I can use</td><td>€30,000</td><td></td></tr>
+            <tr><td>5–7. Minus the move, deposits and my reserve</td><td>− €13,650</td><td></td></tr>
+            <tr><td>8. Savings left to live on</td><td>€16,350</td><td></td></tr>
+            <tr><td>9. Months my savings can cover</td><td>about 40</td><td></td></tr>
+          </table>
+          <p class="wb-note">The example is made up, based on typical 2026 prices for a couple renting a small house in central Portugal.</p>
+        </div>
+        <figcaption><b>What it helps you make:</b> your First Money Picture: your first numbers, how sure they are, and what you still need to check.</figcaption>
+      </figure>
+    </div>
+
+    <!-- How it works -->
+    <h3 style="margin-top:80px">How it works</h3>
+    <div class="includes">
+      <div><h4>A workbook for each step</h4><p>Each exercise explains the idea, gives you an example, and helps you apply it to your own situation.</p></div>
+      <div><h4>Two personal meetings <span class="soon bonus">Launch bonus</span></h4><p>Two video calls with me, 1.5 hours each, to talk through your results, your doubts and your next steps.</p></div>
+      <div><h4>Email and WhatsApp</h4><p>Short questions between the meetings. I answer them myself.</p></div>
+      <div><h4>Conversations that matter</h4><p>Prompts help you talk through your plans with your partner, family and friends.</p></div>
+      <div><h4>Information you can check</h4><p>Rules and prices change. I show my sources and when I checked them, and help you work out which professional to ask about legal or tax matters.</p></div>
+      <div><h4>Begin where you are</h4><p>A short check helps you choose your starting point. About two to three hours a week is enough to make steady progress.</p></div>
+    </div>
+
+    <h3 style="margin-top:72px">What makes it different</h3>
+    <div class="diff">
+      <div class="card"><h3>Your life first, the place second.</h3><p>You start with the life you want, not with a country or a visa.</p></div>
+      <div class="card"><h3>Staying can be the best outcome.</h3><p>Sometimes a real change in the country you live in already gives you most of what you want. That is a success, not a failure.</p></div>
+      <div class="card"><h3>Honest numbers, early and simple.</h3><p>Start with a straightforward money check, with an example alongside it.</p></div>
+      <div class="card"><h3>Clear decisions.</h3><p>Before you move, you check five green lights: money, papers, people, place, and your Plan B.</p></div>
+      <div class="card"><h3>The important things run through the whole journey.</h3><p>Money, work, language and the people in your life are not separate topics. You start early and keep working on them.</p></div>
+      <div class="card"><h3>Real experience, not theory.</h3><p>You learn from what worked for me and what did not. You choose your own way.</p></div>
+    </div>
+    <div class="not-this"><p>Not a dream-life course. Not a relocation agency. A practical route: choose it, build it, live it. With personal guidance from someone who has done it twice.</p></div>
+    <div class="btn-row"><a class="btn btn-primary" href="#options">See the options and prices</a></div>
   </div>
 </section>
 
-<!-- 7 IMAGINE -->
-<section class="imagine">
+<!-- 5 STORY -->
+<section class="proof" id="story">
   <div class="wrap">
     <div class="split">
       <div>
-        <p class="eyebrow">After the Choose it steps</p>
-        <h2>Imagine the day you <em>know</em>.</h2>
-        <p class="lead">No more going round in circles. No more "someday". Just a clear answer, and a next step.</p>
+        <p class="eyebrow">Who I am</p>
+        <h2>I'm Mwata. I have built a life abroad twice.</h2>
+        <p class="lead">I had a good job and a comfortable home, but I felt that something was missing. In 2021 I moved to Bali with two bags and built a life there: a consultancy, a house, an inspection business. After four years my picture changed. Today I live on my own land in rural central Portugal.</p>
+        <p>I made this Blueprint because I could find help with single parts, but nobody to guide me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone who could tell me what to check first.</p>
       </div>
-      <ul class="know">
-        <li><b>You know what you really want.</b> Your picture of a new life, written down in your own words.</li>
-        <li><b>You know where it can happen.</b> A short list of places that fit that life, and why the others do not.</li>
-        <li><b>You know your numbers.</b> What the change costs, and how long your money lasts.</li>
-        <li><b>You have made a decision.</b> Go, not yet, or no. One you can explain to the people you love.</li>
-        <li><b>You know your next step.</b> And the one after that.</li>
-      </ul>
+      <div class="lesson">
+        <p class="eyebrow">From my life into the workbook</p>
+        <p><b>What I faced:</b> which region of Portugal, and which piece of land?</p>
+        <p><b>What I did:</b> I travelled for two months in a campervan and viewed 25 plots. What surprised me was how connected I felt to one region, and not at all to another.</p>
+        <p><b>What I learned:</b> you only find out on the ground. Go as a tester, not a tourist.</p>
+        <p><b>Where it is in the Blueprint:</b> Step 2, Explore: test it in real life before you decide.</p>
+      </div>
     </div>
+    <div class="before-after">
+      <figure>
+        <img src="images/land-2024.jpg" alt="Aerial view in 2024: a roofless granite ruin surrounded by long grass, rocks and shrubs." loading="lazy" width="1600" height="900">
+        <figcaption><b>April 2024.</b> The plot as I found it: a ruin, rocks and long grass.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/land-2026.jpg" alt="Aerial view in April 2026: the renovated stone house, a path and rows of young blueberry plants." loading="lazy" width="1600" height="900">
+        <figcaption><b>April 2026.</b> The house renovated, the land cleared, and the first blueberries in the ground.</figcaption>
+      </figure>
+    </div>
+    <div class="photo-row">
+      <img src="images/house-renovation.jpg" alt="The granite house under renovation, with scaffolding against the walls." loading="lazy">
+      <img src="images/house-today.jpg" alt="The renovated granite house with a dark roof and a wooden terrace." loading="lazy">
+      <img src="images/garden.jpg" alt="Raised vegetable beds in the new garden." loading="lazy">
+      <img src="images/harvest-fruit.jpg" alt="A bowl of fresh blueberries, strawberries and cherries held up in front of the view." loading="lazy">
+    </div>
+    <p class="cap">It is still work in progress, but the idea of two years ago has been made real. These photos show my own journey. Your version will look different.</p>
+
+    <details class="fullstory">
+      <summary>Read my full story</summary>
+      <div class="split" style="margin-top:28px">
+        <ol class="timeline" style="margin-top:0">
+          <li><span class="when">2020</span><h3>Selling the house</h3><p>I sold my house in the Netherlands to travel the world. Then COVID stopped those plans. A course helped me get clear about what I really wanted.</p></li>
+          <li><span class="when">Bali</span><h3>Two bags, a new life</h3><p>During a two-month sabbatical in Bali, I finally had room to think. I wrote down a life near the sea, in a warm climate, where I could run my own business and help people. Back home, I left my job, sold what I still owned and moved to Bali with two bags. I started a consultancy, bought a house, and later an inspection business of my own.</p></li>
+          <li><span class="when">Four years later</span><h3>A new picture</h3><p>Bali changed, and so did I. I missed being creative: building things and working in a garden. A YouTube channel about living more self-sufficiently set me thinking about another move.</p></li>
+          <li><span class="when">April 2024</span><h3>The third plot</h3><p>I travelled through Portugal in a campervan, exploring the regions and visiting plots I had shortlisted. I had not planned to buy on that trip. But when I saw the third plot, I knew it was the one.</p></li>
+          <li><span class="when">August 2024</span><h3>Signing</h3><p>I signed the purchase agreement. My money plan was already in place, so I was not afraid to commit. By the end of that year, the land was officially mine.</p></li>
+          <li class="now"><span class="when">Today</span><h3>Living it</h3><p>I live on my land in rural central Portugal, surrounded by nature, with enough projects to keep me creative for years. It is not finished, and it does not have to be. It is real.</p></li>
+        </ol>
+        <div class="story-photos">
+          <img class="a" src="images/bali-inspection.jpg" alt="Mwata on a building site in Bali, reading construction drawings." loading="lazy">
+          <div class="pair">
+            <img src="images/campervan.jpg" alt="A campervan parked on a cliff above the Atlantic Ocean in Portugal." loading="lazy">
+            <img src="images/harvest-basket.jpg" alt="A basket of freshly harvested vegetables from the garden." loading="lazy">
+          </div>
+          <p class="cap">Inspecting a build in Bali · the campervan trip through Portugal · the first harvest.</p>
+        </div>
+      </div>
+    </details>
   </div>
 </section>
 
-<!-- 8 HOW IT WORKS -->
-<section style="padding-top:0">
+<!-- 6 OPTIONS -->
+<section class="offer" id="options">
   <div class="wrap">
-    <h3>How it works</h3>
-    <div class="includes">
-      <div><h4>A workbook for each step</h4><p>Each exercise explains the idea, gives you an example, and helps you apply it to your own situation.</p></div>
-      <div><h4>Questions? Ask me</h4><p>You can bring your questions to me along the way. I tell you what I would check first, and what went wrong for me.</p></div>
-      <div><h4>Conversations that matter</h4><p>Prompts help you talk through your plans with your partner, family and friends.</p></div>
-      <div><h4>Information you can check</h4><p>Rules and prices change. We show our sources and when we checked them, and help you work out which professional to ask about legal or tax matters.</p></div>
-      <div><h4>Begin where you are</h4><p>A short check helps you choose your starting point. About two to three hours a week is enough to make steady progress.</p></div>
-      <div><h4>Videos <span class="soon">Coming soon</span></h4><p>I will talk through the same ideas for anyone who prefers to listen.</p></div>
-    </div>
-
-    <h3 style="margin-top:72px">Is this for you?</h3>
-    <div class="fit">
-      <div class="card yes">
-        <h3>This is for you if…</h3>
-        <ul>
-          <li>you feel a pull towards a different life, and want to do something with it</li>
-          <li>you want clear steps, not only inspiration</li>
-          <li>you are ready to look honestly at your life, including money</li>
-          <li>you want to choose for yourself, even if the answer is "stay"</li>
-        </ul>
-      </div>
-      <div class="card no">
-        <h3>It may not be for you if…</h3>
-        <ul>
-          <li>you want someone to arrange everything for you</li>
-          <li>you are looking for quick answers or a get-rich plan</li>
-          <li>you want to be told what your life should look like</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 9 OFFER -->
-<section class="offer" id="get">
-  <div class="wrap">
-    <p class="eyebrow">Get the Blueprint</p>
+    <p class="eyebrow">The options</p>
     <h2>Your picture deserves a plan.</h2>
-    <div class="offer-card" style="margin-top:36px">
-      <div>
-        <h3>The Made Real Blueprint · Portugal Edition</h3>
-        <p>Everything you need to go from "what if" to a clear decision, and from a decision to a real life.</p>
+    <div class="bonus-bar">
+      <b>Launch bonus, with both options:</b> two personal meetings with me of 1.5 hours each, plus email and WhatsApp support. <span class="todo">launch period: until when?</span>
+    </div>
+    <div class="options">
+      <div class="option">
+        <p class="tag">Phase 1 · Choose it</p>
+        <h3>Steps 1 to 3</h3>
+        <p class="for">For you if you want something different, but need to work out what and where.</p>
+        <p class="price"><span class="todo">€297</span> <small>one-time · proposal</small></p>
+        <p class="list-head">You receive</p>
         <ul>
           <li>The Introduction, with a short check to find your starting point</li>
-          <li>Choose it, Steps 1 to 3: Picture, Explore and Decide, each with its own workbook</li>
-          <li>Build it and Live it, Steps 4 to 8, added as they are ready <span class="todo">included at no extra cost? confirm</span></li>
-          <li>Your questions answered by me along the way <span class="todo">how: email, calls? confirm</span></li>
+          <li>Workbooks for Step 1 Picture, Step 2 Explore and Step 3 Decide <span class="todo">format: PDF download?</span></li>
+          <li>Launch bonus: two 1.5-hour meetings with me, plus email and WhatsApp support</li>
         </ul>
-        <p class="muted" style="margin-top:16px">Steps 1 to 3 work for any destination, including staying where you are.</p>
+        <p class="list-head">You work towards</p>
+        <ul>
+          <li>My Working Direction</li>
+          <li>My shortlist and what I found</li>
+          <li>A first money check</li>
+          <li>My Decision: go, not yet, or no</li>
+        </ul>
+        <a class="btn btn-ghost" href="#" data-checkout="phase1" title="Replace with the Lemon Squeezy checkout link for Phase 1">Get Phase 1</a>
       </div>
-      <div class="price-box">
-        <p class="eyebrow" style="margin-bottom:4px">Price</p>
-        <p class="price"><span class="todo">€…</span></p>
-        <p style="font-size:15px;margin:0" class="muted">One-time payment.</p>
-        <a class="btn btn-primary" href="#" data-checkout title="Replace with your Lemon Squeezy checkout link">Get the Blueprint</a>
-        <a class="btn btn-ghost" href="#contact">Ask me a question first</a>
-        <small>Secure payment through Lemon Squeezy. <span class="todo">refund terms?</span></small>
+      <div class="option main">
+        <p class="tag">The whole Blueprint · Portugal Edition</p>
+        <h3>Steps 1 to 8</h3>
+        <p class="for">For you if you want to build your life in Portugal and need a practical route.</p>
+        <p class="price"><span class="todo">€697</span> <small>one-time · proposal</small></p>
+        <p class="list-head">You receive</p>
+        <ul>
+          <li>Everything in Phase 1</li>
+          <li>Workbooks for Step 4 Prepare, Step 5 Arrive, Step 6 Settle, Step 7 Build and Step 8 Thrive</li>
+          <li>Launch bonus: two 1.5-hour meetings with me, plus email and WhatsApp support</li>
+        </ul>
+        <p class="list-head">You also work towards</p>
+        <ul>
+          <li>My Moving Plan and My Arrival Checklist</li>
+          <li>A home that fits me</li>
+          <li>My First-Year Plan</li>
+          <li>My check-ins and yearly review</li>
+        </ul>
+        <a class="btn btn-primary" href="#" data-checkout="full" title="Replace with the Lemon Squeezy checkout link for the whole Blueprint">Get the whole Blueprint</a>
       </div>
     </div>
+    <div class="upgrade">
+      <p><b>Start with Phase 1, choose Portugal later?</b> The price you paid for Phase 1 counts towards the whole Blueprint, so you never pay twice. Your two meetings carry over; an upgrade does not add two more.</p>
+    </div>
+    <div class="meetings">
+      <h3>How the meetings work</h3>
+      <ul>
+        <li><b>What they are for:</b> your workbook results, your doubts and challenges, and your practical next steps.</li>
+        <li><b>How:</b> online video call, 1.5 hours each, in <span class="todo">English (and Dutch?)</span>.</li>
+        <li><b>When:</b> you book them yourself when you are ready <span class="todo">booking link; use within 6 months?</span></li>
+        <li><b>Between meetings:</b> short questions by email or WhatsApp <span class="todo">for how long, and reply time</span></li>
+      </ul>
+      <p class="muted" style="margin:10px 0 0">I share my experience and help you think clearly. I do not give legal, tax or financial advice; for that, I help you find the right professional.</p>
+    </div>
+    <p class="small-print">Secure payment through Lemon Squeezy. <span class="todo">refund terms</span> · <a href="#" class="todo">Terms</a></p>
+    <p class="future">Next: the same method for other places, starting with Bali, and detailed modules on topics like land, renovation and money. <a href="#contact">Tell me what you would like to see →</a></p>
   </div>
 </section>
 
-<!-- 10 NEXT -->
-<section id="next">
+<!-- 7 WHAT WE STAND FOR -->
+<section class="band-pine" id="stand">
   <div class="wrap">
-    <p class="eyebrow">What's next</p>
-    <h2>One method. More places, more depth.</h2>
-    <p class="lead">This first Blueprint is made for building a new life in Portugal. Next come editions for other places, starting with Bali, and detailed modules that go deeper into specific topics.</p>
-
-    <div class="edition">
-      <img src="images/bali-volcano.jpg" alt="A hiker on a ridge in Bali, looking out over a volcano rising above the morning mist." loading="lazy">
-      <div class="txt">
-        <p class="eyebrow">Planned</p>
-        <h3>The Made Real Blueprint · Bali Edition</h3>
-        <p>The same method, on different ground. I lived in Bali for four years: I rented, bought a house, started two businesses and made it home. The Bali Edition brings that experience together, from visas and companies to buying property and daily life.</p>
-        <p style="margin:0"><a href="#contact" style="color:var(--ochre-light);font-weight:600">Tell me you are interested →</a></p>
-      </div>
-    </div>
-
-    <h3 style="margin-top:64px">Detailed modules</h3>
-    <p class="muted">Modules marked <span class="star">★</span> come straight from my own experience.</p>
-    <div class="modules">
-      <div class="card"><h3>Your home</h3><ul>
-        <li>Finding and choosing land <span class="star">★</span></li>
-        <li>Buying a house <span class="star">★</span></li>
-        <li>Renovating an old house or ruin <span class="star">★</span></li>
-        <li>Living on site while you build <span class="star">★</span></li>
-        <li>Living off-grid: water, solar and food <span class="star">★</span></li>
-      </ul></div>
-      <div class="card"><h3>Work and money</h3><ul>
-        <li>Your Money Plan <span class="star">★</span></li>
-        <li>Starting a company <span class="star">★</span></li>
-        <li>Banking in Portugal <span class="star">★</span></li>
-        <li>Working online</li>
-        <li>Income from land: farming and rural tourism</li>
-      </ul></div>
-      <div class="card"><h3>Portugal in detail</h3><ul>
-        <li>Land and building rules <span class="star">★</span></li>
-        <li>Fire risk, water, wells and boreholes <span class="star">★</span></li>
-        <li>Your papers, step by step <span class="star">★</span></li>
-        <li>Learning Portuguese</li>
-        <li>Health care and insurance</li>
-      </ul></div>
-      <div class="card"><h3>Your people</h3><ul>
-        <li>Moving with a partner, children or pets</li>
-        <li>Caring for parents from far away <span class="star">★</span></li>
-        <li>Choosing and working with professionals <span class="star">★</span></li>
-        <li>Leaving well: closing your life abroad <span class="star">★</span></li>
-        <li>Making friends and finding your network</li>
-      </ul></div>
+    <p class="eyebrow">What we stand for</p>
+    <p class="statement">A life is chosen and built. Not inherited, and not drifted into.</p>
+    <p class="lead" style="color:#E6DECF">The life you live today is shaped by the choices you make. Within your situation, you can make different ones. Not by dreaming harder, but by deciding, planning and building, one step at a time.</p>
+    <div class="pvm">
+      <div><h3>Our purpose</h3><p>To inspire and help people realise the life they truly want, by sharing real experience and practical knowledge, creating clear plans together, and providing the connections, tools and guidance that help them make it happen.</p></div>
+      <div><h3>Our vision</h3><p><span class="todo">A world where more people live a life they chose, not one they drifted into, and then help others do the same.</span></p></div>
+      <div><h3>Our mission</h3><p>A practical blueprint that helps people realise the life they want in Portugal, built on real experience of moving, projects, financial planning and making connections. Made so it can be adapted to other places and your own focus.</p></div>
     </div>
   </div>
 </section>
 
-<!-- 11 FAQ -->
-<section style="padding-top:0">
+<!-- 8 FAQ -->
+<section id="faq">
   <div class="wrap faq">
     <p class="eyebrow">Good to know</p>
     <h2>Questions people ask</h2>
-    <details><summary>Do I have to move to Portugal?</summary><p>No. Steps 1 to 3 work for any destination, and for staying where you are. Portugal is where the practical Steps 4 to 8 focus, because that is where I live and what I know well.</p></details>
-    <details><summary>I already know what I want. Can I skip ahead?</summary><p>Yes. A short check tells you where to start: at Picture, Explore, Decide or Prepare. Most people still gain from reading Step 1 briefly, because your picture helps you judge every choice after it.</p></details>
-    <details><summary>How much time does it take?</summary><p>About two to three hours a week. Short, regular sessions work better than one long weekend.</p></details>
-    <details><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so we always show the source and the date we checked. For legal, tax and money decisions, I help you find the right professional and the right questions to ask.</p></details>
+    <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal, other places, and changes at home. Already sure about Portugal? Take the whole Blueprint: it starts with Phase 1 too, because a clear picture of the life you want helps you judge every choice that follows. Still unsure? Send me a message.</p></details>
+    <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal, because that is where I live and what I know well.</p></details>
+    <details><summary>What exactly do I receive, and how?</summary><p>After payment you receive the workbooks for your option <span class="todo">as PDF downloads? confirm</span>, and a link to book your two meetings. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
+    <details><summary>How do the two meetings work?</summary><p>They are online video calls with me of 1.5 hours each. You use them for what helps you most: your workbook results, doubts, challenges or next steps. You book them yourself when you are ready. Short questions in between can go by email or WhatsApp.</p></details>
+    <details><summary>Can I start with Phase 1 and upgrade later?</summary><p>Yes. The price you paid for Phase 1 counts towards the whole Blueprint. Your two meetings carry over to the whole Blueprint; the upgrade does not add two more.</p></details>
+    <details><summary>I already know what I want. Can I skip ahead?</summary><p>With the whole Blueprint, a short check tells you where to start: at Picture, Explore, Decide or Prepare. Most people still gain from reading Step 1 briefly, because your picture helps you judge every choice after it.</p></details>
+    <details><summary>How much time does it take?</summary><p>About two to three hours a week. Short, regular sessions work better than one long weekend. <span class="todo">typical time for Phase 1, after the test group</span></p></details>
+    <details><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so I always show the source and the date I checked. For legal, tax and money decisions, I help you find the right professional and the right questions to ask.</p></details>
     <details><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. Every Portuguese or official word is explained the first time.</p></details>
   </div>
 </section>
 
-<!-- 12 CONTACT -->
+<!-- 9 CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap split">
     <div>
-      <p class="eyebrow">Contact</p>
-      <h2>Let's talk about your picture.</h2>
-      <p class="lead" style="color:#E6DECF">Curious, unsure, or already packing? Send me a message. I read every one myself and reply within <span class="todo">two working days</span>.</p>
+      <p class="eyebrow">Your next step</p>
+      <h2>Ready to choose, or not sure yet?</h2>
+      <p class="lead" style="color:#E6DECF">Pick the option that fits you, or send me a message first. I read every message myself and reply within <span class="todo">two working days</span>.</p>
       <p>Tell me a little about where you are now. There is no wrong answer, and "I don't know yet" is a good place to start.</p>
+      <div class="btn-row"><a class="btn btn-light" href="#options">See the options</a></div>
     </div>
     <form action="https://formspree.io/f/xyezojjr" method="POST" id="contact-form">
       <div class="two">
@@ -614,7 +731,7 @@ footer a{color:#E6DECF}
           <option>I feel a pull, but it is not clear yet</option>
           <option>I know what I want, not yet where</option>
           <option>I have a place in mind and want to decide</option>
-          <option>I have decided and need a plan</option>
+          <option>I have decided on Portugal and need a plan</option>
           <option>I already live in Portugal</option>
         </select>
       </div>
@@ -650,6 +767,19 @@ footer a{color:#E6DECF}
 </footer>
 
 <script>
+// Phone menu: opens and closes the section links below 1100px
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.getElementById('menu');
+menuBtn.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', open);
+});
+menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+  menu.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded', false);
+}));
+
+
 // Sends the form to Formspree without leaving the page. Without JavaScript, the normal form post still works.
 const form = document.getElementById('contact-form');
 const ok = document.getElementById('form-ok');
