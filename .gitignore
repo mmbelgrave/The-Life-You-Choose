@@ -1,0 +1,5 @@
+# Word review documents and local tooling stay private
+*.docx
+~$*
+.claude/
+_check.pdf
