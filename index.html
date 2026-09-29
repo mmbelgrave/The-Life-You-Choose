@@ -48,15 +48,15 @@ p{margin:0 0 16px;max-width:64ch}
 
 /* nav */
 header.top{position:sticky;top:0;z-index:10;background:rgba(243,236,224,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;max-width:1400px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pine);font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
 .logo svg{width:40px;height:30px;flex:none}
-nav.links{display:flex;gap:24px;font-size:15px;font-weight:500}
+nav.links{display:flex;gap:20px;font-size:15px;font-weight:500}
 nav.links a{text-decoration:none;color:var(--granite);white-space:nowrap}
 header.top .btn{white-space:nowrap}
 nav.links a:hover{color:var(--ochre)}
 header.top .btn{padding:9px 16px;font-size:14px}
-@media (max-width:1100px){ nav.links{display:none} }
+@media (max-width:1240px){ nav.links{display:none} }
 @media (max-width:420px){ header.top .btn{display:none} }
 
 /* hero */
@@ -257,7 +257,7 @@ footer a{color:#E6DECF}
 .btn-small{padding:9px 16px;font-size:14px;white-space:nowrap}
 .menu-btn{display:none;width:42px;height:42px;border:1px solid var(--rule);background:var(--white);border-radius:3px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
 .menu-btn span{display:block;width:20px;height:2px;background:var(--pine)}
-@media (max-width:1100px){
+@media (max-width:1240px){
   .menu-btn{display:flex}
   nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
   nav.links.open a{padding:12px 0;border-bottom:1px solid var(--rule);font-size:17px}
@@ -350,10 +350,11 @@ footer a{color:#E6DECF}
       <span>The Life You <em>Choose</em></span>
     </a>
     <nav class="links" id="menu" aria-label="Main">
-      <a href="#routes">Which one fits you?</a>
+      <a href="#routes">Two routes</a>
       <a href="#inside">What you get</a>
       <a href="#story">My story</a>
-      <a href="#options">Options and prices</a>
+      <a href="#options">Options</a>
+      <a href="#stand">What we stand for</a>
       <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
     </nav>
