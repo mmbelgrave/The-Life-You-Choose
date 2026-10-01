@@ -34,8 +34,6 @@ p{margin:0 0 16px;max-width:64ch}
 .muted{color:var(--stone)}
 .cap{font-size:14px;color:var(--stone);margin-top:10px}
 
-/* draft markers: remove before going live */
-.draft-bar{background:var(--granite);color:var(--sand);font-size:14px;text-align:center;padding:8px 16px}
 .todo{background:#FBE9C8;color:var(--granite) !important;outline:1px dashed var(--ochre);padding:0 4px;border-radius:2px}
 
 /* buttons */
@@ -345,7 +343,6 @@ footer a{color:#E6DECF}
 .portrait-ph.small{width:88px;height:88px;border-radius:50%;flex:none;font-size:11px;padding:6px}
 .meet-head{display:flex;align-items:center;gap:18px;margin-bottom:6px}
 .meet-head h3{margin:0}
-.wb-placeholder{border-style:dashed;min-height:260px}
 .previews{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 
 /* v4 additions */
@@ -388,11 +385,15 @@ footer a{color:#E6DECF}
 .after-price{font-size:15px;color:var(--stone);margin:-6px 0 14px}
 .blueprint-line{font-family:var(--serif);font-size:20px;color:var(--pine);margin:18px 0 0}
 .meetings h3 small{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--stone)}
+
+/* v6 who it is for */
+.fit-sec{padding-top:clamp(56px,8vw,96px);padding-bottom:0}
+.fit-sec .fit{margin-top:20px}
+.fit .card h3{font-size:21px}
 </style>
 </head>
 <body>
 
-<div class="draft-bar">Draft for review. Highlighted items are placeholders to fill in before going live.</div>
 
 <header class="top">
   <div class="wrap">
@@ -457,7 +458,7 @@ footer a{color:#E6DECF}
       <div class="stuck-row"><p>You are afraid to give up a steady income and the security you have built. What if the money runs out?</p><p>Do an honest first money check, with a realistic example next to it: what the change costs, and how long your savings would last.</p></div>
       <div class="stuck-row"><p>Your partner is not as sure as you are, and you wonder what family and friends will say.</p><p>Use specific exercises to find out what each of you really needs, and how to talk about it together.</p></div>
     </div>
-    <p class="turn narrow">Moving is not the only good answer. Sometimes the best choice is a real change right where you are. What matters is choosing, instead of drifting. I know that feeling of being stuck. I had it for years.</p>
+    <p class="turn narrow">Moving is not the only good answer. Sometimes the best choice is a real change right where you are. What matters is choosing, instead of drifting. I know that feeling of being stuck. I had it for years, in a good job in the Netherlands. Then I moved to Bali with two bags, and later built my life on my own land in Portugal. This course is the route I followed, written down. <a href="#story">Read my story →</a></p>
   </div>
 </section>
 
@@ -479,6 +480,33 @@ footer a{color:#E6DECF}
         <p>From checking your direction to preparing, moving, settling and building your life in Portugal. Phase 1 is included: choosing Portugal does not always mean you know what life you want there, and that picture helps you judge every choice after it.</p>
         <span class="more">See the whole Blueprint →</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3b WHO IT IS FOR -->
+<section class="fit-sec" id="for-you">
+  <div class="wrap">
+    <p class="eyebrow">Who it is for</p>
+    <h2>Is this for you?</h2>
+    <div class="fit">
+      <div class="card yes">
+        <h3>This is for you if…</h3>
+        <ul>
+          <li>you feel a pull towards a different life, and want to do something with it</li>
+          <li>you want clear steps, not only inspiration</li>
+          <li>you are ready to look honestly at your life, including money</li>
+          <li>you want to choose for yourself, even if the answer is "stay"</li>
+        </ul>
+      </div>
+      <div class="card no">
+        <h3>It may not be for you if…</h3>
+        <ul>
+          <li>you want someone to arrange everything for you</li>
+          <li>you are looking for quick answers or a get-rich plan</li>
+          <li>you want to be told what your life should look like</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -578,14 +606,6 @@ footer a{color:#E6DECF}
         </div>
         <figcaption><b>What it helps you make:</b> your First Money Picture: your first numbers, how sure they are, and what you still need to check.</figcaption>
       </figure>
-      <figure class="wb">
-        <div class="wb-page wb-placeholder">
-          <p class="wb-step">Step 4 · Prepare · whole Blueprint only</p>
-          <h4>An exercise from Steps 4 to 8</h4>
-          <p><span class="todo">Placeholder: a real extract from My Moving Plan, the Arrival Checklist or another practical exercise, once the workbook is written.</span></p>
-        </div>
-        <figcaption><b>What it helps you make:</b> <span class="todo">which decision it supports, and how you use it</span></figcaption>
-      </figure>
     </div>
 
     <!-- How it works -->
@@ -624,8 +644,8 @@ footer a{color:#E6DECF}
           <p class="list-head">What you get</p>
           <ul>
             <li>The founding price: €99 for Phase 1, €249 for the whole Blueprint.</li>
-            <li>Personal meetings with me, 1.5 hours each: two with Phase 1, four with the whole Blueprint.</li>
-            <li>Email and WhatsApp support while you work through the steps.</li>
+            <li>Personal meetings with me, 1.5 hours each, in English or Dutch: two with Phase 1, four with the whole Blueprint.</li>
+            <li>Email and WhatsApp support while you work through the steps, in English or Dutch.</li>
           </ul>
         </div>
         <div>
@@ -636,7 +656,7 @@ footer a{color:#E6DECF}
           </ul>
         </div>
       </div>
-      <p>The steps are released as they are ready, and all of them before the end of 2026. Your feedback shapes them. Step 1 has been tested with a small test group before launch.</p>
+      <p>The steps are released as they are ready, and all of them before the end of 2026. If a step takes longer, you keep your access and pay nothing extra. Your feedback shapes them. Step 1 has been tested with a small test group before launch.</p>
       <p class="after-round">After the first 12, the course is sold without meetings: €195 for Phase 1 and €495 for the whole Blueprint.</p>
     </div>
     <div class="options">
@@ -793,7 +813,7 @@ footer a{color:#E6DECF}
     <details><summary>I already know what I want. Can I skip ahead?</summary><p>I recommend still walking through all the steps: it helps you confirm the picture you have in mind. In my experience, most people still benefit, because it also helps you judge every choice afterwards.</p></details>
     <details><summary>How much time does it take?</summary><p>About two to three hours a week. Short, regular sessions work better than one long weekend.</p></details>
     <details><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so I always show the source and the date I checked. For legal, tax and money decisions, I help you find the right professional and the right questions to ask.</p></details>
-    <details><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. It explains every Portuguese or official word the first time.</p></details>
+    <details><summary>Is my English good enough? Can I get help in Dutch?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. It explains every Portuguese or official word the first time. The workbooks are in English. As a founding member, you can have the meetings and the email and WhatsApp support in English or Dutch.</p></details>
   </div>
 </section>
 
