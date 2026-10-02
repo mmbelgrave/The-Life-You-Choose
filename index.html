@@ -390,6 +390,15 @@ footer a{color:#E6DECF}
 .fit-sec{padding-top:clamp(56px,8vw,96px);padding-bottom:0}
 .fit-sec .fit{margin-top:20px}
 .fit .card h3{font-size:21px}
+
+/* v7 layout system: one content width and one section rhythm everywhere */
+:root{--content:1180px;--section-y:clamp(32px,5vw,64px)}
+.wrap, .wrap.faq, header.top .wrap, footer .wrap{max-width:calc(var(--content) + 2 * var(--gutter))}
+section, .hero, .familiar, .routes-sec, .fit-sec{padding:var(--section-y) 0}
+p, .narrow, .not-this, .familiar .turn{max-width:none}
+section .wrap > :last-child{margin-bottom:0}
+.hero .descriptor{margin-bottom:0}
+.fullstory:not([open]){padding-bottom:0}
 </style>
 </head>
 <body>
@@ -446,7 +455,7 @@ footer a{color:#E6DECF}
     <div class="narrow">
       <p class="eyebrow">Sound familiar?</p>
       <h2>The thought keeps coming back.</h2>
-      <p class="lead">The alarm goes on Monday morning, and before you are out of bed, you feel it again: is this really it? On the last day of a holiday, you look around and you don't want to go home. And late at night, you catch yourself scrolling through houses in a country you have never lived in. <em class="thought">What if I just did it?</em></p>
+      <p class="lead">The alarm goes off on Monday morning, and before you are out of bed, you feel it again: is this really it? On the last day of a holiday, you look around, and you don't want to go home. And late at night, you catch yourself scrolling through houses in a country you have never lived in. <em class="thought">What if I just did it?</em></p>
       <p>Nothing is really wrong. On paper, your life looks fine. And yet something is missing. You want things to change, but you don't know where to start. Giving up a steady income and the life you know feels like jumping without a net. So you wait.</p>
       <p>Wanting a different life is the easy part. Turning it into decisions and reality is where most people get stuck.</p>
     </div>
@@ -581,7 +590,7 @@ footer a{color:#E6DECF}
           </table>
           <p class="wb-now">Now you</p>
           <p>Describe this day from morning to evening. Include an ordinary detail you would not put in a holiday brochure: housework, rain, or an hour when nothing much happens.</p>
-          <p class="wb-example"><b>Made-up example (Maria, 46):</b> I wake up at 7, without an alarm. From my window, I see olive trees. I drink coffee outside. In the morning, I work online for my clients for four hours. In the afternoon, I work in the garden or go to the market in the village. Two afternoons a week are for paperwork and cleaning, and I don't enjoy them. I go to bed tired, but happy.</p>
+          <p class="wb-example"><b>Made-up example (Maria, 46):</b> I wake up at 7 without an alarm. From my window, I see olive trees. I drink coffee outside. In the morning, I work online for my clients for four hours. In the afternoon, I work in the garden or go to the village market. Two afternoons a week are for paperwork and cleaning, and I don't enjoy them. I go to bed tired, but happy.</p>
           <div class="wb-lines"><span>I wake up…</span></div>
         </div>
         <figcaption><b>What it helps you make:</b> a picture concrete enough to test against a real house, job or town. It becomes the measuring stick for every later choice.</figcaption>
@@ -612,7 +621,7 @@ footer a{color:#E6DECF}
     <h3 style="margin-top:80px">How it works</h3>
     <div class="includes">
       <div><h4>An 8-step course, with a workbook for each step</h4><p>Each exercise explains the idea, gives you an example, and helps you apply it to your own situation.</p></div>
-      <div><h4>Personal meetings <span class="soon bonus">Founding members</span></h4><p>Video calls with me, 1.5 hours each, to talk through your results, doubts and next steps. Two meetings with Phase 1, four with the whole Blueprint.</p></div>
+      <div><h4>Personal meetings <span class="soon bonus">Founding members</span></h4><p>Video calls with me, 1 hour each, to talk through your results, doubts and next steps: two meetings with Phase 1, four with the whole Blueprint.</p></div>
       <div><h4>Email and WhatsApp <span class="soon bonus">Founding members</span></h4><p>Questions between the meetings? I answer them personally.</p></div>
       <div><h4>Conversations that matter</h4><p>Prompts help you talk through your plans with your partner, family and friends.</p></div>
       <div><h4>Information you can check</h4><p>Rules and prices change. I show my sources and when I checked them, and help you work out which professional to ask about legal or tax matters.</p></div>
@@ -638,13 +647,13 @@ footer a{color:#E6DECF}
     <div class="founding" id="founding">
       <p class="eyebrow">Founding members · limited to 12</p>
       <h3>Build it with me, as one of the first 12.</h3>
-      <p>This is the launch of the Blueprint. Before I open it to everyone, I want to build it together with a small group: the first 12 people who join.</p>
+      <p>This is the Blueprint launch. Before I open it to everyone, I want a small group to experience it first: the first 12 people who join.</p>
       <div class="founding-cols">
         <div>
           <p class="list-head">What you get</p>
           <ul>
             <li>The founding price: €99 for Phase 1, €249 for the whole Blueprint.</li>
-            <li>Personal meetings with me, 1.5 hours each, in English or Dutch: two with Phase 1, four with the whole Blueprint.</li>
+            <li>Personal meetings with me, 1 hour each, in English or Dutch: two with Phase 1, four with the whole Blueprint.</li>
             <li>Email and WhatsApp support while you work through the steps, in English or Dutch.</li>
           </ul>
         </div>
@@ -652,12 +661,11 @@ footer a{color:#E6DECF}
           <p class="list-head">What I ask in return</p>
           <ul>
             <li>Honest feedback as you work through the steps: what is clear, what is missing, and what helped.</li>
-            <li>A testimonial is optional. I only use your words, name or photo with your written permission. When I quote a founding member, I say that the quote comes from a founding member who received a discount.</li>
+            <li>A testimonial is optional. I only use your words, name or photo with your written permission.</li>
           </ul>
         </div>
       </div>
-      <p>The steps are released as they are ready, and all of them before the end of 2026. If a step takes longer, you keep your access and pay nothing extra. Your feedback shapes them. Step 1 has been tested with a small test group before launch.</p>
-      <p class="after-round">After the first 12, the course is sold without meetings: €195 for Phase 1 and €495 for the whole Blueprint.</p>
+      <p>We release the steps as they are ready, and we'll release them all before the end of 2026.</p>
     </div>
     <div class="options">
       <div class="option" id="opt-phase1">
@@ -665,12 +673,11 @@ footer a{color:#E6DECF}
         <h3>Steps 1 to 3</h3>
         <p class="for">For you if you want something different, but need to work out what and where.</p>
         <p class="price">€99 <small>founding member price</small></p>
-        <p class="after-price">Price after the founding round: €195 (course only)</p>
         <p class="list-head">You receive</p>
         <ul>
           <li>The Introduction, with a short check to find your starting point</li>
           <li>PDF workbooks for Step 1 Picture, Step 2 Explore and Step 3 Decide</li>
-          <li>As a founding member: two 1.5-hour meetings with me, plus email and WhatsApp support</li>
+          <li>As a founding member: two 1-hour meetings with me, plus email and WhatsApp support</li>
         </ul>
         <p class="list-head">You work towards</p>
         <ul>
@@ -687,12 +694,11 @@ footer a{color:#E6DECF}
         <h3>Steps 1 to 8</h3>
         <p class="for">For you if you want to build your life in Portugal and need a practical route.</p>
         <p class="price">€249 <small>founding member price</small></p>
-        <p class="after-price">Price after the founding round: €495 (course only)</p>
         <p class="list-head">You receive</p>
         <ul>
           <li>Everything in Phase 1</li>
           <li>PDF workbooks for Step 4 Prepare, Step 5 Arrive, Step 6 Settle, Step 7 Build and Step 8 Thrive, released as they are ready</li>
-          <li>As a founding member: four 1.5-hour meetings with me, plus email and WhatsApp support</li>
+          <li>As a founding member: four 1-hour meetings with me, plus email and WhatsApp support</li>
         </ul>
         <p class="list-head">You also work towards</p>
         <ul>
@@ -706,13 +712,13 @@ footer a{color:#E6DECF}
       </div>
     </div>
     <div class="upgrade">
-      <p><b>Start with Phase 1, choose Portugal later?</b> The price you paid for Phase 1 is deducted from the price of the whole Blueprint, so you never pay twice. As a founding member, you also get the two extra meetings.</p>
+      <p><b>Start with Phase 1, choose Portugal later?</b> The price you paid for Phase 1 is deducted from the full Blueprint price, so you never pay twice. As a founding member, you also get the two extra meetings.</p>
     </div>
     <div class="meetings">
       <h3>How the meetings work <small>(founding members)</small></h3>
       <ul>
         <li><b>What they are for:</b> your workbook results, your doubts and challenges, and your practical next steps. You decide how to use them. For example: a first conversation about your workbook results and what you are unsure about, and a later one to review your challenges, your decision and your next steps. With the whole Blueprint, two more along the way, for example while you prepare the move and after you arrive.</li>
-        <li><b>How:</b> online video call, 1.5 hours each, in English or Dutch.</li>
+        <li><b>How:</b> online video call, 1 hour each, in English or Dutch.</li>
         <li><b>When:</b> you book them yourself when you are ready, within 6 months of your purchase.</li>
         <li><b>Between meetings:</b> short questions by email or WhatsApp.</li>
       </ul>
@@ -731,8 +737,8 @@ footer a{color:#E6DECF}
         <p class="eyebrow">Who I am</p>
         <img class="portrait big" src="images/mwata.jpg" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
         <h2>I'm Mwata. I have built a new life abroad twice.</h2>
-        <p class="lead">I had a good job and a comfortable home in the Netherlands, but I felt that something was missing. A course helped me get clear about the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house and a local inspection business. After three years, however, my picture changed. That led me to build my second life, in rural central Portugal.</p>
-        <p>I made this Blueprint because, although I had help with individual parts, nobody guided me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone who could tell me what to check first, and give practical support from experience.</p>
+        <p class="lead">I had a good job and a comfortable home in the Netherlands, but something felt missing. A course helped me clarify the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house and a local inspection business. After three years, however, my picture changed. That led me to build my second life in rural central Portugal.</p>
+        <p>I made this Blueprint because, although I had help with individual parts, nobody guided me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone to tell me what to check first and offer practical support from experience.</p>
       </div>
       <div class="lesson">
         <p class="eyebrow">From my life into the workbook</p>
@@ -791,7 +797,7 @@ footer a{color:#E6DECF}
     <p class="statement">A life is chosen and built, not inherited or drifted into.</p>
     <p class="lead" style="color:#E6DECF">The life you live today is shaped by the choices you make. Within your situation, you can make different ones. Not by dreaming harder, but by deciding, planning and building, one step at a time.</p>
     <div class="pvm">
-      <div><h3>My picture <small>(my vision)</small></h3><p>I build a life in which I am present, dependable and true to my values. I have the freedom to shape most of my days, spend time in nature, explore, and work on meaningful projects with the people I love.</p></div>
+      <div><h3>My picture <small>(my vision)</small></h3><p>I build a life where I am present, dependable, and true to my values. I have the freedom to shape most of my days, spend time in nature, explore, and work on meaningful projects with the people I love.</p></div>
       <div><h3>Why I do this <small>(my purpose)</small></h3><p>To inspire and help people realise the life they truly want by sharing my experience and practical knowledge, creating clear plans together, and providing the connections, tools and guidance that help them make it happen.</p></div>
       <div><h3>What I am building <small>(my mission)</small></h3><p>A practical blueprint that helps people realise the life they want in Portugal, built on my experience of moving, projects, financial planning and making connections. Made so it can be adapted to other places and your own focus.</p></div>
     </div>
@@ -806,9 +812,9 @@ footer a{color:#E6DECF}
     <details><summary>Is this a course?</summary><p>Yes. An 8-step course with workbooks and, for founding members, personal meetings and support. The blueprint is what you finish with: your own written plan.</p></details>
     <details><summary>What does it mean to be a founding member?</summary><p>The first 12 people who join get the founding price, personal meetings with me, and email and WhatsApp support. In return, I ask for honest feedback as you work through the steps. A testimonial is optional, and I only use it with your written permission. After the first 12, the course is sold without meetings: €195 for Phase 1 and €495 for the whole Blueprint.</p></details>
     <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal and other places, but also for real changes at home. Already sure about Portugal? Take the whole Blueprint: it starts with Phase 1 too, because a clear picture of the life you want helps you judge every choice that follows. Not sure which to choose? Send me a message.</p></details>
-    <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal, because that is where I live now and where I built a life myself.</p></details>
-    <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the workbooks that are ready as PDF downloads and, as a founding member, a link to book your meetings. The other steps follow as they are ready, at no extra cost, and all of them before the end of 2026. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
-    <details><summary>How do the personal meetings work?</summary><p>They are part of the founding member offer: online video calls with me of 1.5 hours each, two with Phase 1 and four with the whole Blueprint. You use them for what helps you most: your workbook results, doubts, challenges or next steps. You book them yourself when you are ready. Short questions in between can go by email or WhatsApp.</p></details>
+    <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal because that is where I live now and where I built a life.</p></details>
+    <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you'll receive the workbooks as PDF downloads and, as a founding member, a link to book your meetings. The steps still in development follow as they are ready, at no extra cost, and all of them before the end of 2026. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
+    <details><summary>How do the personal meetings work?</summary><p>They are part of the founding member offer: online video calls with me of 1 hour each, two with Phase 1 and four with the whole Blueprint. You use them for what helps you most: your workbook results, doubts, challenges or next steps. You book them yourself when you are ready. Short questions in between can go by email or WhatsApp.</p></details>
     <details><summary>Can I start with Phase 1 and upgrade later?</summary><p>Yes. The price you paid for Phase 1 is deducted from the price of the whole Blueprint. As a founding member, you also get two extra meetings.</p></details>
     <details><summary>I already know what I want. Can I skip ahead?</summary><p>I recommend still walking through all the steps: it helps you confirm the picture you have in mind. In my experience, most people still benefit, because it also helps you judge every choice afterwards.</p></details>
     <details><summary>How much time does it take?</summary><p>About two to three hours a week. Short, regular sessions work better than one long weekend.</p></details>
