@@ -399,6 +399,25 @@ p, .narrow, .not-this, .familiar .turn{max-width:none}
 section .wrap > :last-child{margin-bottom:0}
 .hero .descriptor{margin-bottom:0}
 .fullstory:not([open]){padding-bottom:0}
+
+/* v7.1 */
+.story-top{display:grid;grid-template-columns:280px 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.story-top .portrait.big{width:100%;margin:0}
+.story-top h2{margin-bottom:20px}
+.lesson{margin-top:40px}
+.lesson-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 40px}
+.lesson-grid p{margin:0 0 10px}
+@media (max-width:760px){
+  .story-top{grid-template-columns:1fr}
+  .story-top .portrait.big{width:200px}
+  .lesson-grid{grid-template-columns:1fr}
+}
+.includes{grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){ .includes{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:600px){ .includes{grid-template-columns:1fr} }
+#inside .btn-row{justify-content:center}
+.previews .wb{display:flex;flex-direction:column}
+.previews .wb-page{flex:1}
 </style>
 </head>
 <body>
@@ -535,7 +554,6 @@ section .wrap > :last-child{margin-bottom:0}
         <li><b>A first money check.</b> What the change could cost, what comes in, and how long your savings could cover a gap. In addition, a list of what you still need to check.</li>
         <li><b>A considered decision.</b> Go, not yet, or no, with your next steps. One you can explain to the people you love.</li>
       </ul>
-      <p class="blueprint-line">Together, these results form your own blueprint.</p>
     </div>
 
     <!-- Route -->
@@ -732,16 +750,18 @@ section .wrap > :last-child{margin-bottom:0}
 <!-- 5 STORY -->
 <section class="proof" id="story">
   <div class="wrap">
-    <div class="split">
+    <div class="story-top">
+      <img class="portrait big" src="images/mwata.jpg" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
       <div>
         <p class="eyebrow">Who I am</p>
-        <img class="portrait big" src="images/mwata.jpg" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
         <h2>I'm Mwata. I have built a new life abroad twice.</h2>
         <p class="lead">I had a good job and a comfortable home in the Netherlands, but something felt missing. A course helped me clarify the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house and a local inspection business. After three years, however, my picture changed. That led me to build my second life in rural central Portugal.</p>
         <p>I made this Blueprint because, although I had help with individual parts, nobody guided me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone to tell me what to check first and offer practical support from experience.</p>
       </div>
-      <div class="lesson">
-        <p class="eyebrow">From my life into the workbook</p>
+    </div>
+    <div class="lesson">
+      <p class="eyebrow">From my life into the workbook</p>
+      <div class="lesson-grid">
         <p><b>What I faced:</b> which region of Portugal, and which piece of land?</p>
         <p><b>What I did:</b> I travelled for two months in a campervan and viewed 25 plots. What surprised me was how connected I felt to one region, and not at all to another.</p>
         <p><b>What I learned:</b> you only find out on the ground. Go as a tester, not a tourist.</p>
