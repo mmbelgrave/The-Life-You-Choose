@@ -426,6 +426,13 @@ section .wrap > :last-child{margin-bottom:0}
 .free-start p{margin:0 0 14px}
 .free-start .small{font-size:15px;color:var(--stone);margin:14px 0 0}
 @media (max-width:600px){ .free-start .btn{width:100%;text-align:center} }
+
+/* v8.2: both cards use the same rows (10 children each) */
+@supports (grid-template-rows:subgrid){
+  .option{display:grid;grid-row:span 10;grid-template-rows:subgrid;row-gap:0}
+  .option > *{align-self:start}
+  .option .btn{align-self:end}
+}
 </style>
 </head>
 <body>
@@ -698,7 +705,7 @@ section .wrap > :last-child{margin-bottom:0}
           </ul>
         </div>
       </div>
-      <p>We release the steps as they are ready, and we'll release them all before the end of 2026.</p>
+      <p>I release the steps as they are ready, and all of them before the end of 2026.</p>
     </div>
     <div class="options">
       <div class="option" id="opt-phase1">
