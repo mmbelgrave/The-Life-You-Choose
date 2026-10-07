@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Een gewone dinsdag: een gratis oefening · The Made Real Blueprint</title>
+<meta name="description" content="Een gratis oefening om één gewone dag in het leven dat je wilt voor je te zien, zo concreet dat je het kunt testen. Uit Stap 1 van The Made Real Blueprint. Ontvang de pdf per mail.">
+<link rel="canonical" href="https://maderealblueprint.com/dinsdag/">
+<link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/">
+<link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/">
+<link rel="icon" href="../images/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Life You Choose">
+<meta property="og:url" content="https://maderealblueprint.com/dinsdag/">
+<meta property="og:title" content="Een gewone dinsdag: een gratis oefening">
+<meta property="og:description" content="Zie één gewone dag in het leven dat je wilt voor je, zo concreet dat je het kunt testen. Gratis pdf van The Made Real Blueprint.">
+<meta property="og:image" content="https://maderealblueprint.com/images/dinsdag-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/hankengrotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../fonts.css">
+<style>
+/* Dutch sign-up page for the free exercise, built by _build/tuesday/web/make-dinsdag.js. English twin: ../tuesday/ */
+:root{--pine:#2C3B2F;--sand:#F3ECE0;--ochre:#8F5410;--granite:#1C1E1B;--white:#FFFFFF;--moss:#5E7A50;--sage:#E3E1D0;--stone:#66625A;--rule:#D8CFBF;
+  --serif:'Newsreader', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--sand);color:var(--granite);font-family:var(--sans);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--pine)}
+img{max-width:100%;height:auto;display:block}
+header{border-bottom:1px solid var(--rule)}
+.in{max-width:1080px;margin:0 auto;padding:0 20px}
+header .in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pine);font-family:var(--serif);font-size:21px;font-weight:500}
+.logo svg{width:38px;height:28px}
+.lang{font-size:15px}
+h1,h2{font-family:var(--serif);font-weight:500;color:var(--pine);letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(40px,6vw,60px);line-height:1.05;margin:0 0 16px}
+h1 em{color:var(--ochre)}
+h2{font-size:clamp(24px,3vw,30px);line-height:1.2;margin:0 0 12px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin:0 0 12px}
+.hero{padding:clamp(32px,6vw,72px) 0}
+.hero .in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:start}
+.preview{position:sticky;top:24px;margin-top:8px}
+.lead{font-size:clamp(19px,2vw,21px);color:var(--pine);margin:0 0 18px}
+ul.gets{padding-left:20px;margin:0 0 8px}ul.gets li{margin-bottom:6px}
+.signup{background:var(--white);border:2px solid var(--pine);border-radius:4px;padding:clamp(22px,3vw,30px);margin-top:26px}
+.signup h2{font-size:24px}
+label{display:block;font-size:15px;font-weight:600;color:var(--pine);margin:12px 0 4px}
+input[type=text],input[type=email]{width:100%;font:inherit;font-size:17px;padding:11px 12px;border:1px solid var(--rule);border-radius:3px;background:var(--white)}
+input:focus{outline:2px solid var(--moss);outline-offset:1px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:var(--granite);font-size:15px;margin-top:14px}
+.check input{margin-top:5px;flex:none}
+.btn{display:inline-block;font:inherit;font-weight:600;font-size:17px;text-decoration:none;border:2px solid var(--pine);border-radius:3px;padding:13px 22px;cursor:pointer;background:var(--pine);color:var(--sand);margin-top:18px}
+.btn:hover{background:var(--granite)}
+.small{font-size:14px;color:var(--stone);margin:12px 0 0}
+.ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px}
+.err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
+.alt{margin-top:18px;font-size:16px}
+.preview img{border-radius:4px}
+.about{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(32px,5vw,56px) 0}
+.about .in{display:grid;grid-template-columns:140px 1fr;gap:28px;align-items:center;max-width:820px}
+.about img{width:140px;height:140px;object-fit:cover;border-radius:50%}
+.about p{margin:0 0 10px}
+footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
+footer a{color:#E6DECF}
+@media (max-width:820px){ .hero .in{grid-template-columns:1fr} .preview{order:-1;max-width:520px} }
+@media (max-width:560px){ .about .in{grid-template-columns:1fr} .about img{width:110px;height:110px} .btn{width:100%;text-align:center} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="in">
+    <a class="logo" href="../" aria-label="The Life You Choose, home">
+      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <span>The Life You <em>Choose</em></span>
+    </a>
+    <a class="lang" href="../tuesday/" hreflang="en" lang="en">English</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="in">
+    <div>
+      <p class="eyebrow">Gratis oefening · uit Stap 1 van The Made Real Blueprint</p>
+      <h1>Een gewone <em>dinsdag</em>.</h1>
+      <p class="lead">Geen vakantie. Een gewone dinsdag, want de meeste dagen zijn gewone dagen. Zie één gewone dag in het leven dat je wilt voor je, zo concreet dat je het kunt testen.</p>
+      <p>Een pdf van 3 pagina's om te printen of op je scherm in te vullen:</p>
+      <ul class="gets">
+        <li>Een korte opwarmer: momenten die goed voelden</li>
+        <li>De oefening, met een verzonnen voorbeeld</li>
+        <li>De behoefte achter je beeld, en hoe je verder kunt verdiepen</li>
+      </ul>
+
+      <form class="signup" id="signup" action="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
+        <h2>Ontvang de oefening per mail</h2>
+        <label for="name">Je voornaam</label>
+        <input type="text" id="name" name="fields[name]" autocomplete="given-name" required>
+        <label for="email">Je e-mailadres</label>
+        <input type="email" id="email" name="fields[email]" autocomplete="email" required>
+        <label class="check"><input type="checkbox" name="fields[updates]" value="yes"> Stuur me ook af en toe een update als er iets nieuws klaar is. Je kunt altijd stoppen.</label>
+        <input type="hidden" name="fields[language]" value="nl">
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn" type="submit">Stuur me de oefening</button>
+        <p class="small">De oefening zelf is in het Nederlands; de e-mails zijn in het Engels. Ik gebruik je e-mailadres alleen om je de oefening te sturen, en updates alleen als je het vakje aanvinkt. Zie de <a href="../privacy.html">privacyverklaring</a> (in het Engels).</p>
+        <div class="ok" role="status" id="ok">Dank je. Kijk in je inbox en bevestig je e-mailadres. De oefening volgt direct daarna.</div>
+        <div class="err" role="alert" id="err"></div>
+      </form>
+      <p class="alt">Liever via WhatsApp? <a href="https://wa.me/31657930469?text=DINSDAG" target="_blank" rel="noopener">Stuur "DINSDAG"</a> en ik stuur hem je toe.</p>
+    </div>
+    <figure class="preview" style="margin:0">
+      <img src="../images/dinsdag-preview.jpg" alt="De eerste twee pagina's van de oefening Een gewone dinsdag: een opwarmer, de uitleg met een tabel, en ruimte om je dag te beschrijven." width="1200" height="900">
+    </figure>
+  </div>
+</section>
+
+<section class="about">
+  <div class="in">
+    <img src="../images/mwata.jpg" alt="Mwata lacht, met helm en vizier, op zijn land in Portugal." width="720" height="960" loading="lazy">
+    <div>
+      <p class="eyebrow">Wie heeft dit gemaakt</p>
+      <p>Ik ben Mwata. Ik heb twee keer een nieuw leven in het buitenland opgebouwd: eerst op Bali, daarna op het platteland van Portugal. Deze oefening komt uit The Made Real Blueprint, de cursus in 8 stappen die ik vanuit die ervaring schreef. De cursus zelf is in eenvoudig Engels. De oefening werkt waar je ook wilt wonen, ook gewoon waar je nu woont.</p>
+      <p><a href="../">Bekijk de cursus (Engels) →</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="in">© 2026 The Life You Choose · <a href="../">Home</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Voorwaarden</a></div>
+</footer>
+
+<script>
+// Sends the form to MailerLite without leaving the page (set the form action to the MailerLite endpoint).
+(function () {
+  var f = document.getElementById('signup'), ok = document.getElementById('ok'), err = document.getElementById('err');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    if (!f.checkValidity()) { err.textContent = 'Vul je voornaam en een geldig e-mailadres in.'; err.style.display = 'block'; return; }
+    if (f.action.indexOf('MAILERLITE_FORM_ACTION') !== -1) { err.textContent = 'De aanmelding is nog niet gekoppeld.'; err.style.display = 'block'; return; }
+    fetch(f.action, { method: 'POST', body: new FormData(f) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; } else { throw new Error(); } })
+      .catch(function () { err.textContent = 'Er ging iets mis. Probeer het opnieuw, of stuur "DINSDAG" via WhatsApp.'; err.style.display = 'block'; });
+  });
+})();
+</script>
+</body>
+</html>
