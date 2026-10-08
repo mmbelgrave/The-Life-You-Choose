@@ -22,6 +22,7 @@
 <link rel="preload" href="../fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../fonts/hankengrotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../fonts.css">
+<script data-goatcounter="https://maderealblueprint.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 /* Dutch sign-up page for the free exercise, built by _build/tuesday/web/make-dinsdag.js. English twin: ../tuesday/ */
 :root{--pine:#2C3B2F;--sand:#F3ECE0;--ochre:#8F5410;--granite:#1C1E1B;--white:#FFFFFF;--moss:#5E7A50;--sage:#E3E1D0;--stone:#66625A;--rule:#D8CFBF;
@@ -146,7 +147,7 @@ footer a{color:#E6DECF}
     if (f.action.indexOf('MAILERLITE_FORM_ACTION') !== -1) { err.textContent = 'De aanmelding is nog niet gekoppeld.'; err.style.display = 'block'; return; }
     fetch(f.action, { method: 'POST', body: new FormData(f) })
       .then(function (r) { return r.json(); })
-      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; } else { throw new Error(); } })
+      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-signup-' + document.documentElement.lang, title: 'Tuesday sign-up', event: true }); } catch (e) {} } else { throw new Error(); } })
       .catch(function () { err.textContent = 'Er ging iets mis. Probeer het opnieuw, of stuur "DINSDAG" via WhatsApp.'; err.style.display = 'block'; });
   });
 })();
