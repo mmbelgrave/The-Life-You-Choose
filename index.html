@@ -467,6 +467,20 @@ section .wrap > :last-child{margin-bottom:0}
 /* v13 */
 .wb-table th[scope=row]{background:var(--sage);color:var(--granite);font-weight:400;border:1px solid var(--rule);vertical-align:top}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* v15: free-exercise box with preview; portrait as tall as the text */
+.free-start{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,44px);align-items:center;max-width:1000px;padding:clamp(22px,3vw,34px)}
+.free-start h3{font-size:clamp(28px,3.4vw,38px);line-height:1.1;margin:0 0 12px}
+.free-start h3 em{color:var(--ochre)}
+.free-start .btn-row{margin-top:18px}
+.fs-preview{display:block;border-radius:4px;overflow:hidden;transition:transform .2s}
+.fs-preview:hover{transform:translateY(-3px)}
+.fs-preview img{width:100%;display:block}
+@media (max-width:760px){ .free-start{grid-template-columns:1fr} .fs-preview{order:-1;max-width:420px} }
+@media (min-width:761px){
+  .story-top{grid-template-columns:380px 1fr;align-items:stretch}
+  .story-top .portrait.big{height:100%;object-fit:cover;object-position:50% 35%}
+}
 </style>
 </head>
 <body>
@@ -537,11 +551,14 @@ section .wrap > :last-child{margin-bottom:0}
       <div class="stuck-row"><p>Your partner is not as sure as you are, and you wonder what family and friends will say.</p><p>Use specific exercises to find out what each of you really needs, and how to talk about it together.</p></div>
     </div>
     <p class="turn narrow">Moving is not the only good answer. Sometimes the best choice is a real change right where you are. What matters is choosing, instead of drifting. I know that feeling of being stuck. I had it for years, in a good job in the Netherlands. Then I moved to Bali with two bags, and later built my life on my own land in Portugal. This course is the route I followed, written down. <a href="#story">Read my story →</a></p>
-    <div class="free-start narrow">
-      <p class="eyebrow">Not ready for a course?</p>
-      <p><b>Start for free with the Ordinary Tuesday exercise.</b> It comes from Step 1: you picture one normal day in the life you want, in enough detail to test it. Get it by email, or send me "TUESDAY" on WhatsApp.</p>
-      <div class="btn-row"><a class="btn btn-primary" href="tuesday/">Get it by email</a><a class="btn btn-whatsapp" href="https://wa.me/31657930469?text=TUESDAY" target="_blank" rel="noopener">Send TUESDAY on WhatsApp</a></div>
-      <p class="small">In het Nederlands? <a href="dinsdag/" hreflang="nl" lang="nl">Een gewone dinsdag</a>. Or message me on <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a>.</p>
+    <div class="free-start">
+      <div class="fs-text">
+        <p class="eyebrow">Not ready for a course? Start for free</p>
+        <h3>An ordinary <em>Tuesday</em>.</h3>
+        <p>Picture one normal day in the life you want, in enough detail to test it. A short exercise from Step 1 of the Blueprint: a 3-page PDF to print or fill in on screen.</p>
+        <div class="btn-row"><a class="btn btn-primary" href="tuesday/">Get the free exercise →</a></div>
+      </div>
+      <a class="fs-preview" href="tuesday/" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
     </div>
   </div>
 </section>
@@ -792,7 +809,7 @@ section .wrap > :last-child{margin-bottom:0}
 <section class="proof" id="story">
   <div class="wrap">
     <div class="story-top">
-      <img class="portrait big" src="images/mwata.jpg" srcset="images/mwata-420.jpg 420w, images/mwata.jpg 720w" sizes="(max-width: 760px) 200px, 280px" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
+      <img class="portrait big" src="images/mwata.jpg" srcset="images/mwata-420.jpg 420w, images/mwata.jpg 720w" sizes="(max-width: 760px) 200px, 380px" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
       <div>
         <p class="eyebrow">Who I am</p>
         <h2>I'm Mwata. I have built a new life abroad twice.</h2>
