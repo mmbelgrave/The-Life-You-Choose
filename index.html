@@ -448,6 +448,20 @@ section .wrap > :last-child{margin-bottom:0}
 /* v9: four cards in How it works, so two columns */
 .includes{grid-template-columns:repeat(2,1fr)}
 @media (max-width:600px){ .includes{grid-template-columns:1fr} }
+
+/* v12 waiting-list pop-up */
+.waitlist{border:none;border-radius:6px;padding:0;max-width:460px;width:calc(100% - 32px);background:var(--white);color:var(--granite);box-shadow:0 20px 60px rgba(28,30,27,.3)}
+.waitlist::backdrop{background:rgba(28,30,27,.55)}
+.wl-form{padding:30px 28px 26px;position:relative}
+.wl-form h3{font-size:28px;margin:0 0 10px}
+.wl-form p{margin:0 0 14px;font-size:16px}
+.wl-form label{display:block;font-size:15px;font-weight:600;color:var(--pine);margin:6px 0 4px}
+.wl-form input[type=email]{width:100%;font:inherit;font-size:17px;padding:11px 12px;border:1px solid var(--rule);border-radius:3px}
+.wl-form .btn{margin-top:14px;width:100%;text-align:center}
+.wl-form .wl-small{font-size:13px;color:var(--stone);margin:12px 0 0}
+.wl-close{position:absolute;top:8px;right:12px;background:none;border:none;font-size:28px;line-height:1;color:var(--stone);cursor:pointer;padding:4px 8px}
+.wl-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px;font-size:16px}
+.wl-err{display:none;color:#9B2C1F;margin-top:10px;font-size:15px}
 </style>
 </head>
 <body>
@@ -737,7 +751,7 @@ section .wrap > :last-child{margin-bottom:0}
           <li>My Decision: go, not yet, or no</li>
           <li>Together: your blueprint for the decision</li>
         </ul>
-        <a class="btn btn-primary" href="#contact" data-checkout="phase1">Reserve your founding place</a>
+        <a class="btn btn-primary" href="#contact" data-checkout="phase1" data-waitlist="phase1">Reserve your founding place</a>
       </div>
       <div class="option" id="opt-full">
         <p class="tag">The full course · Portugal Edition <span class="soon">Coming soon</span></p>
@@ -757,7 +771,7 @@ section .wrap > :last-child{margin-bottom:0}
           <li>My check-ins and yearly review</li>
           <li>Together: your complete blueprint for your life in Portugal</li>
         </ul>
-        <a class="btn btn-ghost" href="#contact">Notify me when it opens</a>
+        <a class="btn btn-ghost" href="#contact" data-waitlist="full">Notify me when it opens</a>
       </div>
     </div>
     <div class="upgrade">
@@ -873,7 +887,7 @@ section .wrap > :last-child{margin-bottom:0}
       <p class="lead" style="color:#E6DECF">Pick the option that fits you, or send me a message first. I read every message myself and reply as soon as I can.</p>
       <p>Tell me a little about where you are now. There is no wrong answer, and "I don't know yet" is a good place to start.</p>
       <div class="btn-row"><a class="btn btn-light" href="#options">Compare options and prices</a></div>
-      <p style="margin-top:32px">Not ready for a course? Get the free Ordinary Tuesday exercise <a href="tuesday/" style="color:#E6DECF">by email</a>, or <a href="https://wa.me/31657930469?text=TUESDAY" target="_blank" rel="noopener" style="color:#E6DECF">send "TUESDAY" on WhatsApp</a>.</p>
+      <p style="margin-top:32px">Not ready for a course? Get the <a href="tuesday/" style="color:#E6DECF">free Ordinary Tuesday exercise</a>.</p>
       <p>Follow along on <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener" style="color:#E6DECF">Instagram</a> and <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener" style="color:#E6DECF">Facebook</a>.</p>
     </div>
     <form action="https://formspree.io/f/xyezojjr" method="POST" id="contact-form">
@@ -921,6 +935,22 @@ section .wrap > :last-child{margin-bottom:0}
   </div>
 </footer>
 
+<dialog class="waitlist" id="waitlist" aria-labelledby="wl-title">
+  <form class="wl-form" id="wl-form" method="post" novalidate>
+    <button class="wl-close" type="button" aria-label="Close">×</button>
+    <p class="eyebrow" id="wl-eyebrow"></p>
+    <h3 id="wl-title"></h3>
+    <p id="wl-text"></p>
+    <label for="wl-email">Your email</label>
+    <input type="email" id="wl-email" name="fields[email]" autocomplete="email" required>
+    <input type="hidden" name="ml-submit" value="1">
+    <input type="hidden" name="anticsrf" value="true">
+    <button class="btn btn-primary" type="submit">Let me know</button>
+    <p class="wl-small">You first get one email to confirm your address. I only use it for this, and every email has an unsubscribe link. See the <a href="privacy.html">privacy note</a>.</p>
+    <div class="wl-ok" role="status">Thank you. Please check your inbox and confirm your email address.</div>
+    <div class="wl-err" role="alert"></div>
+  </form>
+</dialog>
 <script>
 // Phone menu: opens and closes the section links below 1100px
 const menuBtn = document.querySelector('.menu-btn');
@@ -960,6 +990,51 @@ form.addEventListener('submit', async (e) => {
     btn.disabled = false; btn.textContent = 'Send message';
   }
 });
+
+// Waiting-list pop-up: email only, sent to the MailerLite form of the chosen list.
+// Without JavaScript (or without <dialog> support) the buttons simply go to the contact form.
+const WAITLISTS = {
+  phase1: { action: 'https://assets.mailerlite.com/jsonp/2693532/forms/200744713223931062/subscribe', eyebrow: 'Founding members · limited to 12', title: 'Reserve your founding place',
+    text: 'Phase 1 is ready, and the checkout opens soon. Leave your email address and you will hear first, so you can claim one of the 12 founding places at €99.' },
+  full: { action: 'https://assets.mailerlite.com/jsonp/2693532/forms/200744843056514169/subscribe', eyebrow: 'The whole Blueprint · coming soon', title: 'Get notified when it opens',
+    text: 'Steps 4 to 8 are being finished. Leave your email address and I will let you know when the whole Blueprint opens, at the founding price of €249.' },
+};
+const wl = document.getElementById('waitlist');
+if (wl && typeof wl.showModal === 'function') {
+  const wf = document.getElementById('wl-form');
+  const wOk = wf.querySelector('.wl-ok'), wErr = wf.querySelector('.wl-err'), wBtn = wf.querySelector('button[type=submit]');
+  document.querySelectorAll('[data-waitlist]').forEach((a) => a.addEventListener('click', (e) => {
+    const list = WAITLISTS[a.dataset.waitlist];
+    if (!list) return;
+    e.preventDefault();
+    wf.action = list.action;
+    document.getElementById('wl-eyebrow').textContent = list.eyebrow;
+    document.getElementById('wl-title').textContent = list.title;
+    document.getElementById('wl-text').textContent = list.text;
+    wf.reset(); wOk.style.display = 'none'; wErr.style.display = 'none'; wBtn.style.display = '';
+    wl.showModal();
+    document.getElementById('wl-email').focus();
+  }));
+  wf.querySelector('.wl-close').addEventListener('click', () => wl.close());
+  wl.addEventListener('click', (e) => { if (e.target === wl) wl.close(); });
+  wf.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    wErr.style.display = 'none';
+    if (!wf.checkValidity()) { wErr.textContent = 'Please enter a valid email address.'; wErr.style.display = 'block'; return; }
+    wBtn.disabled = true; wBtn.textContent = 'Sending…';
+    try {
+      const res = await fetch(wf.action, { method: 'POST', body: new FormData(wf) });
+      const data = await res.json();
+      if (!data.success) throw new Error();
+      wBtn.style.display = 'none'; wOk.style.display = 'block';
+    } catch {
+      wErr.textContent = 'Something went wrong. Please try again, or send me a message below.';
+      wErr.style.display = 'block';
+    } finally {
+      wBtn.disabled = false; wBtn.textContent = 'Let me know';
+    }
+  });
+}
 </script>
 </body>
 </html>
