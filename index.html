@@ -113,7 +113,7 @@ header.top .btn{padding:9px 16px;font-size:14px}
 .route{margin-top:48px;display:grid;grid-template-columns:3fr 4fr 1.4fr;grid-template-rows:auto auto auto;gap:0 14px}
 .phase{display:grid;grid-row:span 3;grid-template-rows:subgrid}
 .phase > .ph{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:0 0 10px;border-bottom:3px solid var(--pine);margin-bottom:12px;color:var(--pine)}
-.phase.live > .ph{border-color:var(--moss);color:var(--moss)}
+.phase.live > .ph{border-color:var(--moss);color:#4A6340}
 .phase .steps{display:grid;gap:10px}
 .phase.choose .steps{grid-template-columns:repeat(3,1fr)}
 .phase.build .steps{grid-template-columns:repeat(4,1fr)}
@@ -462,6 +462,10 @@ section .wrap > :last-child{margin-bottom:0}
 .wl-close{position:absolute;top:8px;right:12px;background:none;border:none;font-size:28px;line-height:1;color:var(--stone);cursor:pointer;padding:4px 8px}
 .wl-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px;font-size:16px}
 .wl-err{display:none;color:#9B2C1F;margin-top:10px;font-size:15px}
+
+/* v13 */
+.wb-table th[scope=row]{background:var(--sage);color:var(--granite);font-weight:400;border:1px solid var(--rule);vertical-align:top}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -506,7 +510,7 @@ section .wrap > :last-child{margin-bottom:0}
       <p class="descriptor">A practical course, written from my own experience of doing this fully myself: two lives, built from the ground up. Bali, then Portugal.</p>
     </div>
     <figure>
-      <img fetchpriority="high" src="images/bali-volcano.jpg" alt="Mwata on a green ridge in Bali, looking out over a volcano rising above the morning mist." width="1100" height="1467">
+      <img fetchpriority="high" src="images/bali-volcano.jpg" srcset="images/bali-volcano-600.jpg 600w, images/bali-volcano.jpg 1100w" sizes="(max-width: 860px) calc(100vw - 40px), 500px" alt="Mwata on a green ridge in Bali, looking out over a volcano rising above the morning mist." width="1100" height="1467">
       <figcaption class="cap">Exploring Bali, shortly after I arrived.</figcaption>
     </figure>
   </div>
@@ -671,14 +675,14 @@ section .wrap > :last-child{margin-bottom:0}
           <p class="wb-sub">Do I have money left each month, and if not, how long do my savings cover the gap?</p>
           <p>That second number is your runway. Runway turns worry into a plan: "I am short 400 a month and have 40 months to work with" gives you a timescale for action.</p>
           <table class="wb-table money">
-            <tr><th></th><th>Example</th><th>Me</th></tr>
-            <tr><td>1. Confirmed income per month</td><td>€1,600</td><td></td></tr>
-            <tr><td>2. Costs per month in my new life</td><td>€2,000</td><td></td></tr>
-            <tr><td>3. Left over or short</td><td>€400 short</td><td></td></tr>
-            <tr><td>4. Savings I can use</td><td>€30,000</td><td></td></tr>
-            <tr><td>5–7. Minus the move, deposits and my reserve</td><td>− €13,650</td><td></td></tr>
-            <tr><td>8. Savings left to live on</td><td>€16,350</td><td></td></tr>
-            <tr><td>9. Months my savings can cover</td><td>about 40</td><td></td></tr>
+            <tr><th scope="col"><span class="vh">Item</span></th><th scope="col">Example</th><th scope="col">Me</th></tr>
+            <tr><th scope="row">1. Confirmed income per month</th><td>€1,600</td><td></td></tr>
+            <tr><th scope="row">2. Costs per month in my new life</th><td>€2,000</td><td></td></tr>
+            <tr><th scope="row">3. Left over or short</th><td>€400 short</td><td></td></tr>
+            <tr><th scope="row">4. Savings I can use</th><td>€30,000</td><td></td></tr>
+            <tr><th scope="row">5–7. Minus the move, deposits and my reserve</th><td>− €13,650</td><td></td></tr>
+            <tr><th scope="row">8. Savings left to live on</th><td>€16,350</td><td></td></tr>
+            <tr><th scope="row">9. Months my savings can cover</th><td>about 40</td><td></td></tr>
           </table>
           <p class="wb-note">The example is made up: an illustrative budget for a couple renting a small house in central Portugal.</p>
         </div>
@@ -787,7 +791,7 @@ section .wrap > :last-child{margin-bottom:0}
 <section class="proof" id="story">
   <div class="wrap">
     <div class="story-top">
-      <img class="portrait big" src="images/mwata.jpg" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
+      <img class="portrait big" src="images/mwata.jpg" srcset="images/mwata-420.jpg 420w, images/mwata.jpg 720w" sizes="(max-width: 760px) 200px, 280px" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960">
       <div>
         <p class="eyebrow">Who I am</p>
         <h2>I'm Mwata. I have built a new life abroad twice.</h2>
@@ -930,7 +934,7 @@ section .wrap > :last-child{margin-bottom:0}
     </div>
     <div>
       <p style="margin-top:0">The Made Real Blueprint gives practical guidance based on personal experience. It is not legal, tax, immigration or financial advice. Always check current rules with the official source or a qualified professional.</p>
-      <p>© 2026 The Life You Choose · <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></p>
+      <p>© 2026 The Life You Choose · <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a></p>
     </div>
   </div>
 </footer>
