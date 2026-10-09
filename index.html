@@ -773,7 +773,7 @@ section .wrap > :last-child{margin-bottom:0}
           <li>My Decision: go, not yet, or no</li>
           <li>Together: your blueprint for the decision</li>
         </ul>
-        <a class="btn btn-primary" href="#contact" data-checkout="phase1" data-waitlist="phase1">Reserve your founding place</a>
+        <a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a>
       </div>
       <div class="option" id="opt-full">
         <p class="tag">The full course · Portugal Edition <span class="soon">Coming soon</span></p>
@@ -977,6 +977,7 @@ section .wrap > :last-child{margin-bottom:0}
 // Counts a named event in GoatCounter (no cookies, nothing personal). Safe if the counter is blocked.
 function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); } catch (e) {} }
 document.addEventListener('click', function (e) { const a = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (a) track('whatsapp-click'); });
+document.addEventListener('click', function (e) { const a = e.target.closest && e.target.closest('a[data-checkout]'); if (a) track('checkout-click-' + a.dataset.checkout); });
 
 // Phone menu: opens and closes the section links below 1100px
 const menuBtn = document.querySelector('.menu-btn');
@@ -1063,7 +1064,9 @@ if (wl && typeof wl.showModal === 'function') {
     }
   });
   // maderealblueprint.com/#reserve or /#notify opens the pop-up directly (links in emails and bios)
-  const direct = { '#reserve': 'phase1', '#notify': 'full' }[location.hash];
+  // #reserve (used in emails) now goes to the Phase 1 card, because Phase 1 is for sale
+  if (location.hash === '#reserve') { const c = document.getElementById('opt-phase1'); if (c) c.scrollIntoView({ block: 'center' }); }
+  const direct = { '#notify': 'full' }[location.hash];
   if (direct) { const b = document.querySelector('[data-waitlist="' + direct + '"]'); if (b) { b.scrollIntoView({ block: 'center' }); b.click(); } }
 }
 </script>
