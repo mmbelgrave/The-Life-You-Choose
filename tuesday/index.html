@@ -97,19 +97,19 @@ footer a{color:#E6DECF}
         <li>The need behind your picture, and how to go deeper</li>
       </ul>
 
-      <form class="signup" id="signup" action="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
-        <h2>Get the exercise by email</h2>
-        <label for="name">Your first name</label>
-        <input type="text" id="name" name="fields[name]" autocomplete="given-name" required>
+      <form class="signup" id="signup" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
+        <h2>Get the exercise</h2>
+        <label for="name">Your first name (optional)</label>
+        <input type="text" id="name" name="fields[name]" autocomplete="given-name">
         <label for="email">Your email</label>
         <input type="email" id="email" name="fields[email]" autocomplete="email" required>
         <label class="check"><input type="checkbox" name="fields[updates]" value="yes"> Also send me an occasional update when something new is ready. You can stop at any time.</label>
         <input type="hidden" name="fields[language]" value="en">
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
-        <button class="btn" type="submit">Send me the exercise</button>
-        <p class="small">I only use your email to send you the exercise, and updates only if you tick the box. See the <a href="../privacy.html">privacy note</a>.</p>
-        <div class="ok" role="status" id="ok">Thank you. Please check your inbox and confirm your email address. The exercise follows straight after.</div>
+        <button class="btn" type="submit">Get the exercise</button>
+        <p class="small">I only use your email to send you a copy of the exercise, and updates only if you tick the box. If you tick it, I will ask you to confirm by email first. See the <a href="../privacy.html">privacy note</a>.</p>
+        <div class="ok" role="status" id="ok"><p style="margin:0">Your exercise is ready.</p><a class="btn" id="dl" href="../downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
         <div class="err" role="alert" id="err"></div>
       </form>
       <p class="alt">Prefer WhatsApp? <a href="https://wa.me/31657930469?text=TUESDAY" target="_blank" rel="noopener">Send "TUESDAY"</a> and I'll send it to you.</p>
@@ -143,13 +143,15 @@ footer a{color:#E6DECF}
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     err.style.display = 'none';
-    if (!f.checkValidity()) { err.textContent = 'Please fill in your first name and a valid email address.'; err.style.display = 'block'; return; }
-    if (f.action.indexOf('MAILERLITE_FORM_ACTION') !== -1) { err.textContent = 'The sign-up is not connected yet.'; err.style.display = 'block'; return; }
-    fetch(f.action, { method: 'POST', body: new FormData(f) })
+    if (!f.checkValidity()) { err.textContent = 'Please fill in a valid email address.'; err.style.display = 'block'; return; }
+    var ticked = f.querySelector('input[name="fields[updates]"]').checked, url = ticked ? f.getAttribute('data-updates') : f.getAttribute('data-download');
+    if (url.indexOf('FORM_ID') !== -1) { err.textContent = 'The sign-up is not connected yet.'; err.style.display = 'block'; return; }
+    fetch(url, { method: 'POST', body: new FormData(f) })
       .then(function (r) { return r.json(); })
-      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-signup-' + document.documentElement.lang, title: 'Tuesday sign-up', event: true }); } catch (e) {} } else { throw new Error(); } })
+      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; try { if (window.goatcounter && window.goatcounter.count) { window.goatcounter.count({ path: 'tuesday-signup-' + document.documentElement.lang, title: 'Tuesday sign-up', event: true }); if (ticked) window.goatcounter.count({ path: 'tuesday-updates-' + document.documentElement.lang, title: 'Tuesday updates ticked', event: true }); } } catch (e) {} } else { throw new Error(); } })
       .catch(function () { err.textContent = 'Something went wrong. Please try again, or send "TUESDAY" on WhatsApp.'; err.style.display = 'block'; });
   });
+  document.getElementById('dl').addEventListener('click', function () { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-download-' + document.documentElement.lang, title: 'Tuesday download', event: true }); } catch (e) {} });
 })();
 </script>
 </body>
