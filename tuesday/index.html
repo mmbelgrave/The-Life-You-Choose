@@ -139,7 +139,7 @@ footer a{color:#E6DECF}
 <script>
 // Sends the form to MailerLite without leaving the page (set the form action to the MailerLite endpoint).
 (function () {
-  function tlycRef(){try{var q=new URLSearchParams(location.search),s=q.get('utm_source'),m=q.get('utm_medium');return s?s+(m?'-'+m:''):undefined}catch(e){return undefined}}
+  function tlycRef(){try{var q=new URLSearchParams(location.search),r=q.get('ref'),s=q.get('utm_source'),m=q.get('utm_medium');return r||(s?s+(m?'-'+m:''):undefined)}catch(e){return undefined}}
   var f = document.getElementById('signup'), ok = document.getElementById('ok'), err = document.getElementById('err');
   var started = false; f.addEventListener('focusin', function () { if (!started) { started = true; try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-form-start-' + document.documentElement.lang, title: 'Tuesday form started', event: true, referrer: tlycRef() }); } catch (e) {} } });
   f.addEventListener('submit', function (e) {

@@ -1012,7 +1012,7 @@ footer .links{margin:10px 0 0}
 
 <script>
 // Preview copy: analytics are not loaded here, so track() is a no-op unless GoatCounter is present.
-function tlycRef(){try{var q=new URLSearchParams(location.search),s=q.get('utm_source'),m=q.get('utm_medium');return s?s+(m?'-'+m:''):undefined}catch(e){return undefined}}
+function tlycRef(){try{var q=new URLSearchParams(location.search),r=q.get('ref'),s=q.get('utm_source'),m=q.get('utm_medium');return r||(s?s+(m?'-'+m:''):undefined)}catch(e){return undefined}}
 function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true, referrer: tlycRef() }); } catch (e) {} }
 
 // Events counted as on the live page
