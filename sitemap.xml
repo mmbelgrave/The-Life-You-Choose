@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://maderealblueprint.com/</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://maderealblueprint.com/</loc><lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/nl/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/nl/</loc><lastmod>2026-10-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/nl/"/>
+  </url>
   <url><loc>https://maderealblueprint.com/tuesday/</loc><lastmod>2026-10-17</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/"/>
