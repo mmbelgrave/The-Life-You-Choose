@@ -139,7 +139,9 @@ footer a{color:#E6DECF}
 <script>
 // Sends the form to MailerLite without leaving the page (set the form action to the MailerLite endpoint).
 (function () {
+  function tlycRef(){try{var q=new URLSearchParams(location.search),s=q.get('utm_source'),m=q.get('utm_medium');return s?s+(m?'-'+m:''):undefined}catch(e){return undefined}}
   var f = document.getElementById('signup'), ok = document.getElementById('ok'), err = document.getElementById('err');
+  var started = false; f.addEventListener('focusin', function () { if (!started) { started = true; try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-form-start-' + document.documentElement.lang, title: 'Tuesday form started', event: true, referrer: tlycRef() }); } catch (e) {} } });
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     err.style.display = 'none';
@@ -148,10 +150,10 @@ footer a{color:#E6DECF}
     if (url.indexOf('FORM_ID') !== -1) { err.textContent = 'De aanmelding is nog niet gekoppeld.'; err.style.display = 'block'; return; }
     fetch(url, { method: 'POST', body: new FormData(f) })
       .then(function (r) { return r.json(); })
-      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; try { if (window.goatcounter && window.goatcounter.count) { window.goatcounter.count({ path: 'tuesday-signup-' + document.documentElement.lang, title: 'Tuesday sign-up', event: true }); if (ticked) window.goatcounter.count({ path: 'tuesday-updates-' + document.documentElement.lang, title: 'Tuesday updates ticked', event: true }); } } catch (e) {} } else { throw new Error(); } })
+      .then(function (d) { if (d && d.success) { f.querySelector('button').style.display = 'none'; ok.style.display = 'block'; try { if (window.goatcounter && window.goatcounter.count) { window.goatcounter.count({ path: 'tuesday-signup-' + document.documentElement.lang, title: 'Tuesday sign-up', event: true, referrer: tlycRef() }); if (ticked) window.goatcounter.count({ path: 'tuesday-updates-' + document.documentElement.lang, title: 'Tuesday updates ticked', event: true, referrer: tlycRef() }); } } catch (e) {} } else { throw new Error(); } })
       .catch(function () { err.textContent = 'Er ging iets mis. Probeer het opnieuw, of stuur "DINSDAG" via WhatsApp.'; err.style.display = 'block'; });
   });
-  document.getElementById('dl').addEventListener('click', function () { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-download-' + document.documentElement.lang, title: 'Tuesday download', event: true }); } catch (e) {} });
+  document.getElementById('dl').addEventListener('click', function () { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: 'tuesday-download-' + document.documentElement.lang, title: 'Tuesday download', event: true, referrer: tlycRef() }); } catch (e) {} });
 })();
 </script>
 </body>

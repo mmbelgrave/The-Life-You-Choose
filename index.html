@@ -1012,12 +1012,14 @@ footer .links{margin:10px 0 0}
 
 <script>
 // Preview copy: analytics are not loaded here, so track() is a no-op unless GoatCounter is present.
-function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true }); } catch (e) {} }
+function tlycRef(){try{var q=new URLSearchParams(location.search),s=q.get('utm_source'),m=q.get('utm_medium');return s?s+(m?'-'+m:''):undefined}catch(e){return undefined}}
+function track(name) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: name, event: true, referrer: tlycRef() }); } catch (e) {} }
 
 // Events counted as on the live page
 document.addEventListener('click', function (e) {
   const w = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (w) track('whatsapp-click');
   const c = e.target.closest && e.target.closest('a[data-checkout]'); if (c) track('checkout-click-' + c.dataset.checkout);
+  const g = e.target.closest && e.target.closest('a[href="#free"]'); if (g) track('free-cta-click');
 });
 
 const menuBtn = document.querySelector('.menu-btn');
@@ -1116,7 +1118,8 @@ if (OLD[location.hash]) { const t = document.querySelector(OLD[location.hash]); 
 (function () {
   var f = document.getElementById('fx'); if (!f) return;
   var ok = document.getElementById('fx-ok'), err = document.getElementById('fx-err');
-  function count(p, t) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: p, title: t, event: true }); } catch (e) {} }
+  function count(p, t) { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: p, title: t, event: true, referrer: tlycRef() }); } catch (e) {} }
+  var started = false; f.addEventListener('focusin', function () { if (!started) { started = true; count('tuesday-form-start-home', 'Tuesday form started (home)'); } });
   f.addEventListener('submit', function (e) {
     e.preventDefault(); err.style.display = 'none';
     if (!f.checkValidity()) { err.textContent = 'Please fill in a valid email address.'; err.style.display = 'block'; return; }
