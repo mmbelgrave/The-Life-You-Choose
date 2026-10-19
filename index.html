@@ -490,11 +490,16 @@ textarea{min-height:130px;resize:vertical}
 .form-err{display:none;background:var(--white);border-left:3px solid #A23B30;padding:14px 16px;font-size:16px}
 button[disabled]{opacity:.6;cursor:wait}
 
-footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:48px 0}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:16px 32px}
 footer .logo{color:var(--sand)}
-footer p{max-width:60ch;margin:12px 0 0}
+footer p{max-width:60ch;margin:8px 0 0}
 footer a{color:#E6DECF}
+/* The legal block: everything the law asks for, in as little height as it
+   takes. Smaller, tighter, and wide enough not to wrap three times. */
+footer .cols{flex:1 1 620px;min-width:280px}
+footer .fine{font-size:12.5px;line-height:1.55;color:#A49D91;max-width:none;margin:0 0 6px}
+footer .links{margin:10px 0 0}
 
 /* waitlist dialog */
 .waitlist{border:none;border-radius:6px;padding:0;max-width:460px;width:calc(100% - 32px);background:var(--white);color:var(--granite);box-shadow:0 20px 60px rgba(28,30,27,.3)}
@@ -980,10 +985,10 @@ footer a{color:#E6DECF}
       <a class="logo" href="#top"><svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span>The Life You <em>Choose</em></span></a>
       <p>Choose it. Build it. Live it.</p>
     </div>
-    <div>
-      <p style="margin-top:0">The Made Real Blueprint gives practical guidance based on personal experience. It is not legal, tax, immigration or financial advice. Always check current rules with the official source or a qualified professional.</p>
-      <p style="margin-top:0">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
-      <p>© 2026 The Life You Choose · <a href="#stand">What I stand for</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract</a></p>
+    <div class="cols">
+      <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is not legal, tax, immigration or financial advice. Always check current rules with the official source or a qualified professional.</p>
+      <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
+      <p class="links">© 2026 The Life You Choose · <a href="#stand">What I stand for</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract</a></p>
     </div>
   </div>
 </footer>
