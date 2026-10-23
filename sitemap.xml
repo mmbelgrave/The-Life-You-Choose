@@ -16,8 +16,36 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/"/>
   </url>
-  <url><loc>https://maderealblueprint.com/wel-of-niet-emigreren/</loc><lastmod>2026-10-21</lastmod></url>
-  <url><loc>https://maderealblueprint.com/meer-tijd-voor-jezelf/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://maderealblueprint.com/gidsen/</loc><lastmod>2026-10-23</lastmod></url>
-  <url><loc>https://maderealblueprint.com/dinsdag/oefening/</loc><lastmod>2026-10-23</lastmod></url>
+  <url><loc>https://maderealblueprint.com/tuesday/exercise/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/exercise/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/oefening/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/dinsdag/oefening/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/exercise/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/oefening/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/guides/moving-abroad-or-not/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/moving-abroad-or-not/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/wel-of-niet-emigreren/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/wel-of-niet-emigreren/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/moving-abroad-or-not/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/wel-of-niet-emigreren/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/guides/more-time-for-yourself/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/more-time-for-yourself/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/meer-tijd-voor-jezelf/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/meer-tijd-voor-jezelf/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/more-time-for-yourself/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/meer-tijd-voor-jezelf/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/guides/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/gidsen/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/gidsen/</loc><lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/gidsen/"/>
+  </url>
 </urlset>
