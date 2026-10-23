@@ -108,11 +108,11 @@ nav.links a:hover{color:var(--ochre)}
 
 /* HERO: image does the first work */
 .hero{position:relative;background:var(--pine);color:var(--sand);padding:0;overflow:hidden}
-.hero-img{position:relative;height:50svh;min-height:300px;overflow:hidden}
+.hero-img{position:relative;height:26svh;min-height:180px;overflow:hidden}
 .hero-img picture{display:block;width:100%;height:100%}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;animation:drift 22s ease-out both}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(44,59,47,0) 40%,var(--pine) 100%)}
-.hero-copy{position:relative;margin-top:-72px;padding-bottom:36px}
+.hero-copy{position:relative;margin-top:-56px;padding-bottom:32px}
 .hero h1{font-size:clamp(40px,10.5vw,60px);line-height:1.02;color:var(--sand);margin-bottom:16px}
 .hero h1 em{color:var(--ochre-light)}
 .hero .lead{color:#E6DECF;margin-bottom:0;font-size:19px}
@@ -456,6 +456,7 @@ footer .stand-link{display:inline-block;margin-top:12px}
 
 /* OFFERS */
 .offers{padding-bottom:calc(var(--y) + 8px)}
+.three{margin:14px 0 6px;padding-left:20px}.three li{margin-bottom:8px}.offer details.notfor{margin-top:16px;font-size:16px}.offer details.notfor summary{cursor:pointer;font-weight:600}.offer details.notfor p{margin:8px 0}
 .founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:28px}
 .founding b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ochre-light)}
 .founding p{margin:0;font-size:16px;flex:1 1 380px}
@@ -591,14 +592,14 @@ footer .links{margin:10px 0 0}
   </div>
   <div class="wrap">
     <div class="hero-copy">
-      <p class="eyebrow" style="color:var(--ochre-light)">The Made Real Blueprint · Phase 1 available now</p>
+      <p class="eyebrow" style="color:var(--ochre-light)">For people unsure about moving abroad, or wanting a different life where they are</p>
       <h1>Work out the <em>life you want</em>, and what needs to change.</h1>
-      <p class="lead">The Made Real Blueprint turns a feeling that something needs to change into a written direction, the checks to run, and a decision about your next steps. That could mean changing your life where you are, or building it somewhere new.</p>
+      <p class="lead">Perhaps you want to move. Perhaps you mainly want more calm, different work or more time for yourself. The Made Real Blueprint helps you put it into words, work out what it takes and choose your next step.</p>
       <div class="btn-row">
-        <a class="btn btn-ochre" href="#free">Try the free exercise</a>
-        <a class="textlink" href="#options">See what you get in Phase 1 →</a>
+        <a class="btn btn-ochre" href="#free">Get the free exercise</a>
+        <a class="textlink" href="#options">See what you work through in Phase 1 →</a>
       </div>
-      <p class="founding-line"><b>Free:</b> 3 pages, print it or fill it in on screen. <b>Phase 1:</b> €99, one payment. Workbooks and app in English.</p>
+      <p class="founding-line"><b>Free:</b> a 3-page exercise, sent by email. <b>Phase 1:</b> €99 including VAT, paid once. Workbooks and app in English.</p>
     </div>
   </div>
 </section>
@@ -635,7 +636,7 @@ footer .links{margin:10px 0 0}
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
-      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="tuesday/" target="_blank" rel="noopener">Click here to open the exercise in a new tab</a></p>
+      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="tuesday/" target="_blank" rel="noopener">Prefer a separate page for the exercise? Open it in a new tab</a></p>
     </div>
     <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
   </div>
@@ -687,7 +688,7 @@ footer .links{margin:10px 0 0}
     <div class="phases">
       <div class="ph now rv"><span class="avail">Available now</span><p class="n">Phase 1 · Steps 1–3</p><h3>Choose it</h3><p>Decide honestly what you want to change, and where. Deciding not to move is a real choice too.</p><p class="range">Picture · Explore · Decide</p></div>
       <div class="ph rv"><span class="avail">Coming later</span><p class="n">Steps 4–7</p><h3>Build it</h3><p>Put the practical foundations in place, then build your own version of life on them.</p><p class="range">Prepare · Arrive · Settle · Build</p></div>
-      <div class="ph rv"><span class="avail">Coming later</span><p class="n">Step 8</p><h3>Live it</h3><p>Settle into the ordinary days that follow. And perhaps, one day, help someone who was once where you are.</p><p class="range">Thrive</p></div>
+      <div class="ph rv"><span class="avail">Coming later</span><p class="n">Step 8</p><h3>Live it</h3><p>Settle into the ordinary days that follow. And perhaps, one day, help someone who is where you are now.</p><p class="range">Thrive</p></div>
     </div>
 
     <details class="more stepsbox">
@@ -794,8 +795,8 @@ footer .links{margin:10px 0 0}
   </div>
 </section>
 
-<dialog class="sample" id="sample" aria-label="Sample results">
-  <div class="sample-bar"><b>Sample results · Phase 1</b><span>Illustrative examples, fictional answers</span><button type="button" class="wl-close" aria-label="Close" style="position:static">×</button></div>
+<dialog class="sample" id="sample" aria-labelledby="sample-t">
+  <div class="sample-bar"><b id="sample-t">Sample results · Phase 1</b><span>Illustrative examples, fictional answers</span><button type="button" class="wl-close" aria-label="Close" style="position:static">×</button></div>
   <div class="rtabs" role="tablist"><button type="button" role="tab" data-tab="1" aria-selected="true">Step 1 · My Working Direction</button><button type="button" role="tab" data-tab="2" aria-selected="false">Step 2 · My Explore Summary</button><button type="button" role="tab" data-tab="3" aria-selected="false">Step 3 · My Decision</button><button type="button" role="tab" data-tab="4" aria-selected="false">Phase 1 · My Blueprint</button><button type="button" role="tab" data-tab="5" aria-selected="false">Sample B · Step 1</button><button type="button" role="tab" data-tab="6" aria-selected="false">Sample B · Step 2</button><button type="button" role="tab" data-tab="7" aria-selected="false">Sample B · Step 3</button><button type="button" role="tab" data-tab="8" aria-selected="false">Sample B · My Change Plan</button></div>
   <div class="sample-body">
     <div class="rpanel" data-panel="1">
@@ -850,8 +851,8 @@ footer .links{margin:10px 0 0}
   </div>
 </dialog>
 
-<dialog class="sample" id="wbdialog" aria-label="Look inside a workbook">
-  <div class="sample-bar"><b>Look inside a workbook</b><span>Examples from the Step 1 workbook</span><button type="button" class="wl-close" aria-label="Close" style="position:static">×</button></div>
+<dialog class="sample" id="wbdialog" aria-labelledby="wb-t">
+  <div class="sample-bar"><b id="wb-t">Look inside a workbook</b><span>Examples from the Step 1 workbook</span><button type="button" class="wl-close" aria-label="Close" style="position:static">×</button></div>
   <div class="sample-body">
     <p class="muted" style="margin:0">Every exercise explains the idea first, shows a made-up example, and then asks you to apply it to your own life.</p>
     <div class="page-card"><p class="pg-step">Step 1 · Picture · Part 1</p><h4>1.2 A normal day in the life you want</h4><p class="pg-sub">Not a holiday. A normal Tuesday. Because most days are normal days.</p>
@@ -879,14 +880,19 @@ footer .links{margin:10px 0 0}
     </div>
     <div class="founding" id="founding">
       <b>Your feedback helps</b>
-      <p>As you work through Phase 1, I ask for honest feedback. A testimonial is optional, and I only use your words with your written permission.</p>
+      <p>As you work through Phase 1, I ask for honest feedback. Giving a review is voluntary, and I only use your words with your written permission.</p>
     </div>
     <div class="offer-grid">
       <div class="offer main" id="opt-phase1">
         <p class="tag">Available now · Phase 1 · Choose it</p>
-        <h3>Steps 1 to 3</h3>
+        <h3>From wanting a different life to a decision you can explain</h3>
         <p class="for">For you if you want something different and need to work out what to change.</p>
-        <p class="price">€99 <small>one payment, VAT included. Workbooks and app in English.</small></p>
+        <p class="price">€99 <small>including VAT, paid once. No subscription.</small></p>
+        <ul class="three">
+          <li><b>What you want.</b> How your ordinary days could look, and what matters in them.</li>
+          <li><b>What you still need to investigate.</b> Which options fit, which assumptions to check, and what looks practical and affordable.</li>
+          <li><b>What you choose now.</b> Investigate further, change something where you are, prepare a move, or not go ahead for now, with conditions and a first step.</li>
+        </ul>
         <div class="cols">
           <div>
             <p class="lh">You receive</p>
@@ -897,16 +903,22 @@ footer .links{margin:10px 0 0}
             <ul><li>My Working Direction</li><li>My Explore Summary</li><li>My First Money Picture</li><li>My Decision: go, not yet, or no</li><li>If you stay: My Change Plan, your staying route</li><li>A downloadable personal Blueprint</li></ul>
           </div>
         </div>
-        <p class="after" style="margin-top:8px">The workbooks and the app are in plain English.</p>
+        <p class="after" style="margin-top:8px">The workbooks and the app are in English. <a href="#inside">Look at a sample first.</a></p>
+        <p class="after"><b>30-day money-back guarantee.</b> Pay by card or PayPal. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
+        <p class="after">Steps 4 to 8 are in development and are not part of this purchase.</p>
         <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a><a class="textlink" href="#contact">Ask me a question first</a></div>
+        <details class="more notfor"><summary>Who this is not for</summary>
+          <p>This is probably not for you if you mainly want someone to arrange your move, answer a visa or tax question, or tell you what to choose. You work on your own, and personal coaching is not included.</p>
+          <p>Already sure you want to move and only need practical country information? A specialist source or adviser may fit better.</p>
+          <p>You need to be comfortable reading English to use the workbooks and app, so look at a sample first.</p>
+          <p>The course and the AI partner do not replace psychological treatment or professional legal, tax, immigration or financial advice.</p>
+        </details>
       </div>
       <div class="offer next" id="opt-full">
         <p class="tag">Next · Portugal Edition<br><span class="soon" style="margin-left:0">Coming later</span></p>
         <h3>Steps 1 to 8</h3>
         <p class="for">For you if you want to build your life in Portugal and need a practical route.</p>
         <p class="price"><small>No date and no price yet</small></p>
-        <p class="lh">Everything in Phase 1, plus</p>
-        <ul><li>Prepare, Arrive, Settle, Build and Thrive workbooks</li><li>Moving Plan, Arrival Checklist, First-Year Plan</li><li>Your complete blueprint for life in Portugal</li></ul>
         <div class="actions"><a class="btn btn-light" href="#contact" data-waitlist="full">Notify me when it opens</a><a class="textlink" href="#contact">Ask me a question</a></div>
       </div>
     </div>
@@ -980,7 +992,7 @@ footer .links{margin:10px 0 0}
   <div class="wrap">
     <p class="eyebrow" style="color:var(--ochre-light)">What I stand for</p>
     <p class="statement">A life is chosen and built, not inherited or drifted into.</p>
-    <p class="lead" style="color:#E6DECF">The life you live today is the result of choices, and you can make different ones. You do that by deciding, planning and building, one step at a time.</p>
+    <p class="lead" style="color:#E6DECF">A lot of the life you live today comes from choices, and you can make different ones. Not everything is a choice: health, money and caring for others limit what is possible. Within those limits you can decide, plan and build, one step at a time.</p>
     <div class="pvm2">
       <div><h3>My picture <small>(my vision)</small></h3><p>I build a life where I am present, dependable, and true to my values. I have the freedom to shape most of my days, spend time in nature, explore, and work on meaningful projects with the people I love.</p></div>
       <div><h3>Why I do this <small>(my purpose)</small></h3><p>To inspire and help people realise the life they truly want by sharing my experience, practical knowledge and the tools that help them make it happen.</p></div>
@@ -995,7 +1007,7 @@ footer .links{margin:10px 0 0}
     <p class="eyebrow">Good to know</p>
     <h2>Questions people ask</h2>
     <details><summary>Is this a course?</summary><p>Yes. A course in steps, with PDF workbooks and an app for the exercises. Phase 1 (Steps 1 to 3) is available now; Steps 4 to 8 are coming later. After each step you can print or save your results in the app, and when you finish Phase 1 you get your personal Blueprint: your own written plan.</p></details>
-    <details><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. A testimonial is optional, and I only use it with your written permission.</p></details>
+    <details><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. Giving a review is voluntary, and I only use your words with your written permission.</p></details>
     <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal and other places, but also for real changes at home. Already sure about Portugal? The whole Blueprint starts with Phase 1 as well, because a clear picture of the life you want helps you judge every choice that follows.</p></details>
     <details><summary>Is this only for people who want to move?</summary><p>No. Phase 1 starts with the life you want. You can finish with a plan to change your life where you are, a decision to look elsewhere, or a decision to wait. Later phases are planned for people building a life in Portugal.</p></details>
     <details><summary>What do I have at the end of Phase 1?</summary><p>A written direction, the checks to run, and a decision about what to change, why, what to check and what to do next. You save or print a summary after every step.</p></details>
@@ -1004,6 +1016,13 @@ footer .links{margin:10px 0 0}
     <details><summary>Do I need the app, or can I use the PDF workbooks on paper?</summary><p>You can complete the PDF workbooks on paper or on screen. To print or save your results after each step, and to get your personal Blueprint when you finish Phase 1, you enter your answers in the app.</p></details>
     <details><summary>Is the free Tuesday exercise only for people who choose Portugal?</summary><p>No. Phase 1 and the free Tuesday exercise work for any destination, including staying where you are. Steps 4 to 8 focus on Portugal.</p></details>
     <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the Introduction and the Phase 1 workbooks as PDF downloads, plus the app with the exercises. In the app you can print or save your results after each step, and when you finish Phase 1 you get your personal Blueprint. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
+    <details><summary>Is the course in Dutch?</summary><p>The Dutch pages, the free exercise and the follow-up emails are in Dutch. The workbooks and the app are in English. Planned videos and Dutch subtitles are not part of the current offer.</p></details>
+    <details><summary>How long do I keep access?</summary><p>According to our terms, at least three years from your purchase. You can download the PDFs. If we ever close the app, we give at least 12 months notice by email, and you can first download your answers and your personal Blueprint.</p></details>
+    <details><summary>What if it is not for me?</summary><p>You can ask for a full refund within 30 days of purchase, by email with your order number. A line or two about what did not work is welcome but not required. Your legal rights stay as they are.</p></details>
+    <details><summary>Do I have to use the AI partner?</summary><p>No. The AI partner is optional, and you can do the exercises without it. AI answers can contain mistakes, so check important information with a reliable source or a professional.</p></details>
+    <details><summary>Is this personal coaching?</summary><p>No. You work on your own and at your own pace. You can email questions about how things work, but personal coaching and professional legal, tax or financial advice are not included.</p></details>
+    <details><summary>Can my partner and I work on it together?</summary><p>Yes. In the app you invite your partner, who gets their own access to the exercises that apply. When you have both finished an exercise, you can see each other's answers.</p></details>
+    <details><summary>How does access work after I pay?</summary><p>You receive a link to download the PDF workbooks, and a separate email with how to open the app. You sign in with the email address you paid with and a code sent to that address. If something does not arrive, use "Bought but no access?" in the app or email us.</p></details>
     <details><summary>Can I start with Phase 1 and get the whole Blueprint later?</summary><p>Yes. When the whole Blueprint opens, I intend to credit what you paid for Phase 1, and I will confirm how before it opens.</p></details>
     <details><summary>I already know what I want. Can I skip ahead?</summary><p>You can. The short check in the Introduction helps you choose where to start, from Step 1 to Step 3. Even if you start later, read Step 1 briefly: your picture of the life you want helps you judge every later choice.</p></details>
     <details><summary>How much time does it take?</summary><p>Plan on about two to three hours a week. Short, regular blocks of time tend to suit this kind of work better than one long weekend.</p></details>
@@ -1099,7 +1118,8 @@ document.addEventListener('click', function (e) {
 
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.getElementById('menu');
-menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); });
+menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); if (open) { const f = menu.querySelector('a'); if (f) f.focus(); } });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
 
 // Gentle reveal on scroll
