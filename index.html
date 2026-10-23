@@ -142,6 +142,7 @@ nav.links a:hover{color:var(--ochre)}
 .sample-set>summary::after{content:"+";font-size:24px;line-height:1;color:var(--ochre)}
 .sample-set[open]>summary::after{content:"3"}
 @media (min-width:641px){.sample-set>summary{pointer-events:none;cursor:default}.sample-set>summary::after{content:none}}
+/*langbanner*/.lb{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;background:var(--pine);color:var(--sand);border-radius:6px;padding:12px 14px;display:none;align-items:center;gap:12px;box-shadow:0 8px 28px rgba(28,30,27,.35);font-size:16px;line-height:1.4}.lb.on{display:flex}.lb span{flex:1}.lb a{background:#D9A55A;color:var(--granite);font-weight:600;text-decoration:none;border-radius:3px;padding:9px 14px;white-space:nowrap}.lb button{all:unset;cursor:pointer;color:var(--sand);font-size:22px;line-height:1;padding:4px 8px}.lb button:focus-visible{outline:2px solid #D9A55A}@media (min-width:700px){.lb{left:auto;right:20px;bottom:20px;max-width:430px}}
 section.routes{padding:0;background:var(--sand);border-bottom:1px solid var(--rule)}
 section.routes .wrap{padding-top:26px;padding-bottom:26px}
 .routes h2{font-size:clamp(22px,2.4vw,28px);margin:0 0 14px}
@@ -1207,5 +1208,9 @@ if (OLD[location.hash]) { const t = document.querySelector(OLD[location.hash]); 
   document.getElementById('fx-dl').addEventListener('click', function () { count('tuesday-download-home', 'Tuesday download (home)'); });
 })();
 </script>
+<!--LANGBANNER-->
+<div class="lb" id="lb" role="region" aria-label="Taal" lang="nl"><span>Deze pagina is ook in het Nederlands.</span><a href="/nl/" hreflang="nl">Naar het Nederlands</a><button type="button" id="lb-x" aria-label="Sluiten">×</button></div>
+<script>(function(){try{var l=(navigator.languages&&navigator.languages.length?navigator.languages:[navigator.language||""]);var nl=l.some(function(x){return /^nl/i.test(x)});var d=false;try{d=localStorage.getItem("tlyc-lb")==="1"}catch(e){}var b=document.getElementById("lb");if(nl&&!d&&b){b.classList.add("on");document.getElementById("lb-x").addEventListener("click",function(){b.classList.remove("on");try{localStorage.setItem("tlyc-lb","1")}catch(e){}});b.querySelector("a").addEventListener("click",function(){try{localStorage.setItem("tlyc-lb","1")}catch(e){}})}}catch(e){}})();</script>
+<!--/LANGBANNER-->
 </body>
 </html>
