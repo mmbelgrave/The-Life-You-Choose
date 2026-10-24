@@ -140,8 +140,8 @@ nav.links a:hover{color:var(--ochre)}
 .sample-set>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding:12px 0;border-top:1px solid var(--rule)}
 .sample-set>summary::-webkit-details-marker{display:none}
 .sample-set>summary::after{content:"+";font-size:24px;line-height:1;color:var(--ochre)}
-.sample-set[open]>summary::after{content:"3"}
-@media (min-width:641px){.sample-set>summary{pointer-events:none;cursor:default}.sample-set>summary::after{content:none}}
+.sample-set[open]>summary::after{content:"\2212"}
+@media (min-width:641px){.sample-set>summary{pointer-events:none;cursor:default}.sample-set>summary::after,.sample-set[open]>summary::after{content:none}}
 /*langbanner*/.lb{position:fixed;z-index:60;left:12px;right:12px;bottom:12px;background:var(--pine);color:var(--sand);border-radius:6px;padding:12px 14px;display:none;align-items:center;gap:12px;box-shadow:0 8px 28px rgba(28,30,27,.35);font-size:16px;line-height:1.4}.lb.on{display:flex}.lb span{flex:1}.lb a{background:#D9A55A;color:var(--granite);font-weight:600;text-decoration:none;border-radius:3px;padding:9px 14px;white-space:nowrap}.lb button{all:unset;cursor:pointer;color:var(--sand);font-size:22px;line-height:1;padding:4px 8px}.lb button:focus-visible{outline:2px solid #D9A55A}@media (min-width:700px){.lb{left:auto;right:20px;bottom:20px;max-width:430px}}
 section.routes{padding:0;background:var(--sand);border-bottom:1px solid var(--rule)}
 section.routes .wrap{padding-top:26px;padding-bottom:26px}
@@ -461,10 +461,10 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .fnote{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:14px 16px;background:var(--white);border:1px solid var(--rule);border-radius:4px}
 .fnote img{width:52px;height:52px;border-radius:50%;object-fit:cover;display:block}.fnote picture{flex:none}
 .fnote p{margin:0;font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--granite)}
-.why-share{max-width:48em;margin:44px 0 0;padding:6px 0 6px 24px;border-left:3px solid var(--ochre);display:flex;gap:22px;align-items:flex-start}.ws-pic{flex:none}.ws-pic img{width:84px;height:84px;border-radius:50%;object-fit:cover;display:block}.ws-text{min-width:0}@media (max-width:560px){.why-share{flex-direction:column;gap:14px}}
+.why-share{max-width:none;margin:44px 0 0;padding:6px 0 6px 24px;border-left:3px solid var(--ochre);display:flex;gap:22px;align-items:flex-start}.ws-pic{flex:none}.ws-pic img{width:84px;height:84px;border-radius:50%;object-fit:cover;display:block}.ws-text{min-width:0}@media (max-width:560px){.why-share{flex-direction:column;gap:14px}}
 .why-share .eyebrow{margin-bottom:8px}
 .why-share p:not(.eyebrow){margin:0;font-family:var(--serif);font-size:clamp(19px,2.2vw,22px);line-height:1.55;color:var(--pine)}
-.warm-wide{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.6vw,28px);line-height:1.4;color:var(--ochre-light);margin:44px 0 0;padding-top:28px;border-top:1px solid rgba(243,236,224,.22);max-width:34em}
+.warm-wide{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.6vw,28px);line-height:1.4;color:var(--ochre-light);margin:44px 0 0;padding-top:28px;border-top:1px solid rgba(243,236,224,.22);max-width:none}@media (min-width:1200px){.warm-wide{white-space:nowrap;font-size:clamp(18px,1.85vw,23px)}}
 .peek{display:flex;gap:14px;align-items:center;margin:8px 0 20px;padding:12px;border:1px solid var(--rule);border-radius:4px;background:var(--white)}.peek .pk{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:76px;flex:none;border:1px solid var(--rule);border-radius:2px;overflow:hidden}.peek .pk:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}.peek .pk img{display:block;width:100%;height:auto}.peek p{margin:0;font-size:15px;color:var(--granite)}
 .founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:28px}
 .founding b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ochre-light)}
