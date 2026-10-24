@@ -248,7 +248,7 @@ details.more[open]>summary::after{content:"–"}
 .vs th{background:var(--pine);color:var(--sand);text-align:left;padding:6px 8px;font-weight:600}
 .vs td{border:1px solid var(--rule);padding:6px 8px;vertical-align:top}
 .vs td:first-child{background:var(--sage)}
-.pg-now{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--moss)}
+.pg-now{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#4B6640}
 .pg-ex{background:var(--sand);border-left:3px solid var(--stone);padding:10px 12px}
 .pg-lines{height:56px;background:repeating-linear-gradient(transparent 0 27px,var(--rule) 27px 28px);color:var(--stone);font-style:italic;padding-top:4px}
 .money th[scope=row]{background:var(--sage);color:var(--granite);font-weight:400;border:1px solid var(--rule);vertical-align:top}
@@ -399,7 +399,7 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .rimg{display:block;aspect-ratio:4/5;overflow:hidden;border-radius:2px;background:var(--sand);margin-bottom:12px}
 .rimg img{width:100%;height:100%;object-fit:cover;object-position:top}
 .rtag{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
-.rcard.final .rtag{color:var(--moss)}
+.rcard.final .rtag{color:#4B6640}
 .rtitle{font-family:var(--serif);font-size:22px;color:var(--pine);line-height:1.2;margin:2px 0 6px}
 .rblurb{font-size:14px;line-height:1.45;color:var(--stone)}
 @media (max-width:900px){
@@ -457,6 +457,8 @@ footer .stand-link{display:inline-block;margin-top:12px}
 /* OFFERS */
 .offers{padding-bottom:calc(var(--y) + 8px)}
 .three{margin:14px 0 6px;padding-left:20px}.three li{margin-bottom:8px}.offer details.notfor{margin-top:16px;font-size:16px}.offer details.notfor summary{cursor:pointer;font-weight:600}.offer details.notfor p{margin:8px 0}
+@media (max-width:360px){.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}.head-actions{gap:6px}.head-actions .btn-small{padding:8px 10px;font-size:14px}.lang-sw{margin-right:2px}.menu-btn{width:38px;height:38px}}
+.peek{display:flex;gap:14px;align-items:center;margin:8px 0 20px;padding:12px;border:1px solid var(--rule);border-radius:4px;background:var(--white)}.peek .pk{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:76px;flex:none;border:1px solid var(--rule);border-radius:2px;overflow:hidden}.peek .pk:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}.peek .pk img{display:block;width:100%;height:auto}.peek p{margin:0;font-size:15px;color:var(--granite)}
 .founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:28px}
 .founding b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ochre-light)}
 .founding p{margin:0;font-size:16px;flex:1 1 380px}
@@ -753,6 +755,7 @@ footer .links{margin:10px 0 0}
       <div class="btn-row"><a class="textlink" href="#options">See Phase 1 and pricing →</a></div>
       <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you.</p>
       <p class="legend">The decision names what to change and what to check next. It is not only a yes or no to moving.</p>
+      <p class="legend"><a href="samples/text/">Read the sample results as text (English)</a></p>
     </div>
 
     <div class="object-sub">
@@ -896,6 +899,11 @@ footer .links{margin:10px 0 0}
           <li><b>What you still need to investigate.</b> Which options fit, which assumptions to check, and what looks practical and affordable.</li>
           <li><b>What you choose now.</b> Investigate further, change something where you are, prepare a move, or not go ahead for now, with conditions and a first step.</li>
         </ul>
+        <div class="peek">
+          <button type="button" class="pk" data-open="3" aria-label="View sample: My Decision (Anna, who decides to move)"><img src="img/results/step3-decision-p1.jpg" alt="First page of a finished My Decision, Anna decides to move." width="1000" height="1415" loading="lazy"></button>
+          <button type="button" class="pk" data-open="7" aria-label="View sample: My Decision (Sam, who decides to stay and change something)"><img src="img/results/b-step3-decision-p1.jpg" alt="First page of a finished My Decision, Sam decides to stay and change something." width="1000" height="1415" loading="lazy"></button>
+          <p><b>See what a finished result looks like.</b> Two examples from two different people: one decides to move, the other decides to stay and change something. Tap a page to open it.</p>
+        </div>
         <div class="cols">
           <div>
             <p class="lh">You receive</p>
