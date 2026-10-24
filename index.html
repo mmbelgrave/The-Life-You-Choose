@@ -459,10 +459,16 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .three{margin:14px 0 6px;padding-left:20px}.three li{margin-bottom:8px}.offer details.notfor{margin-top:16px;font-size:16px}.offer details.notfor summary{cursor:pointer;font-weight:600}.offer details.notfor p{margin:8px 0}
 @media (max-width:360px){.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}.head-actions{gap:6px}.head-actions .btn-small{padding:8px 10px;font-size:14px}.lang-sw{margin-right:2px}.menu-btn{width:38px;height:38px}}
 .peek{display:flex;gap:14px;align-items:center;margin:8px 0 20px;padding:12px;border:1px solid var(--rule);border-radius:4px;background:var(--white)}.peek .pk{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:76px;flex:none;border:1px solid var(--rule);border-radius:2px;overflow:hidden}.peek .pk:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}.peek .pk img{display:block;width:100%;height:auto}.peek p{margin:0;font-size:15px;color:var(--granite)}
-.founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:28px}
+.founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:28px}
 .founding b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ochre-light)}
 .founding p{margin:0;font-size:16px;flex:1 1 380px}
-.offer-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start}
+.offer-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+.o-buy .actions{margin-top:20px}.offer .o-buy .btn{margin-top:0}.o-buy .assure{margin:14px 0 4px}
+.o-what .peek{margin-top:0}
+@media (min-width:900px){.offer.main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:clamp(28px,4vw,56px);align-items:start}.o-what{padding-top:6px}}
+.offer.next{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:22px clamp(22px,3vw,34px)}
+.offer.next .nx-text{flex:1 1 380px}.offer.next h3{font-size:24px;margin:2px 0 4px}.offer.next .tag{margin-bottom:2px}.offer.next .for{margin:0}
+.offer.next .actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}.offer.next .btn{margin-top:0;align-self:auto}
 .offer{background:var(--sand);color:var(--granite);border-radius:4px;padding:clamp(26px,3.4vw,40px);display:flex;flex-direction:column}
 .offer h3{font-size:clamp(30px,3.4vw,40px);color:var(--pine)}
 .offer .tag{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
@@ -475,6 +481,8 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .offer li{margin-bottom:6px}
 .offer .btn{margin-top:auto;align-self:stretch}
 .offer.main .textlink{color:var(--pine)}
+.offer.main h3{font-size:clamp(28px,3vw,36px)}
+.offer.main .after a,.offer.main .notfor a{color:var(--pine);text-decoration:underline}
 .offer.main{box-shadow:0 0 0 3px var(--ochre-light)}
 .offer.main .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
 @media (max-width:560px){ .offer.main .cols{grid-template-columns:1fr} }
@@ -487,7 +495,7 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .offer.next .lh{color:var(--ochre-light)}
 .offer.next li{color:#E6DECF}
 .soon{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.16);color:inherit;padding:2px 9px;border-radius:20px;margin-left:6px;vertical-align:2px}
-@media (max-width:900px){ .offer-grid{grid-template-columns:1fr} .offer .btn{margin-top:20px} }
+@media (max-width:900px){ .offer .btn{margin-top:20px} .offer .o-buy .btn{margin-top:0} }
 .fine{font-size:14px;color:#CFC7B8;margin:22px 0 0}
 .fine a{color:var(--sand)}
 
@@ -884,12 +892,9 @@ footer .links{margin:10px 0 0}
       <p class="eyebrow">The options</p>
       <h2>A picture needs a plan.</h2>
     </div>
-    <div class="founding" id="founding">
-      <b>Your feedback helps</b>
-      <p>As you work through Phase 1, I ask for honest feedback. Giving a review is voluntary, and I only use your words with your written permission.</p>
-    </div>
     <div class="offer-grid">
       <div class="offer main" id="opt-phase1">
+        <div class="o-buy">
         <p class="tag">Available now · Phase 1 · Choose it</p>
         <h3>From wanting a different life to a decision you can explain</h3>
         <p class="for">For you if you want something different and need to work out what to change.</p>
@@ -899,6 +904,11 @@ footer .links{margin:10px 0 0}
           <li><b>What you still need to investigate.</b> Which options fit, which assumptions to check, and what looks practical and affordable.</li>
           <li><b>What you choose now.</b> Investigate further, change something where you are, prepare a move, or not go ahead for now, with conditions and a first step.</li>
         </ul>
+        <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a><a class="textlink" href="#contact">Ask me a question first</a></div>
+        <p class="after assure"><b>30-day money-back guarantee.</b> Pay by card or PayPal. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
+        <p class="after">The workbooks and the app are in English. <a href="#inside">Look at a sample first.</a></p>
+        </div>
+        <div class="o-what">
         <div class="peek">
           <button type="button" class="pk" data-open="3" aria-label="View sample: My Decision (Anna, who decides to move)"><img src="img/results/step3-decision-p1.jpg" alt="First page of a finished My Decision, Anna decides to move." width="1000" height="1415" loading="lazy"></button>
           <button type="button" class="pk" data-open="7" aria-label="View sample: My Decision (Sam, who decides to stay and change something)"><img src="img/results/b-step3-decision-p1.jpg" alt="First page of a finished My Decision, Sam decides to stay and change something." width="1000" height="1415" loading="lazy"></button>
@@ -914,23 +924,27 @@ footer .links{margin:10px 0 0}
             <ul><li>My Working Direction</li><li>My Explore Summary</li><li>My First Money Picture</li><li>My Decision: go, not yet, or no</li><li>If you stay: My Change Plan, your staying route</li><li>A downloadable personal Blueprint</li></ul>
           </div>
         </div>
-        <p class="after" style="margin-top:8px">The workbooks and the app are in English. <a href="#inside">Look at a sample first.</a></p>
-        <p class="after"><b>30-day money-back guarantee.</b> Pay by card or PayPal. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
         <p class="after">Steps 4 to 8 are in development and are not part of this purchase.</p>
-        <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a><a class="textlink" href="#contact">Ask me a question first</a></div>
         <details class="more notfor"><summary>Who this is not for</summary>
           <p>This is probably not for you if you mainly want someone to arrange your move, answer a visa or tax question, or tell you what to choose. You work on your own, and personal coaching is not included.</p>
           <p>Already sure you want to move and only need practical country information? A specialist source or adviser may fit better.</p>
           <p>You need to be comfortable reading English to use the workbooks and app, so look at a sample first.</p>
           <p>The course and the AI partner do not replace psychological treatment or professional legal, tax, immigration or financial advice.</p>
         </details>
+        </div>
       </div>
       <div class="offer next" id="opt-full">
-        <p class="tag">Next · Portugal Edition<br><span class="soon" style="margin-left:0">Coming later</span></p>
+        <div class="nx-text">
+        <p class="tag">Next · Portugal Edition <span class="soon" style="margin-left:0">Coming later</span></p>
         <h3>Steps 1 to 8</h3>
         <p class="for">For you if you want to build your life in Portugal and need a practical route.</p>
+        </div>
         <div class="actions"><a class="btn btn-light" href="#contact" data-waitlist="full">Notify me when it opens</a><a class="textlink" href="#contact">Ask me a question</a></div>
       </div>
+    </div>
+    <div class="founding" id="founding">
+      <b>Your feedback helps</b>
+      <p>As you work through Phase 1, I ask for honest feedback. Giving a review is voluntary, and I only use your words with your written permission.</p>
     </div>
     <p class="fine">Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>. I share my experience and help you think clearly. I do not give legal, tax or financial advice; the workbooks show you which professional to ask.</p>
   </div>

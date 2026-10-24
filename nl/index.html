@@ -458,10 +458,16 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .three{margin:14px 0 6px;padding-left:20px}.three li{margin-bottom:8px}.offer details.notfor{margin-top:16px;font-size:16px}.offer details.notfor summary{cursor:pointer;font-weight:600}.offer details.notfor p{margin:8px 0}
 @media (max-width:360px){.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}.head-actions{gap:6px}.head-actions .btn-small{padding:8px 10px;font-size:14px}.lang-sw{margin-right:2px}.menu-btn{width:38px;height:38px}}
 .peek{display:flex;gap:14px;align-items:center;margin:8px 0 20px;padding:12px;border:1px solid var(--rule);border-radius:4px;background:var(--white)}.peek .pk{all:unset;box-sizing:border-box;cursor:pointer;display:block;width:76px;flex:none;border:1px solid var(--rule);border-radius:2px;overflow:hidden}.peek .pk:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}.peek .pk img{display:block;width:100%;height:auto}.peek p{margin:0;font-size:15px;color:var(--granite)}
-.founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-bottom:28px}
+.founding{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:18px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:28px}
 .founding b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--ochre-light)}
 .founding p{margin:0;font-size:16px;flex:1 1 380px}
-.offer-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:start}
+.offer-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:start}
+.o-buy .actions{margin-top:20px}.offer .o-buy .btn{margin-top:0}.o-buy .assure{margin:14px 0 4px}
+.o-what .peek{margin-top:0}
+@media (min-width:900px){.offer.main{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:clamp(28px,4vw,56px);align-items:start}.o-what{padding-top:6px}}
+.offer.next{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:22px clamp(22px,3vw,34px)}
+.offer.next .nx-text{flex:1 1 380px}.offer.next h3{font-size:24px;margin:2px 0 4px}.offer.next .tag{margin-bottom:2px}.offer.next .for{margin:0}
+.offer.next .actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px}.offer.next .btn{margin-top:0;align-self:auto}
 .offer{background:var(--sand);color:var(--granite);border-radius:4px;padding:clamp(26px,3.4vw,40px);display:flex;flex-direction:column}
 .offer h3{font-size:clamp(30px,3.4vw,40px);color:var(--pine)}
 .offer .tag{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin-bottom:8px}
@@ -474,6 +480,8 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .offer li{margin-bottom:6px}
 .offer .btn{margin-top:auto;align-self:stretch}
 .offer.main .textlink{color:var(--pine)}
+.offer.main h3{font-size:clamp(28px,3vw,36px)}
+.offer.main .after a,.offer.main .notfor a{color:var(--pine);text-decoration:underline}
 .offer.main{box-shadow:0 0 0 3px var(--ochre-light)}
 .offer.main .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 32px}
 @media (max-width:560px){ .offer.main .cols{grid-template-columns:1fr} }
@@ -486,7 +494,7 @@ footer .stand-link{display:inline-block;margin-top:12px}
 .offer.next .lh{color:var(--ochre-light)}
 .offer.next li{color:#E6DECF}
 .soon{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.16);color:inherit;padding:2px 9px;border-radius:20px;margin-left:6px;vertical-align:2px}
-@media (max-width:900px){ .offer-grid{grid-template-columns:1fr} .offer .btn{margin-top:20px} }
+@media (max-width:900px){ .offer .btn{margin-top:20px} .offer .o-buy .btn{margin-top:0} }
 .fine{font-size:14px;color:#CFC7B8;margin:22px 0 0}
 .fine a{color:var(--sand)}
 
@@ -883,12 +891,9 @@ footer .links{margin:10px 0 0}
       <p class="eyebrow">De opties</p>
       <h2>Een beeld heeft een plan nodig.</h2>
     </div>
-    <div class="founding" id="founding">
-      <b>Jouw feedback helpt</b>
-      <p>Terwijl je Fase 1 doorloopt, vraag ik om eerlijke feedback. Een review geven is vrijwillig en ik gebruik je woorden alleen met je schriftelijke toestemming.</p>
-    </div>
     <div class="offer-grid">
       <div class="offer main" id="opt-phase1">
+        <div class="o-buy">
         <p class="tag">Nu beschikbaar · Fase 1 · Choose it</p>
         <h3>Van een ander leven willen naar een besluit dat je kunt uitleggen</h3>
         <p class="for">Voor jou als je iets anders wilt en moet uitzoeken wat je moet veranderen.</p>
@@ -898,6 +903,11 @@ footer .links{margin:10px 0 0}
           <li><b>Wat je nog moet onderzoeken.</b> Welke mogelijkheden passen, welke aannames je moet controleren en wat praktisch en financieel haalbaar lijkt.</li>
           <li><b>Wat je nu kiest.</b> Verder onderzoeken, iets veranderen waar je bent, een verhuizing voorbereiden of voorlopig niet doorgaan, met voorwaarden en een eerste stap.</li>
         </ul>
+        <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a><a class="textlink" href="#contact">Stel me eerst een vraag</a></div>
+        <p class="after assure"><b>30 dagen geld-terug-garantie.</b> Betaal met kaart of PayPal. Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>.</p>
+        <p class="after">De werkboeken en de app zijn in het Engels. <a href="#inside">Bekijk eerst een voorbeeld.</a></p>
+        </div>
+        <div class="o-what">
         <div class="peek">
           <button type="button" class="pk" data-open="3" aria-label="Bekijk voorbeeld: My Decision (Anna, die besluit te verhuizen)"><img src="/img/results/step3-decision-p1.jpg" alt="Eerste pagina van een afgerond My Decision: Anna besluit te verhuizen." width="1000" height="1415" loading="lazy"></button>
           <button type="button" class="pk" data-open="7" aria-label="Bekijk voorbeeld: My Decision (Sam, die besluit te blijven en iets te veranderen)"><img src="/img/results/b-step3-decision-p1.jpg" alt="Eerste pagina van een afgerond My Decision: Sam besluit te blijven en iets te veranderen." width="1000" height="1415" loading="lazy"></button>
@@ -913,23 +923,27 @@ footer .links{margin:10px 0 0}
             <ul><li>My Working Direction: je werkrichting</li><li>My Explore Summary: wat je hebt uitgezocht</li><li>My First Money Picture: je eerste geldcheck</li><li>My Decision: je besluit (gaan, nog niet of nee)</li><li>Als je blijft: My Change Plan, je blijfroute</li><li>Een downloadbare persoonlijke Blueprint</li></ul>
           </div>
         </div>
-        <p class="after" style="margin-top:8px">De werkboeken en de app zijn in het Engels. <a href="#inside">Bekijk eerst een voorbeeld.</a></p>
-        <p class="after"><b>30 dagen geld-terug-garantie.</b> Betaal met kaart of PayPal. Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>.</p>
         <p class="after">Stap 4 tot en met 8 is nog in ontwikkeling en maakt geen deel uit van deze aankoop.</p>
-        <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a><a class="textlink" href="#contact">Stel me eerst een vraag</a></div>
         <details class="more notfor"><summary>Wanneer past dit niet bij je?</summary>
           <p>Dit past waarschijnlijk niet als je vooral iemand zoekt die een verhuizing voor je regelt, een visum- of belastingvraag beantwoordt of zegt welke keuze je moet maken. Je werkt zelfstandig; persoonlijke coaching is niet inbegrepen.</p>
           <p>Zoek je alleen praktische informatie over een land en weet je al zeker dat je wilt verhuizen? Dan kan een gespecialiseerde bron of adviseur beter bij je vraag passen.</p>
           <p>Je moet prettig genoeg Engels kunnen lezen om met de werkboeken en app te werken. Bekijk daarom eerst een voorbeeld.</p>
           <p>De cursus en de AI-partner vervangen geen psychologische behandeling of professioneel juridisch, fiscaal, immigratie- of financieel advies.</p>
         </details>
+        </div>
       </div>
       <div class="offer next" id="opt-full">
-        <p class="tag">Straks · Portugal Edition<br><span class="soon" style="margin-left:0">Komt later</span></p>
+        <div class="nx-text">
+        <p class="tag">Straks · Portugal Edition <span class="soon" style="margin-left:0">Komt later</span></p>
         <h3>Stap 1 tot en met 8</h3>
         <p class="for">Voor jou als je je leven in Portugal wilt opbouwen en een praktische route nodig hebt.</p>
+        </div>
         <div class="actions"><a class="btn btn-light" href="#contact" data-waitlist="full">Laat me weten wanneer hij opengaat</a><a class="textlink" href="#contact">Stel me een vraag</a></div>
       </div>
+    </div>
+    <div class="founding" id="founding">
+      <b>Jouw feedback helpt</b>
+      <p>Terwijl je Fase 1 doorloopt, vraag ik om eerlijke feedback. Een review geven is vrijwillig en ik gebruik je woorden alleen met je schriftelijke toestemming.</p>
     </div>
     <p class="fine">Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>. Ik deel mijn ervaring en help je helder denken. Ik geef geen juridisch, fiscaal of financieel advies; de workbooks laten zien welke professional je kunt vragen.</p>
   </div>
