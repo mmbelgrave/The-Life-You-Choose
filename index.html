@@ -531,6 +531,8 @@ textarea{min-height:130px;resize:vertical}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media (max-width:560px){ .two{grid-template-columns:1fr} }
 .form-buttons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.contact-direct .cd-mail{font-size:clamp(20px,5vw,26px);font-weight:600;margin:6px 0 14px;overflow-wrap:anywhere}
+.contact-direct .cd-mail a{color:inherit}
 .btn-wa{background:var(--white);color:var(--pine)} .btn-wa:hover{background:var(--pine);color:var(--sand)}
 .form-ok{display:none;background:var(--white);border-left:3px solid var(--moss);padding:14px 16px;font-size:16px}
 .form-err{display:none;background:var(--white);border-left:3px solid #A23B30;padding:14px 16px;font-size:16px}
@@ -1089,32 +1091,12 @@ footer .links{margin:10px 0 0}
       <p style="margin-top:28px">Not ready to buy? <a href="#free">Try the Tuesday exercise free</a>.</p>
       <p>Follow along on <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a>.</p>
     </div>
-    <form action="https://formspree.io/f/xyezojjr" method="POST" id="contact-form">
-      <div class="two">
-        <div><label for="name">Your name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
-        <div><label for="email">Your email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-      </div>
-      <div>
-        <label for="stage">Where are you now? (optional)</label>
-        <select id="stage" name="stage">
-          <option value="" selected>Prefer not to say</option>
-          <option>I feel a pull, but it is not clear yet</option>
-          <option>I know what I want, just not where yet</option>
-          <option>I want to change my life where I live</option>
-          <option>I have a place in mind and want to decide</option>
-          <option>I have decided on Portugal and need a plan</option>
-          <option>I already live in Portugal</option>
-        </select>
-      </div>
-      <div><label for="message">Your message</label><textarea id="message" name="message" required placeholder="What pulls you towards a different life?"></textarea></div>
-      <label class="check"><input type="checkbox" name="updates" value="yes"> Send me an occasional update when something new is ready.</label>
-      <label class="check"><input type="checkbox" name="consent" required> I have read how my details are used, in the privacy note.</label>
-      <input type="hidden" name="_subject" value="New message from the website">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <div class="form-buttons"><button class="btn btn-primary" type="submit">Send message</button><a class="btn btn-ghost btn-wa" href="https://wa.me/31657930469" target="_blank" rel="noopener">Prefer WhatsApp?</a></div>
-      <div class="form-ok" role="status" id="form-ok">Thank you. Your message is on its way, and I will reply soon.</div>
-      <div class="form-err" role="alert" id="form-err"></div>
-    </form>
+    <div class="contact-direct">
+      <p>Write to me at this address, or message me on WhatsApp.</p>
+      <p class="cd-mail"><a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a></p>
+      <p>You can say where you are now, or just ask your question. I use your email address and your message only to reply to you. See the <a href="privacy.html">privacy note</a>.</p>
+      <div class="form-buttons"><a class="btn btn-primary" href="mailto:info@maderealblueprint.com?subject=A%20question%20about%20The%20Made%20Real%20Blueprint">Email me</a><a class="btn btn-ghost btn-wa" href="https://wa.me/31657930469" target="_blank" rel="noopener">Prefer WhatsApp?</a></div>
+    </div>
   </div>
 </section>
 
@@ -1159,6 +1141,7 @@ function track(name) { try { if (window.goatcounter && window.goatcounter.count)
 // Events counted as on the live page
 document.addEventListener('click', function (e) {
   const w = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (w) track('whatsapp-click');
+  const m = e.target.closest && e.target.closest('a[href^="mailto:"]'); if (m) track('email-click');
   const c = e.target.closest && e.target.closest('a[data-checkout]'); if (c) track('checkout-click-' + c.dataset.checkout);
   const g = e.target.closest && e.target.closest('a[href="#free"]'); if (g) track('free-cta-click');
 });
@@ -1201,21 +1184,6 @@ if(wbd&&typeof wbd.showModal==='function'){
 function openStand(){ const d=document.getElementById('stand'); if(d){ d.open=true; setTimeout(()=>d.scrollIntoView({block:'start'}),50); } }
 document.querySelectorAll('a[href="#stand"]').forEach((a)=>a.addEventListener('click',openStand));
 if(location.hash==='#stand') openStand();
-
-// Contact form (Formspree)
-const form = document.getElementById('contact-form');
-const ok = document.getElementById('form-ok'), err = document.getElementById('form-err');
-const btn = form.querySelector('button[type=submit]');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault(); ok.style.display = 'none'; err.style.display = 'none';
-  btn.disabled = true; btn.textContent = 'Sending…';
-  try {
-    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-    if (res.ok) { form.reset(); ok.style.display = 'block'; }
-    else { const data = await res.json().catch(() => ({})); err.textContent = (data.errors || []).map((x) => x.message).join(' ') || 'Something went wrong. Please try again, or email me directly.'; err.style.display = 'block'; }
-  } catch { err.textContent = 'Your message could not be sent. Please check your connection and try again.'; err.style.display = 'block'; }
-  finally { btn.disabled = false; btn.textContent = 'Send message'; }
-});
 
 // Waiting-list pop-up (MailerLite)
 const WAITLISTS = {
