@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The Life You Choose//Masterclass//NL
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:masterclass-2026-11-17@maderealblueprint.com
+DTSTAMP:20261027T181258Z
+DTSTART:20261117T190000Z
+DTEND:20261117T200500Z
+SUMMARY:Masterclass: Emigreren of blijven?
+DESCRIPTION:Gratis Nederlandse masterclass met werkblad. 50 minuten les en oefeningen\, daarna 15 minuten vragen. De deelnamelink staat in je bevestigingsmail.
+LOCATION:Online (deelnamelink in je bevestigingsmail)
+END:VEVENT
+END:VCALENDAR
