@@ -48,4 +48,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/guides/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/gidsen/"/>
   </url>
+  <url><loc>https://maderealblueprint.com/other-destination/</loc><lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/other-destination/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/andere-bestemming/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/andere-bestemming/</loc><lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/other-destination/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/andere-bestemming/"/>
+  </url>
 </urlset>
