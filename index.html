@@ -646,6 +646,11 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 /* round 7d: spacing under "Ask me a question first", tidy final step */
 .o-buy .assure{margin:20px 0 6px}
 .contact h2{text-wrap:balance}
+/* round 7h: logo block on top, the text column below it at full width, so the links line fits on one row and shares the left edge of the paragraphs and the logo */
+footer .wrap{flex-direction:column;align-items:flex-start}
+footer .cols{flex:none;width:100%;min-width:0}
+footer .cols .links{max-width:none}
+@media (min-width:761px) and (max-width:1100px){footer .cols .links{font-size:13px}}
 .faq-extra details:first-of-type{border-top:0}
 .faq-toggle{margin-top:26px}
 .faq-toggle .btn:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
