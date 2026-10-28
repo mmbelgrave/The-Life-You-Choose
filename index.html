@@ -183,7 +183,6 @@ details.more[open]>summary::after{content:"–"}
 .gr-strip .gr-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin:0 0 4px;line-height:1.3}
 .gr-meta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px;font-size:14px;line-height:1.5;color:var(--stone);margin-bottom:2px!important}
 .gr-type{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
-.gr-new{background:var(--pine);color:var(--sand);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:1px 8px;border-radius:3px;line-height:1.6}
 .gr-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.2vw,22px);line-height:1.2;color:var(--pine);margin:0 0 2px}
 .gr-card h3 a{text-decoration:none;color:inherit}
 .gr-card h3 a::after{content:"";position:absolute;inset:0}
@@ -196,8 +195,8 @@ details.more[open]>summary::after{content:"–"}
 .gr-all{position:relative;z-index:1;font-weight:600;font-size:14px;color:var(--pine);white-space:nowrap}
 @media (max-width:640px){
   .gr-strip{padding:12px 0}
-  .gr-card{grid-template-columns:72px minmax(0,1fr);gap:6px 12px;padding:10px 12px;align-items:start}
-  .gr-card img{width:72px}
+  .gr-card{grid-template-columns:minmax(0,1fr);gap:6px 0;padding:12px 14px;align-items:start}
+  .gr-card img{display:none}
   .gr-meta{font-size:13px;gap:0 8px}
   .gr-card h3{font-size:17px}
   .gr-short{font-size:14px}
@@ -634,8 +633,8 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 .intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
 /* final step */
 .contact .fnote{margin:22px 0 0;max-width:30em}
-.free .prev-col .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
-.free .prev-col .fx-more a{color:var(--pine)}
+.free .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
+.free .fx-more a{color:var(--pine)}
 .intro .intro-more{margin-top:20px}
 .final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
 .final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
@@ -701,6 +700,59 @@ footer .cols .links{max-width:none}
 .fx-err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
 @media (max-width:760px){ .free .prev-col{order:2;max-width:360px} }
 @media (max-width:560px){ .fx .btn{width:100%} }
+/*s8:css*/
+/* spacing scale: ordinary sections --y (88px desktop, 52px phone), related sections --y-tight, the offer and the final step keep --y-major (the former 112px) */
+:root{--y:clamp(52px,7vw,88px);--y-tight:clamp(40px,5vw,56px);--y-major:clamp(64px,9vw,112px)}
+.object{padding-bottom:var(--y-tight)}
+.method{padding-top:var(--y-tight);padding-bottom:var(--y-tight)}
+.offers{padding-top:var(--y-major);padding-bottom:calc(var(--y-major) + 8px)}
+section.contact{padding:var(--y-major) 0}
+/* free exercise: each label sits with its field (7px), field groups 22px apart; no extra grid gap */
+.free .fx{gap:0}
+.free .fx label:not(.fx-check){margin:0 0 7px}
+.free .fx input[type=text],.free .fx input[type=email]{margin:0 0 22px}
+.free .fx .fx-check{margin:0}
+.free .fx .btn{margin-top:22px}
+.free .fx .fx-small{margin-top:14px}
+/* menu with the longer label "Free resources" / "Gratis materiaal": up to 1040px the burger menu is used (the round 7 menu no longer fits there);
+   between 1041 and 1180px the language link shows its short form and the gaps get tighter, so logo, menu and buttons stay on one row */
+@media (min-width:981px) and (max-width:1040px){
+  nav.links{display:none}
+  .menu-btn{display:flex}
+  nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px;font-size:16px}
+  nav.links.open a{padding:13px 0;border-bottom:1px solid var(--rule);font-size:18px}
+}
+@media (min-width:1041px) and (max-width:1180px){
+  nav.links{font-size:15px;gap:14px}
+  .lang-sw .lg-d{display:none}.lang-sw .lg-m{display:inline}.lang-sw{margin-right:6px}
+  header.top .wrap{gap:16px}
+  .head-actions .btn-small{padding:9px 14px}
+}
+/* free exercise, desktop: two independent columns (left: head, form; right: .prev-col with the picture and the "Prefer to start straight away?" line, starting level with the heading).
+   The right column spans both rows, so it never stretches the left one. Phone: one column in DOM order (text, browser alternative, form); the decorative picture is hidden there. */
+.free .wrap{align-items:start;row-gap:0}
+.free .fx-more{font-size:16px;margin:18px 0 0}
+.free .fx{margin-top:22px}
+@media (min-width:761px){
+  .free .fx-head{grid-column:1;grid-row:1}
+  .free .fx{grid-column:1;grid-row:2}
+  .free .prev-col{grid-column:2;grid-row:1/3;margin-top:34px;align-self:start}
+}
+@media (max-width:760px){.free .prev-col{order:0;max-width:none;margin-top:6px}.free .prev-col .prev{display:none}.free .fx-more{margin-top:0}}
+/* hero crop: below 900px the picture is a short band, so the focus moves up to keep the head and shoulders of the person in frame (desktop keeps 50% 88%) */
+@media (max-width:899px){.hero-img img{object-position:50% 12%}}
+@media (max-width:560px){.hero-img img{object-position:50% 22%}}
+/* reading width and supporting text */
+.legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
+.not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
+.hero .founding-line{font-size:16px}
+.offer .after{font-size:16px}
+.final-buy .fb-note{font-size:16px}
+.inc p{font-size:16px}
+.rblurb{font-size:15px}
+.strip span{font-size:14px}
+.fx-small{font-size:15px}
+/*/s8:css*/
 </style>
 </head>
 <body>
@@ -712,7 +764,7 @@ footer .cols .links{max-width:none}
       <span>The Life You <em>Choose</em></span>
     </a>
     <nav class="links" id="menu" aria-label="Main">
-      <a href="/free/">Free</a>
+      <a href="/free/">Free resources</a>
       <a href="#inside">What you get</a>
       <a href="#options">Phase 1</a>
       <a href="/my-story/">My story</a>
@@ -780,12 +832,17 @@ footer .cols .links{max-width:none}
 <!-- 4 FREE EXERCISE -->
 <section class="free" id="free">
   <div class="wrap">
-    <div>
+    <div class="fx-head">
       <p class="eyebrow">Start here · free</p>
       <h2>An ordinary <em>Tuesday</em>.</h2>
       <p>Picture one normal day in the life you want, in enough detail to test it. A short exercise from Step 1 of the Blueprint: a three-page PDF to print, or an online version you can complete in your browser. You can use it wherever you want to live, including where you are now. It helps you describe what an ordinary day would actually look like. Phase 1 then helps you decide what to change, what to check and what to do next.</p>
       <p class="free-res">The free exercise is a first step. Below you can see what you can work out in Phase 1.</p>
-      <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
+    </div>
+    <div class="prev-col">
+      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+      <p class="fx-more"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span> <span style="color:var(--stone)">Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>.</span></p>
+    </div>
+    <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
         <label for="fx-name">Your first name (optional)</label>
         <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
         <label for="fx-email">Your email</label>
@@ -800,11 +857,6 @@ footer .cols .links{max-width:none}
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
-    </div>
-    <div class="prev-col">
-      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
-      <p class="fx-more"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span> <span style="color:var(--stone)">Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>.</span></p>
-    </div>
   </div>
 </section>
 
@@ -814,11 +866,11 @@ footer .cols .links{max-width:none}
       <img src="/images/gratis/masterclass.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
       <div class="gr-text">
         <h2 class="gr-label" id="gr-h">New and free</h2>
-        <p class="gr-meta"><span class="gr-type">Free masterclass</span><span class="gr-new">New</span><time datetime="2026-11-17T20:00:00+01:00">Live on Tuesday 17 November, 8 pm (Dutch)</time></p>
+        <p class="gr-meta"><span class="gr-type">Free masterclass</span><time datetime="2026-11-17T20:00:00+01:00">Live on Tuesday 17 November, 8 pm (Dutch)</time></p>
         <h3><a href="/masterclass/" hreflang="nl" lang="nl">Considering a move abroad?</a></h3>
         <p class="gr-short">Describe what you want, pick one question to investigate and plan a small test. In Dutch.</p>
       </div>
-      <div class="gr-side"><span class="gr-go" aria-hidden="true">View details in Dutch →</span><a class="gr-all" href="/free/">All free material →</a></div>
+      <div class="gr-side"><span class="gr-go" aria-hidden="true">View details in Dutch →</span><a class="gr-all" href="/free/">All free resources →</a></div>
     </div>
   </div>
 </section><!--/gr:strip-->

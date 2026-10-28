@@ -30,7 +30,7 @@
 <style>
 :root{--pine:#2C3B2F;--sand:#F3ECE0;--ochre:#8F5410;--ochre-light:#D9A55A;--granite:#1C1E1B;--white:#FFFFFF;--moss:#5E7A50;--sage:#E3E1D0;--stone:#66625A;--rule:#D8CFBF;
   --serif:'Newsreader', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --gutter:clamp(20px, 6vw, 88px);--content:1180px;--y:clamp(64px,9vw,112px)}
+  --gutter:clamp(20px, 6vw, 88px);--content:1180px;--y:clamp(52px,7vw,88px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--sand);color:var(--granite);font-family:var(--sans);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;height:auto;display:block}
@@ -66,9 +66,9 @@ details.more[open]>summary::after{content:"–"}
 .story-top{display:grid;grid-template-columns:380px 1fr;gap:clamp(28px,5vw,64px);align-items:stretch}
 .story-top .photo{width:100%;height:100%;min-height:360px;object-position:50% 35%}
 .story-top .txt{align-self:center}
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(40px,6vw,64px)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start;max-width:880px;margin:clamp(40px,6vw,64px) auto 0}
 .ba figure{margin:0;position:relative}
-.ba img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.ba img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px}
 .ba figcaption{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(28,30,27,.78);color:var(--white);font-size:14px;padding:10px 14px;border-radius:3px}
 .ba figcaption b{color:var(--ochre-light);margin-right:6px}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
@@ -109,6 +109,8 @@ details.more[open]>summary::after{content:"–"}
 .band-pine details.more>summary{color:var(--sand)}
 .band-pine details.more>summary::after{color:var(--ochre-light)}
 .band-pine details.more .pvm2{margin-top:6px;padding-top:18px;border-top:0}
+.band-pine .lead{max-width:46em}
+.why-share .ws-text{max-width:44em}
 .band-pine .statement{font-family:var(--serif);font-size:clamp(30px,4.2vw,50px);line-height:1.15;color:var(--sand);max-width:22ch;margin:0 0 24px}
 .pvm2{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(243,236,224,.25)}
 .pvm2 h3,.pvm2 h2{font-size:26px;line-height:1.25;margin-bottom:8px;color:var(--sand)}.pvm2 h3 small,.pvm2 h2 small{display:block;font-family:var(--sans);font-size:14px;font-weight:500;color:#C9C1B2;margin-top:2px}
@@ -122,6 +124,19 @@ details.more[open]>summary::after{content:"–"}
 footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:380px){header .in{gap:8px}.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}header .hl{font-size:13px}.hs{gap:10px!important}}
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
@@ -129,10 +144,10 @@ footer a{color:#E6DECF}
 <header>
   <div class="in">
     <a class="logo" href="/nl/" aria-label="The Life You Choose, naar de startpagina">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <span class="hs" style="display:flex;gap:16px;align-items:center"><a href="/my-story/" hreflang="en" lang="en" style="font-size:15px">English</a> <a class="hl" href="/dinsdag/">Gratis oefening →</a></span>
+    <span class="hs"><a class="lang-sw" href="/my-story/" hreflang="en" lang="en" title="English"><span class="lg-d">English</span><span class="lg-m">EN</span></a> <a class="hl" href="/dinsdag/">Gratis oefening →</a></span>
   </div>
 </header>
 
