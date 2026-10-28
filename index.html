@@ -231,7 +231,7 @@ details.more[open]>summary::after{content:"–"}
 .free h2 em{color:var(--ochre)}
 .free .prev{display:block;border-radius:4px;overflow:hidden;box-shadow:0 14px 40px rgba(28,30,27,.14);transition:transform .25s;transform:rotate(1.5deg)}
 .free .prev:hover{transform:rotate(0) translateY(-3px)}
-@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev{order:-1;max-width:420px} }
+@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev-col{order:-1;max-width:420px} }
 
 /* METHOD: three equal panels on a rising line */
 .method{background:var(--white)}
@@ -654,6 +654,8 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 .intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
 /* final step */
 .contact .fnote{margin:22px 0 0;max-width:30em}
+.free .prev-col .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
+.free .prev-col .fx-more a{color:var(--pine)}
 .intro .intro-more{margin-top:20px}
 .final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
 .final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
@@ -684,7 +686,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 .fx-small{font-size:14px;color:var(--stone);margin:12px 0 0}
 .fx-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px}
 .fx-err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
-@media (max-width:760px){ .free .prev{order:2;max-width:360px} }
+@media (max-width:760px){ .free .prev-col{order:2;max-width:360px} }
 @media (max-width:560px){ .fx .btn{width:100%} }
 </style>
 </head>
@@ -785,9 +787,11 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
-      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span> <span style="color:var(--stone)">Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>.</span></p>
     </div>
-    <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+    <div class="prev-col">
+      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+      <p class="fx-more"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span> <span style="color:var(--stone)">Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>.</span></p>
+    </div>
   </div>
 </section>
 
@@ -803,6 +807,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     
 
     <div class="results">
+      <div class="btn-row"><a class="textlink" href="#options">See Phase 1 and pricing →</a></div>
       <div class="sample-pair">
         <div class="sample-col">
           <p class="eyebrow">Sample A: preparing to move (Anna)</p>
@@ -836,10 +841,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
           </ul>
         </div>
       </details>
-      <div class="btn-row"><a class="textlink" href="#options">See Phase 1 and pricing →</a></div>
-      <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you.</p>
-      <p class="legend">The decision names what to change and what to check next. It is not only a yes or no to moving.</p>
-      <p class="legend">The five checks are money, papers, people, place and Plan B. In your result each one shows as a light: green when it is in place, amber or red when it still needs attention.</p>
+      <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you. The decision names what to change and what to check next. It is not only a yes or no to moving. The five checks are money, papers, people, place and Plan B. In your result each one shows as a light: green when it is in place, amber or red when it still needs attention.</p>
       <p class="legend"><a href="samples/text/">Read the sample results as text (English)</a></p>
     </div>
 

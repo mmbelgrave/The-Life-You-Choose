@@ -230,7 +230,7 @@ details.more[open]>summary::after{content:"–"}
 .free h2 em{color:var(--ochre)}
 .free .prev{display:block;border-radius:4px;overflow:hidden;box-shadow:0 14px 40px rgba(28,30,27,.14);transition:transform .25s;transform:rotate(1.5deg)}
 .free .prev:hover{transform:rotate(0) translateY(-3px)}
-@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev{order:-1;max-width:420px} }
+@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev-col{order:-1;max-width:420px} }
 
 /* METHOD: three equal panels on a rising line */
 .method{background:var(--white)}
@@ -653,6 +653,8 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 .intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
 /* final step */
 .contact .fnote{margin:22px 0 0;max-width:30em}
+.free .prev-col .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
+.free .prev-col .fx-more a{color:var(--pine)}
 .intro .intro-more{margin-top:20px}
 .final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
 .final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
@@ -683,7 +685,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 .fx-small{font-size:14px;color:var(--stone);margin:12px 0 0}
 .fx-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px}
 .fx-err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
-@media (max-width:760px){ .free .prev{order:2;max-width:360px} }
+@media (max-width:760px){ .free .prev-col{order:2;max-width:360px} }
 @media (max-width:560px){ .fx .btn{width:100%} }
 </style>
 </head>
@@ -784,9 +786,11 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Je oefening staat klaar.</p><a class="btn btn-primary" id="fx-dl" href="/downloads/een-gewone-dinsdag.pdf" download>Download de oefening (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
-      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="/dinsdag/oefening/">Liever meteen beginnen? Doe de oefening in je browser</a> <span style="color:var(--stone)">Je antwoorden blijven op je apparaat.</span> <span style="color:var(--stone)">Doe de oefening hier zonder account. Wil je je antwoorden in een account bewaren? Probeer dan <a href="https://app.maderealblueprint.com/free?from=website">de gratis oefening in de app (Engels)</a>.</span></p>
     </div>
-    <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="/images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+    <div class="prev-col">
+      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="/images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+      <p class="fx-more"><a href="/dinsdag/oefening/">Liever meteen beginnen? Doe de oefening in je browser</a> <span style="color:var(--stone)">Je antwoorden blijven op je apparaat.</span> <span style="color:var(--stone)">Doe de oefening hier zonder account. Wil je je antwoorden in een account bewaren? Probeer dan <a href="https://app.maderealblueprint.com/free?from=website">de gratis oefening in de app (Engels)</a>.</span></p>
+    </div>
   </div>
 </section>
 
@@ -802,6 +806,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     
 
     <div class="results">
+      <div class="btn-row"><a class="textlink" href="#options">Bekijk Fase 1 en prijs →</a></div>
       <div class="sample-pair">
         <div class="sample-col">
           <p class="eyebrow">Voorbeeld A: een verhuizing voorbereiden (Anna)</p>
@@ -835,10 +840,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
           </ul>
         </div>
       </details>
-      <div class="btn-row"><a class="textlink" href="#options">Bekijk Fase 1 en prijs →</a></div>
-      <p class="legend">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Je resultaten zijn gebaseerd op je eigen antwoorden. Je maakt zelf de keuzes.</p>
-      <p class="legend">Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen.</p>
-      <p class="legend">De vijf controles zijn geld, papieren, mensen, plek en Plan B. In je resultaat staat elke controle als een lichtje: groen als het geregeld is, oranje of rood als er nog aandacht nodig is.</p>
+      <p class="legend">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Je resultaten zijn gebaseerd op je eigen antwoorden. Je maakt zelf de keuzes. Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen. De vijf controles zijn geld, papieren, mensen, plek en Plan B. In je resultaat staat elke controle als een lichtje: groen als het geregeld is, oranje of rood als er nog aandacht nodig is.</p>
       <p class="legend"><a href="/samples/text/">Lees de voorbeeldresultaten als tekst (Engels)</a></p>
     </div>
 
