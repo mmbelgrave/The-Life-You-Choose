@@ -168,11 +168,6 @@ section.routes .wrap{padding-top:26px;padding-bottom:26px}
 /* RECOGNITION */
 .thought{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1.2;color:var(--pine);max-width:24em;margin:0 0 20px}
 .thought em{color:var(--ochre)}
-.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.problem{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:28px 26px;display:flex;flex-direction:column}
-.problem .says{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--granite);margin-bottom:18px}
-.problem .fix{margin-top:auto;font-size:16px;color:var(--pine);border-left:3px solid var(--moss);padding-left:14px;margin-bottom:0}
-@media (max-width:900px){ .problems{grid-template-columns:1fr} }
 details.more{margin-top:24px;border-top:1px solid var(--rule);padding-top:6px}
 details.more>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:22px;color:var(--pine);padding:14px 0;display:flex;justify-content:space-between;gap:16px}
 details.more>summary::-webkit-details-marker{display:none}
@@ -658,6 +653,8 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 /* founder intro */
 .intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
 /* final step */
+.contact .fnote{margin:22px 0 0;max-width:30em}
+.intro .intro-more{margin-top:20px}
 .final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
 .final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
 .final-buy .fb-price small{display:block;font-family:var(--sans);font-size:14px;color:#CFC7B8;margin-top:6px}
@@ -772,7 +769,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
       <p class="eyebrow">Start here · free</p>
       <h2>An ordinary <em>Tuesday</em>.</h2>
       <p>Picture one normal day in the life you want, in enough detail to test it. A short exercise from Step 1 of the Blueprint: a three-page PDF to print, or an online version you can complete in your browser. You can use it wherever you want to live, including where you are now. It helps you describe what an ordinary day would actually look like. Phase 1 then helps you decide what to change, what to check and what to do next.</p>
-      <p class="free-res">Below, you can see the kind of result it leads to.</p>
+      <p class="free-res">The free exercise is a first step. Below you can see what you can work out in Phase 1.</p>
       <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
         <label for="fx-name">Your first name (optional)</label>
         <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
@@ -799,16 +796,13 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">What you get</p>
-      <h2>Your answers become your personal Blueprint.</h2>
-      <p class="lead">Work through each step, answer the questions about your own life, and reach a decision about what to change, why, what to check and what to do next.</p>
+      <h2>A result after every step. Your Blueprint after Phase 1.</h2>
+      <p class="lead">After each step, you save or print a clear summary of your own answers. When you finish Phase 1, they come together in your personal Blueprint. Tap below to see an example.</p>
     </div>
 
     
 
     <div class="results">
-      <p class="eyebrow">What you finish with</p>
-      <h3 class="results-h">A result after every step. Your Blueprint after Phase 1.</h3>
-      <p class="lead" style="max-width:44em">After each step, you save or print a clear summary of your own answers. When you finish Phase 1, they come together in your personal Blueprint. Tap below to see an example.</p>
       <div class="sample-pair">
         <div class="sample-col">
           <p class="eyebrow">Sample A: preparing to move (Anna)</p>
@@ -1011,8 +1005,9 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div class="rv">
       <p class="eyebrow">Who made this</p>
       <h2>Hello, I'm Mwata.</h2>
-      <p class="lead">I built a life in Bali, then another in rural Portugal. Along the way, I got help with individual parts, but nobody guided me through the whole journey. I created this Blueprint to share what I learned and help you make your own picture real. <a href="/my-story/">Read my story →</a></p>
+      <p class="lead">I built a life in Bali, then another in rural Portugal. Along the way, I got help with individual parts, but nobody guided me through the whole journey. I created this Blueprint to share what I learned and help you make your own picture real.</p>
       <p class="intro-stand">A life is chosen and built, not inherited or drifted into.</p>
+      <div class="btn-row intro-more"><a class="btn btn-ghost" href="/my-story/">Read my story →</a></div>
     </div>
   </div>
 </section>
@@ -1040,10 +1035,6 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
         <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a><a class="textlink" href="#contact">Ask me a question first</a></div>
         <p class="after assure"><b>30-day money-back guarantee.</b> Pay by card, PayPal or the other methods shown at checkout. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
         <p class="after">The workbooks and the app are in English. <a href="#inside">Look at a sample first.</a></p>
-        <div class="fnote">
-          <picture><source type="image/avif" srcset="images/mwata-portrait-240.avif"><source type="image/webp" srcset="images/mwata-portrait-240.webp"><img src="images/mwata-portrait-240.jpg" alt="Mwata, the author of The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
-          <p>Somewhere inside, there is a feeling that something needs to change. I learned to listen to it, put a clear picture of the life I wanted on paper, and build my life from it. I want to help you hear yours and make it real, wherever that turns out to be. Mwata</p>
-        </div>
         </div>
         <div class="o-what">
         <div class="peek">
@@ -1094,28 +1085,28 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
   <div class="wrap faq">
     <p class="eyebrow">Good to know</p>
     <h2>Questions people ask</h2>
+    <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the Introduction and the Phase 1 workbooks as PDF downloads, plus the app with the exercises. In the app you can print or save your results after each step, and when you finish Phase 1 you get your personal Blueprint. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
+    <details><summary>What do I have at the end of Phase 1?</summary><p>A written plan for what you want to change, what still needs checking and the next step you will take. You save or print a summary after every step.</p></details>
     <details><summary>Is this a course?</summary><p>Yes. A course in steps, with PDF workbooks and an app for the exercises. Phase 1 (Steps 1 to 3) is available now; Steps 4 to 8 are coming later. After each step you can print or save your results in the app, and when you finish Phase 1 you get your personal Blueprint: your own written plan.</p></details>
-    <details><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. Giving a review is voluntary, and I only use your words with your written permission.</p></details>
     <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal and other places, but also for real changes at home. Already sure about Portugal? The whole Blueprint starts with Phase 1 as well, because a clear picture of the life you want helps you judge every choice that follows.</p></details>
     <details><summary>Is this only for people who want to move?</summary><p>No. Phase 1 starts with the life you want. You can finish with a plan to change your life where you are, a decision to look elsewhere, or a decision to wait. Later phases are planned for people building a life in Portugal.</p></details>
-    <details><summary>What do I have at the end of Phase 1?</summary><p>A written plan for what you want to change, what still needs checking and the next step you will take. You save or print a summary after every step.</p></details>
     <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal because that is where I live now and where I built a life.</p></details>
     <details><summary>What if I decide to stay where I am?</summary><p>That is a real result. The option you test in Step 3 can also be a change where you live, such as working fewer days, a new job, your own business, more space or another region in your own country. If you decide to stay, Step 3 ends with your staying route: My Change Plan, with a date, a first step and a check-in. That completes your Blueprint.</p></details>
-    <details><summary>Do I need the app, or can I use the PDF workbooks on paper?</summary><p>You can complete the PDF workbooks on paper or on screen. To print or save your results after each step, and to get your personal Blueprint when you finish Phase 1, you enter your answers in the app.</p></details>
-    <details><summary>Is the free Tuesday exercise only for people who choose Portugal?</summary><p>No. Phase 1 and the free Tuesday exercise work for any destination, including staying where you are. Steps 4 to 8 focus on Portugal.</p></details>
-    <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the Introduction and the Phase 1 workbooks as PDF downloads, plus the app with the exercises. In the app you can print or save your results after each step, and when you finish Phase 1 you get your personal Blueprint. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
     <details><summary>Is the course in Dutch?</summary><p>The Dutch pages, the free exercise and the follow-up emails are in Dutch. The workbooks and the app are in English. The welcome video in the app has English subtitles. Videos for the course steps are planned, and we plan Dutch subtitles for them.</p></details>
+    <details><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. Portuguese terms and specialist terminology are explained when they first appear. The workbooks and the app are in English. Questions before you buy? You can send me a message in English or Dutch.</p></details>
+    <details><summary>How much time does it take?</summary><p>Plan on about two to three hours a week. Short, regular blocks of time tend to suit this kind of work better than one long weekend.</p></details>
+    <details><summary>Do I need the app, or can I use the PDF workbooks on paper?</summary><p>You can complete the PDF workbooks on paper or on screen. To print or save your results after each step, and to get your personal Blueprint when you finish Phase 1, you enter your answers in the app.</p></details>
+    <details><summary>How does access work after I pay?</summary><p>You receive a link to download the PDF workbooks, and a separate email explaining how to access the app. You sign in with the email address you paid with and a code sent to that address. If something does not arrive, email info@maderealblueprint.com from the address you paid with. If you paid with one email and signed in with another, use the sign-in help in the app, headed "Paid with one email, signed in with another?"</p></details>
     <details><summary>How long do I keep access?</summary><p>According to our terms, at least three years from your purchase. You can download the PDFs. If we ever close the app, we give at least 12 months' notice by email, and you can first download your answers and your personal Blueprint.</p></details>
     <details><summary>What if it is not for me?</summary><p>You can ask for a full refund within 30 days of purchase, by email with your order number. A line or two about what did not work is welcome but not required. Your legal rights stay as they are.</p></details>
+    <details><summary>Can my partner and I work on it together?</summary><p>Yes, without a second purchase. In the app you invite your partner, who signs in with their own email and gets their own access. Some pages are shared: you write one answer together. Others you each write alone, and you see each other's answer once you have both written. A few personal pages can stay private. If you receive a refund, access ends for you and your partner. Timing follows section 6A of the <a href="terms.html">terms</a> (3-day grace, same-day notice to your partner, download of their answers, deletion after 30 days).</p></details>
     <details><summary>Do I have to use the AI partner?</summary><p>No. The AI partner is optional, and you can do the exercises without it. AI answers can contain mistakes, so check important information with a reliable source or a professional.</p></details>
     <details><summary>Is this personal coaching?</summary><p>No. You work on your own and at your own pace. You can email questions about how things work, but personal coaching is not included. The Blueprint is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result.</p></details>
-    <details><summary>Can my partner and I work on it together?</summary><p>Yes, without a second purchase. In the app you invite your partner, who signs in with their own email and gets their own access. Some pages are shared: you write one answer together. Others you each write alone, and you see each other's answer once you have both written. A few personal pages can stay private. If you receive a refund, access ends for you and your partner. Timing follows section 6A of the <a href="terms.html">terms</a> (3-day grace, same-day notice to your partner, download of their answers, deletion after 30 days).</p></details>
-    <details><summary>How does access work after I pay?</summary><p>You receive a link to download the PDF workbooks, and a separate email explaining how to access the app. You sign in with the email address you paid with and a code sent to that address. If something does not arrive, email info@maderealblueprint.com from the address you paid with. If you paid with one email and signed in with another, use the sign-in help in the app, headed "Paid with one email, signed in with another?"</p></details>
-    <details><summary>Can I start with Phase 1 and get the whole Blueprint later?</summary><p>Yes. When the whole Blueprint opens, I intend to credit what you paid for Phase 1, and I will confirm how before it opens.</p></details>
     <details><summary>I already know what I want. Can I skip ahead?</summary><p>You can. The short check in the Introduction helps you choose where to start, from Step 1 to Step 3. Even if you start later, read Step 1 briefly: your picture of the life you want helps you judge every later choice.</p></details>
-    <details><summary>How much time does it take?</summary><p>Plan on about two to three hours a week. Short, regular blocks of time tend to suit this kind of work better than one long weekend.</p></details>
+    <details><summary>Can I start with Phase 1 and get the whole Blueprint later?</summary><p>Yes. When the whole Blueprint opens, I intend to credit what you paid for Phase 1, and I will confirm how before it opens.</p></details>
+    <details><summary>Is the free Tuesday exercise only for people who choose Portugal?</summary><p>No. Phase 1 and the free Tuesday exercise work for any destination, including staying where you are. Steps 4 to 8 focus on Portugal.</p></details>
     <details><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so I always show the source and the date I checked. For legal, tax and money decisions, the workbooks help you find the right professional and the right questions to ask.</p></details>
-    <details><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. Portuguese terms and specialist terminology are explained when they first appear. The workbooks and the app are in English. Questions before you buy? You can send me a message in English or Dutch.</p></details>
+    <details><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. Giving a review is voluntary, and I only use your words with your written permission.</p></details>
   </div>
 </section>
 
@@ -1169,6 +1160,10 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div>
       <p class="eyebrow">Your next step</p>
       <h2>Ready to choose, or not sure yet?</h2>
+      <div class="fnote">
+            <picture><source type="image/avif" srcset="images/mwata-portrait-240.avif"><source type="image/webp" srcset="images/mwata-portrait-240.webp"><img src="images/mwata-portrait-240.jpg" alt="Mwata, the author of The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
+            <p>Somewhere inside, there is a feeling that something needs to change. I learned to listen to it, put a clear picture of the life I wanted on paper, and build my life from it. I want to help you hear yours and make it real, wherever that turns out to be. Mwata</p>
+          </div>
       <div class="final-buy">
         <p class="fb-price">€99 <small>including VAT. One-off payment, no subscription.</small></p>
         <a class="btn btn-ochre" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a>
@@ -1200,7 +1195,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div class="cols">
       <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result. Always check current rules with the official source or a qualified professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
-      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">What I stand for</a> · <a href="tuesday/">Free exercise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">My story</a> · <a href="tuesday/">Free exercise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
     </div>
   </div>
 </footer>

@@ -167,11 +167,6 @@ section.routes .wrap{padding-top:26px;padding-bottom:26px}
 /* RECOGNITION */
 .thought{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1.2;color:var(--pine);max-width:24em;margin:0 0 20px}
 .thought em{color:var(--ochre)}
-.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.problem{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:28px 26px;display:flex;flex-direction:column}
-.problem .says{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--granite);margin-bottom:18px}
-.problem .fix{margin-top:auto;font-size:16px;color:var(--pine);border-left:3px solid var(--moss);padding-left:14px;margin-bottom:0}
-@media (max-width:900px){ .problems{grid-template-columns:1fr} }
 details.more{margin-top:24px;border-top:1px solid var(--rule);padding-top:6px}
 details.more>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:22px;color:var(--pine);padding:14px 0;display:flex;justify-content:space-between;gap:16px}
 details.more>summary::-webkit-details-marker{display:none}
@@ -657,6 +652,8 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
 /* founder intro */
 .intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
 /* final step */
+.contact .fnote{margin:22px 0 0;max-width:30em}
+.intro .intro-more{margin-top:20px}
 .final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
 .final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
 .final-buy .fb-price small{display:block;font-family:var(--sans);font-size:14px;color:#CFC7B8;margin-top:6px}
@@ -771,7 +768,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
       <p class="eyebrow">Begin hier · gratis</p>
       <h2>Een gewone <em>dinsdag</em>.</h2>
       <p>Stel je één gewone dag voor in het leven dat je wilt, zo concreet dat je het kunt testen. Een korte oefening uit Stap 1 van de Blueprint: een pdf van drie pagina's om te printen, of een online versie die je in je browser kunt invullen. De oefening helpt je nadenken over elke woonplek, ook de plek waar je nu woont. Zo krijg je een concreet beeld van je dagelijks leven. Fase 1 helpt je daarna te kiezen wat je verandert, wat je controleert en wat je daarna doet.</p>
-      <p class="free-res">Hieronder zie je het soort resultaat waar dit toe leidt.</p>
+      <p class="free-res">De gratis oefening is een eerste stap. Hieronder zie je wat je in Fase 1 kunt uitwerken.</p>
       <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/201595939187591038/subscribe" method="post" novalidate>
         <label for="fx-name">Je voornaam (optioneel)</label>
         <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
@@ -798,16 +795,13 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Wat je krijgt</p>
-      <h2>Je antwoorden vormen samen je persoonlijke Blueprint.</h2>
-      <p class="lead">Werk elke stap door, beantwoord de vragen over je eigen leven en kom tot een besluit over wat je verandert, waarom, wat je controleert en wat je daarna doet.</p>
+      <h2>Een resultaat na elke stap. Je Blueprint na Fase 1.</h2>
+      <p class="lead">Na elke stap bewaar of print je een duidelijke samenvatting van je eigen antwoorden. Als je Fase 1 afrondt, komen ze samen in je persoonlijke Blueprint. Tik hieronder om een voorbeeld te zien.</p>
     </div>
 
     
 
     <div class="results">
-      <p class="eyebrow">Waarmee je eindigt</p>
-      <h3 class="results-h">Een resultaat na elke stap. Je Blueprint na Fase 1.</h3>
-      <p class="lead" style="max-width:44em">Na elke stap bewaar of print je een duidelijke samenvatting van je eigen antwoorden. Als je Fase 1 afrondt, komen ze samen in je persoonlijke Blueprint. Tik hieronder om een voorbeeld te zien.</p>
       <div class="sample-pair">
         <div class="sample-col">
           <p class="eyebrow">Voorbeeld A: een verhuizing voorbereiden (Anna)</p>
@@ -1010,8 +1004,9 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div class="rv">
       <p class="eyebrow">Wie maakte dit</p>
       <h2>Hallo, ik ben Mwata.</h2>
-      <p class="lead">Ik bouwde een leven op in Bali en daarna een ander in landelijk Portugal. Onderweg kreeg ik hulp bij losse onderdelen, maar niemand begeleidde me door de hele reis. Ik maakte deze Blueprint om te delen wat ik geleerd heb en om jou te helpen je eigen beeld werkelijkheid te maken. <a href="/mijn-verhaal/">Lees mijn verhaal →</a></p>
+      <p class="lead">Ik bouwde een leven op in Bali en daarna een ander in landelijk Portugal. Onderweg kreeg ik hulp bij losse onderdelen, maar niemand begeleidde me door de hele reis. Ik maakte deze Blueprint om te delen wat ik geleerd heb en om jou te helpen je eigen beeld werkelijkheid te maken.</p>
       <p class="intro-stand">Een leven wordt gekozen en opgebouwd, niet geërfd en niet aan het toeval overgelaten.</p>
+      <div class="btn-row intro-more"><a class="btn btn-ghost" href="/mijn-verhaal/">Lees mijn verhaal →</a></div>
     </div>
   </div>
 </section>
@@ -1039,10 +1034,6 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
         <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a><a class="textlink" href="#contact">Stel me eerst een vraag</a></div>
         <p class="after assure"><b>30 dagen geld-terug-garantie.</b> Betaal met kaart, PayPal of de andere methoden die bij het afrekenen staan. Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>.</p>
         <p class="after">De werkboeken en de app zijn in het Engels. <a href="#inside">Bekijk eerst een voorbeeld.</a></p>
-        <div class="fnote">
-          <picture><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata, de maker van The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
-          <p>Ergens diep van binnen is er een gevoel dat er iets moet veranderen. Ik leerde ernaar te luisteren, zette een helder beeld van het leven dat ik wilde op papier en bouwde mijn leven daaruit op. Ik help je graag het jouwe te horen en echt te maken, waar dat ook blijkt te zijn. Mwata</p>
-        </div>
         </div>
         <div class="o-what">
         <div class="peek">
@@ -1093,28 +1084,28 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
   <div class="wrap faq">
     <p class="eyebrow">Goed om te weten</p>
     <h2>Vragen die mensen stellen</h2>
+    <details><summary>Wat ontvang ik precies, en hoe?</summary><p>Direct na betaling ontvang je de Introduction en de Fase 1-workbooks als pdf-download, plus de app met de oefeningen. In de app kun je na elke stap je resultaten printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint. Elk workbook legt de ideeën uit, geeft verzonnen voorbeelden en heeft ruimte voor je eigen antwoorden.</p></details>
+    <details><summary>Wat heb ik aan het einde van Fase 1?</summary><p>Een opgeschreven richting, wat je nog moet uitzoeken en een besluit over wat je verandert, waarom en wat je daarna doet. Na elke stap bewaar of print je een samenvatting.</p></details>
     <details><summary>Is dit een cursus?</summary><p>Ja. Een cursus in stappen, met pdf-workbooks en een app voor de oefeningen. Fase 1 (Stap 1 tot 3) is nu beschikbaar; Stap 4 tot 8 komen later. Na elke stap kun je je resultaten in de app printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint: je eigen opgeschreven plan.</p></details>
-    <details><summary>Vraag je om feedback?</summary><p>Ja. Ik vraag om eerlijke feedback terwijl je de stappen doorloopt: wat duidelijk is, wat ontbreekt en wat hielp. Een review geven is vrijwillig en ik gebruik die alleen met je schriftelijke toestemming.</p></details>
     <details><summary>Welke optie past bij mij?</summary><p>Weet je nog niet wat je wilt, of waar? Begin met Fase 1. Die werkt voor Portugal en andere plekken, maar ook voor echte veranderingen thuis. Weet je al zeker dat het Portugal wordt? Ook de hele Blueprint begint met Fase 1, omdat een helder beeld van het leven dat je wilt je helpt elke keuze daarna te beoordelen.</p></details>
     <details><summary>Is dit alleen voor mensen die willen verhuizen?</summary><p>Nee. Fase 1 begint met het leven dat je wilt. Je kunt eindigen met een plan om je leven te veranderen waar je bent, een besluit om elders te kijken of een besluit om te wachten. Latere fasen zijn gepland voor mensen die een leven in Portugal opbouwen.</p></details>
-    <details><summary>Wat heb ik aan het einde van Fase 1?</summary><p>Een opgeschreven richting, wat je nog moet uitzoeken en een besluit over wat je verandert, waarom en wat je daarna doet. Na elke stap bewaar of print je een samenvatting.</p></details>
     <details><summary>Moet ik naar Portugal verhuizen?</summary><p>Nee. Fase 1 werkt voor elke bestemming, en ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal, omdat ik daar nu woon en daar een leven heb opgebouwd.</p></details>
     <details><summary>Wat als ik besluit te blijven waar ik ben?</summary><p>Dat is een echt resultaat. De optie die je in Stap 3 test kan ook een verandering zijn op de plek waar je woont, zoals minder dagen werken, een nieuwe baan, een eigen bedrijf, meer ruimte of een andere regio in je eigen land. Besluit je te blijven, dan eindigt Stap 3 met je blijfroute: My Change Plan, met een streefdatum, een eerste stap en een moment om te bekijken hoe het gaat. Daarmee is je Blueprint compleet.</p></details>
-    <details><summary>Heb ik de app nodig, of kan ik de pdf-workbooks op papier gebruiken?</summary><p>Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je resultaten na elke stap te printen of te bewaren, en om je persoonlijke Blueprint te krijgen als je Fase 1 afrondt, voer je je antwoorden in de app in.</p></details>
-    <details><summary>Is de gratis dinsdagoefening alleen voor mensen die voor Portugal kiezen?</summary><p>Nee. Fase 1 en de gratis dinsdagoefening werken voor elke bestemming, ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal.</p></details>
-    <details><summary>Wat ontvang ik precies, en hoe?</summary><p>Direct na betaling ontvang je de Introduction en de Fase 1-workbooks als pdf-download, plus de app met de oefeningen. In de app kun je na elke stap je resultaten printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint. Elk workbook legt de ideeën uit, geeft verzonnen voorbeelden en heeft ruimte voor je eigen antwoorden.</p></details>
     <details><summary>Is de cursus in het Nederlands?</summary><p>De Nederlandse pagina's, de gratis oefening en de e-mails zijn in het Nederlands. De werkboeken en de app zijn in het Engels. De welkomstvideo in de app heeft Engelse ondertitels. Video's voor de cursusstappen staan gepland, en daarvoor plannen we ook Nederlandse ondertitels.</p></details>
+    <details><summary>Is mijn Engels goed genoeg?</summary><p>De Blueprint is geschreven in korte, eenvoudige zinnen voor mensen die Engels als tweede taal spreken. Portugese termen en vaktermen worden uitgelegd wanneer ze voor het eerst voorkomen. De workbooks en de app zijn in het Engels. Vragen voor je koopt? Je kunt me een bericht sturen in het Engels of Nederlands.</p></details>
+    <details><summary>Hoeveel tijd kost het?</summary><p>Reken op ongeveer twee tot drie uur per week. Korte, regelmatige blokken tijd werken voor dit soort werk meestal beter dan één lang weekend.</p></details>
+    <details><summary>Heb ik de app nodig, of kan ik de pdf-workbooks op papier gebruiken?</summary><p>Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je resultaten na elke stap te printen of te bewaren, en om je persoonlijke Blueprint te krijgen als je Fase 1 afrondt, voer je je antwoorden in de app in.</p></details>
+    <details><summary>Hoe werkt toegang nadat ik betaald heb?</summary><p>Je krijgt een link om de pdf-werkboeken te downloaden en een aparte e-mail met uitleg over de app. Je meldt je aan met het e-mailadres waarmee je betaalde en een code die naar dat adres wordt gestuurd. Komt er iets niet aan, mail dan naar info@maderealblueprint.com vanaf het e-mailadres waarmee je betaalde. Heb je met het ene e-mailadres betaald en met een ander aangemeld, gebruik dan de aanmeldhulp in de app, met de kop "Paid with one email, signed in with another?"</p></details>
     <details><summary>Hoe lang houd ik toegang?</summary><p>Volgens onze voorwaarden minimaal drie jaar vanaf je aankoop. De pdf's kun je downloaden. Als we de app ooit sluiten, krijg je minstens 12 maanden van tevoren een e-mail en kun je eerst je antwoorden en je persoonlijke Blueprint downloaden.</p></details>
     <details><summary>Wat als het niet bij me past?</summary><p>Je kunt binnen 30 dagen na aankoop een volledige terugbetaling vragen, per e-mail met je ordernummer. Een of twee regels over wat niet werkte zijn welkom, maar niet verplicht. Je wettelijke rechten blijven gelden.</p></details>
+    <details><summary>Kunnen mijn partner en ik samen werken?</summary><p>Ja, zonder tweede aankoop. In de app nodig je je partner uit, die inlogt met een eigen e-mailadres en eigen toegang krijgt. Sommige pagina's zijn gedeeld: jullie schrijven samen één antwoord. Andere schrijf je allebei alleen, en je ziet elkaars antwoord zodra jullie allebei geschreven hebben. Een paar persoonlijke pagina's kunnen privé blijven. Krijg je je geld terug, dan eindigt de toegang voor jou en je partner. De timing volgt onderdeel 6A van de <a href="/terms.html">voorwaarden (in het Engels)</a> (3 dagen respijt, dezelfde dag bericht aan je partner, download van hun antwoorden, verwijdering na 30 dagen).</p></details>
     <details><summary>Moet ik de AI-partner gebruiken?</summary><p>Nee. De AI-partner is optioneel en je kunt de oefeningen ook zonder doen. AI-antwoorden kunnen fouten bevatten, dus controleer belangrijke informatie bij een betrouwbare bron of een professional.</p></details>
     <details><summary>Is dit persoonlijke coaching?</summary><p>Nee. Je werkt zelfstandig en in je eigen tempo. Je kunt vragen mailen over hoe iets werkt, maar persoonlijke coaching is niet inbegrepen. De Blueprint is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven.</p></details>
-    <details><summary>Kunnen mijn partner en ik samen werken?</summary><p>Ja, zonder tweede aankoop. In de app nodig je je partner uit, die inlogt met een eigen e-mailadres en eigen toegang krijgt. Sommige pagina's zijn gedeeld: jullie schrijven samen één antwoord. Andere schrijf je allebei alleen, en je ziet elkaars antwoord zodra jullie allebei geschreven hebben. Een paar persoonlijke pagina's kunnen privé blijven. Krijg je je geld terug, dan eindigt de toegang voor jou en je partner. De timing volgt onderdeel 6A van de <a href="/terms.html">voorwaarden (in het Engels)</a> (3 dagen respijt, dezelfde dag bericht aan je partner, download van hun antwoorden, verwijdering na 30 dagen).</p></details>
-    <details><summary>Hoe werkt toegang nadat ik betaald heb?</summary><p>Je krijgt een link om de pdf-werkboeken te downloaden en een aparte e-mail met uitleg over de app. Je meldt je aan met het e-mailadres waarmee je betaalde en een code die naar dat adres wordt gestuurd. Komt er iets niet aan, mail dan naar info@maderealblueprint.com vanaf het e-mailadres waarmee je betaalde. Heb je met het ene e-mailadres betaald en met een ander aangemeld, gebruik dan de aanmeldhulp in de app, met de kop "Paid with one email, signed in with another?"</p></details>
-    <details><summary>Kan ik met Fase 1 beginnen en de hele Blueprint later krijgen?</summary><p>Ja. Als de hele Blueprint opengaat, ben ik van plan te verrekenen wat je voor Fase 1 betaalde, en ik bevestig hoe voordat hij opengaat.</p></details>
     <details><summary>Ik weet al wat ik wil. Kan ik stappen overslaan?</summary><p>Dat kan. De korte check in de Introduction helpt je kiezen waar je begint, van Stap 1 tot Stap 3. Lees stap 1 ook kort door als je later begint: je beeld van het leven dat je wilt helpt je elke latere keuze te beoordelen.</p></details>
-    <details><summary>Hoeveel tijd kost het?</summary><p>Reken op ongeveer twee tot drie uur per week. Korte, regelmatige blokken tijd werken voor dit soort werk meestal beter dan één lang weekend.</p></details>
+    <details><summary>Kan ik met Fase 1 beginnen en de hele Blueprint later krijgen?</summary><p>Ja. Als de hele Blueprint opengaat, ben ik van plan te verrekenen wat je voor Fase 1 betaalde, en ik bevestig hoe voordat hij opengaat.</p></details>
+    <details><summary>Is de gratis dinsdagoefening alleen voor mensen die voor Portugal kiezen?</summary><p>Nee. Fase 1 en de gratis dinsdagoefening werken voor elke bestemming, ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal.</p></details>
     <details><summary>Geef je juridisch of fiscaal advies?</summary><p>Nee. Regels en prijzen veranderen, dus ik laat altijd de bron en de datum van controle zien. Voor juridische, fiscale en geldbesluiten helpen de workbooks je de juiste professional en de juiste vragen te vinden.</p></details>
-    <details><summary>Is mijn Engels goed genoeg?</summary><p>De Blueprint is geschreven in korte, eenvoudige zinnen voor mensen die Engels als tweede taal spreken. Portugese termen en vaktermen worden uitgelegd wanneer ze voor het eerst voorkomen. De workbooks en de app zijn in het Engels. Vragen voor je koopt? Je kunt me een bericht sturen in het Engels of Nederlands.</p></details>
+    <details><summary>Vraag je om feedback?</summary><p>Ja. Ik vraag om eerlijke feedback terwijl je de stappen doorloopt: wat duidelijk is, wat ontbreekt en wat hielp. Een review geven is vrijwillig en ik gebruik die alleen met je schriftelijke toestemming.</p></details>
   </div>
 </section>
 
@@ -1168,6 +1159,10 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div>
       <p class="eyebrow">Je volgende stap</p>
       <h2>Klaar om te kiezen, of nog niet zeker?</h2>
+      <div class="fnote">
+            <picture><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata, de maker van The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
+            <p>Ergens diep van binnen is er een gevoel dat er iets moet veranderen. Ik leerde ernaar te luisteren, zette een helder beeld van het leven dat ik wilde op papier en bouwde mijn leven daaruit op. Ik help je graag het jouwe te horen en echt te maken, waar dat ook blijkt te zijn. Mwata</p>
+          </div>
       <div class="final-buy">
         <p class="fb-price">€99 <small>inclusief btw, eenmalig. Geen abonnement.</small></p>
         <a class="btn btn-ochre" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a>
@@ -1199,7 +1194,7 @@ section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,
     <div class="cols">
       <p class="fine">The Made Real Blueprint geeft praktische begeleiding op basis van persoonlijke ervaring. Het is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven. Controleer actuele regels altijd bij de officiële bron of een gekwalificeerde professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Maatschappelijk kapitaal €10.000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Ingeschreven in het Portugese handelsregister (Conservatória do Registo Comercial)</p>
-      <p class="links">© 2026 The Life You Choose · <a href="/mijn-verhaal/">Waar ik voor sta</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="https://app.maderealblueprint.com/withdraw">Hier de overeenkomst ontbinden</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/mijn-verhaal/">Mijn verhaal</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="https://app.maderealblueprint.com/withdraw">Hier de overeenkomst ontbinden</a></p>
     </div>
   </div>
 </footer>

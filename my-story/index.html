@@ -105,6 +105,10 @@ details.more[open]>summary::after{content:"–"}
 .why-share .eyebrow{margin-bottom:8px}
 .why-share p:not(.eyebrow){margin:0;font-family:var(--serif);font-size:clamp(19px,2.2vw,22px);line-height:1.55;color:var(--pine)}
 .band-pine{background:var(--pine);color:var(--sand)}
+.band-pine details.more{border-top-color:rgba(243,236,224,.25);margin-top:36px}
+.band-pine details.more>summary{color:var(--sand)}
+.band-pine details.more>summary::after{color:var(--ochre-light)}
+.band-pine details.more .pvm2{margin-top:6px;padding-top:18px;border-top:0}
 .band-pine .statement{font-family:var(--serif);font-size:clamp(30px,4.2vw,50px);line-height:1.15;color:var(--sand);max-width:22ch;margin:0 0 24px}
 .pvm2{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px;padding-top:28px;border-top:1px solid rgba(243,236,224,.25)}
 .pvm2 h3,.pvm2 h2{font-size:26px;line-height:1.25;margin-bottom:8px;color:var(--sand)}.pvm2 h3 small,.pvm2 h2 small{display:block;font-family:var(--sans);font-size:14px;font-weight:500;color:#C9C1B2;margin-top:2px}
@@ -141,7 +145,7 @@ footer a{color:#E6DECF}
       <div class="txt">
         <p class="eyebrow">Who I am</p>
         <h1>I'm Mwata. I have built a new life abroad twice.</h1>
-        <p class="lead">I had a good job and a comfortable home in the Netherlands, but something felt missing. A course helped me clarify the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house and a local inspection business. After three years, I wanted something different. That led me to build my second life in rural central Portugal.</p>
+        <p class="lead">I had a good job and a comfortable home in the Netherlands, but something felt missing. A course helped me clarify the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house that I bought and a local inspection business. After three years, I wanted something different. That led me to build my second life in rural central Portugal.</p>
         <p>I made this Blueprint because, although I had help with individual parts, nobody guided me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone to tell me what to check first, based on real experience. That is what I wrote down in this Blueprint.</p>
       </div>
     </div>
@@ -168,12 +172,11 @@ footer a{color:#E6DECF}
       </div>
     </div>
 
-    <details class="more fullstory" style="margin-top:32px">
-      <summary>Read my full story</summary>
+    <div class="fullstory" style="margin-top:32px">
       <div class="split" style="margin-top:28px">
         <ol class="timeline" style="margin-top:0">
           <li><span class="when">2020</span><h2>Selling the house</h2><p>I sold my house in the Netherlands to travel the world. Then COVID stopped those plans. A course helped me clarify what I really wanted.</p></li>
-          <li><span class="when">Bali</span><h2>Two bags, a new life</h2><p>During a two-month sabbatical in Bali, I finally had room to think. I wrote down what I wanted: to live near the sea in a warm climate, run my own business and help people. Back home, I left my job, sold what I still owned and moved to Bali with two bags. I started a consultancy, bought a house, and later started my own inspection business.</p><figure style="margin:12px 0 0"><picture><source type="image/avif" srcset="/images/bali-volcano-600.avif"><source type="image/webp" srcset="/images/bali-volcano-600.webp"><img src="/images/bali-volcano-600.jpg" alt="Mwata on a green ridge in Bali, looking out over a volcano rising above the morning mist." loading="lazy" width="600" height="800" style="width:100%;height:auto;border-radius:4px"></picture><figcaption class="cap" style="margin-top:6px">Bali, a few weeks after I arrived.</figcaption></figure></li>
+          <li><span class="when">Bali</span><h2>Two bags, a new life</h2><p>During a two-month sabbatical in Bali, I finally had room to think. I wrote down what I wanted: to live near the sea in a warm climate, run my own business and help people. Back home, I left my job, sold what I still owned and moved to Bali with two bags. I started a consultancy, bought a newly built house, and later started my own inspection business.</p><figure style="margin:12px 0 0"><picture><source type="image/avif" srcset="/images/bali-volcano-600.avif"><source type="image/webp" srcset="/images/bali-volcano-600.webp"><img src="/images/bali-volcano-600.jpg" alt="Mwata on a green ridge in Bali, looking out over a volcano rising above the morning mist." loading="lazy" width="600" height="800" style="width:100%;height:auto;border-radius:4px"></picture><figcaption class="cap" style="margin-top:6px">Bali, a few weeks after I arrived.</figcaption></figure></li>
           <li><span class="when">Three years later</span><h2>A new picture</h2><p>Bali changed, and so did I. I missed being creative: building things and working in a garden. A YouTube channel about living more self-sufficiently set me thinking about another move.</p></li>
           <li><span class="when">April 2024</span><h2>The third plot</h2><p>I travelled through Portugal in a campervan, exploring the regions and visiting plots I had shortlisted. I had not planned to buy on that trip. But when I saw the third plot, I knew it was the one.</p></li>
           <li><span class="when">August 2024</span><h2>Signing</h2><p>I signed the purchase agreement. My money plan was already in place, so I was not afraid to commit. By the end of that year, the land was officially mine.</p></li>
@@ -188,7 +191,7 @@ footer a{color:#E6DECF}
           <p class="cap">My house in the Netherlands, sold in 2020 · inspection work in Bali · the campervan trip through Portugal.</p>
         </div>
       </div>
-    </details>
+    </div>
 
     <div class="why-share">
       <picture class="ws-pic"><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata smiling, with a lake and mountains behind him." width="84" height="84" loading="lazy"></picture>
@@ -206,11 +209,14 @@ footer a{color:#E6DECF}
     <p class="eyebrow" style="color:var(--ochre-light)">What I stand for</p>
     <p class="statement">A life is chosen and built, not inherited or drifted into.</p>
     <p class="lead" style="color:#E6DECF">Much of the life you live now came from choices, some made on purpose and some made by drifting. You can choose again. Health, money and the people you care for set real limits. Inside those limits, you can decide what matters, make a plan and build it, one step at a time.</p>
+    <details class="more vmm">
+      <summary>My vision, purpose and mission</summary>
     <div class="pvm2">
       <div><h2>My picture <small>(my vision)</small></h2><p>I build a life where I am present, dependable, and true to my values. I have the freedom to shape most of my days, spend time in nature, explore, and work on meaningful projects with the people I love.</p></div>
       <div><h2>Why I do this <small>(my purpose)</small></h2><p>To inspire and help people realise the life they truly want by sharing my experience, practical knowledge and the tools that help them make it happen.</p></div>
       <div><h2>What I am building <small>(my mission)</small></h2><p>To develop and share a Blueprint that helps people clarify the life they want, explore realistic ways to create it, and turn their choices into action, whether where they live now or somewhere new. Phase 1 is available now. Later phases are planned for people building a life in Portugal.</p></div>
     </div>
+    </details>
     <p class="warm warm-wide">My biggest lesson was learning to truly hear what I wanted. Now I want to help you hear what you want.</p>
   </div>
 </section>
