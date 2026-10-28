@@ -34,7 +34,7 @@
 body{margin:0;background:var(--sand);color:var(--granite);font-family:var(--sans);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:var(--pine)}
 header{border-bottom:1px solid var(--rule)}
-header .in,main,footer .in{max-width:760px;margin:0 auto;padding:0 20px}
+header .in,main,footer .in{max-width:1120px;margin:0 auto;padding:0 20px}
 header .in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pine);font-family:var(--serif);font-size:21px;font-weight:500}
 .logo svg{width:38px;height:28px}
@@ -46,20 +46,27 @@ h2{font-size:26px;line-height:1.25;margin:0 0 8px}
 h3{font-size:23px;line-height:1.25;margin:0 0 8px}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin:0 0 14px}
 .lead{font-size:20px}
-.group{margin-top:44px}
-.group>h2{font-size:28px;margin:0 0 2px}
-.card{display:block;background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--ochre);border-radius:0 4px 4px 0;padding:22px 24px;margin:16px 0 0;color:inherit}
-.card:hover{border-color:var(--pine)}
-.card h3 a{text-decoration:none}
-.card p{margin:0 0 10px}
-.card .go{font-weight:600;color:var(--pine);margin-bottom:0}
-.meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;font-size:14px;color:var(--stone);margin:0 0 8px}
+.lead,.note{max-width:46em}
+.grid{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:24px}
+.card{position:relative;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--rule);border-radius:8px;overflow:hidden;transition:box-shadow .15s,border-color .15s}
+.card:hover,.card:focus-within{border-color:var(--pine);box-shadow:0 4px 16px rgba(44,59,47,.12)}
+.card:focus-within{outline:3px solid var(--ochre);outline-offset:2px}
+.card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:top center;background:var(--sage)}
+.card .body{display:flex;flex-direction:column;flex:1;padding:18px 20px 20px}
+.card h2{font-size:23px;line-height:1.25;margin:0 0 8px}
+.card h2 a{text-decoration:none;color:inherit}
+.card h2 a::after{content:"";position:absolute;inset:0}
+.card h2 a:focus{outline:none}
+.card p{margin:0 0 12px;font-size:16px;line-height:1.55}
+.card .go{display:inline-block;align-self:flex-start;margin:auto 0 0;font-weight:600;color:var(--pine);border:2px solid var(--pine);border-radius:3px;padding:8px 16px}
+.card:hover .go,.card:focus-within .go{background:var(--pine);color:var(--sand)}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:14px;color:var(--stone);margin:0 0 8px}
 .type{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
 .new{background:var(--pine);color:var(--sand);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:1px 8px;border-radius:3px;line-height:1.7}
 .note{font-size:15px;color:var(--stone);border-top:1px solid var(--rule);margin-top:48px;padding-top:16px}
 footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
-@media (max-width:560px){.card{padding:18px 18px}}
+@media (max-width:560px){.card .go{align-self:stretch;text-align:center}}
 @media (max-width:380px){header .in{gap:8px}.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}header .hl{font-size:13px}.hs{gap:10px!important}}
 </style>
 </head>
@@ -80,41 +87,44 @@ footer a{color:#E6DECF}
   <h1>Gratis oefeningen, gidsen en meer</h1>
   <p class="lead">Alles op deze pagina is gratis. Gebruik het als je nadenkt over een verandering in je leven. Je hoeft niets te kopen. Nieuwe dingen komen hier te staan zodra ik ze heb gemaakt.</p>
 
-  <section class="group" aria-labelledby="g-masterclass">
-    <h2 id="g-masterclass">Masterclass</h2>
-  <div class="card">
-    <p class="meta"><span class="type">Masterclass</span><span class="new">Nieuw</span><time datetime="2026-10-28">28 oktober 2026</time></p>
-    <h3><a href="/masterclass/">Blijf je twijfelen tussen emigreren en blijven?</a></h3>
-    <p>In de gratis masterclass maak je van je ideeën drie criteria, één onderzoeksvraag en een eerste test. Nederlands, met werkblad en opname.</p>
-    <p class="go"><a href="/masterclass/">Bekijk de masterclass →</a></p>
-  </div>
-  </section>
-
-  <section class="group" aria-labelledby="g-guide">
-    <h2 id="g-guide">Gidsen</h2>
-  <div class="card">
-    <p class="meta"><span class="type">Gids</span><span class="new">Nieuw</span><time datetime="2026-10-23">23 oktober 2026</time></p>
-    <h3><a href="/wel-of-niet-emigreren/">Wel of niet emigreren? Begin met een gewone dag.</a></h3>
-    <p>Twijfel je of je moet emigreren? Vijf vragen en een gratis oefening om te onderzoeken of je moet verhuizen om te leven zoals je wilt.</p>
-    <p class="go"><a href="/wel-of-niet-emigreren/">Lees de gids →</a></p>
-  </div>
-  <div class="card">
-    <p class="meta"><span class="type">Gids</span><span class="new">Nieuw</span><time datetime="2026-10-23">23 oktober 2026</time></p>
-    <h3><a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf? Begin met wie jouw week bepaalt.</a></h3>
-    <p>Heb je weinig tijd, of weinig zeggenschap erover? Sorteer je week in vaste verplichtingen, noodzakelijke taken en vrij in te delen tijd, en haal één blok terug.</p>
-    <p class="go"><a href="/meer-tijd-voor-jezelf/">Lees de gids →</a></p>
-  </div>
-  </section>
-
-  <section class="group" aria-labelledby="g-exercise">
-    <h2 id="g-exercise">Oefeningen</h2>
-  <div class="card">
-    <p class="meta"><span class="type">Oefening</span><span class="new">Nieuw</span><time datetime="2026-10-07">7 oktober 2026</time></p>
-    <h3><a href="/dinsdag/">Een gewone dinsdag</a></h3>
-    <p>Beschrijf één gewone dag in het leven dat je wilt, concreet genoeg om te testen. Een oefening van 3 pagina's: doe hem in je browser, waar je antwoorden op je eigen apparaat blijven, of vraag hem aan als pdf.</p>
-    <p class="go"><a href="/dinsdag/">Haal de oefening op →</a> · <a href="/dinsdag/oefening/">Doe hem in je browser</a></p>
-  </div>
-  </section>
+  <ul class="grid">
+    <li class="card">
+      <img src="/images/gratis/masterclass.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
+      <div class="body">
+        <p class="meta"><span class="type">Masterclass</span><span class="new">Nieuw</span><time datetime="2026-10-28">28 oktober 2026</time></p>
+        <h2><a href="/masterclass/">Blijf je twijfelen tussen emigreren en blijven?</a></h2>
+        <p>In de gratis masterclass maak je van je ideeën drie criteria, één onderzoeksvraag en een eerste test. Nederlands, met werkblad en opname.</p>
+        <span class="go" aria-hidden="true">Bekijk de masterclass →</span>
+      </div>
+    </li>
+    <li class="card">
+      <img src="/images/gratis/guide-moving.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
+      <div class="body">
+        <p class="meta"><span class="type">Gids</span><span class="new">Nieuw</span><time datetime="2026-10-23">23 oktober 2026</time></p>
+        <h2><a href="/wel-of-niet-emigreren/">Wel of niet emigreren? Begin met een gewone dag.</a></h2>
+        <p>Twijfel je of je moet emigreren? Vijf vragen en een gratis oefening om te onderzoeken of je moet verhuizen om te leven zoals je wilt.</p>
+        <span class="go" aria-hidden="true">Lees de gids →</span>
+      </div>
+    </li>
+    <li class="card">
+      <img src="/images/gratis/guide-time.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
+      <div class="body">
+        <p class="meta"><span class="type">Gids</span><span class="new">Nieuw</span><time datetime="2026-10-23">23 oktober 2026</time></p>
+        <h2><a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf? Begin met wie jouw week bepaalt.</a></h2>
+        <p>Heb je weinig tijd, of weinig zeggenschap erover? Sorteer je week in vaste verplichtingen, noodzakelijke taken en vrij in te delen tijd, en haal één blok terug.</p>
+        <span class="go" aria-hidden="true">Lees de gids →</span>
+      </div>
+    </li>
+    <li class="card">
+      <img src="/images/dinsdag-preview-720.jpg" width="720" height="540" alt="Twee pagina's van de oefening Een gewone dinsdag" loading="lazy" decoding="async">
+      <div class="body">
+        <p class="meta"><span class="type">Oefening</span><span class="new">Nieuw</span><time datetime="2026-10-07">7 oktober 2026</time></p>
+        <h2><a href="/dinsdag/">Een gewone dinsdag</a></h2>
+        <p>Beschrijf één gewone dag in het leven dat je wilt, concreet genoeg om te testen. Een oefening van 3 pagina's: doe hem in je browser, waar je antwoorden op je eigen apparaat blijven, of vraag hem aan als pdf.</p>
+        <span class="go" aria-hidden="true">Haal de oefening op →</span>
+      </div>
+    </li>
+  </ul>
 
   <p class="note">Door Mwata. Ik heb twee keer een nieuw leven in het buitenland opgebouwd, eerst op Bali en daarna in Portugal. Meer weten of een vraag? <a href="/nl/#contact">Mail me of stuur me een bericht via WhatsApp</a> of probeer de <a href="/dinsdag/">gratis oefening</a>.</p>
 </main>
