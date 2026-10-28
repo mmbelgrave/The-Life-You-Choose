@@ -180,6 +180,12 @@ details.more[open]>summary::after{content:"–"}
 .turn{margin-top:36px;font-size:clamp(19px,2vw,22px);color:var(--pine);border-left:3px solid var(--ochre);padding-left:20px;max-width:46em}
 
 /* FREE START */
+/*mc:css*/.mc-band{background:var(--sand);border-bottom:1px solid var(--rule);padding:22px 0}
+.mc-band .wrap{display:flex;gap:20px 32px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.mc-band p{margin:0;font-size:17px}
+.mc-band .mc-h{margin-bottom:2px}
+.mc-band .mc-h b{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--pine)}
+@media (max-width:560px){.mc-band .btn{width:100%;text-align:center}}/*/mc:css*/
 .free{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(40px,6vw,64px) 0}
 .free .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
 .free h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
@@ -675,6 +681,19 @@ footer .links{margin:10px 0 0}
   </div>
 </div>
 
+
+
+
+<!--mc:band--><section class="mc-band" aria-label="Gratis masterclass">
+  <div class="wrap">
+    <div>
+      <p class="mc-h"><b>Blijf je twijfelen tussen emigreren en blijven?</b></p>
+      <p>In de gratis masterclass maak je van je ideeën drie criteria, één onderzoeksvraag en een eerste test. Nederlands, met werkblad en opname.</p>
+    </div>
+    <a class="btn btn-primary" href="/masterclass/" hreflang="nl" lang="nl">Bekijk de masterclass</a>
+  </div>
+</section><!--/mc:band-->
+
 <!-- 3 RECOGNITION -->
 <section id="familiar">
   <div class="wrap">
@@ -1143,6 +1162,7 @@ function track(name) { try { if (window.goatcounter && window.goatcounter.count)
 document.addEventListener('click', function (e) {
   const w = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (w) track('whatsapp-click');
   const m = e.target.closest && e.target.closest('a[href^="mailto:"]'); if (m) track('email-click');
+  <!--mc:track-->const mcl = e.target.closest && e.target.closest('a[href="/masterclass/"]'); if (mcl) track('masterclass-link-click');<!--/mc:track-->
   const c = e.target.closest && e.target.closest('a[data-checkout]'); if (c) track('checkout-click-' + c.dataset.checkout);
   const g = e.target.closest && e.target.closest('a[href="#free"]'); if (g) track('free-cta-click-nl');
 });
