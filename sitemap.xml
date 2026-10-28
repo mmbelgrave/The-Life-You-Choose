@@ -8,6 +8,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/nl/"/>
   </url>
+  <url><loc>https://maderealblueprint.com/my-story/</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/my-story/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/mijn-verhaal/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/mijn-verhaal/</loc><lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/my-story/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/mijn-verhaal/"/>
+  </url>
   <url><loc>https://maderealblueprint.com/tuesday/</loc><lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/tuesday/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/dinsdag/"/>
