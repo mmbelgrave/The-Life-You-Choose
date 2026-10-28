@@ -90,12 +90,12 @@ footer a{color:#E6DECF}
     <div>
       <p class="eyebrow">Free exercise · from Step 1 of The Made Real Blueprint</p>
       <h1>An ordinary <em>Tuesday</em>.</h1>
-      <p class="lead">Not a holiday. A normal Tuesday, because most days are normal days. Picture one normal day in the life you want, in enough detail to test it.</p>
-      <p class="fmt">A 3-page PDF to print or fill in on screen:</p>
+      <p class="lead">Imagine an ordinary Tuesday in the life you want, including work, chores and downtime. Describe it in enough detail to test it.</p>
+      <p class="fmt">A three-page PDF to print, or an online version you can complete in your browser:</p>
       <ul class="gets fmt">
         <li>A short warm-up: moments that felt good</li>
         <li>The exercise, with a made-up example</li>
-        <li>The need behind your picture, and how to go deeper</li>
+        <li>What your description tells you about your needs, with questions to explore them further</li>
       </ul>
 
       <form class="signup" id="signup" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
@@ -130,7 +130,7 @@ footer a{color:#E6DECF}
     <div>
       <p class="eyebrow">Who made this</p>
       <p>I'm Mwata. I have built a new life abroad twice: first in Bali, then in rural Portugal. This exercise comes from The Made Real Blueprint, the course I wrote from that experience. It works wherever you want to live, including right where you are now.</p>
-      <p><a href="/#options">See what you work through in Phase 1 →</a></p>
+      <p><a href="/#options">See what's included in Phase 1 →</a></p>
     </div>
   </div>
 </section>
@@ -149,7 +149,7 @@ footer a{color:#E6DECF}
   f.addEventListener('submit', function (e) {
     e.preventDefault();
     err.style.display = 'none';
-    if (!f.checkValidity()) { err.textContent = 'Please fill in a valid email address.'; err.style.display = 'block'; return; }
+    if (!f.checkValidity()) { err.textContent = 'Please enter a valid email address.'; err.style.display = 'block'; return; }
     var ticked = f.querySelector('input[name="fields[updates]"]').checked, url = ticked ? f.getAttribute('data-updates') : f.getAttribute('data-download');
     if (url.indexOf('FORM_ID') !== -1) { err.textContent = 'The sign-up is not connected yet.'; err.style.display = 'block'; return; }
     fetch(url, { method: 'POST', body: new FormData(f) })
