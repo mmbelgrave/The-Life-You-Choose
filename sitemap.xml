@@ -64,4 +64,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/other-destination/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/andere-bestemming/"/>
   </url>
+  <url><loc>https://maderealblueprint.com/recommended/</loc><lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/recommended/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/aanbevolen/"/>
+  </url>
+  <url><loc>https://maderealblueprint.com/aanbevolen/</loc><lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maderealblueprint.com/recommended/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://maderealblueprint.com/aanbevolen/"/>
+  </url>
 </urlset>
