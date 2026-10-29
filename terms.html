@@ -42,6 +42,19 @@ ul{padding-left:22px}li{margin-bottom:6px}
 footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:560px){ table,thead,tbody,tr,th,td{display:block} th{display:none} td:first-child{width:auto;border-bottom:none} td{border-top:none} tr{border-top:1px solid var(--rule);margin-bottom:10px} }
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
@@ -50,7 +63,7 @@ footer a{color:#E6DECF}
 <header>
   <div class="in">
     <a class="logo" href="index.html" aria-label="The Life You Choose, home">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
     <a href="index.html">← Back to the website</a>
@@ -60,7 +73,7 @@ footer a{color:#E6DECF}
 <main>
   <p class="eyebrow">Terms and conditions</p>
   <h1>The terms for buying the Blueprint</h1>
-  <p class="meta">Last updated: 24 October 2026</p>
+  <p class="meta">Last updated: 28 October 2026</p>
 
   <div class="short">
     <p><b>In short.</b></p>
@@ -80,7 +93,7 @@ footer a{color:#E6DECF}
       <tr><td>What you need</td><td>A phone, tablet or computer with an up-to-date web browser and an internet connection. An email address to sign in. A way to open PDF files.</td></tr>
     </tbody>
   </table>
-  <p>The full course (Steps 4 to 8) is not yet for sale. These terms will be updated when it is.</p>
+  <p>The complete eight-step course is not yet for sale. Steps 4 to 8 are still in development and are not included in your Phase 1 purchase. These terms will be updated when it is.</p>
 
   <h2>3. Prices and payment</h2>
   <p>The price for Phase 1 is €99, a one-time payment. The price includes VAT. There is no subscription and no extra fee for the app.</p>
@@ -88,10 +101,10 @@ footer a{color:#E6DECF}
 
   <h2>4. Delivery and access</h2>
   <p>Right after payment, you receive a link to download all Phase 1 workbooks as PDF files, and a separate email with how to access the app. That email is sent to the address you used to pay, and tells you to sign in at <a href="https://app.maderealblueprint.com/">app.maderealblueprint.com</a> with that email address and a one-time code that we email to you.</p>
-  <p>Access normally starts within a few minutes of payment. If something doesn't arrive, or you cannot sign in, use "Bought but no access?" in the app, or email us, and we will fix it.</p>
+  <p>Access normally starts within a few minutes of payment. If something doesn't arrive, or you cannot sign in, email <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a> and we will fix it. If you paid with one email address and signed in with another, the page "Paid with one email, signed in with another?" in the app is for that. It is a page inside the app, which you reach after you sign in.</p>
 
   <h2>5. How long you have access</h2>
-  <p>You have access to Phase 1 for at least 3 years from your purchase. If we ever close the app, we give you at least 12 months notice by email, and you can first download your answers and your personal Blueprint. After three years, we may close an account that has been inactive for 24 months, but only after an email to you and 30 days to reply.</p>
+  <p>You have access to Phase 1 for at least 3 years from your purchase. If we ever close the app, we give you at least 12 months' notice by email, and you can first download your answers and your personal Blueprint. After three years, we may close an account that has been inactive for 24 months, but only after an email to you and 30 days to reply.</p>
 
   <h2>6. Your account and your answers</h2>
   <p>You sign in with your email address and a code. Please keep your email account secure and do not let others use your account. Each buyer has their own account and answers.</p>
@@ -114,7 +127,7 @@ footer a{color:#E6DECF}
     <li>To keep the service fair for everyone, there is a daily limit on messages and drafts per person.</li>
     <li>Please do not write details about other people that they would not want shared. Please also avoid details about health, religion, sexual orientation or political opinions unless you want them in your answers. If you choose to write them, the box on your first screen is your explicit consent to the app storing them with your answers, and the second box before your first chat is your explicit consent to sending them to our AI provider.</li>
   </ul>
-  <p>I (Mwata) cannot read your answers: the app has no way to show them to me. What I do see is how far people have come and the feedback they send me, without answers in it. You can email me questions about the material. My answers are general guidance, not individual coaching.</p>
+  <p>The app has no screen that shows me what you wrote, and I do not read your answers. I can reach the database only to fix a technical problem or where the law requires it. What I do see is how far people have come and the feedback they send me, without answers in it. You can email me questions about the material. My answers are general guidance, not individual coaching.</p>
   <p>The AI partner is optional. Before you first use it, we ask for your explicit consent to send what you write to our AI provider, as explained in the <a href="privacy.html">privacy note</a>. You can withdraw it at any time in Settings, and the rest of the app keeps working.</p>
 
   <h2>8. Changes to the app and the material</h2>

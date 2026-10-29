@@ -42,6 +42,19 @@ ul{padding-left:22px}li{margin-bottom:6px}
 footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:560px){ table,thead,tbody,tr,th,td{display:block} th{display:none} td:first-child{width:auto;border-bottom:none} td{border-top:none} tr{border-top:1px solid var(--rule);margin-bottom:10px} }
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
@@ -50,7 +63,7 @@ footer a{color:#E6DECF}
 <header>
   <div class="in">
     <a class="logo" href="index.html" aria-label="The Life You Choose, home">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
     <a href="index.html">← Back to the website</a>
@@ -60,7 +73,7 @@ footer a{color:#E6DECF}
 <main>
   <p class="eyebrow">Privacy note</p>
   <h1>How I handle your personal data</h1>
-  <p class="meta">Last updated: 26 October 2026</p>
+  <p class="meta">Last updated: 28 October 2026</p>
 
   <div class="short">
     <p><b>In short.</b></p>
@@ -99,7 +112,7 @@ footer a{color:#E6DECF}
   <table>
     <thead><tr><th>Service</th><th>What it does with your data</th></tr></thead>
     <tbody>
-      <tr><td>Supabase</td><td>Stores your account, your answers, your chats, the AI notes and your pictures, in a database and storage in the European Union. Each person can only open their own data. The database is in the European Union, but Supabase is a United States company, and its support staff outside the EU could have access in limited cases. See <a href="https://supabase.com/privacy" rel="noopener">Supabase's privacy policy</a>.</td></tr>
+      <tr><td>Supabase</td><td>Stores your account, your answers, your chats, the AI notes and your pictures, in a database and storage in the European Union. Access to answers follows the individual and partner-sharing permissions described in section 5A. The database is in the European Union, but Supabase is a United States company, and its support staff outside the EU could have access in limited cases. See <a href="https://supabase.com/privacy" rel="noopener">Supabase's privacy policy</a>.</td></tr>
       <tr><td>Anthropic</td><td>Runs the AI model (Claude) behind your AI partner. It receives what you write in the chat and the answers the AI partner needs to reply, and returns the reply. Anthropic is in the United States. Under its commercial terms, Anthropic does not use this data to train its models. Anthropic deletes what the AI receives from its systems within 30 days, unless the law requires it, or a message is flagged for misuse. See <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic's privacy policy</a>.</td></tr>
       <tr><td>Vercel</td><td>Hosts this website and the app. It receives your IP address and keeps short technical logs. Vercel is a United States company with servers worldwide. See <a href="https://vercel.com/legal/privacy-policy" rel="noopener">Vercel's privacy policy</a>.</td></tr>
       <tr><td>Resend</td><td>Delivers the emails from the app: your sign-in code, the welcome email and the questions you send from Help. Resend is in the United States. I have accepted its data processing agreement, which includes the standard contractual clauses. See <a href="https://resend.com/legal/privacy-policy" rel="noopener">Resend's privacy policy</a>.</td></tr>
@@ -126,7 +139,7 @@ footer a{color:#E6DECF}
     <li>The AI partner is an artificial intelligence. It is not a person.</li>
     <li>It reads your answers, and keeps short notes about them to help you in later steps. You can read, correct, make it forget one topic, or delete all of it, under "What my AI partner knows".</li>
     <li>It does not make decisions about you that have legal or similar effects. It only suggests. You decide, and nothing is written into your answers without your click.</li>
-    <li>I cannot read your answers, chats or notes: the app has no way to show them to me. I see only how far people have come and the feedback they send me, without answers in it.</li>
+    <li>The app has no screen that shows me what you wrote, and I do not read your answers. I can reach the database only to fix a technical problem or where the law requires it. I see only how far people have come and the feedback they send me, without answers in it.</li>
     <li>You can switch off the AI partner in Settings. It then stops helping and stops making notes.</li>
     <li>If you share the course with a partner, the AI partner only reads the pages you answer together, and only keeps notes about them, if both of you have switched it on. A note made from a page you answered together is shown to both of you, and either of you can delete it, which deletes it for both.</li>
     <li>If either of you switches the AI partner off, it stops using the pages you answered together, and the notes made from them are deleted for both of you.</li>
@@ -143,7 +156,7 @@ footer a{color:#E6DECF}
     <thead><tr><th>Data</th><th>How long</th></tr></thead>
     <tbody>
       <tr><td>Your account, answers, pictures and AI notes</td><td>Until you delete them or ask me to. If you do not sign in for 24 months, I email you first, and send one short reminder seven days before the deletion. If there is no reply within 30 days I delete the account. If you bought the course, this applies only once three years have passed since your purchase.</td></tr>
-      <tr><td>Chats with your AI partner</td><td>12 months from the day you write them, then deleted automatically. If you switch the AI partner off and choose to keep them, they are deleted 12 months after you switched it off. The notes stay until you delete them.</td></tr>
+      <tr><td>Chats with your AI partner</td><td>Chats are deleted 12 months after you write them. While the AI partner is on, your notes stay until you delete them. If you switch the AI partner off and choose to keep your notes, they are deleted 12 months after you switch it off. If you or your partner switches it off, the notes drawn from pages you answered together are deleted for both of you. If you delete your account, everything is deleted.</td></tr>
       <tr><td>A partner's own answers after a seat ends</td><td>30 days after their access ends. An invitation that is never used is deleted after 30 days.</td></tr>
       <tr><td>Sign-in codes</td><td>They expire after one hour.</td></tr>
       <tr><td>Usage log (number and size of AI messages)</td><td>12 months.</td></tr>
@@ -173,7 +186,7 @@ footer a{color:#E6DECF}
   <p>Not happy with how I handle your data? Please tell me first. You also have the right to complain to a data protection authority. In Portugal, this is the Comissão Nacional de Proteção de Dados (CNPD, the national data protection commission), <a href="https://www.cnpd.pt" rel="noopener">www.cnpd.pt</a>. You can also complain in the EU country where you live.</p>
 
   <h2>8. Security</h2>
-  <p>Your data travels over encrypted connections. The database is in the European Union, and each person can only open their own data. Pictures are kept in a private folder. The sign-in uses a one-time code, not a password. I keep my own accounts protected by strong passwords and two-step login, and I share your data only with the services listed above. If something goes wrong with your data, I tell you and, where the law requires, the data protection authority.</p>
+  <p>Your data travels over encrypted connections. The database is in the European Union, and access to answers follows the individual and partner-sharing permissions described in section 5A. Pictures are kept in a private folder. The sign-in uses a one-time code, not a password. I keep my own accounts protected by strong passwords and two-step login, and I share your data only with the services listed above. If something goes wrong with your data, I tell you and, where the law requires, the data protection authority.</p>
 
   <h2>9. Changes to this note</h2>
   <p>If I change how I handle your data, I update this page and the date at the top. If a change affects you directly, I tell you by email.</p>
