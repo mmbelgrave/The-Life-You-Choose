@@ -45,7 +45,6 @@ h1{font-size:clamp(34px,5.4vw,48px);line-height:1.1;margin:0 0 16px;max-width:20
 h2{font-size:28px;line-height:1.2;margin:0 0 4px}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin:0 0 14px}
 .lead{font-size:20px;max-width:40em;margin:0 0 20px}
-.disclosure{max-width:760px;margin:0;padding:14px 18px;background:var(--sage);border-radius:4px;font-size:18px}
 .cards{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:20px;max-width:760px}
 .card{background:var(--white);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
 .card .top{background:var(--pine);color:var(--sand);padding:18px 24px 16px}
@@ -55,6 +54,8 @@ h2{font-size:28px;line-height:1.2;margin:0 0 4px}
 .card .top.has-logo h2{margin:0}
 .card .top.has-logo img{display:block;width:auto;height:96px;max-width:none;margin-left:-41px}
 .card .top.has-logo .dom{color:var(--stone);margin-top:6px}
+.card .callout{margin:4px 0 18px;padding:14px 16px;background:var(--sand);border:1px solid var(--rule);border-radius:4px;font-size:17px;line-height:1.6}
+.card .callout .code{display:inline-block;font-family:var(--sans);font-weight:600;letter-spacing:.04em;color:var(--pine);background:var(--sage);border-radius:3px;padding:0 7px;margin-right:-5px;user-select:all}
 .card .body{padding:20px 24px 24px}
 .card .body p{margin:0 0 14px}
 .card .go{display:inline-block;font-weight:600;text-decoration:none;color:var(--pine);border:2px solid var(--pine);border-radius:3px;padding:10px 20px;margin-top:4px}
@@ -102,7 +103,6 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
   <p class="eyebrow">Recommended · by Mwata</p>
   <h1>Useful when you are thinking about moving abroad: recommended sites</h1>
   <p class="lead">Moving abroad is more than one question. I help you first to get clear about the life you want and what you need to find out. For other parts there are good places made by others. I name them here.</p>
-  <p class="disclosure">I work together with Vertrekklaar. If you buy through a link on this page, one of us may receive a fee. You do not pay more. I only recommend what I find suitable myself.</p>
 
   <ul class="cards">
     <li class="card">
@@ -110,6 +110,7 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
       <div class="body">
         <p>Vertrekklaar makes a personal step-by-step plan for moving abroad from the Netherlands: what to arrange, in the right order and at the right time. Useful once you know which country you want.</p>
         <p>Not sure yet whether you want to go? Then start with an ordinary day in the life you want: <a href="/tuesday/">try the free exercise</a>.</p>
+        <p class="callout">Buying a plan from Vertrekklaar? Use <a href="https://vertrekklaar.nl/" target="_blank" rel="noopener">this link</a> and the code <span class="code">LIFEYOUCHOOSE</span>: [DISCOUNT]. I receive a fee through this link. You pay no more.</p>
         <a class="go" href="https://vertrekklaar.nl/" target="_blank" rel="noopener">Go to Vertrekklaar →</a>
       </div>
     </li>

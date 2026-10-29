@@ -45,7 +45,6 @@ h1{font-size:clamp(34px,5.4vw,48px);line-height:1.1;margin:0 0 16px;max-width:20
 h2{font-size:28px;line-height:1.2;margin:0 0 4px}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre);margin:0 0 14px}
 .lead{font-size:20px;max-width:40em;margin:0 0 20px}
-.disclosure{max-width:760px;margin:0;padding:14px 18px;background:var(--sage);border-radius:4px;font-size:18px}
 .cards{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:20px;max-width:760px}
 .card{background:var(--white);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
 .card .top{background:var(--pine);color:var(--sand);padding:18px 24px 16px}
@@ -55,6 +54,8 @@ h2{font-size:28px;line-height:1.2;margin:0 0 4px}
 .card .top.has-logo h2{margin:0}
 .card .top.has-logo img{display:block;width:auto;height:96px;max-width:none;margin-left:-41px}
 .card .top.has-logo .dom{color:var(--stone);margin-top:6px}
+.card .callout{margin:4px 0 18px;padding:14px 16px;background:var(--sand);border:1px solid var(--rule);border-radius:4px;font-size:17px;line-height:1.6}
+.card .callout .code{display:inline-block;font-family:var(--sans);font-weight:600;letter-spacing:.04em;color:var(--pine);background:var(--sage);border-radius:3px;padding:0 7px;margin-right:-5px;user-select:all}
 .card .body{padding:20px 24px 24px}
 .card .body p{margin:0 0 14px}
 .card .go{display:inline-block;font-weight:600;text-decoration:none;color:var(--pine);border:2px solid var(--pine);border-radius:3px;padding:10px 20px;margin-top:4px}
@@ -102,7 +103,6 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
   <p class="eyebrow">Aanbevolen · door Mwata</p>
   <h1>Handig bij emigreren: aanbevolen sites</h1>
   <p class="lead">Emigreren is meer dan één vraag. Ik help je eerst helder te krijgen welk leven je wilt en wat je daarvoor moet uitzoeken. Voor andere onderdelen zijn er goede plekken van anderen. Deze noem ik hier.</p>
-  <p class="disclosure">Ik werk samen met Vertrekklaar. Koop je via een link op deze pagina, dan kan een van ons een vergoeding ontvangen. Jij betaalt niet meer. Ik raad alleen aan wat ik zelf passend vind.</p>
 
   <ul class="cards">
     <li class="card">
@@ -110,6 +110,7 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
       <div class="body">
         <p>Vertrekklaar maakt een persoonlijk stappenplan voor je emigratie vanuit Nederland: wat je moet regelen, in de juiste volgorde en op het juiste moment. Handig als je al weet naar welk land je wilt.</p>
         <p>Weet je nog niet óf je wilt gaan? Begin dan met een gewone dag in het leven dat je wilt: <a href="/dinsdag/">probeer de gratis oefening</a>.</p>
+        <p class="callout">Koop je een stappenplan bij Vertrekklaar? Gebruik dan <a href="https://vertrekklaar.nl/" target="_blank" rel="noopener">deze link</a> en de code <span class="code">LIFEYOUCHOOSE</span>: [KORTING]. Via deze link ontvang ik een vergoeding. Jij betaalt niet meer.</p>
         <a class="go" href="https://vertrekklaar.nl/" target="_blank" rel="noopener">Naar Vertrekklaar →</a>
       </div>
     </li>
