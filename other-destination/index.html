@@ -67,7 +67,8 @@ footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:560px){ table,thead,tbody,tr,th,td{display:block} th{display:none} td:first-child{width:auto;border-bottom:none} td{border-top:none} tr{border-top:1px solid var(--rule);margin-bottom:10px} .btn{display:block;text-align:center} }
 @media (max-width:380px){header .in{gap:8px}.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}header .hl{font-size:13px}.hs{gap:10px!important}}
-/*s7:footer*/footer .in{max-width:1080px}@media (min-width:761px) and (max-width:1100px){footer .in{font-size:13px}}/*/s7:footer*/
+
+
 /*s8:hdr*/
 header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
 header .logo svg{width:40px;height:30px;flex:none}
@@ -81,6 +82,34 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
 @media (max-width:440px){header .hl{display:none}}
 @media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
 /*/s8:hdr*/
+/*s11:frame*/
+:root{--fr-g:clamp(20px,6vw,88px);--fr-c:1180px;--serif:'Newsreader', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif}
+header{border-bottom:1px solid var(--rule)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+header .logo{display:flex;align-items:center;text-decoration:none;color:var(--pine);font-family:var(--serif);font-weight:500}
+header .hs a{text-decoration:none}
+header .hs a:hover{text-decoration:underline}
+header .in,footer .wrap{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin:0 auto;padding:0 var(--fr-g)}
+main.reading,main.frame{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin-left:auto;margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+main.reading>*{max-width:720px}
+main.reading{font-size:18px;line-height:1.7}
+main.reading h1{font-size:clamp(36px,6vw,52px);line-height:1.1;margin:0 0 14px}
+main .in{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin-left:max(0px, calc((100% - (var(--fr-c) + 2*var(--fr-g)))/2));margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+main>.in:only-child{padding-top:40px;padding-bottom:40px}
+main .about .in,main .sec .in{max-width:calc(780px + 2*var(--fr-g))}
+main>.wrap{max-width:calc(720px + 2*var(--fr-g));margin-left:max(0px, calc((100% - (var(--fr-c) + 2*var(--fr-g)))/2));margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+footer .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sand);font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
+footer .logo svg{width:40px;height:30px;flex:none}
+footer p{max-width:60ch;margin:8px 0 0}
+footer a{color:#E6DECF}
+footer .cols{width:100%}
+footer .fine{font-size:12.5px;line-height:1.55;color:#A49D91;max-width:none;margin:0 0 6px}
+footer .links{margin:10px 0 0;max-width:none}
+@media (min-width:761px) and (max-width:1100px){footer .cols .links{font-size:13px}}
+@media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
+/*/s11:frame*/
 </style>
 </head>
 <body>
@@ -95,7 +124,94 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
   </div>
 </header>
 
-<main>
+<main class="reading">
+<p class="eyebrow">Guide · by Mwata</p>
+  <h1>Moving abroad or not? Start with <em>an ordinary day</em>.</h1>
+  <p class="meta">Updated 21 October 2026 · about 6 minutes to read</p>
+
+  <p class="lead">Thinking about moving abroad can bring up questions about work, money, family and the life you want. But "move or not" is often too big a question to answer in one go. It helps to ask a smaller one first: what life do I actually want, and what in my ordinary week does not fit it?</p>
+  <p>I have built a new life abroad twice, first in Bali and then in Portugal. These questions give you a way to think through the decision, whether you eventually move or stay.</p>
+
+  <div class="short">
+    <p><b>In short</b></p>
+    <ul>
+      <li>Do not start with the country. Start with your ordinary week.</li>
+      <li>Write down one ordinary day in the life you want, detailed enough to test.</li>
+      <li>Consider what would make that day possible: changes where you live, a move elsewhere or more time to investigate.</li>
+      <li>Test something small before you decide anything big.</li>
+    </ul>
+  </div>
+
+  <h2>Away from something, or towards something?</h2>
+  <p>A lot of doubt begins with "I want out of here". That feeling is real. But it does not yet say where you want to go, or whether a move would fix it.</p>
+  <p>Sometimes the problem is your working week, evenings that fill up, too little time outside or a decision you have been putting off for a long time. A new country does not remove those things by itself. Sometimes a move is the answer: when you miss what is only possible somewhere else, such as another climate, more space or another language around you. It is worth making that distinction before you sell, cancel or arrange anything.</p>
+
+  <h2>Five questions to start with</h2>
+  <ol>
+    <li><b>What in my ordinary week do I no longer want?</b> Think of hours, evenings, people and places, not of a country.</li>
+    <li><b>What do I definitely want to keep?</b> People, work, habits, a place you know. These are the parts of your life you want to preserve.</li>
+    <li><b>What would I change about my weekly routine if I stayed where I live?</b> Fewer working days, a fixed day off, a different way of working, more time outside.</li>
+    <li><b>What is only possible somewhere else?</b> This helps you identify what a move could offer that staying would not.</li>
+    <li><b>What small change could I try before making a bigger decision?</b> A trial period, an exploratory visit, a conversation with someone who already lives it.</li>
+  </ol>
+  <p>Write your answers down. Written answers can be read back and compared later. In your head they change a little every time.</p>
+
+  <h2>Write down one ordinary day</h2>
+  <p>A holiday tells you little, because most days are ordinary days. So choose an ordinary Tuesday in the life you want. Start when you get up and walk through the day until the evening. Include the small things: when you work, who is around you, where you are outside, what you do not enjoy but comes with it.</p>
+  <p>The more concrete the day, the better you can test it. "A house with a view" is too vague to plan. "Coffee on the terrace before anyone else is awake" is something you can try out.</p>
+  <div class="ex"><b>Made-up example.</b> I work four days. On Friday I am outside, even when it rains. On two evenings a week, I stop work at six and keep the rest of the evening free. My sister lives ten minutes away and comes for dinner on Thursday.</div>
+
+  <div class="cta">
+    <h2>The free exercise: An ordinary Tuesday</h2>
+    <p>A three-page exercise. Do it in your browser (your answers stay on your own device) or get it as a PDF. You can use it wherever you want to live, including where you are now.</p>
+    <a class="btn" href="/tuesday/exercise/">Do the exercise in your browser</a> <a href="/tuesday/">Or get the PDF</a>
+  </div>
+
+  <h2>What your day tells you</h2>
+  <p>Read your day back and see what it needs. Usually it comes down to one of these three:</p>
+  <table>
+    <thead><tr><th>What you notice</th><th>What that could mean</th></tr></thead>
+    <tbody>
+      <tr><td>You mainly want more time, less stress or a different daily routine</td><td>A change where you are now may be enough: different working days, free evenings, more time outside. Test that first, because it is smaller and cheaper.</td></tr>
+      <tr><td>You miss things that are not possible here</td><td>Then looking further makes sense. Test a place against your ordinary day, not against a list of advantages.</td></tr>
+      <tr><td>You do not know yet</td><td>Waiting is also a decision. Set a date to look again, so that it does not turn into drifting.</td></tr>
+    </tbody>
+  </table>
+  <div class="ex"><b>Made-up example of staying.</b> Daan writes down his ordinary Tuesday and sees that what he wants is more free time in the mornings and evenings, rather than life in another country. He asks his employer for a four-week trial with one day off a week. At the end he looks again: does the week feel different, and what does it cost him? That way he makes a small change where he is, and keeps moving as a question for later.</div>
+  <p>Staying, moving and waiting can all be reasonable choices. What matters is understanding what each option would mean for you.</p>
+
+  <h2>Test small, and go as a tester, not as a tourist</h2>
+  <p>Before you decide anything big, you can run a small experiment. Where you are now: try a different working week for four weeks, or two evenings a week without work. Somewhere else: do not go on holiday, go as a tester. Do your usual shopping, check how far away a GP practice is and how appointments work, and spend time there in bad weather too.</p>
+  <p>I travelled through Portugal for two months in a camper and looked at 25 plots of land. I felt connected to one region and not at all to another. I could only find that out on the spot.</p>
+
+  <h2>When you need a professional</h2>
+  <p>This is not legal, tax or financial advice. Rules on tax, pensions, health insurance and residence differ per country and change. If you do move, check the current rules with the official source. For Dutch citizens a good start is the <a href="https://www.nederlandwereldwijd.nl/checklist-verhuizen-buitenland-emigreren" target="_blank" rel="noopener">NederlandWereldwijd checklist</a> (in Dutch). For tax, pensions and residence law, ask a qualified adviser.</p>
+
+  <h2>Want to change your week as well?</h2>
+  <p>Sometimes what you miss is mainly control over your time. If so, read <a href="/guides/more-time-for-yourself/">More time for yourself? Start with who decides your week</a>.</p>
+
+  <h2>If you want to go further with this</h2>
+  <p>Phase 1 of The Made Real Blueprint (Steps 1 to 3) helps you go from these questions to a written direction, what you still need to investigate and a decision with conditions and a first step. That can also mean staying where you are and changing something there. It is self-study with workbooks and an app. The workbooks and the app are in English.</p>
+  <p><a href="/#options">See Phase 1</a> · <a href="/tuesday/">Try the free exercise first</a></p>
+
+  <p class="note">By Mwata. I have built a new life abroad twice, first in Bali and then in Portugal. This guide draws on my own experience and the exercises in the Blueprint. Questions or comments? <a href="/#contact">Email me or send me a message on WhatsApp</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="/"><svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span>The Life You <em>Choose</em></span></a>
+      <p>Choose it. Build it. Live it.</p>
+    </div>
+    <div class="cols">
+      <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result. Always check current rules with the official source or a qualified professional.</p>
+      <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
+      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">My story</a> · <a href="/tuesday/">Free exercise</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html><main>
   <p class="eyebrow">Note · by Mwata</p>
   <h1>Thinking of a country other than <em>Portugal</em>?</h1>
   <p class="meta">Updated 27 October 2026</p>
@@ -115,8 +231,17 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
 </main>
 
 <footer>
-  <div class="in" style="margin-bottom:10px">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</div>
-  <div class="in">© 2026 The Life You Choose · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a> · <a href="/">Back to the website</a></div>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="/"><svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span>The Life You <em>Choose</em></span></a>
+      <p>Choose it. Build it. Live it.</p>
+    </div>
+    <div class="cols">
+      <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result. Always check current rules with the official source or a qualified professional.</p>
+      <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
+      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">My story</a> · <a href="/tuesday/">Free exercise</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
+    </div>
+  </div>
 </footer>
 </body>
 </html>
