@@ -97,24 +97,37 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   .sec{border:none;padding:0;margin:14px 0;break-inside:avoid}
   textarea{border:1px solid #bbb;min-height:0;overflow:visible;resize:none}
 }
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
 <header>
   <div class="in">
     <a class="logo" href="/" aria-label="The Life You Choose, home">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <a class="lang" href="/dinsdag/oefening/" hreflang="nl" lang="nl">Nederlands</a>
+    <a class="lang lang-sw" href="/dinsdag/oefening/" hreflang="nl" lang="nl" title="Nederlands"><span class="lg-d">Nederlands</span><span class="lg-m">NL</span></a>
   </div>
 </header>
 <main>
 <div class="wrap">
   <p class="eyebrow">Free exercise · from Step 1 of The Made Real Blueprint</p>
   <h1>An ordinary <em>Tuesday</em>, in your browser.</h1>
-  <p class="lead">Not a holiday. A normal Tuesday, because most days are normal days. Find a quiet moment and write below.</p>
-  <p class="small noprint"><b>Your answers stay on this device.</b> They are saved only in your own browser and are not sent anywhere. If you clear your browser data or switch device, they are gone, so save or print your answers when you finish. Prefer paper? <a href="/tuesday/">Get the PDF by email</a>.</p>
+  <p class="lead">Imagine an ordinary Tuesday in the life you want, including work, chores and downtime. Find a quiet moment and write below.</p>
+  <p class="small noprint"><b>Your answers stay on this device.</b> They are saved only in your own browser and are not sent anywhere. Clearing this browser's saved data deletes your answers. They will not appear on another device or in another browser, so download or print a copy when you finish. Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>. Prefer paper? <a href="/tuesday/">Get the PDF by email</a>.</p>
 
   <section class="sec">
     <p class="tag">Warm-up</p>
@@ -148,13 +161,13 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 
   <section class="sec">
     <p class="tag">Go deeper (optional)</p>
-    <h2>Sharpen your day</h2>
-    <p>Read your day again and underline the concrete details: coffee, terrace, olive trees, clients, sister. If there are only a few, add enough detail for someone else to picture the day as clearly as you do.</p>
+    <h2>Make your description more specific</h2>
+    <p>Read your description again and look for concrete details: coffee, terrace, olive trees, clients, sister. If there are only a few, add enough detail for someone else to picture the day as clearly as you do.</p>
     <label for="detail">Details I add</label><textarea id="detail" data-f rows="5"></textarea>
-    <p>Then add the less enjoyable parts: housework, paid work, a tired day, a rainy winter week, time alone. Does the picture still feel good? Could you meet the same needs another way, including closer to home?</p>
+    <p>Then add the less enjoyable parts: housework, paid work, a day when you feel tired, a rainy winter week, time alone. Does the picture still feel good? Could you meet the same needs another way, including closer to home?</p>
     <label for="hard">The less enjoyable parts, and other ways to meet the same needs</label><textarea id="hard" data-f rows="6"></textarea>
     <p><b>Make it visible.</b> Collect five to eight photos of ordinary scenes that fit your day: a kitchen table, a path, a workshop, a market. Use your own photos where you can. Under each one, write the need it represents. These pictures will help you compare real places with the daily life you want.</p>
-    <div class="watch"><b>Watch out:</b> some of what comes up will not be yours. It will be a life you have seen online. That is normal. For now, write everything down. You sort it later.</div>
+    <div class="watch">Some ideas may come from lives you have seen online. Write them down too. Later, you can ask which parts actually matter to you.</div>
   </section>
 
   <div class="tools noprint" role="group" aria-label="Save">
@@ -167,8 +180,8 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 
   <section class="next">
     <h2>What comes next</h2>
-    <p>This exercise is one part of Step 1, Picture. In the full step, you also look honestly at today, take a first money check and compare your options, until you have a working direction you can test.</p>
-    <p><a href="/#options">See what you work through in Phase 1</a> (workbooks and app in English). Or read a guide first: <a href="/guides/moving-abroad-or-not/">Moving abroad or not?</a> and <a href="/guides/more-time-for-yourself/">More time for yourself?</a></p>
+    <p>This exercise is one part of Step 1, Picture. In the full step, you look at your life as it is now, make an initial budget and compare your options. You finish with a direction to explore and test.</p>
+    <p><a href="/#options">See what's included in Phase 1</a> (workbooks and app in English). Or read a guide first: <a href="/guides/moving-abroad-or-not/">Moving abroad or not?</a> and <a href="/guides/more-time-for-yourself/">More time for yourself?</a></p>
     <p style="margin:0">Questions, or want to tell me about your Tuesday? Send me a message on <a href="https://wa.me/31657930469">WhatsApp</a> or email <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
   </section>
 </div>
@@ -190,7 +203,7 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   document.getElementById('b-print').addEventListener('click',function(){fields.forEach(grow);ev('exercise-print-en','Browser exercise printed');window.print()});
   document.getElementById('b-dl').addEventListener('click',function(){ev('exercise-download-en','Browser exercise downloaded');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text()],{type:'text/plain;charset=utf-8'}));a.download='an-ordinary-tuesday.txt';document.body.appendChild(a);a.click();a.remove()});
   document.getElementById('b-copy').addEventListener('click',function(){var done=function(){saved.textContent='Copied.'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text()).then(done,function(){saved.textContent='Copying does not work. Download the text file instead.'})}else{saved.textContent='Copying does not work. Download the text file instead.'}});
-  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Clear everything? This cannot be undone.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Everything cleared.'});
+  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Delete all your answers in this browser? This cannot be undone.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Everything cleared.'});
 })();
 </script>
 </body>

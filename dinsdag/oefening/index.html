@@ -98,24 +98,37 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   .sec{border:none;padding:0;margin:14px 0;break-inside:avoid}
   textarea{border:1px solid #bbb;min-height:0;overflow:visible;resize:none}
 }
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
 <header>
   <div class="in">
     <a class="logo" href="/nl/" aria-label="The Life You Choose, naar de startpagina">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <a class="lang" href="/tuesday/exercise/" hreflang="en" lang="en">English</a>
+    <a class="lang lang-sw" href="/tuesday/exercise/" hreflang="en" lang="en" title="English"><span class="lg-d">English</span><span class="lg-m">EN</span></a>
   </div>
 </header>
 <main>
 <div class="wrap">
   <p class="eyebrow">Gratis oefening · uit Stap 1 van The Made Real Blueprint</p>
   <h1>Een gewone <em>dinsdag</em>, in je browser.</h1>
-  <p class="lead">Geen vakantie. Een gewone dinsdag, want de meeste dagen zijn gewone dagen. Zoek een rustig moment en schrijf hieronder.</p>
-  <p class="small noprint"><b>Je antwoorden blijven op dit apparaat.</b> Ze worden alleen in je eigen browser bewaard en nergens naartoe gestuurd. Ruim je browsergegevens op of gebruik je een ander apparaat, dan zijn ze weg: bewaar of print je antwoorden dus als je klaar bent. Liever op papier? <a href="/dinsdag/">Ontvang de pdf per e-mail</a>.</p>
+  <p class="lead">Stel je een gewone dinsdag voor in het leven dat je wilt, met werk, huishoudelijke taken en vrije tijd. Zoek een rustig moment en schrijf hieronder.</p>
+  <p class="small noprint"><b>Je antwoorden blijven op dit apparaat.</b> Ze worden alleen in je eigen browser bewaard en nergens naartoe gestuurd. Als je de opgeslagen gegevens van deze browser wist, verdwijnen je antwoorden. Op een ander apparaat of in een andere browser zijn ze niet beschikbaar. Download of print daarom een kopie als je klaar bent. Doe de oefening hier zonder account. Wil je je antwoorden in een account bewaren? Probeer dan <a href="https://app.maderealblueprint.com/free?from=website">de gratis oefening in de app (Engels)</a>. Liever op papier? <a href="/dinsdag/">Ontvang de pdf per e-mail</a>.</p>
 
   <section class="sec">
     <p class="tag">Opwarmer</p>
@@ -136,7 +149,7 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
       <tr><td>"Zinvol werk"</td><td>"Twee ochtenden per week nieuwe ondernemers helpen met problemen die ik begrijp"</td></tr>
       <tr><td>"Dicht bij familie"</td><td>"Mijn zus kan komen eten zonder een vlucht te boeken"</td></tr>
     </table>
-    <p>Met de details in de rechterkolom kun je iets controleren bij een echt huis, echt werk of een echte plaats.</p>
+    <p>Met de details in de rechterkolom kun je beoordelen of een woning, baan of woonplaats bij je wensen past.</p>
     <h3 style="font-family:var(--serif);font-weight:500;font-size:21px;color:var(--pine);margin:22px 0 6px">Nu jij</h3>
     <p>Beschrijf deze dag van de ochtend tot de avond. Neem ook een gewoon detail op dat je niet in een vakantiefolder zou zetten: huishouden, regen, of een uur waarin er weinig gebeurt. Deze vragen helpen je:</p>
     <ul class="prompts"><li>Waar word je wakker? Wat zie je uit je raam?</li><li>Wat doe je 's ochtends? En 's middags?</li><li>Wat is je werk, of hoe besteed je je tijd?</li><li>Wie is er bij je? Hoe eindigt de dag?</li></ul>
@@ -149,13 +162,13 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 
   <section class="sec">
     <p class="tag">Verder verdiepen (optioneel)</p>
-    <h2>Maak je dag scherper</h2>
-    <p>Lees je dag nog eens en onderstreep de concrete details: koffie, terras, olijfbomen, klanten, zus. Zijn het er maar een paar? Voeg dan zoveel detail toe dat iemand anders de dag net zo helder voor zich ziet als jij.</p>
+    <h2>Maak je beschrijving concreter</h2>
+    <p>Lees je beschrijving nog eens en zoek de concrete details: koffie, terras, olijfbomen, klanten, zus. Zijn het er maar een paar? Voeg dan zoveel detail toe dat iemand anders de dag net zo helder voor zich ziet als jij.</p>
     <label for="detail">Details die ik toevoeg</label><textarea id="detail" data-f rows="5" placeholder=""></textarea>
     <p>Voeg daarna de minder leuke delen toe: huishouden, betaald werk, een vermoeiende dag, een regenachtige winterweek, tijd alleen. Voelt het beeld nog steeds goed? Kun je dezelfde behoeften ook op een andere manier vervullen, misschien dichter bij huis?</p>
     <label for="hard">De minder leuke delen, en andere manieren om dezelfde behoeften te vervullen</label><textarea id="hard" data-f rows="6" placeholder=""></textarea>
-    <p><b>Maak het zichtbaar.</b> Verzamel vijf tot acht foto's van gewone dingen die bij je dag passen: een keukentafel, een pad, een werkplaats, een markt. Gebruik waar het kan je eigen foto's. Schrijf onder elke foto welke behoefte erbij hoort. Met deze foto's kun je straks echt controleren of het beeld klopt.</p>
-    <div class="watch"><b>Let op:</b> niet alles wat naar boven komt, is van jou. Soms is het een leven dat je online hebt gezien. Dat is normaal. Schrijf voor nu alles op. Sorteren doe je later.</div>
+    <p><b>Maak het zichtbaar.</b> Verzamel vijf tot acht foto's van gewone dingen die bij je dag passen: een keukentafel, een pad, een werkplaats, een markt. Gebruik waar het kan je eigen foto's. Schrijf onder elke foto welke behoefte erbij hoort. Met deze foto's kun je straks echte plekken vergelijken met het dagelijks leven dat je wilt.</p>
+    <div class="watch">Sommige ideeën komen misschien uit een leven dat je online hebt gezien. Schrijf ze gerust op. Later kun je onderzoeken welke onderdelen echt bij jou passen.</div>
   </section>
 
   <div class="tools noprint" role="group" aria-label="Bewaren">
@@ -168,8 +181,8 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 
   <section class="next">
     <h2>Hoe nu verder</h2>
-    <p>Deze oefening is één onderdeel van Stap 1, Picture. In de volledige stap kijk je ook eerlijk naar je leven van nu, doe je een eerste geldcheck en vergelijk je je opties, tot je een richting hebt die je kunt testen.</p>
-    <p><a href="/nl/#options">Bekijk wat je met Fase 1 uitwerkt</a> (werkboeken en app in het Engels). Of lees eerst een gids: <a href="/wel-of-niet-emigreren/">Wel of niet emigreren?</a> en <a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf?</a></p>
+    <p>Deze oefening is één onderdeel van Stap 1, Picture. In de volledige stap kijk je naar je leven van nu, maak je een eerste budget en vergelijk je je mogelijkheden. Zo kies je een richting die je verder kunt onderzoeken en testen.</p>
+    <p><a href="/nl/#options">Bekijk wat Fase 1 inhoudt</a> (werkboeken en app in het Engels). Of lees eerst een gids: <a href="/wel-of-niet-emigreren/">Wel of niet emigreren?</a> en <a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf?</a></p>
     <p style="margin:0">Vragen, of wil je me over je dinsdag vertellen? Stuur me een bericht via <a href="https://wa.me/31657930469">WhatsApp</a> of mail naar <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
   </section>
 </div>
@@ -191,7 +204,7 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   document.getElementById('b-print').addEventListener('click',function(){fields.forEach(grow);ev('oefening-print-nl','Browser exercise printed');window.print()});
   document.getElementById('b-dl').addEventListener('click',function(){ev('oefening-download-nl','Browser exercise downloaded');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text()],{type:'text/plain;charset=utf-8'}));a.download='een-gewone-dinsdag.txt';document.body.appendChild(a);a.click();a.remove()});
   document.getElementById('b-copy').addEventListener('click',function(){var done=function(){saved.textContent='Gekopieerd.'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text()).then(done,function(){saved.textContent='Kopiëren lukt niet. Download het tekstbestand.'})}else{saved.textContent='Kopiëren lukt niet. Download het tekstbestand.'}});
-  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Alles wissen? Dit kun je niet ongedaan maken.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Alles gewist.'});
+  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Al je antwoorden in deze browser wissen? Dit kun je niet ongedaan maken.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Alles gewist.'});
 })();
 </script>
 </body>
