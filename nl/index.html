@@ -30,7 +30,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://maderealblueprint.com/#website","url":"https://maderealblueprint.com/","name":"The Made Real Blueprint","alternateName":"The Life You Choose","inLanguage":"nl","publisher":{"@id":"https://maderealblueprint.com/#org"}},{"@type":"Organization","@id":"https://maderealblueprint.com/#org","name":"The Life You Choose","legalName":"Belgrave Management, Unipessoal Lda","url":"https://maderealblueprint.com/","logo":{"@type":"ImageObject","url":"https://maderealblueprint.com/images/logo-512.png","width":512,"height":512},"email":"info@maderealblueprint.com","sameAs":["https://www.instagram.com/the.life_you.choose/","https://www.facebook.com/profile.php?id=61595278371843"],"founder":{"@id":"https://maderealblueprint.com/#mwata"}},{"@type":"Person","@id":"https://maderealblueprint.com/#mwata","name":"Mwata Belgrave","jobTitle":"Founder","image":"https://maderealblueprint.com/images/mwata.jpg","worksFor":{"@id":"https://maderealblueprint.com/#org"}},{"@type":"WebPage","@id":"https://maderealblueprint.com/nl/#webpage","url":"https://maderealblueprint.com/nl/","name":"Werk uit welk leven je wilt, en wat daarvoor moet veranderen · The Made Real Blueprint","description":"Twijfel je of je wilt emigreren, of wil je eerst iets veranderen waar je nu bent? Begin met een gratis oefening. Fase 1 van The Made Real Blueprint, door Mwata.","inLanguage":"nl","isPartOf":{"@id":"https://maderealblueprint.com/#website"},"about":{"@id":"https://maderealblueprint.com/#org"},"author":{"@id":"https://maderealblueprint.com/#mwata"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://maderealblueprint.com/images/og-image-nl-v1.jpg","width":1200,"height":630}},{"@type":"Product","@id":"https://maderealblueprint.com/#phase1","name":"The Made Real Blueprint, Fase 1","description":"Stap 1 tot 3 van The Made Real Blueprint: pdf-workbooks en een app voor zelfstandig nadenken en plannen, in het Engels. Werk uit welk leven je wilt, wat je verandert, wat je controleert en wat je daarna doet.","image":"https://maderealblueprint.com/images/og-image-nl-v1.jpg","url":"https://maderealblueprint.com/nl/","brand":{"@id":"https://maderealblueprint.com/#org"},"offers":{"@type":"Offer","url":"https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8","price":"99.00","priceCurrency":"EUR","availability":"https://schema.org/InStock","seller":{"@id":"https://maderealblueprint.com/#org"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"99.00","priceCurrency":"EUR","valueAddedTaxIncluded":true}}}]}</script>
 <link rel="icon" href="/images/mark.svg" type="image/svg+xml">
 <meta name="theme-color" content="#2C3B2F">
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 899px)" imagesrcset="/images/hero-everyday-m-480.avif 480w, /images/hero-everyday-m-720.avif 720w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 899px)" imagesrcset="/images/hero-everyday-m2-480.avif 480w, /images/hero-everyday-m2-720.avif 720w" imagesizes="100vw">
 <link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(min-width: 900px)" imagesrcset="/images/hero-everyday-600.avif 600w, /images/hero-everyday-900.avif 900w" imagesizes="54vw">
 <link rel="preload" href="/fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/hankengrotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -750,6 +750,16 @@ section.contact{padding:var(--y-major) 0}
 @media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
 /* reading width and supporting text */
 .legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
+.legend.legend-wide{max-width:none}
+/* 29 Oct 2026 (owner): comfortable space between the price line and the first bullet of the Phase 1 box */
+.o-buy .price+ul{margin-top:20px}
+/* 29 Oct 2026 (perf): sections below the hero are not laid out until they come near the viewport (LCP and style/layout cost on phones) */
+main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
+html.nocv main>section,html.nocv footer{content-visibility:visible}
+#familiar{contain-intrinsic-size:auto 1162px}#free{contain-intrinsic-size:auto 1383px}#free-new{contain-intrinsic-size:auto 218px}#inside{contain-intrinsic-size:auto 1471px}#method{contain-intrinsic-size:auto 1480px}.intro{contain-intrinsic-size:auto 777px}#options{contain-intrinsic-size:auto 3018px}#faq{contain-intrinsic-size:auto 991px}#contact{contain-intrinsic-size:auto 1672px}footer{contain-intrinsic-size:auto 430px}
+@media (min-width:900px){#familiar{contain-intrinsic-size:auto 723px}#free{contain-intrinsic-size:auto 1056px}#free-new{contain-intrinsic-size:auto 146px}#inside{contain-intrinsic-size:auto 1232px}#method{contain-intrinsic-size:auto 925px}.intro{contain-intrinsic-size:auto 513px}#options{contain-intrinsic-size:auto 1638px}#faq{contain-intrinsic-size:auto 944px}#contact{contain-intrinsic-size:auto 976px}footer{contain-intrinsic-size:auto 252px}}
+html[lang=nl] #familiar{contain-intrinsic-size:auto 1323px}html[lang=nl] #free{contain-intrinsic-size:auto 1513px}html[lang=nl] #free-new{contain-intrinsic-size:auto 218px}html[lang=nl] #inside{contain-intrinsic-size:auto 1622px}html[lang=nl] #method{contain-intrinsic-size:auto 1454px}html[lang=nl] .intro{contain-intrinsic-size:auto 835px}html[lang=nl] #options{contain-intrinsic-size:auto 3397px}html[lang=nl] #faq{contain-intrinsic-size:auto 991px}html[lang=nl] #contact{contain-intrinsic-size:auto 1761px}html[lang=nl] footer{contain-intrinsic-size:auto 452px}
+@media (min-width:900px){html[lang=nl] #familiar{contain-intrinsic-size:auto 758px}html[lang=nl] #free{contain-intrinsic-size:auto 1128px}html[lang=nl] #free-new{contain-intrinsic-size:auto 146px}html[lang=nl] #inside{contain-intrinsic-size:auto 1232px}html[lang=nl] #method{contain-intrinsic-size:auto 961px}html[lang=nl] .intro{contain-intrinsic-size:auto 535px}html[lang=nl] #options{contain-intrinsic-size:auto 1766px}html[lang=nl] #faq{contain-intrinsic-size:auto 944px}html[lang=nl] #contact{contain-intrinsic-size:auto 1027px}html[lang=nl] footer{contain-intrinsic-size:auto 252px}}
 .not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
 .hero .founding-line{font-size:16px}
 .offer .after{font-size:16px}
@@ -759,6 +769,7 @@ section.contact{padding:var(--y-major) 0}
 .strip span{font-size:14px}
 .fx-small{font-size:15px}
 /*/s8:css*/
+/*pn:css*/.pn-link{color:var(--pine);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}.pn-link:hover,.pn-link:focus-visible{text-decoration-thickness:2.5px}/*/pn:css*/
 </style>
 </head>
 <body>
@@ -789,7 +800,7 @@ section.contact{padding:var(--y-major) 0}
 <!-- 1 HERO -->
 <section class="hero">
   <div class="hero-img">
-    <picture><source media="(max-width: 899px)" type="image/avif" srcset="/images/hero-everyday-m-480.avif 480w, /images/hero-everyday-m-720.avif 720w" sizes="100vw"><source media="(max-width: 899px)" type="image/webp" srcset="/images/hero-everyday-m-480.webp 480w, /images/hero-everyday-m-720.webp 720w" sizes="100vw"><source type="image/avif" srcset="/images/hero-everyday-600.avif 600w, /images/hero-everyday-900.avif 900w" sizes="(max-width: 899px) 100vw, 54vw"><source type="image/webp" srcset="/images/hero-everyday-600.webp 600w, /images/hero-everyday-900.webp 900w" sizes="(max-width: 899px) 100vw, 54vw"><img src="/images/hero-everyday-900.jpg" alt="Mwata zit op een granieten rotsblok, van achteren gezien, en kijkt uit over groene heuvels onder een blauwe lucht." width="900" height="1600" fetchpriority="high"></picture>
+    <picture><source media="(max-width: 899px)" type="image/avif" srcset="/images/hero-everyday-m2-480.avif 480w, /images/hero-everyday-m2-720.avif 720w" sizes="100vw"><source media="(max-width: 899px)" type="image/webp" srcset="/images/hero-everyday-m-480.webp 480w, /images/hero-everyday-m-720.webp 720w" sizes="100vw"><source type="image/avif" srcset="/images/hero-everyday-600.avif 600w, /images/hero-everyday-900.avif 900w" sizes="(max-width: 899px) 100vw, 54vw"><source type="image/webp" srcset="/images/hero-everyday-600.webp 600w, /images/hero-everyday-900.webp 900w" sizes="(max-width: 899px) 100vw, 54vw"><img src="/images/hero-everyday-900.jpg" alt="Mwata zit op een granieten rotsblok, van achteren gezien, en kijkt uit over groene heuvels onder een blauwe lucht." width="900" height="1600" fetchpriority="high"></picture>
   </div>
   <div class="wrap">
     <div class="hero-copy">
@@ -859,7 +870,7 @@ section.contact{padding:var(--y-major) 0}
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn btn-primary" type="submit">Ontvang de oefening</button>
-        <p class="fx-small">Belgrave Management, Unipessoal Lda is verantwoordelijk voor je gegevens. Ik gebruik je e-mailadres alleen om je de oefening te sturen, en voor de korte reeks e-mails alleen als je het vakje aanvinkt. Vink je het aan, dan vraag ik je eerst per e-mail om te bevestigen. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de voorwaarden, de werkboeken, de app en de informatie bij het afrekenen zijn in het Engels.</p>
+        <p class="fx-small">Belgrave Management, Unipessoal Lda is verantwoordelijk voor je gegevens. Ik gebruik je e-mailadres alleen om je een kopie van de oefening te sturen, en een korte reeks e-mails als je het vakje aanvinkt. Vink je het aan, dan krijg je eerst een bevestigingsmail. Meer informatie staat in de <a class="pn-link" href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de voorwaarden, de werkboeken, de app en de informatie bij het afrekenen zijn in het Engels.</p>
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Je oefening staat klaar.</p><a class="btn btn-primary" id="fx-dl" href="/downloads/een-gewone-dinsdag.pdf" download>Download de oefening (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
@@ -927,8 +938,7 @@ section.contact{padding:var(--y-major) 0}
           </ul>
         </div>
       </details>
-      <p class="legend">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Je resultaten zijn gebaseerd op je eigen antwoorden. Je maakt zelf de keuzes. Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen. De vijf controles zijn geld, papieren, mensen, plek en Plan B. In je resultaat staat elke controle als een lichtje: groen als het geregeld is, oranje of rood als er nog aandacht nodig is.</p>
-      <p class="legend"><a href="/samples/text/">Lees de voorbeeldresultaten als tekst (Engels)</a></p>
+      <p class="legend legend-wide">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Je resultaten zijn gebaseerd op je eigen antwoorden. Je maakt zelf de keuzes. Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen. De vijf controles zijn geld, papieren, mensen, plek en Plan B. In je resultaat staat elke controle als een lichtje: groen als het geregeld is, oranje of rood als er nog aandacht nodig is. <a href="/samples/text/">Lees de voorbeeldresultaten als tekst (Engels)</a></p>
     </div>
 
     <p class="not-this">Ik schreef de Blueprint op basis van mijn ervaring met twee verhuizingen naar het buitenland. Je gebruikt de cursus om zelf uit te zoeken wat je wilt veranderen en welke stappen daarvoor nodig zijn. Persoonlijke coaching en hulp bij het regelen van je verhuizing zijn niet inbegrepen.</p>
@@ -1286,7 +1296,8 @@ menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('op
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
 
-/*s7:faq*/(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
+/*s7:faq*/(function(){var d=document.documentElement;function f(){d.classList.add('nocv')}if(location.hash)f();window.addEventListener('hashchange',f);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(a&&a.hash&&a.pathname===location.pathname)f()},true)})();
+(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
 function set(o){b.setAttribute('aria-expanded',o?'true':'false');a.hidden=o;l.hidden=!o;if(o)x.removeAttribute('hidden');else x.setAttribute('hidden','until-found')}
 t.hidden=false;set(false);
 b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});
