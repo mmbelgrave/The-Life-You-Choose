@@ -68,6 +68,20 @@ footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:560px){ .stack table,.stack thead,.stack tbody,.stack tr,.stack th,.stack td{display:block} .stack th{display:none} .stack td:first-child{width:auto;border-bottom:none} .stack td{border-top:none} .stack tr{border-top:1px solid var(--rule);margin-bottom:10px} .btn{display:block;text-align:center} }
 @media (max-width:380px){header .in{gap:8px}.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}header .hl{font-size:13px}.hs{gap:10px!important}}
+/*s7:footer*/footer .in{max-width:1080px}@media (min-width:761px) and (max-width:1100px){footer .in{font-size:13px}}/*/s7:footer*/
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
@@ -75,10 +89,10 @@ footer a{color:#E6DECF}
 <header>
   <div class="in">
     <a class="logo" href="/nl/" aria-label="The Life You Choose, naar de startpagina">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <span class="hs" style="display:flex;gap:16px;align-items:center"><a class="lang-en" href="/guides/more-time-for-yourself/" hreflang="en" lang="en" style="font-size:15px">English</a> <a class="hl" href="/dinsdag/">Gratis oefening →</a></span>
+    <span class="hs"><a class="lang-en lang-sw" href="/guides/more-time-for-yourself/" hreflang="en" lang="en" title="English"><span class="lg-d">English</span><span class="lg-m">EN</span></a> <a class="hl" href="/dinsdag/">Gratis oefening →</a></span>
   </div>
 </header>
 
@@ -88,22 +102,22 @@ footer a{color:#E6DECF}
   <p class="meta">Bijgewerkt op 23 oktober 2026 · leestijd ongeveer 6 minuten</p>
 
   <p class="lead">Veel mensen zeggen dat ze geen tijd hebben. Dat klopt vaak, maar het is niet het hele verhaal. Wat vaak ontbreekt is zeggenschap: wie bepaalt eigenlijk wat jouw week vult?</p>
-  <p>Het komt vaak terug bij mensen die over een grote verandering nadenken. Ze willen minder werken, een sabbatical nemen of verhuizen, en achter die wens zit vaak dezelfde vraag: hoe krijg ik meer regie over mijn tijd? Dit is een korte oefening om dat eerst op je eigen week te testen, voordat je iets groots beslist.</p>
+  <p>Het komt vaak terug bij mensen die over een grote verandering nadenken. Ze willen minder werken, een sabbatical nemen of verhuizen, en achter die wens zit vaak dezelfde vraag: hoe krijg ik meer regie over mijn tijd? Met deze korte oefening ontdek je wat je in je huidige week kunt veranderen voordat je een groter besluit neemt.</p>
 
   <div class="short">
     <p><b>Kort samengevat</b></p>
     <ul>
       <li>Weinig tijd is iets anders dan weinig zeggenschap over je tijd.</li>
-      <li>Sorteer een gewone week in drie soorten tijd: vast door anderen, moetjes en eigen keuze.</li>
-      <li>Reken uit welk deel van je 112 uren echt van jou is.</li>
+      <li>Sorteer een gewone week in drie soorten tijd: vaste verplichtingen, noodzakelijke taken en vrij in te delen tijd.</li>
+      <li>Reken uit welk deel van je wakkere uren echt van jou is.</li>
       <li>Haal volgende maand één blok van je week terug.</li>
-      <li>Voor die eerste stap heb je meestal geen nieuw land nodig, maar een gesprek of een andere verdeling.</li>
+      <li>Voor die eerste stap heb je meestal geen nieuw land nodig, maar een gesprek of een andere verdeling van taken.</li>
     </ul>
   </div>
 
   <h2>Weinig tijd of weinig zeggenschap?</h2>
   <p>Werk en reistijd vullen de week. Het weekend loopt vol met moetjes: schoonmaken, boodschappen, administratie. Aan het eind van de week is er weinig over dat je zelf hebt gekozen. Dan voelt het alsof je geen tijd hebt, terwijl het probleem vooral is dat anderen en de moetjes beslissen wat je doet.</p>
-  <p>Dat onderscheid maakt uit voor wat je eraan doet. Een tekort aan uren los je op met minder doen. Een tekort aan zeggenschap los je op door anders te verdelen wie wat bepaalt.</p>
+  <p>Dat onderscheid maakt uit voor wat je eraan doet. Bij tijdgebrek kan het helpen om minder verplichtingen aan te gaan. Heb je weinig zeggenschap over je planning, kijk dan welke afspraken je kunt veranderen.</p>
 
   <h2>Drie soorten tijd</h2>
   <table class="stack">
@@ -111,16 +125,16 @@ footer a{color:#E6DECF}
     <tbody>
       <tr><td>Vast door anderen</td><td>Uren die iemand anders bepaalt: werk, vergaderingen, reistijd naar werk.</td></tr>
       <tr><td>Moetjes</td><td>Dingen die moeten gebeuren: huishouden, boodschappen, administratie, zorg voor anderen.</td></tr>
-      <tr><td>Eigen keuze</td><td>Tijd waarover jij beslist, ook als je het druk hebt.</td></tr>
+      <tr><td>Eigen keuze</td><td>Tijd die je zelf kunt invullen, ook als je ervoor kiest om veel te doen.</td></tr>
     </tbody>
   </table>
 
   <h2>De oefening in vier stappen</h2>
   <ol>
     <li><b>Kies een gewone week.</b> Geen vakantie, geen uitzondering. Schat de uren. Ruwe getallen zijn goed genoeg.</li>
-    <li><b>Sorteer de uren</b> in vast door anderen, moetjes en eigen keuze.</li>
-    <li><b>Reken je eigen deel uit.</b> Reken met 112 uren per week: 16 wakkere uren per dag, 7 dagen, de rest is slaap. Slaap je minder of meer, pas het getal dan aan. Heb je een baan, kinderen of zorg voor iemand anders, dan zijn veel van die uren vastgelegd. Dat is geen falen: het laat zien waar je ruimte hebt en waar niet. Deel je eigen-keuze-uren door 112. Dat is het deel van je week dat echt van jou is.</li>
-    <li><b>Kijk wat je kunt terugpakken.</b> Welke moetjes kun je laten vallen, vereenvoudigen, delen of uitbesteden? Welk vast blok kun je verplaatsen, korter maken of anders afspreken? En welk blok haal je volgende maand terug?</li>
+    <li><b>Sorteer de uren</b> in vast door anderen, moetjes en eigen keuze. Tel elk uur maar één keer. Past een activiteit in meer dan één categorie, kies dan de categorie die het beste aangeeft hoeveel zeggenschap je over die tijd hebt.</li>
+    <li><b>Reken je eigen deel uit.</b> Reken met 112 uren per week: 16 wakkere uren per dag, 7 dagen, de rest is slaap. Heb je een baan, kinderen of zorg voor iemand anders, dan zijn veel van die uren vastgelegd. Dat is geen falen: het laat zien waar je ruimte hebt en waar niet. Deel de uren die je zelf kunt invullen door je totale aantal wakkere uren per week. Vermenigvuldig de uitkomst met 100 voor een percentage. Slaap je acht uur per nacht, dan reken je met 112 wakkere uren. Gebruik anders je aangepaste totaal. Dat is het deel van je week dat echt van jou is.</li>
+    <li><b>Kijk wat je kunt terugpakken.</b> Welke moetjes kun je laten vallen, vereenvoudigen, delen of uitbesteden? Welk vast blok kun je verplaatsen, korter maken of anders afspreken? Welk tijdsblok wil je volgende maand vrijmaken?</li>
   </ol>
 
   <div class="ex"><b>Verzonnen voorbeeld (Lucas, 29).</b>
@@ -132,11 +146,11 @@ footer a{color:#E6DECF}
         <tr><td>Eigen keuze</td><td class="n">37</td></tr>
       </tbody>
     </table>
-    <p style="margin:10px 0 0">Van de 112 uren in zijn week is ongeveer een derde echt van Lucas. Hij ziet dat een groot deel van zijn zaterdag opgaat aan boodschappen en schoonmaken. Twee veranderingen: de boodschappen laten bezorgen en samen schoonmaken op donderdagavond. Dat geeft hem de zaterdagochtend terug. Daarna wil hij vragen of hij op vrijdag thuis kan werken.</p>
+    <p style="margin:10px 0 0">Van de 112 uren in zijn week is ongeveer een derde echt van Lucas. Hij ziet dat een groot deel van zijn zaterdag opgaat aan boodschappen en schoonmaken. Twee veranderingen: de boodschappen laten bezorgen en samen schoonmaken op donderdagavond. Dat geeft hem de zaterdagochtend terug. Daarna wil hij vragen of hij op vrijdag thuis kan werken. Hierdoor vallen de taken op een ander moment; ze kosten niet automatisch minder tijd. Tel alleen extra vrije uren als Lucas zelf daadwerkelijk minder tijd aan een taak kwijt is.</p>
   </div>
 
   <h2>Hoeveel heeft dit met verhuizen te maken?</h2>
-  <p>Vaak minder dan je denkt. In het voorbeeld hoeft Lucas niet naar een ander land. Hij heeft een gesprek met zijn werkgever nodig, en een aangepaste verdeling thuis. Dat kan al volgende maand.</p>
+  <p>Vaak minder dan je denkt. In het voorbeeld hoeft Lucas niet naar een ander land. Hij kan met zijn werkgever over thuiswerken praten en thuis bespreken hoe ze de huishoudelijke taken anders verdelen.</p>
   <p>Soms zie je juist het tegenovergestelde. Je telt je uren, haalt een blok terug, en merkt dat wat je mist nog steeds ontbreekt: een ander klimaat, meer ruimte, een andere taal om je heen. Dan heb je een beter antwoord op de vraag of een verhuizing nodig is. Je weet dan wat je al kunt veranderen en wat alleen ergens anders kan.</p>
 
   <h2>Mijn eigen week</h2>
@@ -147,18 +161,18 @@ footer a{color:#E6DECF}
 
   <div class="cta">
     <h2>Ga een stap verder: een gewone dinsdag</h2>
-    <p>Na je uren komt de vraag welk leven je eigenlijk wilt. Schrijf één gewone dag op in dat leven, zo concreet dat je hem kunt testen. Een gratis pdf van 3 pagina's, om te printen of op je scherm in te vullen.</p>
+    <p>Als je je week hebt bekeken, is de volgende vraag hoe je de vrijgekomen tijd wilt besteden. Schrijf één gewone dag op in dat leven, zo concreet dat je hem kunt testen. Een gratis pdf van drie pagina's om te printen, of een online versie die je in je browser kunt invullen.</p>
     <a class="btn" href="/dinsdag/oefening/">Doe de oefening in je browser</a> <a href="/dinsdag/">Of ontvang de pdf</a>
   </div>
 
   <h2>Als je ook twijfelt over verhuizen</h2>
-  <p>Merk je dat je week verder verandert dan je hier kunt regelen, en denk je aan een andere plek? Lees dan <a href="/wel-of-niet-emigreren/">Wel of niet emigreren? Begin met een gewone dag</a>. Daar werk je dezelfde vraag uit, maar dan voor het leven dat je wilt, niet alleen voor je uren.</p>
+  <p>Heb je je week anders ingedeeld, maar mis je nog steeds iets? Denk je aan een verhuizing, lees dan <a href="/wel-of-niet-emigreren/">Wel of niet emigreren? Begin met een gewone dag</a>. Die gids helpt je onderzoeken of een verhuizing past bij het dagelijks leven dat je wilt.</p>
 
   <h2>Als je hier verder mee wilt</h2>
-  <p>De oefening hierboven komt uit Stap 1 van The Made Real Blueprint. Fase 1 (Stap 1 tot 3) helpt je uitzoeken wat je wilt veranderen en wat je daarvoor nog moet onderzoeken, en leidt naar een besluit met voorwaarden en een eerste stap. Het is zelfstandig werk met workbooks en een app. De workbooks en de app zijn in het Engels.</p>
+  <p>De oefening hierboven komt uit Stap 1 van The Made Real Blueprint. Fase 1 (Stap 1 tot 3) helpt je uitzoeken wat je wilt veranderen en wat je daarvoor nog moet onderzoeken, en leidt naar een besluit met voorwaarden en een eerste stap. Je werkt zelfstandig met werkboeken en een app. Beide zijn in het Engels.</p>
   <p><a href="/nl/#options">Bekijk Fase 1</a> · <a href="/dinsdag/">Probeer eerst de gratis oefening</a></p>
 
-  <p class="note">Door Mwata. Ik heb twee keer een nieuw leven in het buitenland opgebouwd, eerst op Bali en daarna in Portugal. Wat ik hier schrijf komt uit wat ik zelf deed en uit de Blueprint die ik daaruit maakte. Vragen of opmerkingen? Stuur me een bericht via <a href="/nl/#contact">het contactformulier</a>.</p>
+  <p class="note">Door Mwata. Ik heb twee keer een nieuw leven in het buitenland opgebouwd, eerst op Bali en daarna in Portugal. Deze gids is gebaseerd op mijn eigen ervaring en de oefeningen uit de Blueprint. Vragen of opmerkingen? <a href="/nl/#contact">Mail me of stuur me een bericht via WhatsApp</a>.</p>
 </main>
 
 <footer>

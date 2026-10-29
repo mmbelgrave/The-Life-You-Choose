@@ -68,6 +68,20 @@ footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:560px){ .stack table,.stack thead,.stack tbody,.stack tr,.stack th,.stack td{display:block} .stack th{display:none} .stack td:first-child{width:auto;border-bottom:none} .stack td{border-top:none} .stack tr{border-top:1px solid var(--rule);margin-bottom:10px} .btn{display:block;text-align:center} }
 @media (max-width:380px){header .in{gap:8px}.logo{font-size:17px;gap:6px}.logo svg{width:30px;height:23px}header .hl{font-size:13px}.hs{gap:10px!important}}
+/*s7:footer*/footer .in{max-width:1080px}@media (min-width:761px) and (max-width:1100px){footer .in{font-size:13px}}/*/s7:footer*/
+/*s8:hdr*/
+header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
+header .logo svg{width:40px;height:30px;flex:none}
+header .logo span{white-space:nowrap}
+header .hs{display:flex;gap:16px;align-items:center}
+header .lang-sw{font-size:15px;font-weight:600;color:var(--pine);text-decoration:none;white-space:nowrap}
+header .lang-sw:hover{text-decoration:underline}
+header .lang-sw .lg-m{display:none}
+header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowrap}
+@media (max-width:520px){header .lang-sw .lg-d{display:none}header .lang-sw .lg-m{display:inline}header .hs{gap:12px}}
+@media (max-width:440px){header .hl{display:none}}
+@media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
+/*/s8:hdr*/
 </style>
 </head>
 <body>
@@ -75,10 +89,10 @@ footer a{color:#E6DECF}
 <header>
   <div class="in">
     <a class="logo" href="/" aria-label="The Life You Choose, home">
-      <svg viewBox="0 0 80 64" aria-hidden="true"><path d="M6 58 H74" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#2C3B2F" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#5E7A50" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#8F5410"/></svg>
+      <svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg>
       <span>The Life You <em>Choose</em></span>
     </a>
-    <span style="display:flex;gap:16px;align-items:center"><a href="/meer-tijd-voor-jezelf/" hreflang="nl" lang="nl" style="font-size:15px">Nederlands</a> <a class="hl" href="/tuesday/">Free exercise →</a></span>
+    <span class="hs"><a class="lang-sw" href="/meer-tijd-voor-jezelf/" hreflang="nl" lang="nl" title="Nederlands"><span class="lg-d">Nederlands</span><span class="lg-m">NL</span></a> <a class="hl" href="/tuesday/">Free exercise →</a></span>
   </div>
 </header>
 
@@ -88,39 +102,39 @@ footer a{color:#E6DECF}
   <p class="meta">Updated 23 October 2026 · about 6 minutes to read</p>
 
   <p class="lead">Many people say they have no time. That is often true, but it is not the whole story. What is often missing is control: who actually decides what fills your week?</p>
-  <p>It comes up again and again with people who are thinking about a big change. They want to work less, take a sabbatical or move, and behind that wish there is often the same question: how do I get more control over my time? This is a short exercise to test that on your own week first, before you decide anything big.</p>
+  <p>It comes up again and again with people who are thinking about a big change. They want to work less, take a sabbatical or move, and behind that wish there is often the same question: how do I get more control over my time? This short exercise helps you find changes you could try in your current week before making a bigger decision.</p>
 
   <div class="short">
     <p><b>In short</b></p>
     <ul>
-      <li>Having little time is something different from having little control over your time.</li>
-      <li>Sort an ordinary week into three kinds of time: fixed by others, must-dos and your own choice.</li>
-      <li>Work out how much of your 112 hours is really yours.</li>
+      <li>Having little free time and having little say over your schedule are different problems.</li>
+      <li>Sort an ordinary week into three kinds of time: fixed commitments, necessary tasks and time you choose how to spend.</li>
+      <li>Work out what share of your waking hours is really yours.</li>
       <li>Take back one block of your week next month.</li>
-      <li>For that first step you usually do not need a new country, but a conversation or a different split.</li>
+      <li>For that first step you usually do not need a new country, but a conversation or a different division of responsibilities.</li>
     </ul>
   </div>
 
   <h2>Little time or little control?</h2>
   <p>Work and travel time fill the week. The weekend fills up with must-dos: cleaning, shopping, paperwork. At the end of the week there is little left that you chose yourself. Then it feels as if you have no time, while the problem is mostly that others and the must-dos decide what you do.</p>
-  <p>That distinction matters for what you do about it. A shortage of hours you solve by doing less. A shortage of control you solve by dividing differently who decides what.</p>
+  <p>That distinction matters for what you do about it. If you lack time, reducing commitments may help. If you have little say over your schedule, look at which arrangements you could change.</p>
 
   <h2>Three kinds of time</h2>
   <table class="stack">
     <thead><tr><th>Kind</th><th>What falls under it</th></tr></thead>
     <tbody>
-      <tr><td>Fixed by others</td><td>Hours someone else decides: work, meetings, travel to work.</td></tr>
+      <tr><td>Fixed by others</td><td>Time set by work or other commitments, such as working hours, meetings and commuting.</td></tr>
       <tr><td>Must-dos</td><td>Things that have to happen: housework, shopping, paperwork, caring for others.</td></tr>
-      <tr><td>Your own choice</td><td>Time you decide over, even when you are busy.</td></tr>
+      <tr><td>Your own choice</td><td>Time you can choose how to spend, even if you fill it with activities.</td></tr>
     </tbody>
   </table>
 
   <h2>The exercise in four steps</h2>
   <ol>
     <li><b>Pick an ordinary week.</b> Not a holiday, not an exception. Estimate the hours. Rough numbers are good enough.</li>
-    <li><b>Sort the hours</b> into fixed by others, must-dos and your own choice.</li>
-    <li><b>Work out your own share.</b> Use 112 hours a week: 16 waking hours a day, 7 days, the rest is sleep. If you sleep less or more, adjust the number. If you have a job, children or care for someone else, many of those hours are already committed. That is not failing: it shows where you have room and where you do not. Divide your own-choice hours by 112. That is the share of your week that is really yours.</li>
-    <li><b>See what you can take back.</b> Which must-dos can you drop, simplify, share or outsource? Which fixed block can you move, shorten or agree differently? And which block do you take back next month?</li>
+    <li><b>Sort the hours</b> into fixed by others, must-dos and your own choice. Count each hour once. If an activity fits more than one category, use the category that best explains how much choice you have over that time.</li>
+    <li><b>Work out your own share.</b> Use 112 hours a week: 16 waking hours a day, 7 days, the rest is sleep. If you have a job, children or care for someone else, many of those hours are already committed. That is not failing: it shows where you have room and where you do not. Divide the hours you can choose how to spend by your total waking hours for the week. Multiply by 100 for a percentage. If you sleep eight hours a night, use 112 waking hours; otherwise use your adjusted total. That is the share of your week that is really yours.</li>
+    <li><b>See what you can take back.</b> Which must-dos can you drop, simplify, share or outsource? Which fixed commitment could you move, shorten or renegotiate? And which block do you take back next month?</li>
   </ol>
 
   <div class="ex"><b>Made-up example (Lucas, 29).</b>
@@ -132,11 +146,11 @@ footer a{color:#E6DECF}
         <tr><td>Your own choice</td><td class="n">37</td></tr>
       </tbody>
     </table>
-    <p style="margin:10px 0 0">Of the 112 hours in his week, about a third is really Lucas's own. He sees that a large part of his Saturday goes on shopping and cleaning. Two changes: have the groceries delivered and clean together on Thursday evening. That gives him his Saturday morning back. After that he wants to ask whether he can work from home on Fridays.</p>
+    <p style="margin:10px 0 0">Of the 112 hours in his week, about a third is really Lucas's own. He sees that a large part of his Saturday goes on shopping and cleaning. Two changes: have the groceries delivered and clean together on Thursday evening. That gives him his Saturday morning back. After that he wants to ask whether he can work from home on Fridays. This changes when the tasks happen; it does not automatically reduce the time they take. Count any extra free hours only if a task actually takes less of his time.</p>
   </div>
 
   <h2>How much does this have to do with moving?</h2>
-  <p>Often less than you think. In the example, Lucas does not need to move to another country. He needs a conversation with his employer and a different split at home. That can happen next month.</p>
+  <p>Often less than you think. In the example, Lucas does not need to move to another country. He could discuss working from home with his employer and sharing household tasks differently at home.</p>
   <p>Sometimes you see the opposite. You count your hours, take back a block, and notice that what you miss is still missing: another climate, more space, another language around you. Then you have a better answer to the question of whether a move is needed. You know what you can already change and what is only possible somewhere else.</p>
 
   <h2>My own week</h2>
@@ -147,18 +161,18 @@ footer a{color:#E6DECF}
 
   <div class="cta">
     <h2>Go one step further: an ordinary Tuesday</h2>
-    <p>After your hours comes the question of which life you actually want. Write down one ordinary day in that life, detailed enough to test. A free exercise of 3 pages.</p>
+    <p>Once you have looked at your schedule, consider how you want to spend the time you free up. Write down one ordinary day in that life, detailed enough to test. A free three-page exercise.</p>
     <a class="btn" href="/tuesday/exercise/">Do the exercise in your browser</a> <a href="/tuesday/">Or get the PDF</a>
   </div>
 
-  <h2>If you also doubt about moving</h2>
-  <p>Do you notice that your week needs to change more than you can arrange here, and are you thinking about another place? Then read <a href="/guides/moving-abroad-or-not/">Moving abroad or not? Start with an ordinary day</a>. There you work out the same question, but for the life you want, not only for your hours.</p>
+  <h2>If you are also unsure about moving</h2>
+  <p>Have you changed your routine but still feel that something is missing? If you are considering a move, read <a href="/guides/moving-abroad-or-not/">Moving abroad or not? Start with an ordinary day</a>. That guide helps you consider whether a move would bring you closer to the daily life you want.</p>
 
   <h2>If you want to go further with this</h2>
   <p>The exercise above comes from Step 1 of The Made Real Blueprint. Phase 1 (Steps 1 to 3) helps you work out what you want to change and what you still need to investigate, and leads to a decision with conditions and a first step. It is self-study with workbooks and an app. The workbooks and the app are in English.</p>
   <p><a href="/#options">See Phase 1</a> · <a href="/tuesday/">Try the free exercise first</a></p>
 
-  <p class="note">By Mwata. I have built a new life abroad twice, first in Bali and then in Portugal. What I write here comes from what I did myself and from the Blueprint I made out of it. Questions or comments? Send me a message through <a href="/#contact">the contact form</a>.</p>
+  <p class="note">By Mwata. I have built a new life abroad twice, first in Bali and then in Portugal. This guide draws on my own experience and the exercises in the Blueprint. Questions or comments? <a href="/#contact">Email me or send me a message on WhatsApp</a>.</p>
 </main>
 
 <footer>
