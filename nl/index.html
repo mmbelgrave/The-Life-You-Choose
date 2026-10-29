@@ -91,14 +91,14 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(243,236,224,.94);bac
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pine);font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
 .logo svg{width:40px;height:30px;flex:none}
-nav.links{display:flex;gap:30px;font-size:16px;font-weight:500}
-nav.links a{text-decoration:none;color:var(--granite)}
+nav.links{display:flex;gap:clamp(14px,2.2vw,30px);font-size:16px;font-weight:500}
+nav.links a{text-decoration:none;color:var(--granite);white-space:nowrap}
 nav.links a:hover{color:var(--ochre)}
 .head-actions{display:flex;align-items:center;gap:10px}
 .btn-small{padding:9px 18px;font-size:15px;white-space:nowrap}
 .menu-btn{display:none;width:42px;height:42px;border:1px solid var(--rule);background:var(--white);border-radius:3px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
 .menu-btn span{display:block;width:20px;height:2px;background:var(--pine)}
-@media (max-width:820px){
+@media (max-width:980px){
   nav.links{display:none}
   .menu-btn{display:flex}
   nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
@@ -167,11 +167,6 @@ section.routes .wrap{padding-top:26px;padding-bottom:26px}
 /* RECOGNITION */
 .thought{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1.2;color:var(--pine);max-width:24em;margin:0 0 20px}
 .thought em{color:var(--ochre)}
-.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.problem{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:28px 26px;display:flex;flex-direction:column}
-.problem .says{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--granite);margin-bottom:18px}
-.problem .fix{margin-top:auto;font-size:16px;color:var(--pine);border-left:3px solid var(--moss);padding-left:14px;margin-bottom:0}
-@media (max-width:900px){ .problems{grid-template-columns:1fr} }
 details.more{margin-top:24px;border-top:1px solid var(--rule);padding-top:6px}
 details.more>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:22px;color:var(--pine);padding:14px 0;display:flex;justify-content:space-between;gap:16px}
 details.more>summary::-webkit-details-marker{display:none}
@@ -180,13 +175,41 @@ details.more[open]>summary::after{content:"–"}
 .turn{margin-top:36px;font-size:clamp(19px,2vw,22px);color:var(--pine);border-left:3px solid var(--ochre);padding-left:20px;max-width:46em}
 
 /* FREE START */
+/*gr:css*/.gr-strip{background:var(--sand);border-bottom:1px solid var(--rule);padding:16px 0}
+.gr-card{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr) auto;align-items:center;gap:0 20px;background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--ochre);border-radius:0 8px 8px 0;padding:10px 18px 10px 12px}
+.gr-card img{display:block;width:120px;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:top center;border-radius:6px;background:var(--sage)}
+.gr-card p{margin:0}
+.gr-strip .gr-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin:0 0 4px;line-height:1.3}
+.gr-meta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px;font-size:14px;line-height:1.5;color:var(--stone);margin-bottom:2px!important}
+.gr-type{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+.gr-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.2vw,22px);line-height:1.2;color:var(--pine);margin:0 0 2px}
+.gr-card h3 a{text-decoration:none;color:inherit}
+.gr-card h3 a::after{content:"";position:absolute;inset:0}
+.gr-card h3 a:focus{outline:none}
+.gr-card:focus-within{outline:3px solid var(--ochre);outline-offset:-3px}
+.gr-short{font-size:15px;line-height:1.4}
+.gr-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.gr-go{font-weight:600;font-size:15px;color:var(--pine);border:2px solid var(--pine);border-radius:3px;padding:7px 14px;white-space:nowrap}
+.gr-card:hover .gr-go,.gr-card:focus-within .gr-go{background:var(--pine);color:var(--sand)}
+.gr-all{position:relative;z-index:1;font-weight:600;font-size:14px;color:var(--pine);white-space:nowrap}
+@media (max-width:640px){
+  .gr-strip{padding:12px 0}
+  .gr-card{grid-template-columns:minmax(0,1fr);gap:6px 0;padding:12px 14px;align-items:start}
+  .gr-card img{display:none}
+  .gr-meta{font-size:13px;gap:0 8px}
+  .gr-card h3{font-size:17px}
+  .gr-short{font-size:14px}
+  .gr-side{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px 16px}
+  .gr-go{padding:6px 12px;font-size:14px}
+  .gr-all{white-space:normal}
+}/*/gr:css*/
 .free{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(40px,6vw,64px) 0}
 .free .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
 .free h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
 .free h2 em{color:var(--ochre)}
 .free .prev{display:block;border-radius:4px;overflow:hidden;box-shadow:0 14px 40px rgba(28,30,27,.14);transition:transform .25s;transform:rotate(1.5deg)}
 .free .prev:hover{transform:rotate(0) translateY(-3px)}
-@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev{order:-1;max-width:420px} }
+@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev-col{order:-1;max-width:420px} }
 
 /* METHOD: three equal panels on a rising line */
 .method{background:var(--white)}
@@ -562,6 +585,103 @@ footer .links{margin:10px 0 0}
 .wl-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px;font-size:16px}
 .wl-err{display:none;color:#9B2C1F;margin-top:10px;font-size:15px}
 
+/*s7:css*/
+/* round 7: menu fits at 981-1040px */
+@media (min-width:981px) and (max-width:1040px){nav.links{font-size:15px;gap:16px}}
+/* round 7: slim proof strip */
+.strip ul{grid-template-columns:repeat(3,1fr);gap:0}
+.strip li,.strip li+li{padding:12px 16px 11px 0;border:0}
+.strip li+li{padding-left:24px;border-left:1px solid var(--rule)}
+.strip b{font-size:18px;line-height:1.25}
+.strip span{font-size:13px;line-height:1.35;display:block}
+@media (max-width:760px){.strip ul{display:flex;flex-wrap:wrap;gap:0 22px;padding:6px 0}.strip li,.strip li+li{padding:5px 0;border:0}.strip b{font-size:15px}.strip li span{display:none}}
+/* recognition + two routes */
+section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px)}
+.routes .thought{font-size:clamp(24px,3vw,34px);margin:0 0 20px}
+.says-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.says-row li{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--granite)}
+.routes .turn{margin:26px 0 0}
+.routes h2{margin-top:clamp(28px,4vw,40px)}
+@media (max-width:900px){.says-row{grid-template-columns:1fr;gap:10px}}
+.free .free-res{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine)}
+/* what you finish with */
+.sample-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px);margin:26px 0 8px}
+.sample-col .eyebrow{margin-bottom:0}
+.sample-pair .rcards{display:grid;grid-template-columns:1fr;overflow:visible;margin:10px 0 0;padding:0}
+.sample-pair .rcard{flex:none;max-width:none}
+.sample-pair .rcard button{display:grid;grid-template-columns:minmax(110px,38%) 1fr;grid-template-rows:auto auto 1fr;column-gap:18px;align-content:start;padding:14px}
+.sample-pair .rimg{grid-row:1/4;margin:0}
+.steps-results{margin-top:20px}
+.steps-results .rcards{grid-template-columns:repeat(3,1fr);margin-top:12px}
+.steps-results .sample-col+.sample-col{margin-top:22px}
+@media (max-width:760px){.sample-pair{grid-template-columns:1fr}.sample-pair .rcard button{grid-template-columns:minmax(96px,34%) 1fr}}
+/* how Phase 1 works */
+.three-steps{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.three-steps li{background:var(--sand);border:1px solid var(--rule);border-radius:4px;padding:22px 24px}
+.three-steps .n{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ochre);margin:0 0 4px}
+.three-steps h3{font-size:clamp(28px,2.8vw,34px)}
+.three-steps p:last-child{margin:0;font-size:16px}
+@media (max-width:820px){.three-steps{grid-template-columns:1fr;gap:12px}}
+.method .app-line{max-width:46em;margin:0}
+.xbox{padding:6px 0 4px}
+.xbox>:first-child{margin-top:0}
+.xbox .object-sub{margin-top:clamp(28px,4vw,44px)}
+.xbox .stages{margin-bottom:0}
+.xbox .phases{margin-top:8px}
+/* founder intro */
+.intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
+/* final step */
+.contact .fnote{margin:22px 0 0;max-width:30em}
+.free .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
+.free .fx-more a{color:var(--pine)}
+.intro .intro-more{margin-top:20px}
+.final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
+.final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
+.final-buy .fb-price small{display:block;font-family:var(--sans);font-size:14px;color:#CFC7B8;margin-top:6px}
+.final-buy .btn{display:block;width:100%}
+.final-buy .fb-note{font-size:14px;color:#CFC7B8;margin:12px 0 0}
+.final-buy .fb-note a{color:var(--sand)}
+/* round 7d: spacing under "Ask me a question first", tidy final step */
+.o-buy .assure{margin:20px 0 6px}
+.contact h2{text-wrap:balance}
+/* round 7h: logo block on top, the text column below it at full width, so the links line fits on one row and shares the left edge of the paragraphs and the logo */
+footer .wrap{flex-direction:column;align-items:flex-start}
+footer .cols{flex:none;width:100%;min-width:0}
+footer .cols .links{max-width:none}
+@media (min-width:761px) and (max-width:1100px){footer .cols .links{font-size:13px}}
+.faq-extra details:first-of-type{border-top:0}
+.faq-toggle{margin-top:26px}
+.faq-toggle .btn:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.contact .fs-alt{margin:22px 0 0}
+.contact .fs-alt a{font-weight:600}
+.contact .fs-boxes{margin-top:22px;display:flex;flex-direction:column}
+.contact .fs-boxes .fnote{margin:0}
+.contact .fs-boxes .final-buy{margin:22px 0 0;flex:1;display:flex;flex-direction:column;justify-content:center}
+.contact .contact-direct{display:flex;flex-direction:column}
+.contact .contact-direct .form-buttons+p{margin-top:auto;padding-top:20px}
+@media (min-width:861px){
+  .contact .split{align-items:stretch;row-gap:0;grid-template-rows:auto 1fr auto;grid-template-areas:"head ." "boxes card" "alt ."}
+  .contact .fs-head{grid-area:head}
+  .contact .fs-boxes{grid-area:boxes}
+  .contact .fs-alt{grid-area:alt}
+  .contact .contact-direct{grid-area:card;margin-top:22px}
+  .contact .contact-direct .cd-mail{font-size:clamp(18px,2.1vw,26px)}
+}
+@media (max-width:860px){.contact .split{row-gap:0}.contact .contact-direct{margin-top:32px}}
+.contact .contact-direct{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:clamp(22px,3vw,32px);background:rgba(243,236,224,.04)}
+.contact .contact-direct>:first-child{margin-top:0}
+.contact .contact-direct p{margin:0 0 14px}
+.contact .contact-direct .cd-mail{margin:2px 0 14px}
+.contact .contact-direct .form-buttons{margin:4px 0 0}
+.contact .contact-direct .form-buttons+p{font-size:15px}
+.contact-direct{font-size:16px}
+.contact-direct .lead{font-size:18px}
+.contact .form-buttons{justify-content:flex-start}
+.contact .form-buttons+p{margin-top:20px}
+.contact .form-buttons .btn-primary{background:transparent;border-color:rgba(243,236,224,.55);color:var(--sand)}
+.contact .form-buttons .btn-primary:hover{background:var(--sand);color:var(--pine)}
+/*/s7:css*/
+
 /* gentle reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -577,8 +697,68 @@ footer .links{margin:10px 0 0}
 .fx-small{font-size:14px;color:var(--stone);margin:12px 0 0}
 .fx-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px}
 .fx-err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
-@media (max-width:760px){ .free .prev{order:2;max-width:360px} }
+@media (max-width:760px){ .free .prev-col{order:2;max-width:360px} }
 @media (max-width:560px){ .fx .btn{width:100%} }
+/*s8:css*/
+/* spacing scale: ordinary sections --y (88px desktop, 52px phone), related sections --y-tight, the offer and the final step keep --y-major (the former 112px) */
+:root{--y:clamp(52px,7vw,88px);--y-tight:clamp(40px,5vw,56px);--y-major:clamp(64px,9vw,112px)}
+.object{padding-bottom:var(--y-tight)}
+.method{padding-top:var(--y-tight);padding-bottom:var(--y-tight)}
+.offers{padding-top:var(--y-major);padding-bottom:calc(var(--y-major) + 8px)}
+section.contact{padding:var(--y-major) 0}
+/* free exercise: each label sits with its field (7px), field groups 22px apart; no extra grid gap */
+.free .fx{gap:0}
+.free .fx label:not(.fx-check){margin:0 0 7px}
+.free .fx input[type=text],.free .fx input[type=email]{margin:0 0 22px}
+.free .fx .fx-check{margin:0}
+.free .fx .btn{margin-top:22px}
+.free .fx .fx-small{margin-top:14px}
+/* menu with the longer label "Free resources" / "Gratis materiaal": up to 1040px the burger menu is used (the round 7 menu no longer fits there);
+   between 1041 and 1180px the language link shows its short form and the gaps get tighter, so logo, menu and buttons stay on one row */
+@media (min-width:981px) and (max-width:1040px){
+  nav.links{display:none}
+  .menu-btn{display:flex}
+  nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px;font-size:16px}
+  nav.links.open a{padding:13px 0;border-bottom:1px solid var(--rule);font-size:18px}
+}
+@media (min-width:1041px) and (max-width:1180px){
+  nav.links{font-size:15px;gap:14px}
+  .lang-sw .lg-d{display:none}.lang-sw .lg-m{display:inline}.lang-sw{margin-right:6px}
+  header.top .wrap{gap:16px}
+  .head-actions .btn-small{padding:9px 14px}
+}
+/* free exercise, desktop: two independent columns (left: head, form; right: .prev-col with the picture and the "Prefer to start straight away?" line, starting level with the heading).
+   The right column spans both rows, so it never stretches the left one. Phone: one column in DOM order (text, browser alternative, form); the decorative picture is hidden there. */
+.free .wrap{align-items:start;row-gap:0}
+.free .fx-more{font-size:16px;margin:18px 0 0}
+.free .fx{margin-top:22px}
+@media (min-width:761px){
+  .free .fx-head{grid-column:1;grid-row:1}
+  .free .fx{grid-column:1;grid-row:2}
+  .free .prev-col{grid-column:2;grid-row:1/3;margin-top:34px;align-self:start}
+}
+@media (max-width:760px){.free .prev-col{order:0;max-width:none;margin-top:6px}.free .prev-col .prev{display:none}.free .fx-more{margin-top:0}}
+/* hero crop: below 900px the picture is a short band, so the focus moves up to keep the head and shoulders of the person in frame (desktop keeps 50% 88%) */
+@media (max-width:899.98px){.hero-img img{object-position:50% 12%}}
+@media (max-width:560px){.hero-img img{object-position:50% 22%}}
+/* round 8b: the eyebrow sits over the lower part of the photo below 900px; a deeper pine overlay there keeps it at 4.5:1 or better (pine only, the top of the photo stays as it was) */
+@media (max-width:899.98px){.hero-img{background:var(--pine)}.hero-img img{height:calc(100% - 1px)}.hero-img::after{background:linear-gradient(180deg,rgba(44,59,47,0) 20%,rgba(44,59,47,.5) 48%,rgba(44,59,47,.92) 64%,var(--pine) 80%)}}
+/* round 8b: between 900 and 1199px the copy column reaches into the photo; the pine fade is deeper there too (1200px and up unchanged) */
+@media (min-width:900px){.hero-img{background:var(--pine)}.hero-img img{margin-left:2px;width:calc(100% - 2px)}}
+@media (min-width:900px) and (max-width:1199px){.hero-img::after{background:linear-gradient(90deg,var(--pine) 0,rgba(44,59,47,.95) 24%,rgba(44,59,47,0) 52%)}}
+/* round 9e: the footer links line has one more link (Recommended / Aanbevolen); on the narrow desktop range it still has to fit one row */
+@media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
+/* reading width and supporting text */
+.legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
+.not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
+.hero .founding-line{font-size:16px}
+.offer .after{font-size:16px}
+.final-buy .fb-note{font-size:16px}
+.inc p{font-size:16px}
+.rblurb{font-size:15px}
+.strip span{font-size:14px}
+.fx-small{font-size:15px}
+/*/s8:css*/
 </style>
 </head>
 <body>
@@ -590,10 +770,10 @@ footer .links{margin:10px 0 0}
       <span>The Life You <em>Choose</em></span>
     </a>
     <nav class="links" id="menu" aria-label="Hoofdmenu">
+      <a href="/gratis/">Gratis materiaal</a>
       <a href="#inside">Wat je krijgt</a>
       <a href="#options">Fase 1</a>
-      <a href="#story">Mijn verhaal</a>
-      <a href="/gidsen/">Gidsen</a>
+      <a href="/mijn-verhaal/">Mijn verhaal</a>
       <a href="#faq">Vragen</a>
     </nav>
     <div class="head-actions">
@@ -618,32 +798,57 @@ footer .links{margin:10px 0 0}
       <p class="lead">Misschien wil je verhuizen. Misschien wil je vooral meer rust, ander werk of meer tijd voor jezelf. The Made Real Blueprint helpt je opschrijven wat je wilt, uitzoeken wat daarvoor nodig is en kiezen welke stap je nu zet.</p>
       <div class="btn-row">
         <a class="btn btn-ochre" href="#free">Ontvang de gratis oefening</a>
-        <a class="textlink" href="#options">Bekijk wat je met Fase 1 uitwerkt →</a>
+        <a class="textlink" href="#options">Bekijk wat Fase 1 inhoudt →</a>
       </div>
       <p class="founding-line"><b>Gratis:</b> een oefening van 3 pagina's, per e-mail of in je browser. <b>Fase 1:</b> €99 inclusief btw, eenmalig. Werkboeken en app zijn in het Engels.</p>
     </div>
   </div>
 </section>
 
-<!-- TWO ROUTES -->
-<section class="routes" aria-labelledby="routes-h">
+<!-- 2 PROOF STRIP -->
+<div class="strip">
   <div class="wrap">
+    <ul>
+      <li><b>Twee levens opgebouwd in het buitenland</b><span>Eerst Bali, daarna Portugal, vanaf nul</span></li>
+      <li><b>Fase 1 is klaar</b><span>Stap 1 tot 3, nu beschikbaar</span></li>
+      <li><b>Pdf-werkboeken of de app</b><span>Print ze, of werk de oefeningen door in de app</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 3 RECOGNITION AND TWO ROUTES -->
+<section class="routes" id="familiar" aria-labelledby="routes-h">
+  <div class="wrap">
+    <p class="eyebrow">Herkenbaar?</p>
+    <p class="thought rv">Op maandagochtend, op de laatste dag van een vakantie of als je 's avonds door huizenadvertenties scrolt, komt de gedachte terug: <em>wat als ik het gewoon deed?</em></p>
+    <ul class="says-row">
+      <li>"Wat als het geld op is?"</li>
+      <li>"Mijn weken zitten vol, maar weinig tijd is van mij."</li>
+      <li>"Mijn partner is er niet zo zeker van als ik, en ik vraag me af wat familie en vrienden zullen zeggen."</li>
+    </ul>
+    <p class="turn">Misschien wil je verhuizen. Misschien geven ander werk, een andere weekindeling of meer tijd voor jezelf je al wat je zoekt op de plek waar je woont. De oefeningen helpen je die mogelijkheden te vergelijken.</p>
     <h2 id="routes-h">Twee routes, één werkwijze</h2>
-    <div class="two">
-      <a class="route" href="#free"><b>Verander je leven waar je nu bent.</b><span>Beschrijf het leven dat je wilt, test wat je zou kunnen veranderen en rond af met een plan en een eerste stap.</span></a>
-      <a class="route" href="#free"><b>Bouw een nieuw leven ergens anders op.</b><span>Beschrijf het leven dat je wilt, toets plekken eraan en rond af met een besluit en de controles die nog nodig zijn.</span></a>
-    </div>
+      <div class="two">
+        <a class="route" href="#free"><b>Verander je leven waar je nu bent.</b><span>Beschrijf het leven dat je wilt, test wat je zou kunnen veranderen en rond af met een plan en een eerste stap.</span></a>
+        <a class="route" href="#free"><b>Bouw een nieuw leven ergens anders op.</b><span>Beschrijf het leven dat je wilt, toets plekken eraan en rond af met een besluit en de controles die nog nodig zijn.</span></a>
+      </div>
   </div>
 </section>
 
-<!-- FREE START (moved under the hero) -->
+<!-- 4 FREE EXERCISE -->
 <section class="free" id="free">
   <div class="wrap">
-    <div>
+    <div class="fx-head">
       <p class="eyebrow">Begin hier · gratis</p>
       <h2>Een gewone <em>dinsdag</em>.</h2>
-      <p>Stel je één gewone dag voor in het leven dat je wilt, zo concreet dat je het kunt testen. Een korte oefening uit Stap 1 van de Blueprint: een pdf van 3 pagina's om te printen of op je scherm in te vullen. Je kunt hem gebruiken waar je ook wilt wonen, ook waar je nu bent. Zo wordt het leven concreet. Fase 1 helpt je daarna te kiezen wat je verandert, wat je controleert en wat je daarna doet.</p>
-      <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/201595939187591038/subscribe" method="post" novalidate>
+      <p>Stel je één gewone dag voor in het leven dat je wilt, zo concreet dat je het kunt testen. Een korte oefening uit Stap 1 van de Blueprint: een pdf van drie pagina's om te printen, of een online versie die je in je browser kunt invullen. De oefening helpt je nadenken over elke woonplek, ook de plek waar je nu woont. Zo krijg je een concreet beeld van je dagelijks leven. Fase 1 helpt je daarna te kiezen wat je verandert, wat je controleert en wat je daarna doet.</p>
+      <p class="free-res">De gratis oefening is een eerste stap. Hieronder zie je wat je in Fase 1 kunt uitwerken.</p>
+    </div>
+    <div class="prev-col">
+      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="/images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+      <p class="fx-more"><a href="/dinsdag/oefening/">Liever meteen beginnen? Doe de oefening in je browser</a> <span style="color:var(--stone)">Je antwoorden blijven op je apparaat.</span> <span style="color:var(--stone)">Doe de oefening hier zonder account. Wil je je antwoorden in een account bewaren? Probeer dan <a href="https://app.maderealblueprint.com/free?from=website">de gratis oefening in de app (Engels)</a>.</span></p>
+    </div>
+    <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597739171055303/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/201595939187591038/subscribe" method="post" novalidate>
         <label for="fx-name">Je voornaam (optioneel)</label>
         <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
         <label for="fx-email">Je e-mailadres</label>
@@ -654,168 +859,79 @@ footer .links{margin:10px 0 0}
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn btn-primary" type="submit">Ontvang de oefening</button>
-        <p class="fx-small">Belgrave Management, Unipessoal Lda is verantwoordelijk voor je gegevens. Ik gebruik je e-mailadres alleen om je de oefening te sturen, en voor de korte reeks e-mails alleen als je het vakje aanvinkt. Vink je het aan, dan vraag ik je eerst per e-mail om te bevestigen. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de cursus en de aankoop zijn in het Engels.</p>
+        <p class="fx-small">Belgrave Management, Unipessoal Lda is verantwoordelijk voor je gegevens. Ik gebruik je e-mailadres alleen om je de oefening te sturen, en voor de korte reeks e-mails alleen als je het vakje aanvinkt. Vink je het aan, dan vraag ik je eerst per e-mail om te bevestigen. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de voorwaarden, de werkboeken, de app en de informatie bij het afrekenen zijn in het Engels.</p>
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Je oefening staat klaar.</p><a class="btn btn-primary" id="fx-dl" href="/downloads/een-gewone-dinsdag.pdf" download>Download de oefening (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
-      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="/dinsdag/oefening/">Liever meteen beginnen? Doe de oefening in je browser</a> <span style="color:var(--stone)">Je antwoorden blijven op je apparaat.</span></p>
-    </div>
-    <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="/images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
   </div>
 </section>
 
-<!-- 2 PROOF STRIP -->
-<div class="strip">
+<!--gr:strip--><section class="gr-strip" id="free-new" aria-labelledby="gr-h">
   <div class="wrap">
-    <ul>
-      <li><b>Twee levens opgebouwd in het buitenland</b><span>Eerst Bali, daarna Portugal, vanaf nul</span></li>
-      <li><b>Fase 1 is klaar</b><span>Stap 1 tot 3, nu beschikbaar</span></li>
-      <li><b>Pdf-workbooks of app</b><span>Print ze, of werk de oefeningen door in de app</span></li>
-    </ul>
-  </div>
-</div>
-
-<!-- 3 RECOGNITION -->
-<section id="familiar">
-  <div class="wrap">
-    <p class="eyebrow">Herkenbaar?</p>
-    <h2>De gedachte blijft terugkomen.</h2>
-    <p class="thought rv">Op maandagochtend, op de laatste dag van een vakantie of als je 's avonds door huizenadvertenties scrolt, komt de gedachte terug: <em>wat als ik het gewoon deed?</em></p>
-    <p class="lead muted rv" style="max-width:40em;margin-bottom:36px">Op papier ziet je leven er goed uit. En toch mist er iets. Je wilt dat dingen veranderen, maar je weet niet waar je moet beginnen. Een vast inkomen en het leven dat je kent loslaten voelt riskant, en je ziet geen weg terug als het misgaat.</p>
-    <div class="problems">
-      <div class="problem rv"><p class="says">"Wat als het geld op is?"</p><p class="fix">Doe een eerlijke eerste geldcheck: wat de verandering kost en hoe lang je spaargeld meegaat.</p></div>
-      <div class="problem rv"><p class="says">"Mijn weken zitten vol, maar weinig tijd is van mij."</p><p class="fix">Zie waar je uren heen gaan, bepaal hoe je ze wilt besteden en ontdek wat je kunt veranderen, soms zonder te verhuizen.</p></div>
-      <div class="problem rv"><p class="says">"Mijn partner is er niet zo zeker van als ik, en ik vraag me af wat familie en vrienden zullen zeggen."</p><p class="fix">Jullie doen de oefeningen eerst allebei alleen. Daarna leg je naast elkaar wat ieder van jullie nodig heeft en praten jullie erover.</p></div>
-    </div>
-    <details class="more">
-      <summary>Andere dingen die je misschien tegenhouden</summary>
-      <div class="problems" style="margin-top:12px">
-        <div class="problem"><p class="says">"Ooit. Na dit project. Als we meer gespaard hebben."</p><p class="fix">Zet één stap tegelijk, elk met een duidelijk resultaat, tot je een weloverwogen besluit hebt: gaan, nog niet of nee.</p></div>
-        <div class="problem"><p class="says">"Ik bewaar huizen en kijk filmpjes online, maar ik weet niet wat bij me past."</p><p class="fix">Schrijf eerst op wat je echt wilt, zodat je elke optie daaraan kunt toetsen.</p></div>
-        <div class="problem"><p class="says">"Elk forum zegt iets anders over visa, belasting en kosten."</p><p class="fix">Werk met informatie die haar bron en datum toont, en weet welke professional je moet vragen.</p></div>
+    <div class="gr-card">
+      <img src="/images/gratis/guide-moving.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
+      <div class="gr-text">
+        <h2 class="gr-label" id="gr-h">Nieuw en gratis</h2>
+        <p class="gr-meta"><span class="gr-type">Gids</span><time datetime="2026-10-23">23 oktober 2026</time></p>
+        <h3><a href="/wel-of-niet-emigreren/">Wel of niet emigreren? Begin met een gewone dag.</a></h3>
+        <p class="gr-short">Vijf vragen en een oefening om te zien of je echt moet verhuizen.</p>
       </div>
-    </details>
-    <p class="turn">Verhuizen is niet het enige goede antwoord. Soms is de beste keuze een echte verandering precies waar je nu bent. Waar het om gaat is dat je zelf kiest, in plaats van het maar te laten gebeuren. Soms is het antwoord een verhuizing. Soms is het een andere indeling van je week, een andere manier van werken of een andere besteding van je tijd op de plek waar je al woont.</p>
-    <p class="muted" style="margin-top:14px;max-width:46em">Twijfel je of je moet emigreren? <a href="/wel-of-niet-emigreren/">Lees: Wel of niet emigreren? Begin met een gewone dag.</a> Of lees: <a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf? Begin met wie jouw week bepaalt.</a></p>
-  </div>
-</section>
-
-<!-- 5 METHOD -->
-<section class="method" id="method">
-  <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">De route</p>
-      <h2>Drie fasen. Acht stappen. Eén blueprint.</h2>
-      <p class="lead">Stap 1 tot 3 werken of je je leven verandert waar je nu bent, of een nieuw leven ergens anders opbouwt. Elke stap beantwoordt één grote vraag en geeft je een resultaat dat je kunt gebruiken. Fase 1 is op zichzelf compleet.</p>
-    </div>
-    <div class="phases">
-      <div class="ph now rv"><span class="avail">Nu beschikbaar</span><p class="n">Fase 1 · Stap 1 tot 3</p><h3>Choose it</h3><p>Bepaal eerlijk wat je wilt veranderen, en waar. Besluiten niet te verhuizen is ook een echte keuze.</p><p class="range">Picture · Explore · Decide</p></div>
-      <div class="ph rv"><span class="avail">Komt later</span><p class="n">Stap 4 tot 7</p><h3>Build it</h3><p>Leg de praktische basis en bouw daarop je eigen versie van het leven.</p><p class="range">Prepare · Arrive · Settle · Build</p></div>
-      <div class="ph rv"><span class="avail">Komt later</span><p class="n">Stap 8</p><h3>Live it</h3><p>Kom thuis in de gewone dagen die volgen. Misschien help je later iemand die dan staat waar jij nu staat.</p><p class="range">Thrive</p></div>
-    </div>
-
-    <details class="more stepsbox">
-      <summary>Bekijk alle acht stappen</summary>
-      <figure class="route-fig"><img src="/img/route-8-steps.png" alt="De route in acht stappen. Stap 1 tot 3, Picture, Explore en Decide, zijn Choose it en werken voor elke plek of voor blijven. Stap 4 tot 8, Prepare, Arrive, Settle, Build en Thrive, zijn gemaakt voor Portugal. Een blijfroute vertrekt na Stap 3 om je leven te veranderen waar je bent." width="1600" height="1189" loading="lazy"></figure>
-    </details>
-    <div class="callout"><p><b>Twee goede uitkomsten.</b> Stap 1 tot 3 werken voor elke bestemming, ook als je blijft waar je bent. Besluit je te blijven, dan eindigt Stap 3 met je blijfroute: een plan om je leven te veranderen waar je nu bent. Daarmee is je Blueprint compleet. Besluit je te verhuizen, dan begeleiden Stap 4 tot 8 (komt later) je bij het opbouwen van je leven in Portugal.</p></div>
-  </div>
-</section>
-
-<!-- 5b FOUNDER INTRO -->
-<section class="intro">
-  <div class="wrap intro-grid">
-    <img class="photo rv" src="/img/mwata-terrace.jpg" alt="Mwata lacht op het terras van zijn huis in Portugal, met granieten rotsblokken en bomen achter hem." loading="lazy" width="800" height="1122">
-    <div class="rv">
-      <p class="eyebrow">Wie maakte dit</p>
-      <h2>Hallo, ik ben Mwata.</h2>
-      <p class="lead">Ik bouwde een leven op in Bali en daarna een ander in landelijk Portugal. Onderweg kreeg ik hulp bij losse onderdelen, maar niemand begeleidde me door de hele reis. Ik maakte deze Blueprint om te delen wat ik geleerd heb en om jou te helpen je eigen beeld werkelijkheid te maken. <a href="#story">Lees mijn verhaal →</a></p>
+      <div class="gr-side"><span class="gr-go" aria-hidden="true">Lees de gids →</span><a class="gr-all" href="/gratis/">Al het gratis materiaal →</a></div>
     </div>
   </div>
-</section>
+</section><!--/gr:strip-->
 
-<!-- 6 THE PRODUCT -->
+<!-- 5 WHAT YOU FINISH WITH -->
 <section class="object" id="inside">
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">Wat je krijgt</p>
-      <h2>Jouw antwoorden worden je persoonlijke Blueprint.</h2>
-      <p class="lead">Werk elke stap door, beantwoord de vragen over je eigen leven en kom tot een besluit over wat je verandert, waarom, wat je controleert en wat je daarna doet.</p>
+      <h2>Een resultaat na elke stap. Je Blueprint na Fase 1.</h2>
+      <p class="lead">Na elke stap bewaar of print je een duidelijke samenvatting van je eigen antwoorden. Als je Fase 1 afrondt, komen ze samen in je persoonlijke Blueprint. Tik hieronder om een voorbeeld te zien.</p>
     </div>
 
-    <ol class="stages">
-      <li class="rv"><span class="sn">1</span><h3>Doorloop de cursus</h3><p>Begrijp elk idee en zie een voorbeeld voordat je het zelf toepast.</p></li>
-      <li class="rv"><span class="sn">2</span><h3>Pas het toe op je leven</h3><p>Beantwoord de vragen in de app, in je eigen woorden en in je eigen tempo.</p></li>
-      <li class="rv"><span class="sn">3</span><h3>Breng het samen</h3><p>Rond de fase af met je persoonlijke Blueprint om te bekijken en te downloaden. Of je nu blijft of verhuist.</p></li>
-    </ol>
+    
 
     <div class="results">
-      <p class="eyebrow">Waarmee je eindigt</p>
-      <h3 class="results-h">Een resultaat na elke stap. Je Blueprint na Fase 1.</h3>
-      <p class="lead" style="max-width:44em">Na elke stap bewaar of print je een duidelijke samenvatting van je eigen antwoorden. Als je Fase 1 afrondt, komen ze samen in je persoonlijke Blueprint. Tik hieronder om een voorbeeld te zien.</p>
-      <details class="sample-set" open>
-      <summary class="eyebrow">Voorbeeld A: een nieuw leven ergens anders opbouwen (Anna)</summary>
-      <ul class="rcards">
-        <li class="rcard rv"><button type="button" data-open="1" aria-label="Bekijk voorbeeld: My Working Direction"><span class="rimg"><img src="/img/results/step1-working-direction-p1.jpg" alt="Voorbeeldresultaat My Working Direction, pagina 1: het levensbeeld en waartussen de persoon kiest." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">Het leven dat je wilt, in je eigen woorden, en waartussen je kiest.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="2" aria-label="Bekijk voorbeeld: My Explore Summary"><span class="rimg"><img src="/img/results/step2-explore-summary-p1.jpg" alt="Voorbeeldresultaat My Explore Summary, pagina 1: de plek en de afstanden rond het huis." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">De plek die je onderzoekt, wat je ervan weet en wat je nog moet controleren.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="3" aria-label="Bekijk voorbeeld: My Decision"><span class="rimg"><img src="/img/results/step3-decision-p1.jpg" alt="Voorbeeldresultaat My Decision, pagina 1: het besluit (Go) en de vijf lichten: geld, papieren, mensen, plek en Plan B." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 3</span><span class="rtitle">My Decision</span><span class="rblurb">Gaan, nog niet of nee, met je vijf groene lichten en de voorwaarden die nog tellen.</span></button></li>
-        <li class="rcard rv final"><button type="button" data-open="4" aria-label="Bekijk voorbeeld: My Blueprint"><span class="rimg"><img src="/img/results/phase1-blueprint-p1.jpg" alt="Voorbeeld My Blueprint, pagina 1: het besluit in één oogopslag, met de drie stappen en hun data." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Fase 1</span><span class="rtitle">My Blueprint</span><span class="rblurb">Alles samen op vier pagina's: je besluit, het geld en je volgende hoofdstuk.</span></button></li>
-      </ul>
-      </details>
-      <details class="sample-set" open>
-      <summary class="eyebrow">Voorbeeld B: je leven veranderen waar je nu bent</summary>
-      <ul class="rcards">
-        <li class="rcard rv"><button type="button" data-open="5" aria-label="Bekijk voorbeeld B: My Working Direction"><span class="rimg"><img src="/img/results/b-step1-working-direction-p1.jpg" alt="Voorbeeld B, My Working Direction: een persoon die besluit in de eigen stad te blijven en de week te veranderen." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">Het levensbeeld, wat je behoudt en een werkrichting: blijven en de week veranderen.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="6" aria-label="Bekijk voorbeeld B: My Explore Summary"><span class="rimg"><img src="/img/results/b-step2-explore-summary-p1.jpg" alt="Voorbeeld B, My Explore Summary: de stad waar de persoon woont, getoetst aan het beeld." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">De veranderingen die je kunt doorvoeren waar je woont, getoetst aan je beeld.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="7" aria-label="Bekijk voorbeeld B: My Decision"><span class="rimg"><img src="/img/results/b-step3-decision-p1.jpg" alt="Voorbeeld B, My Decision: ga en verander waar ik ben, met de vijf lichten." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 3</span><span class="rtitle">My Decision</span><span class="rblurb">Wat je verandert, de vijf lichten, wat nog openstaat en de eerste stap.</span></button></li>
-        <li class="rcard rv final"><button type="button" data-open="8" aria-label="Bekijk voorbeeld B: My Change Plan"><span class="rimg"><img src="/img/results/b-step3-change-plan-p1.jpg" alt="Voorbeeld B, My Change Plan, pagina 1: de stappen van de eerste week tot de vierde maand, met het geld en de uren." width="1000" height="1415" loading="lazy"></span><span class="rtag">Als je blijft</span><span class="rtitle">My Change Plan</span><span class="rblurb">De stappen per maand, het geld, de mensen en Plan B.</span></button></li>
-      </ul>
-      </details>
       <div class="btn-row"><a class="textlink" href="#options">Bekijk Fase 1 en prijs →</a></div>
-      <p class="legend">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Jouw resultaten worden gemaakt van je eigen antwoorden en er wordt niets voor je gekozen.</p>
-      <p class="legend">Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen.</p>
+      <div class="sample-pair">
+        <div class="sample-col">
+          <p class="eyebrow">Voorbeeld A: een verhuizing voorbereiden (Anna)</p>
+          <ul class="rcards">
+            <li class="rcard rv final"><button type="button" data-open="4" aria-label="Bekijk voorbeeld: My Blueprint"><span class="rimg"><img src="/img/results/phase1-blueprint-p1.jpg" alt="Verzonnen voorbeeld My Blueprint, pagina 1: Annas besluit, Not yet, in één oogopslag, met de drie stappen op 20 oktober 2026, 14 maart 2027 en 1 mei 2027." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Fase 1</span><span class="rtitle">My Blueprint</span><span class="rblurb">Alles samen op vier pagina's: je besluit, het geld en je volgende hoofdstuk.</span></button></li>
+          </ul>
+        </div>
+        <div class="sample-col">
+          <p class="eyebrow">Voorbeeld B: je leven veranderen waar je nu bent</p>
+          <ul class="rcards">
+            <li class="rcard rv final"><button type="button" data-open="8" aria-label="Bekijk voorbeeld B: My Change Plan"><span class="rimg"><img src="/img/results/b-step3-change-plan-p1.jpg" alt="Verzonnen voorbeeld B, My Change Plan, pagina 1: vier dagen per week met vrijdag buiten, geregeld vóór 1 februari 2027, en de kleine test die Sam al heeft gedaan." width="1000" height="1415" loading="lazy"></span><span class="rtag">Als je blijft</span><span class="rtitle">My Change Plan</span><span class="rblurb">De stappen per maand, het geld, de mensen en Plan B.</span></button></li>
+          </ul>
+        </div>
+      </div>
+      <details class="more steps-results">
+        <summary>Bekijk het resultaat na elke stap</summary>
+        <div class="sample-col">
+          <p class="eyebrow">Voorbeeld A: een verhuizing voorbereiden (Anna)</p>
+          <ul class="rcards">
+            <li class="rcard rv"><button type="button" data-open="1" aria-label="Bekijk voorbeeld: My Working Direction"><span class="rimg"><img src="/img/results/step1-working-direction-p1.jpg" alt="Verzonnen voorbeeld My Working Direction, pagina 1: Annas beeld van een klein huis met land en de twee opties waartussen ze kiest." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">Het leven dat je wilt, in je eigen woorden, en waartussen je kiest.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="2" aria-label="Bekijk voorbeeld: My Explore Summary"><span class="rimg"><img src="/img/results/step2-explore-summary-p1.jpg" alt="Verzonnen voorbeeld My Explore Summary, pagina 1: het gehuurde huis in de Serra do Açor en de reistijden eromheen." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">De plek die je onderzoekt, wat je ervan weet en wat je nog moet controleren.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="3" aria-label="Bekijk voorbeeld: My Decision"><span class="rimg"><img src="/img/results/step3-decision-p1.jpg" alt="Verzonnen voorbeeld My Decision, pagina 1: Annas besluit is Not yet (nog niet). Geld en mensen staan op oranje, allebei uiterlijk 31 mei 2027; papieren, plek en Plan B staan op groen." width="1000" height="1415" loading="lazy"></span><span class="rtag">Na Stap 3</span><span class="rtitle">My Decision</span><span class="rblurb">Je besluit, de uitkomst van vijf controles en de voorwaarden waaraan je nog moet voldoen.</span></button></li>
+          </ul>
+        </div>
+        <div class="sample-col">
+          <p class="eyebrow">Voorbeeld B: je leven veranderen waar je nu bent</p>
+          <ul class="rcards">
+            <li class="rcard rv"><button type="button" data-open="5" aria-label="Bekijk voorbeeld B: My Working Direction"><span class="rimg"><img src="/img/results/b-step1-working-direction-p1.jpg" alt="Verzonnen voorbeeld B, My Working Direction, pagina 1: Sam wil in de eigen stad blijven, vier dagen werken en de vrijdag buiten doorbrengen." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">Hoe je wilt leven, wat je wilt behouden en de optie die je onderzoekt: blijven en je week anders indelen.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="6" aria-label="Bekijk voorbeeld B: My Explore Summary"><span class="rimg"><img src="/img/results/b-step2-explore-summary-p1.jpg" alt="Verzonnen voorbeeld B, My Explore Summary, pagina 1: Sam toetst de vierdaagse werkweek: wat die oplevert, wat niet, en hoe het geld ervoor staat na de verandering." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">De veranderingen die je kunt doorvoeren waar je woont, getoetst aan je beeld.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="7" aria-label="Bekijk voorbeeld B: My Decision"><span class="rimg"><img src="/img/results/b-step3-decision-p1.jpg" alt="Verzonnen voorbeeld B, My Decision, pagina 1: Sams besluit is Go and change where I am (blijven en veranderen waar je bent). Geld en papieren staan op oranje; mensen, plek en Plan B staan op groen." width="764" height="1152" loading="lazy"></span><span class="rtag">Na Stap 3</span><span class="rtitle">My Decision</span><span class="rblurb">Wat je verandert, de uitkomst van vijf controles, wat nog openstaat en de eerste stap.</span></button></li>
+          </ul>
+        </div>
+      </details>
+      <p class="legend">Voorbeelden met verzonnen antwoorden, in het Engels zoals de app en de workbooks. Je resultaten zijn gebaseerd op je eigen antwoorden. Je maakt zelf de keuzes. Het besluit benoemt wat je verandert en wat je daarna controleert. Het is niet alleen een ja of nee tegen verhuizen. De vijf controles zijn geld, papieren, mensen, plek en Plan B. In je resultaat staat elke controle als een lichtje: groen als het geregeld is, oranje of rood als er nog aandacht nodig is.</p>
       <p class="legend"><a href="/samples/text/">Lees de voorbeeldresultaten als tekst (Engels)</a></p>
     </div>
 
-    <div class="object-sub">
-      <p class="eyebrow">De app</p>
-      <h3 style="font-size:clamp(28px,3.4vw,38px);margin-bottom:12px">Eén plek om te leren, te doen en te beslissen.</h3>
-      <p class="lead" style="max-width:44em;margin-bottom:28px">De app hoort bij je Fase 1-pakket, naast de pdf-workbooks. Doe de oefeningen, print of bewaar je resultaten na elke stap en vraag de AI-partner mee te denken als je iets wilt uitzoeken, alles op één plek.</p>
-      <div class="shots">
-        <div class="shots-text rv">
-          <ul class="app-list">
-            <li><b>Begin</b> bij het cursusoverzicht. In de app staat een korte welkomstvideo, gratis en met Engelse ondertitels. Video's voor de stappen staan gepland; alles wat je nodig hebt zit in de workbooks en de app.</li>
-            <li><b>Doe</b> de oefeningen: elke oefening legt het idee uit, geeft een voorbeeld en helpt je het toe te passen op je eigen situatie. Je voortgang wordt bewaard, dus je kunt stoppen en terugkomen wanneer het jou uitkomt. Na elke stap kun je je resultaten printen of bewaren en met het afronden van Fase 1 krijg je je persoonlijke Blueprint.</li>
-            <li><b>Denk samen na</b> met je AI-partner. Die helpt je nadenken over wat je schreef. Hij neemt geen besluiten voor je en controleert geen feiten uit de echte wereld.</li>
-          </ul>
-          <p class="muted" style="font-size:15px;margin-top:14px">Eerst een kijkje nemen? Je kunt ook <a href="https://app.maderealblueprint.com/free?from=website">enkele gratis oefeningen proberen in de app (Engels)</a>.</p>
-        </div>
-        <figure class="rv"><img src="/img/app-welcome.png" alt="De app op een telefoon: een welkomstscherm met de introductie en Fase 1 Choose it, elk met een voortgangsbalk." width="390" height="844" loading="lazy"><figcaption><b>Volg de route.</b> Zie waar je staat in elke fase.</figcaption></figure>
-        <figure class="rv"><img src="/img/app-exercise-step1.png" alt="De app op een telefoon: oefening 1.2, A normal day in the life you want, met bovenaan een voortgangsbalk voor Stap 1 Picture." width="390" height="844" loading="lazy"><figcaption><b>Doe de oefeningen.</b> Elke oefening legt eerst het idee uit, met een voorbeeld.</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="object-sub paper">
-      <div>
-        <p class="eyebrow">Liever op papier werken?</p>
-        <h3 style="font-size:clamp(26px,3vw,34px)">De pdf-workbooks.</h3>
-        <p style="margin-bottom:16px">Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je downloadbare persoonlijke Blueprint te maken, voer je je antwoorden in de app in.</p>
-        <button class="btn btn-ghost" type="button" id="open-wb">Kijk in een workbook</button>
-      </div>
-      <div class="covers rv" role="img" aria-label="De drie Fase 1-workbooks: Stap 1 Picture, Stap 2 Explore, Stap 3 Decide">
-        <div class="cover c1"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 1</span><span class="t">Picture</span><span class="s">Welk leven wil ik echt?</span></div>
-        <div class="cover c2"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 2</span><span class="t">Explore</span><span class="s">Waar, of hoe, kan dit leven plaatsvinden?</span></div>
-        <div class="cover c3"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 3</span><span class="t">Decide</span><span class="s">Ben ik klaar voor deze optie?</span></div>
-      </div>
-    </div>
-
-    <div class="inc">
-      <div><h4>Gesprekken met de mensen om je heen</h4><p>Vragen helpen je je plannen door te spreken met je partner, familie en vrienden.</p></div>
-      <div><h4>Informatie die je kunt controleren</h4><p>Regels en prijzen veranderen. Ik laat mijn bronnen zien, wanneer ik ze controleerde en welke professional je kunt vragen over juridische of fiscale zaken.</p></div>
-      <div><h4>Begin waar je bent</h4><p>Een korte check helpt je je beginpunt te kiezen. Reken op ongeveer twee tot drie uur per week.</p></div>
-    </div>
-
-    <p class="not-this">De Blueprint is een route om uit te werken welk leven je wilt en dat op te bouwen en te leven, geschreven door iemand die dat twee keer heeft gedaan. Hij coacht je niet en regelt je verhuizing niet voor je.</p>
+    <p class="not-this">Ik schreef de Blueprint op basis van mijn ervaring met twee verhuizingen naar het buitenland. Je gebruikt de cursus om zelf uit te zoeken wat je wilt veranderen en welke stappen daarvoor nodig zijn. Persoonlijke coaching en hulp bij het regelen van je verhuizing zijn niet inbegrepen.</p>
   </div>
 </section>
 
@@ -825,53 +941,55 @@ footer .links{margin:10px 0 0}
   <div class="sample-body">
     <div class="rpanel" data-panel="1">
       <div class="rsum"><p><b>Na Stap 1 · My Working Direction.</b> Je levensbeeld in je eigen woorden, de opties waartussen je kiest met wat nog onzeker is, wat je wilt beschermen, je waarden en je werkrichting.</p><p class="rlinks"><a href="/samples/my-working-direction-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/step1-working-direction-p1.jpg" alt="Voorbeeldresultaat My Working Direction, pagina 1: het levensbeeld en waartussen de persoon kiest." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step1-working-direction-p2.jpg" alt="Pagina 2: de tijd die de persoon zelf bepaalt en wat die nodig heeft." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step1-working-direction-p3.jpg" alt="Pagina 3 van het voorbeeld My Working Direction." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step1-working-direction-p1.jpg" alt="Verzonnen voorbeeld My Working Direction, pagina 1: Annas beeld van een klein huis met land en de twee opties waartussen ze kiest." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step1-working-direction-p2.jpg" alt="Pagina 2: Annas scores voor zes levensgebieden en de tijd die ze zelf invult: nu 32 van 112 wakkere uren (29%), gewenst 54%." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step1-working-direction-p3.jpg" alt="Pagina 3: Annas eerste geldbeeld, met €2.245 aan kosten tegenover €1.650 aan inkomen waarop ze kan rekenen, en haar volgende kleine stap: een bezoek van acht dagen in februari." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="2" hidden>
       <div class="rsum"><p><b>Na Stap 2 · My Explore Summary.</b> De plek die je onderzoekt, het leven rond het huis (afstanden tot ziekenhuis, huisarts, winkels en luchthaven, met wat je controleerde en wat nog een schatting is) en of je met deze plek verder gaat.</p><p class="rlinks"><a href="/samples/my-explore-summary-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/step2-explore-summary-p1.jpg" alt="Voorbeeldresultaat My Explore Summary, pagina 1: de plek en de afstanden rond het huis." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step2-explore-summary-p2.jpg" alt="Pagina 2 van het voorbeeld My Explore Summary." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step2-explore-summary-p3.jpg" alt="Pagina 3 van het voorbeeld My Explore Summary." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step2-explore-summary-p1.jpg" alt="Verzonnen voorbeeld My Explore Summary, pagina 1: het gehuurde huis in de Serra do Açor en de reistijden eromheen." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step2-explore-summary-p2.jpg" alt="Pagina 2: wat Anna leerde tijdens een bezoek van acht dagen in februari, en haar scores voor drie landen op 20." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step2-explore-summary-p3.jpg" alt="Pagina 3: Annas kosten, €2.360 per maand gevonden tegenover €2.245 geschat, haar tekort van €710 per maand en een tweede bezoek, gepland van 12 tot 21 april 2027." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="3" hidden>
-      <div class="rsum"><p><b>Na Stap 3 · My Decision.</b> Je besluit (gaan, nog niet of nee) met de vraag die het beantwoordt, je vijf groene lichten zoals je ze noteerde, de voorwaarden die nog tellen en je eerste stap. Besluit je te blijven, dan eindigt Stap 3 met My Change Plan.</p><p class="rlinks"><a href="/samples/my-decision-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/step3-decision-p1.jpg" alt="Voorbeeldresultaat My Decision, pagina 1: het besluit (Go) en de vijf lichten: geld, papieren, mensen, plek en Plan B." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step3-decision-p2.jpg" alt="Pagina 2 van het voorbeeld My Decision." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step3-decision-p3.jpg" alt="Pagina 3 van het voorbeeld My Decision." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step3-decision-p4.jpg" alt="Pagina 4 van het voorbeeld My Decision." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/step3-decision-p5.jpg" alt="Pagina 5 van het voorbeeld My Decision: waar ik op terugkom, met de datum om opnieuw te kijken." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Na Stap 3 · My Decision.</b> Je besluit (Go and move, Go and change where I am, Not yet of No) met de vraag die het beantwoordt, de uitkomst van je vijf controles (geld, papieren, mensen, plek en Plan B), de voorwaarden waaraan je nog moet voldoen en je eerste stap. In dit voorbeeld is Annas besluit Not yet (nog niet): geld en mensen staan nog op oranje, allebei uiterlijk 31 mei 2027. Besluit je te blijven, dan eindigt Stap 3 met My Change Plan.</p><p class="rlinks"><a href="/samples/my-decision-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/step3-decision-p1.jpg" alt="Verzonnen voorbeeld My Decision, pagina 1: Annas besluit is Not yet (nog niet). Geld en mensen staan op oranje, allebei uiterlijk 31 mei 2027; papieren, plek en Plan B staan op groen." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step3-decision-p2.jpg" alt="Pagina 2: Annas budget: kosten van €2.360, inkomen van €1.650, elke maand €710 tekort, en €42.000 spaargeld dat €16.100 wordt om van te leven, ongeveer 22 maanden tegenover de 18 die ze wil." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step3-decision-p3.jpg" alt="Pagina 3: waar Anna op let, met drie risico’s en hun waarschuwingssignalen, haar weg terug en het alternatief dat nog openligt." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step3-decision-p4.jpg" alt="Pagina 4: de volgorde van Annas acties, van de boekhouding online zetten vóór 7 mei 2027 tot residentie aanvragen vóór 30 september 2027." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/step3-decision-p5.jpg" alt="Pagina 5: waar Anna op terugkomt, met de datum om opnieuw te kijken: 1 april 2028." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="4" hidden>
-      <div class="rsum"><p><b>Na Fase 1 · My Blueprint.</b> Pagina 1 toont je besluit in één oogopslag. Pagina 2 toont waarvoor je kiest, de tijd die je zelf bepaalt en wat je nodig hebt. Pagina 3 toont het geld en je looptijd. Pagina 4 toont je volgende hoofdstuk: openstaande voorwaarden, eerste actie, je weg terug en de datum waarop je het besluit opnieuw bekijkt.</p><p class="rlinks"><a href="/samples/my-blueprint-phase-1-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/phase1-blueprint-p1.jpg" alt="Voorbeeld My Blueprint, pagina 1: het besluit in één oogopslag, met de drie stappen en hun data." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/phase1-blueprint-p2.jpg" alt="Pagina 2: waarvoor ik kies, met tijd, behoeften, wat ik bescherm en wat ik accepteer." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/phase1-blueprint-p3.jpg" alt="Pagina 3: het geld, wat de cijfers kunnen dragen, met de looptijd." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/phase1-blueprint-p4.jpg" alt="Pagina 4: mijn volgende hoofdstuk, met de lichten, openstaande voorwaarden, eerste actie en de weg terug." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Na Fase 1 · My Blueprint.</b> Pagina 1 toont je besluit in één oogopslag. Pagina 2 toont wat je kiest, de tijd die je zelf invult en wat je nodig hebt. Pagina 3 toont je budget en hoe lang je beschikbare spaargeld een maandelijks tekort kan dekken. Pagina 4 toont je volgende hoofdstuk: de uitkomst van je vijf controles, openstaande voorwaarden, eerste actie, je weg terug en de datum waarop je het besluit opnieuw bekijkt.</p><p class="rlinks"><a href="/samples/my-blueprint-phase-1-example.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/phase1-blueprint-p1.jpg" alt="Verzonnen voorbeeld My Blueprint, pagina 1: Annas besluit, Not yet, in één oogopslag, met de drie stappen op 20 oktober 2026, 14 maart 2027 en 1 mei 2027." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/phase1-blueprint-p2.jpg" alt="Pagina 2: wat Anna kiest: de tijd die ze zelf invult, wat ze nodig heeft, wat ze beschermt en wat ze accepteert." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/phase1-blueprint-p3.jpg" alt="Pagina 3: Annas geld: €710 tekort per maand, €16.100 om van te leven, genoeg voor ongeveer 22 maanden." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/phase1-blueprint-p4.jpg" alt="Pagina 4: Annas volgende hoofdstuk: de vijf controles, de twee openstaande voorwaarden, de eerste actie en de weg terug." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="5" hidden>
-      <div class="rsum"><p><b>Voorbeeld B · Na Stap 1 · My Working Direction.</b> Verzonnen antwoorden van iemand die meer tijd buiten wil en minder werkavonden, en kiest te blijven en de week te veranderen.</p><p class="rlinks"><a href="/samples/sample-b-my-working-direction.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/b-step1-working-direction-p1.jpg" alt="Voorbeeld B, My Working Direction, pagina 1." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step1-working-direction-p2.jpg" alt="Pagina 2 van het voorbeeld B My Working Direction." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step1-working-direction-p3.jpg" alt="Pagina 3 van het voorbeeld B My Working Direction." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Voorbeeld B · Na Stap 1 · My Working Direction.</b> Verzonnen antwoorden van iemand die meer tijd buiten wil en minder werkavonden, en ervoor kiest te blijven en de week anders in te delen.</p><p class="rlinks"><a href="/samples/sample-b-my-working-direction.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/b-step1-working-direction-p1.jpg" alt="Verzonnen voorbeeld B, My Working Direction, pagina 1: Sam wil in de eigen stad blijven, vier dagen werken en de vrijdag buiten doorbrengen." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step1-working-direction-p2.jpg" alt="Pagina 2: Sams scores voor zes levensgebieden en de tijd die Sam zelf kan invullen: nu 16 van 112 wakkere uren (14%), na de verandering 26 uur (23%)." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step1-working-direction-p3.jpg" alt="Pagina 3: Sams eerste geldbeeld, met kosten van €2.210, inkomen van €2.360 en elke maand €150 over, en de test van vier weken, van 22 september tot 15 oktober 2026." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="6" hidden>
-      <div class="rsum"><p><b>Voorbeeld B · Na Stap 2 · My Explore Summary.</b> Voor wie blijft toetst dit de verandering zelf: waarop die rust, wat die niet geeft, wat nog onbekend is, het geld na de verandering en de week.</p><p class="rlinks"><a href="/samples/sample-b-my-explore-summary.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/b-step2-explore-summary-p1.jpg" alt="Voorbeeld B, My Explore Summary, pagina 1." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step2-explore-summary-p2.jpg" alt="Pagina 2 van het voorbeeld B My Explore Summary." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Voorbeeld B · Na Stap 2 · My Explore Summary.</b> Voor wie blijft toetst dit de verandering zelf: wat ervoor nodig is, wat de verandering wel en niet oplevert, wat nog onzeker is en wat er verandert in je budget en weekindeling.</p><p class="rlinks"><a href="/samples/sample-b-my-explore-summary.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/b-step2-explore-summary-p1.jpg" alt="Verzonnen voorbeeld B, My Explore Summary, pagina 1: Sam toetst de vierdaagse werkweek: wat die oplevert, wat niet, en hoe het geld ervoor staat na de verandering." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step2-explore-summary-p2.jpg" alt="Pagina 2: de regels op het werk, de betrokken mensen en wat Sams test liet zien." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="7" hidden>
-      <div class="rsum"><p><b>Voorbeeld B · Na Stap 3 · My Decision.</b> "Ga en verander waar ik ben": de vijf lichten zoals genoteerd, de voorwaarde die nog openstaat, de eerste stap en het plan erachter. Het besluit benoemt wat je verandert en wat je daarna controleert.</p><p class="rlinks"><a href="/samples/sample-b-my-decision.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/b-step3-decision-p1.jpg" alt="Voorbeeld B, My Decision, pagina 1." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step3-decision-p2.jpg" alt="Pagina 2 van het voorbeeld B My Decision." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step3-decision-p3.jpg" alt="Pagina 3 van het voorbeeld B My Decision." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step3-decision-p4.jpg" alt="Pagina 4 van het voorbeeld B My Decision." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Voorbeeld B · Na Stap 3 · My Decision.</b> "Go and change where I am" (blijven en veranderen waar je bent): de uitkomst van vijf controles (geld en papieren staan nog op oranje), de voorwaarden die nog openstaan, de eerste stap en het plan erachter. Het besluit benoemt wat je verandert en wat je daarna controleert.</p><p class="rlinks"><a href="/samples/sample-b-my-decision.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/b-step3-decision-p1.jpg" alt="Verzonnen voorbeeld B, My Decision, pagina 1: Sams besluit is Go and change where I am (blijven en veranderen waar je bent). Geld en papieren staan op oranje; mensen, plek en Plan B staan op groen." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-decision-p2.jpg" alt="Pagina 2: Sams budget: kosten van €2.210, inkomen van €2.360, elke maand €150 over, en €14.000 spaargeld dat €6.710 wordt om van te leven." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-decision-p3.jpg" alt="Pagina 3: waar Sam op let, met drie risico’s en hun waarschuwingssignalen, en de weg terug." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-decision-p4.jpg" alt="Pagina 4: de volgorde van Sams acties, van een eerste gesprek met de leidinggevende begin november 2026 tot de eerste vrijdag buiten op 5 februari 2027." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-decision-p5.jpg" alt="Pagina 5: waar Sam op terugkomt, met de datum om opnieuw te kijken: 28 december 2026." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="8" hidden>
-      <div class="rsum"><p><b>Voorbeeld B · Als je blijft · My Change Plan.</b> De stappen per maand, het geld en de buffer, de uren die je zelf bepaalt, bij wie het ligt en Plan B.</p><p class="rlinks"><a href="/samples/sample-b-my-change-plan.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
-      <img src="/img/results/b-step3-change-plan-p1.jpg" alt="Voorbeeld B, My Change Plan, pagina 1." width="1000" height="1415" loading="lazy">
-      <img src="/img/results/b-step3-change-plan-p2.jpg" alt="Pagina 2 van het voorbeeld B My Change Plan." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Voorbeeld B · Als je blijft · My Change Plan.</b> De stappen per maand, het geld en de buffer, de uren die je zelf bepaalt, wie erbij betrokken is en wat je alternatief is.</p><p class="rlinks"><a href="/samples/sample-b-my-change-plan.pdf" target="_blank" rel="noopener">Open dit voorbeeld als pdf (Engels)</a></p></div>
+      <img src="/img/results/b-step3-change-plan-p1.jpg" alt="Verzonnen voorbeeld B, My Change Plan, pagina 1: vier dagen per week met vrijdag buiten, geregeld vóór 1 februari 2027, en de kleine test die Sam al heeft gedaan." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-change-plan-p2.jpg" alt="Pagina 2: de stappen op volgorde, het geld en de buffer, en de uren die Sam zelf kan invullen." width="1000" height="1415" loading="lazy">
+      <img src="/img/results/b-step3-change-plan-p3.jpg" alt="Pagina 3: wie Sam het vertelt, de eerste 90 dagen, wat nog onzeker is en Sams Plan B." width="1000" height="1415" loading="lazy">
     </div>
   </div>
 </dialog>
@@ -895,7 +1013,94 @@ footer .links{margin:10px 0 0}
   </div>
 </dialog>
 
-<!-- 8 OFFERS -->
+<!-- 6 HOW PHASE 1 WORKS -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Fase 1 · Stap 1 tot 3</p>
+      <h2>Zo werkt Fase 1</h2>
+      <p class="lead">Stap 1 tot en met 3 helpen je zowel bij veranderingen waar je nu woont als bij het opbouwen van een leven ergens anders. Elke stap beantwoordt één grote vraag en geeft je een resultaat dat je kunt gebruiken. Fase 1 is op zichzelf compleet.</p>
+    </div>
+    <ol class="three-steps">
+      <li class="rv"><p class="n">Stap 1</p><h3>Picture</h3><p><b>Wat je wilt.</b> Hoe je gewone dagen eruit mogen zien en wat daarin voor jou telt.</p></li>
+      <li class="rv"><p class="n">Stap 2</p><h3>Explore</h3><p><b>Wat je nog moet onderzoeken.</b> Welke mogelijkheden passen, welke aannames je moet controleren en wat praktisch en financieel haalbaar lijkt.</p></li>
+      <li class="rv"><p class="n">Stap 3</p><h3>Decide</h3><p><b>Wat je nu kiest.</b> Verder onderzoeken, iets veranderen waar je bent, een verhuizing voorbereiden of voorlopig niet doorgaan, met voorwaarden en een eerste stap.</p></li>
+    </ol>
+    <p class="lead app-line">De app hoort bij je Fase 1-pakket, naast de pdf-workbooks. Doe de oefeningen, print of bewaar je resultaten na elke stap en vraag de AI-partner mee te denken als je iets wilt uitzoeken, alles op één plek.</p>
+    <details class="more">
+      <summary>Bekijk de app en de werkboeken</summary>
+      <div class="xbox">
+        <ol class="stages">
+              <li class="rv"><span class="sn">1</span><h3>Doorloop de cursus</h3><p>Begrijp elk idee en zie een voorbeeld voordat je het zelf toepast.</p></li>
+              <li class="rv"><span class="sn">2</span><h3>Pas het toe op je leven</h3><p>Beantwoord de vragen in de app, in je eigen woorden en in je eigen tempo.</p></li>
+              <li class="rv"><span class="sn">3</span><h3>Breng het samen</h3><p>Rond de fase af met je persoonlijke Blueprint om te bekijken en te downloaden. Of je nu blijft of verhuist.</p></li>
+            </ol>
+        <div class="object-sub">
+          <p class="eyebrow">De app</p>
+          <h3 style="font-size:clamp(28px,3.4vw,38px);margin-bottom:12px">Eén plek om te leren, te doen en te beslissen.</h3>
+          <div class="shots">
+            <div class="shots-text rv">
+              <ul class="app-list">
+                <li><b>Begin</b> bij het cursusoverzicht. In de app staat een korte welkomstvideo, gratis en met Engelse ondertitels. Video's voor de stappen staan gepland; alles wat je nodig hebt zit in de workbooks en de app.</li>
+                <li><b>Doe</b> de oefeningen: elke oefening legt het idee uit, geeft een voorbeeld en helpt je het toe te passen op je eigen situatie. Je voortgang wordt bewaard, dus je kunt stoppen en terugkomen wanneer het jou uitkomt. Na elke stap kun je je resultaten printen of bewaren en als je Fase 1 afrondt, krijg je je persoonlijke Blueprint.</li>
+                <li><b>Gebruik de optionele AI-partner</b> om je antwoorden verder te onderzoeken. Hij neemt geen besluiten voor je en controleert geen feiten uit de echte wereld.</li>
+              </ul>
+              <p class="muted" style="font-size:15px;margin-top:14px">Eerst een kijkje nemen? Je kunt ook <a href="https://app.maderealblueprint.com/free?from=website">de oefening Een gewone dinsdag gratis proberen in de app (Engels)</a>.</p>
+            </div>
+            <figure class="rv"><img src="/img/app-welcome.png" alt="De app op een telefoon: Fase 1 Choose it, met Stap 1 Picture afgerond en voortgangsbalken voor Stap 2 Explore en Stap 3 Decide." width="390" height="844" loading="lazy"><figcaption><b>Volg de route.</b> Zie waar je staat in elke fase.</figcaption></figure>
+            <figure class="rv"><img src="/img/app-exercise-step1.png" alt="De app op een telefoon: oefening 1.2, A normal day in the life you want, met bovenaan een voortgangsbalk voor Stap 1 Picture." width="390" height="844" loading="lazy"><figcaption><b>Doe de oefeningen.</b> Elke oefening legt eerst het idee uit, met een voorbeeld.</figcaption></figure>
+          </div>
+        </div>
+        <div class="object-sub paper">
+          <div>
+            <p class="eyebrow">Liever op papier werken?</p>
+            <h3 style="font-size:clamp(26px,3vw,34px)">De pdf-workbooks.</h3>
+            <p style="margin-bottom:16px">Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je downloadbare persoonlijke Blueprint te maken, voer je je antwoorden in de app in.</p>
+            <button class="btn btn-ghost" type="button" id="open-wb">Kijk in een workbook</button>
+          </div>
+          <div class="covers rv" role="img" aria-label="De drie Fase 1-workbooks: Stap 1 Picture, Stap 2 Explore, Stap 3 Decide">
+            <div class="cover c1"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 1</span><span class="t">Picture</span><span class="s">Welk leven wil ik echt?</span></div>
+            <div class="cover c2"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 2</span><span class="t">Explore</span><span class="s">Waar en hoe kan ik zo leven?</span></div>
+            <div class="cover c3"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Stap 3</span><span class="t">Decide</span><span class="s">Ben ik klaar voor deze optie?</span></div>
+          </div>
+        </div>
+        <div class="inc">
+          <div><h4>Gesprekken met de mensen om je heen</h4><p>Vragen helpen je je plannen door te spreken met je partner, familie en vrienden.</p></div>
+          <div><h4>Informatie die je kunt controleren</h4><p>Regels en prijzen veranderen. Ik laat mijn bronnen zien, wanneer ik ze controleerde en welke professional je kunt vragen over juridische of fiscale zaken.</p></div>
+          <div><h4>Begin waar je bent</h4><p>Een korte check helpt je je beginpunt te kiezen. Reken op ongeveer twee tot drie uur per week.</p></div>
+        </div>
+      </div>
+    </details>
+    <details class="more">
+      <summary>Bekijk de bredere route</summary>
+      <div class="xbox">
+        <div class="phases">
+          <div class="ph now rv"><span class="avail">Nu beschikbaar</span><p class="n">Fase 1 · Stap 1 tot 3</p><h3>Choose it</h3><p>Bepaal eerlijk wat je wilt veranderen, en waar. Besluiten niet te verhuizen is ook een echte keuze.</p><p class="range">Picture · Explore · Decide</p></div>
+          <div class="ph rv"><span class="avail">Komt later</span><p class="n">Stap 4 tot 7</p><h3>Build it</h3><p>Bereid je verhuizing voor en werk stap voor stap aan je leven in Portugal.</p><p class="range">Prepare · Arrive · Settle · Build</p></div>
+          <div class="ph rv"><span class="avail">Komt later</span><p class="n">Stap 8</p><h3>Live it</h3><p>Kom thuis in de gewone dagen die volgen. Misschien help je later iemand die dan staat waar jij nu staat.</p><p class="range">Thrive</p></div>
+        </div>
+        <figure class="route-fig"><img src="/img/route-8-steps.png" alt="De route in acht stappen. Stap 1 tot 3, Picture, Explore en Decide, zijn Choose it en werken voor elke plek of voor blijven. Stap 4 tot 8, Prepare, Arrive, Settle, Build en Thrive, zijn gemaakt voor Portugal. Een blijfroute vertrekt na Stap 3 om je leven te veranderen waar je bent." width="1600" height="1189" loading="lazy"></figure>
+        <div class="callout"><p><b>Twee goede uitkomsten.</b> Stap 1 tot 3 werken voor elke bestemming, ook als je blijft waar je bent. Besluit je te blijven, dan eindigt Stap 3 met je blijfroute: een plan om je leven te veranderen waar je nu bent. Daarmee is je Blueprint compleet. Besluit je te verhuizen, dan helpen stap 4 tot en met 8 je bij het opbouwen van je leven in Portugal, zodra ze beschikbaar zijn.</p></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 7 FOUNDER INTRO -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <img class="photo rv" src="/img/mwata-terrace.jpg" alt="Mwata lacht op het terras van zijn huis in Portugal, met granieten rotsblokken en bomen achter hem." loading="lazy" width="800" height="1122">
+    <div class="rv">
+      <p class="eyebrow">Wie maakte dit</p>
+      <h2>Hallo, ik ben Mwata.</h2>
+      <p class="lead">Ik bouwde een leven op in Bali en daarna een ander in landelijk Portugal. Onderweg kreeg ik hulp bij losse onderdelen, maar niemand begeleidde me door de hele reis. Ik maakte deze Blueprint om te delen wat ik geleerd heb en om jou te helpen je eigen beeld werkelijkheid te maken.</p>
+      <p class="intro-stand">Een leven wordt gekozen en opgebouwd, niet geërfd en niet aan het toeval overgelaten.</p>
+      <div class="btn-row intro-more"><a class="btn btn-ghost" href="/mijn-verhaal/">Lees mijn verhaal →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 PHASE 1 OFFER -->
 <section class="on-dark offers" id="options">
   <div class="offers-art" aria-hidden="true"></div>
   <div class="wrap">
@@ -918,34 +1123,30 @@ footer .links{margin:10px 0 0}
         <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a><a class="textlink" href="#contact">Stel me eerst een vraag</a></div>
         <p class="after assure"><b>30 dagen geld-terug-garantie.</b> Betaal met kaart, PayPal of de andere methoden die bij het afrekenen staan. Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>.</p>
         <p class="after">De werkboeken en de app zijn in het Engels. <a href="#inside">Bekijk eerst een voorbeeld.</a></p>
-        <div class="fnote">
-          <picture><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata, de maker van The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
-          <p>Ergens diep van binnen is er een gevoel dat er iets moet veranderen. Ik leerde ernaar te luisteren, zette een helder beeld van het leven dat ik wilde op papier en bouwde mijn leven daaruit op. Ik help je graag het jouwe te horen en echt te maken, waar dat ook blijkt te zijn. Mwata</p>
-        </div>
         </div>
         <div class="o-what">
         <div class="peek">
-          <button type="button" class="pk" data-open="3" aria-label="Bekijk voorbeeld: My Decision (Anna, die besluit te verhuizen)"><img src="/img/results/step3-decision-p1.jpg" alt="Eerste pagina van een afgerond My Decision: Anna besluit te verhuizen." width="1000" height="1415" loading="lazy"></button>
-          <button type="button" class="pk" data-open="7" aria-label="Bekijk voorbeeld: My Decision (Sam, die besluit te blijven en iets te veranderen)"><img src="/img/results/b-step3-decision-p1.jpg" alt="Eerste pagina van een afgerond My Decision: Sam besluit te blijven en iets te veranderen." width="1000" height="1415" loading="lazy"></button>
-          <p><b>Zie hoe een afgerond resultaat eruitziet.</b> Twee voorbeelden van twee verschillende mensen: de een besluit te verhuizen, de ander besluit te blijven en iets te veranderen. Tik op een pagina om hem te openen.</p>
+          <button type="button" class="pk" data-open="3" aria-label="Bekijk voorbeeld: My Decision (Anna, met het besluit Not yet)"><img src="/img/results/step3-decision-p1.jpg" alt="Eerste pagina van een verzonnen My Decision: Annas besluit is Not yet (nog niet), met geld en mensen nog op oranje." width="1000" height="1415" loading="lazy"></button>
+          <button type="button" class="pk" data-open="7" aria-label="Bekijk voorbeeld: My Decision (Sam, die besluit te blijven en iets te veranderen)"><img src="/img/results/b-step3-decision-p1.jpg" alt="Eerste pagina van een verzonnen My Decision: Sams besluit is Go and change where I am (blijven en veranderen waar je bent), met geld en papieren nog op oranje." width="1000" height="1415" loading="lazy"></button>
+          <p><b>Zie hoe een afgerond resultaat eruitziet.</b> Twee verzonnen voorbeelden: Anna bereidt een verhuizing naar het buitenland voor, terwijl Sam veranderingen plant in het leven thuis. Tik op een pagina om hem te openen.</p>
         </div>
         <div class="cols">
           <div>
             <p class="lh">Je ontvangt</p>
-            <ul><li>De Introduction, met een korte check om je beginpunt te vinden</li><li>De app: oefeningen, resultaten die je kunt printen of bewaren en een AI-partner</li><li>Pdf-workbooks: Picture, Explore en Decide</li></ul>
+            <ul><li>De Introduction: het inleidende werkboek met een korte check om te bepalen waar je begint</li><li>De app: oefeningen, resultaten die je kunt printen of bewaren en een AI-partner</li><li>Pdf-workbooks: Picture, Explore en Decide</li></ul>
           </div>
           <div>
             <p class="lh">Je rondt af met</p>
             <ul><li>My Working Direction: je werkrichting</li><li>My Explore Summary: wat je hebt uitgezocht</li><li>My First Money Picture: je eerste geldcheck</li><li>My Decision: je besluit (gaan, nog niet of nee)</li><li>Als je blijft: My Change Plan, je blijfroute</li><li>Een downloadbare persoonlijke Blueprint</li></ul>
           </div>
         </div>
-        <p class="after"><b>Waar begin je?</b> Begin met de First Picture in Stap 1. Je hoeft niet alle werkboeken tegelijk te openen. Het werkt op je telefoon of laptop.</p>
-        <p class="after">Stap 4 tot en met 8 is nog in ontwikkeling en maakt geen deel uit van deze aankoop.</p>
-        <p class="after">Een deel van de praktische voorbeelden en bronnen gaat over Portugal. Gebruik voor jouw bestemming officiële informatie en een passende deskundige. <a href="/andere-bestemming/">Denk je aan een ander land?</a></p>
+        <p class="after"><b>Weet je nog niet waar je moet beginnen?</b> Start met het onderdeel Your First Picture in stap 1. Je kunt de oefeningen één voor één maken in de app, op je telefoon of laptop.</p>
+        <p class="after">Stap 4 tot en met 8 zijn nog in ontwikkeling en maken geen deel uit van deze aankoop.</p>
+        <p class="after">Een deel van de praktische voorbeelden en bronnen gaat over Portugal. Raadpleeg voor een ander land de officiële bronnen en een deskundige die dat land en jouw vraagstuk kent. <a href="/andere-bestemming/">Denk je aan een ander land?</a></p>
         <details class="more notfor"><summary>Wanneer past dit niet bij je?</summary>
           <p>Dit past waarschijnlijk niet als je vooral iemand zoekt die een verhuizing voor je regelt, een visum- of belastingvraag beantwoordt of zegt welke keuze je moet maken. Je werkt zelfstandig; persoonlijke coaching is niet inbegrepen.</p>
           <p>Zoek je alleen praktische informatie over een land en weet je al zeker dat je wilt verhuizen? Dan kan een gespecialiseerde bron of adviseur beter bij je vraag passen.</p>
-          <p>Je moet prettig genoeg Engels kunnen lezen om met de werkboeken en app te werken. Bekijk daarom eerst een voorbeeld.</p>
+          <p>Je moet voldoende Engels kunnen lezen om met de werkboeken en de app te werken. Bekijk daarom eerst een voorbeeld.</p>
           <p>De Blueprint is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven.</p>
         </details>
         </div>
@@ -956,7 +1157,7 @@ footer .links{margin:10px 0 0}
         <h3>Stap 1 tot en met 8</h3>
         <p class="for">Voor jou als je je leven in Portugal wilt opbouwen en een praktische route nodig hebt.</p>
         </div>
-        <div class="actions"><a class="btn btn-light" href="#contact" data-waitlist="full">Laat me weten wanneer hij opengaat</a><a class="textlink" href="#contact">Stel me een vraag</a></div>
+        <div class="actions"><a class="btn btn-light" href="#contact" data-waitlist="full">Laat me weten wanneer de volledige cursus beschikbaar is</a><a class="textlink" href="#contact">Stel me een vraag</a></div>
       </div>
     </div>
     <div class="founding" id="founding">
@@ -967,136 +1168,66 @@ footer .links{margin:10px 0 0}
   </div>
 </section>
 
-<!-- 7 STORY -->
-<section class="story" id="story">
-  <div class="wrap">
-    <div class="story-top">
-      <img class="photo" src="/images/mwata.jpg" srcset="/images/mwata-420.jpg 420w, /images/mwata.jpg 720w" sizes="(max-width: 760px) 100vw, 380px" alt="Mwata lacht met veiligheidshelm en vizier terwijl hij struikgewas rooit op zijn land in Portugal." width="720" height="960" loading="lazy">
-      <!-- TODO: add a second, approachable portrait without equipment and use it here; keep this one as the working-life image. -->
-      <div class="txt">
-        <p class="eyebrow">Wie ik ben</p>
-        <h2>Ik ben Mwata. Ik heb twee keer een nieuw leven in het buitenland opgebouwd.</h2>
-        <p class="lead">Ik had een goede baan en een comfortabel huis in Nederland, maar ik miste toch iets. Een cursus hielp me helder te krijgen welk leven ik echt wilde, en in 2021 verhuisde ik met slechts twee tassen naar Bali. Daar bouwde ik vanaf nul een leven op: een adviesbedrijf, een nieuwgebouwd huis en een lokaal inspectiebedrijf. Na drie jaar veranderde mijn beeld echter. Dat bracht me ertoe mijn tweede leven op te bouwen in landelijk Portugal.</p>
-        <p>Ik maakte deze Blueprint omdat niemand mij, ondanks hulp bij losse onderdelen, begeleidde van het eerste idee door alle besluiten die daarop volgden. Ik had niemand nodig die bepaalde wat mijn leven moest zijn. Ik had iemand nodig die me vertelde wat ik eerst moest controleren, op basis van echte ervaring. Dat heb ik in deze Blueprint opgeschreven.</p>
-      </div>
-    </div>
-
-    <div class="ba">
-      <figure class="rv"><img src="/images/ruin-before.jpg" alt="Het granieten hoofdhuis in 2024: zonder dak, overwoekerd en in puin, naast een groot rotsblok." loading="lazy" width="1100" height="1467"><figcaption><b>April 2024</b>Het hoofdhuis, een ruïne.</figcaption></figure>
-      <figure class="rv"><img src="/images/ruin-after.jpg" alt="Hetzelfde granieten huis in 2026: volledig gerenoveerd, met een nieuw donker dak, onder een diepblauwe lucht." loading="lazy" width="1100" height="1467"><figcaption><b>April 2026</b></figcaption></figure>
-    </div>
-    <div class="gallery">
-      <img class="photo" src="/images/cabin.jpg" alt="Een houten huisje met terracotta dak achter een klein zwembad, met olijfbomen." loading="lazy" width="640" height="853">
-      <img class="photo" src="/images/outdoor.jpg" alt="Een buitenruimte onder dennenbomen, met houten pergola's, een terras en een vuurschaal tussen granieten rotsblokken." loading="lazy" width="640" height="853">
-      <img class="photo" src="/images/garden.jpg" alt="Verhoogde moestuinbedden in de nieuwe tuin." loading="lazy" width="640" height="853">
-      <img class="photo" src="/images/harvest-fruit.jpg" alt="Een schaal verse bosbessen, aardbeien en kersen, omhooggehouden voor het uitzicht." loading="lazy" width="640" height="853">
-    </div>
-    <p class="cap">Nog niet af, maar het idee van twee jaar geleden is nu echt.</p>
-
-    <div class="lesson">
-      <p class="eyebrow">Van mijn leven naar het workbook</p>
-      <div class="lesson-grid">
-        <p><b>Waar ik voor stond:</b> welke regio van Portugal en welk stuk grond?</p>
-        <p><b>Wat ik deed:</b> Ik reisde twee maanden in een camper en bekeek 25 percelen. Met één regio voelde ik me verbonden, met een andere helemaal niet.</p>
-        <p><b>Wat ik leerde:</b> je ontdekt het alleen ter plaatse. Ga als tester, niet als toerist.</p>
-        <p><b>In de Blueprint:</b> Stap 2, Explore: test het in het echt voordat je beslist.</p>
-      </div>
-    </div>
-
-    <details class="more fullstory" style="margin-top:32px">
-      <summary>Lees mijn hele verhaal</summary>
-      <div class="split" style="margin-top:28px">
-        <ol class="timeline" style="margin-top:0">
-          <li><span class="when">2020</span><h3>Het huis verkocht</h3><p>Ik verkocht mijn huis in Nederland om de wereld rond te reizen. Toen stopte COVID die plannen. Een cursus hielp me helder te krijgen wat ik echt wilde.</p></li>
-          <li><span class="when">Bali</span><h3>Twee tassen, een nieuw leven</h3><p>Tijdens een sabbatical van twee maanden op Bali had ik eindelijk ruimte om na te denken. Ik schreef een leven op aan zee, in een warm klimaat, waar ik mijn eigen bedrijf kon runnen en mensen kon helpen. Thuis zei ik mijn baan op, verkocht wat ik nog had en verhuisde met twee tassen naar Bali. Ik begon een adviesbedrijf, kocht een huis en begon later mijn eigen inspectiebedrijf.</p><figure style="margin:12px 0 0"><picture><source type="image/avif" srcset="/images/bali-volcano-600.avif"><source type="image/webp" srcset="/images/bali-volcano-600.webp"><img src="/images/bali-volcano-600.jpg" alt="Mwata op een groene bergkam op Bali, met uitzicht op een vulkaan die boven de ochtendmist uitsteekt." loading="lazy" width="600" height="800" style="width:100%;height:auto;border-radius:4px"></picture><figcaption class="cap" style="margin-top:6px">Bali, een paar weken na mijn aankomst.</figcaption></figure></li>
-          <li><span class="when">Drie jaar later</span><h3>Een nieuw beeld</h3><p>Bali veranderde, en ik ook. Ik miste creatief bezig zijn: dingen bouwen en in een tuin werken. Een YouTube-kanaal over zelfvoorzienender leven zette me aan het denken over nog een verhuizing.</p></li>
-          <li><span class="when">April 2024</span><h3>Het derde perceel</h3><p>Ik reisde in een camper door Portugal, verkende de regio's en bezocht percelen die ik op een shortlist had gezet. Ik was niet van plan om tijdens die reis te kopen. Maar toen ik het derde perceel zag, wist ik dat het dit moest zijn.</p></li>
-          <li><span class="when">Augustus 2024</span><h3>Tekenen</h3><p>Ik tekende de koopovereenkomst. Mijn geldplan lag al klaar, dus ik was niet bang me te binden. Eind dat jaar was het land officieel van mij.</p></li>
-          <li class="now"><span class="when">Vandaag</span><h3>Het leven leven</h3><p>Ik woon op mijn eigen stuk land op het platteland van midden-Portugal, met genoeg projecten om me jarenlang creatief bezig te houden. Het is niet af en dat hoeft ook niet. Het is echt.</p></li>
-        </ol>
-        <div class="story-photos">
-          <img class="a" src="/images/nl-house.jpg" alt="Luchtfoto van Mwata's voormalige huis in Nederland, met een gebogen rieten dak en een tuin." loading="lazy" width="1100" height="618">
-          <div class="pair">
-            <img src="/images/bali-desk.jpg" alt="Een laptop en bouwplattegronden op een houten bureau op Bali." loading="lazy" width="640" height="1053">
-            <img src="/images/campervan.jpg" alt="Een camper geparkeerd op een klif boven de Atlantische Oceaan in Portugal." loading="lazy" width="640" height="480">
-          </div>
-          <p class="cap">Mijn huis in Nederland, verkocht in 2020 · inspectiewerk op Bali · de camperreis door Portugal.</p>
-        </div>
-      </div>
-    </details>
-
-    <div class="why-share">
-      <picture class="ws-pic"><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata lacht, met een meer en bergen achter zich." width="84" height="84" loading="lazy"></picture>
-      <div class="ws-text">
-      <p class="eyebrow">Waarom ik dit deel</p>
-      <p>Toen ik stopte met mijn gevoel te negeren en ernaar ging luisteren, kwam mijn leven in beweging. Ik begon met een helder beeld op papier van het leven dat ik wilde. Ik zette één stap, daarna de volgende, en bouwde een leven in twee landen dat ik met droge ogen echt kan noemen. De reis was niet makkelijk en ik leerde onderweg veel. Maar ik kan oprecht zeggen hoe goed het voelt als je je eigen beeld echt ziet worden. Nu is het mijn beurt om door te geven wat ik kreeg. Daarom schreef ik deze Blueprint: om je geduldig en praktisch te begeleiden bij het echt maken van je eigen leven.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- 8b WHAT I STAND FOR -->
-<section class="band-pine" id="stand">
-  <div class="wrap">
-    <p class="eyebrow" style="color:var(--ochre-light)">Waar ik voor sta</p>
-    <p class="statement">Een leven wordt gekozen en opgebouwd, niet geërfd en niet aan het toeval overgelaten.</p>
-    <p class="lead" style="color:#E6DECF">Een groot deel van het leven dat je nu leeft is het gevolg van keuzes, sommige bewust gemaakt en andere door mee te drijven. Je kunt opnieuw kiezen. Gezondheid, geld en de mensen om wie je geeft stellen echte grenzen. Binnen die grenzen kun je bepalen wat voor jou telt, een plan maken en dat stap voor stap opbouwen.</p>
-    <div class="pvm2">
-      <div><h3>Mijn beeld <small>(mijn visie)</small></h3><p>Ik bouw een leven waarin ik aanwezig ben, betrouwbaar en trouw aan mijn waarden. Ik heb de vrijheid om het grootste deel van mijn dagen zelf in te richten, tijd in de natuur door te brengen, te ontdekken en aan zinvolle projecten te werken met de mensen van wie ik hou.</p></div>
-      <div><h3>Waarom ik dit doe <small>(mijn doel)</small></h3><p>Mensen inspireren en helpen het leven te realiseren dat ze echt willen, door mijn ervaring, praktische kennis en de hulpmiddelen te delen die het mogelijk maken.</p></div>
-      <div><h3>Wat ik bouw <small>(mijn missie)</small></h3><p>Een Blueprint ontwikkelen en delen die mensen helpt helder te krijgen welk leven ze willen, realistische manieren te onderzoeken om dat te creëren en hun keuzes om te zetten in actie, of dat nu waar ze nu wonen is of ergens anders. Fase 1 is nu beschikbaar. Latere fasen zijn gepland voor mensen die een leven in Portugal opbouwen.</p></div>
-    </div>
-    <p class="warm warm-wide">Mijn grootste les was echt leren horen wat ik wilde. Nu wil ik jou helpen te horen wat jij wilt.</p>
-  </div>
-</section>
-
 <!-- 9 FAQ -->
 <section id="faq">
   <div class="wrap faq">
     <p class="eyebrow">Goed om te weten</p>
     <h2>Vragen die mensen stellen</h2>
-    <details><summary>Is dit een cursus?</summary><p>Ja. Een cursus in stappen, met pdf-workbooks en een app voor de oefeningen. Fase 1 (Stap 1 tot 3) is nu beschikbaar; Stap 4 tot 8 komen later. Na elke stap kun je je resultaten in de app printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint: je eigen opgeschreven plan.</p></details>
-    <details><summary>Vraag je om feedback?</summary><p>Ja. Ik vraag om eerlijke feedback terwijl je de stappen doorloopt: wat duidelijk is, wat ontbreekt en wat hielp. Een review geven is vrijwillig en ik gebruik die alleen met je schriftelijke toestemming.</p></details>
-    <details><summary>Welke optie past bij mij?</summary><p>Weet je nog niet wat je wilt, of waar? Begin met Fase 1. Die werkt voor Portugal en andere plekken, maar ook voor echte veranderingen thuis. Weet je al zeker dat het Portugal wordt? Ook de hele Blueprint begint met Fase 1, omdat een helder beeld van het leven dat je wilt je helpt elke keuze daarna te beoordelen.</p></details>
-    <details><summary>Is dit alleen voor mensen die willen verhuizen?</summary><p>Nee. Fase 1 begint met het leven dat je wilt. Je kunt eindigen met een plan om je leven te veranderen waar je bent, een besluit om elders te kijken of een besluit om te wachten. Latere fasen zijn gepland voor mensen die een leven in Portugal opbouwen.</p></details>
-    <details><summary>Wat heb ik aan het einde van Fase 1?</summary><p>Een opgeschreven richting, wat je nog moet uitzoeken en een besluit over wat je verandert, waarom en wat je daarna doet. Na elke stap bewaar of print je een samenvatting.</p></details>
-    <details><summary>Moet ik naar Portugal verhuizen?</summary><p>Nee. Fase 1 werkt voor elke bestemming, en ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal, omdat ik daar nu woon en daar een leven heb opgebouwd.</p></details>
-    <details><summary>Wat als ik besluit te blijven waar ik ben?</summary><p>Dat is een echt resultaat. De optie die je in Stap 3 test kan ook een verandering zijn op de plek waar je woont, zoals minder dagen werken, een nieuwe baan, een eigen bedrijf, meer ruimte of een andere regio in je eigen land. Besluit je te blijven, dan eindigt Stap 3 met je blijfroute: My Change Plan, met een datum, een eerste stap en een terugblik. Daarmee is je Blueprint compleet.</p></details>
-    <details><summary>Heb ik de app nodig, of kan ik de pdf-workbooks op papier gebruiken?</summary><p>Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je resultaten na elke stap te printen of te bewaren, en om je persoonlijke Blueprint te krijgen als je Fase 1 afrondt, voer je je antwoorden in de app in.</p></details>
-    <details><summary>Is de gratis dinsdagoefening alleen voor mensen die voor Portugal kiezen?</summary><p>Nee. Fase 1 en de gratis dinsdagoefening werken voor elke bestemming, ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal.</p></details>
-    <details><summary>Wat ontvang ik precies, en hoe?</summary><p>Direct na betaling ontvang je de Introduction en de Fase 1-workbooks als pdf-download, plus de app met de oefeningen. In de app kun je na elke stap je resultaten printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint. Elk workbook legt de ideeën uit, geeft verzonnen voorbeelden en heeft ruimte voor je eigen antwoorden.</p></details>
-    <details><summary>Is de cursus in het Nederlands?</summary><p>De Nederlandse pagina's, de gratis oefening en de e-mails zijn in het Nederlands. De werkboeken en de app zijn in het Engels. De welkomstvideo in de app heeft Engelse ondertitels. Video's voor de cursusstappen staan gepland, en daarvoor plannen we ook Nederlandse ondertitels.</p></details>
-    <details><summary>Hoe lang houd ik toegang?</summary><p>Volgens onze voorwaarden minimaal drie jaar vanaf je aankoop. De pdf's kun je downloaden. Als we de app ooit sluiten, krijg je minstens 12 maanden van tevoren een e-mail en kun je eerst je antwoorden en je persoonlijke Blueprint downloaden.</p></details>
-    <details><summary>Wat als het niet bij me past?</summary><p>Je kunt binnen 30 dagen na aankoop een volledige terugbetaling vragen, per e-mail met je ordernummer. Een of twee regels over wat niet werkte zijn welkom, maar niet verplicht. Je wettelijke rechten blijven gelden.</p></details>
-    <details><summary>Moet ik de AI-partner gebruiken?</summary><p>Nee. De AI-partner is optioneel en je kunt de oefeningen ook zonder doen. AI-antwoorden kunnen fouten bevatten, dus controleer belangrijke informatie bij een betrouwbare bron of een professional.</p></details>
-    <details><summary>Is dit persoonlijke coaching?</summary><p>Nee. Je werkt zelfstandig en in je eigen tempo. Je kunt vragen mailen over hoe iets werkt, maar persoonlijke coaching is niet inbegrepen. De Blueprint is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven.</p></details>
-    <details><summary>Kunnen mijn partner en ik samen werken?</summary><p>Ja, zonder tweede aankoop. In de app nodig je je partner uit, die inlogt met een eigen e-mailadres en eigen toegang krijgt. Sommige pagina's zijn gedeeld: jullie schrijven samen één antwoord. Andere schrijf je allebei alleen, en je ziet elkaars antwoord zodra jullie allebei geschreven hebben. Een paar persoonlijke pagina's kunnen privé blijven. Krijg je je geld terug, dan eindigt de toegang van jullie allebei.</p></details>
-    <details><summary>Hoe werkt toegang nadat ik betaald heb?</summary><p>Je krijgt een link om de pdf-werkboeken te downloaden en een aparte e-mail met uitleg over de app. Je meldt je aan met het e-mailadres waarmee je betaalde en een code die naar dat adres wordt gestuurd. Komt er iets niet aan, gebruik dan "Bought but no access?" in de app of mail ons.</p></details>
-    <details><summary>Kan ik met Fase 1 beginnen en de hele Blueprint later krijgen?</summary><p>Ja. Als de hele Blueprint opengaat, ben ik van plan te verrekenen wat je voor Fase 1 betaalde, en ik bevestig hoe voordat hij opengaat.</p></details>
-    <details><summary>Ik weet al wat ik wil. Kan ik vooruitspringen?</summary><p>Dat kan. De korte check in de Introduction helpt je kiezen waar je begint, van Stap 1 tot Stap 3. Ook als je later begint, lees Stap 1 kort door: je beeld van het leven dat je wilt helpt je elke latere keuze te beoordelen.</p></details>
-    <details><summary>Hoeveel tijd kost het?</summary><p>Reken op ongeveer twee tot drie uur per week. Korte, regelmatige blokken tijd werken voor dit soort werk meestal beter dan één lang weekend.</p></details>
-    <details><summary>Geef je juridisch of fiscaal advies?</summary><p>Nee. Regels en prijzen veranderen, dus ik laat altijd de bron en de datum van controle zien. Voor juridische, fiscale en geldbesluiten helpen de workbooks je de juiste professional en de juiste vragen te vinden.</p></details>
-    <details><summary>Is mijn Engels goed genoeg?</summary><p>De Blueprint is geschreven in korte, eenvoudige zinnen voor mensen die Engels als tweede taal spreken. Elk Portugees of officieel woord wordt de eerste keer uitgelegd. De workbooks en de app zijn in het Engels. Vragen voor je koopt? Je kunt me een bericht sturen in het Engels of Nederlands.</p></details>
+    <details id="faq-what-exactly-do-i-receive-and-how"><summary>Wat ontvang ik precies, en hoe?</summary><p>Direct na betaling ontvang je de Introduction en de Fase 1-workbooks als pdf-download, plus de app met de oefeningen. In de app kun je na elke stap je resultaten printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint. Elk workbook legt de ideeën uit, geeft verzonnen voorbeelden en heeft ruimte voor je eigen antwoorden.</p></details>
+    <details id="faq-what-do-i-have-at-the-end-of-phase-1"><summary>Wat heb ik aan het einde van Fase 1?</summary><p>Een opgeschreven richting, wat je nog moet uitzoeken en een besluit over wat je verandert, waarom en wat je daarna doet. Na elke stap bewaar of print je een samenvatting.</p></details>
+    <details id="faq-is-this-a-course"><summary>Is dit een cursus?</summary><p>Ja. Een cursus in stappen, met pdf-workbooks en een app voor de oefeningen. Fase 1 (Stap 1 tot 3) is nu beschikbaar; Stap 4 tot 8 komen later. Na elke stap kun je je resultaten in de app printen of bewaren, en als je Fase 1 afrondt krijg je je persoonlijke Blueprint: je eigen opgeschreven plan.</p></details>
+    <details id="faq-which-option-is-right-for-me"><summary>Welke optie past bij mij?</summary><p>Weet je nog niet wat je wilt, of waar? Begin met Fase 1. Die werkt voor Portugal en andere plekken, maar ook voor echte veranderingen thuis. Weet je al zeker dat het Portugal wordt? Ook de hele Blueprint begint met Fase 1, omdat een helder beeld van het leven dat je wilt je helpt elke keuze daarna te beoordelen.</p></details>
+    <details id="faq-is-this-only-for-people-who-want-to-move"><summary>Is dit alleen voor mensen die willen verhuizen?</summary><p>Nee. Fase 1 begint met het leven dat je wilt. Je kunt eindigen met een plan om je leven te veranderen waar je bent, een besluit om elders te kijken of een besluit om te wachten. Latere fasen zijn gepland voor mensen die een leven in Portugal opbouwen.</p></details>
+    <details id="faq-do-i-have-to-move-to-portugal"><summary>Moet ik naar Portugal verhuizen?</summary><p>Nee. Fase 1 werkt voor elke bestemming, en ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal, omdat ik daar nu woon en daar een leven heb opgebouwd. <a href="/andere-bestemming/">Denk je aan een ander land?</a></p></details>
+    <details id="faq-what-if-i-decide-to-stay-where-i-am"><summary>Wat als ik besluit te blijven waar ik ben?</summary><p>Dat is een echt resultaat. De optie die je in Stap 3 test kan ook een verandering zijn op de plek waar je woont, zoals minder dagen werken, een nieuwe baan, een eigen bedrijf, meer ruimte of een andere regio in je eigen land. Besluit je te blijven, dan eindigt Stap 3 met je blijfroute: My Change Plan, met een streefdatum, een eerste stap en een moment om te bekijken hoe het gaat. Daarmee is je Blueprint compleet.</p></details>
+    <details id="faq-is-the-course-in-dutch"><summary>Is de cursus in het Nederlands?</summary><p>De Nederlandse pagina's, de gratis oefening en de e-mails zijn in het Nederlands. De werkboeken en de app zijn in het Engels. De welkomstvideo in de app heeft Engelse ondertitels. Video's voor de cursusstappen staan gepland, en daarvoor plannen we ook Nederlandse ondertitels.</p></details>
+    <div class="faq-extra" id="faq-extra">
+    <details id="faq-is-my-english-good-enough"><summary>Is mijn Engels goed genoeg?</summary><p>De Blueprint is geschreven in korte, eenvoudige zinnen voor mensen die Engels als tweede taal spreken. Portugese termen en vaktermen worden uitgelegd wanneer ze voor het eerst voorkomen. De workbooks en de app zijn in het Engels. Vragen voor je koopt? Je kunt me een bericht sturen in het Engels of Nederlands.</p></details>
+    <details id="faq-how-much-time-does-it-take"><summary>Hoeveel tijd kost het?</summary><p>Reken op ongeveer twee tot drie uur per week. Korte, regelmatige blokken tijd werken voor dit soort werk meestal beter dan één lang weekend.</p></details>
+    <details id="faq-do-i-need-the-app-or-can-i-use-the-pdf-workbooks-on-paper"><summary>Heb ik de app nodig, of kan ik de pdf-workbooks op papier gebruiken?</summary><p>Je kunt de pdf-workbooks op papier of op je scherm invullen. Om je resultaten na elke stap te printen of te bewaren, en om je persoonlijke Blueprint te krijgen als je Fase 1 afrondt, voer je je antwoorden in de app in.</p></details>
+    <details id="faq-how-does-access-work-after-i-pay"><summary>Hoe werkt toegang nadat ik betaald heb?</summary><p>Je krijgt een link om de pdf-werkboeken te downloaden en een aparte e-mail met uitleg over de app. Je meldt je aan met het e-mailadres waarmee je betaalde en een code die naar dat adres wordt gestuurd. Komt er iets niet aan, mail dan naar info@maderealblueprint.com vanaf het e-mailadres waarmee je betaalde. Heb je met het ene e-mailadres betaald en met een ander aangemeld, gebruik dan de aanmeldhulp in de app, met de kop "Paid with one email, signed in with another?"</p></details>
+    <details id="faq-how-long-do-i-keep-access"><summary>Hoe lang houd ik toegang?</summary><p>Volgens onze voorwaarden minimaal drie jaar vanaf je aankoop. De pdf's kun je downloaden. Als we de app ooit sluiten, krijg je minstens 12 maanden van tevoren een e-mail en kun je eerst je antwoorden en je persoonlijke Blueprint downloaden.</p></details>
+    <details id="faq-what-if-it-is-not-for-me"><summary>Wat als het niet bij me past?</summary><p>Je kunt binnen 30 dagen na aankoop een volledige terugbetaling vragen, per e-mail met je ordernummer. Een of twee regels over wat niet werkte zijn welkom, maar niet verplicht. Je wettelijke rechten blijven gelden.</p></details>
+    <details id="faq-can-my-partner-and-i-work-on-it-together"><summary>Kunnen mijn partner en ik samen werken?</summary><p>Ja, zonder tweede aankoop. In de app nodig je je partner uit, die inlogt met een eigen e-mailadres en eigen toegang krijgt. Sommige pagina's zijn gedeeld: jullie schrijven samen één antwoord. Andere schrijf je allebei alleen, en je ziet elkaars antwoord zodra jullie allebei geschreven hebben. Een paar persoonlijke pagina's kunnen privé blijven. Krijg je je geld terug, dan eindigt de toegang voor jou en je partner. De timing volgt onderdeel 6A van de <a href="/terms.html">voorwaarden (in het Engels)</a> (3 dagen respijt, dezelfde dag bericht aan je partner, download van hun antwoorden, verwijdering na 30 dagen).</p></details>
+    <details id="faq-do-i-have-to-use-the-ai-partner"><summary>Moet ik de AI-partner gebruiken?</summary><p>Nee. De AI-partner is optioneel en je kunt de oefeningen ook zonder doen. AI-antwoorden kunnen fouten bevatten, dus controleer belangrijke informatie bij een betrouwbare bron of een professional.</p></details>
+    <details id="faq-is-this-personal-coaching"><summary>Is dit persoonlijke coaching?</summary><p>Nee. Je werkt zelfstandig en in je eigen tempo. Je kunt vragen mailen over hoe iets werkt, maar persoonlijke coaching is niet inbegrepen. De Blueprint is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven.</p></details>
+    <details id="faq-i-already-know-what-i-want-can-i-skip-ahead"><summary>Ik weet al wat ik wil. Kan ik stappen overslaan?</summary><p>Dat kan. De korte check in de Introduction helpt je kiezen waar je begint, van Stap 1 tot Stap 3. Lees stap 1 ook kort door als je later begint: je beeld van het leven dat je wilt helpt je elke latere keuze te beoordelen.</p></details>
+    <details id="faq-can-i-start-with-phase-1-and-get-the-whole-blueprint-later"><summary>Kan ik met Fase 1 beginnen en de hele Blueprint later krijgen?</summary><p>Ja. Als de hele Blueprint opengaat, ben ik van plan te verrekenen wat je voor Fase 1 betaalde, en ik bevestig hoe voordat hij opengaat.</p></details>
+    <details id="faq-is-the-free-tuesday-exercise-only-for-people-who-choose-port"><summary>Is de gratis dinsdagoefening alleen voor mensen die voor Portugal kiezen?</summary><p>Nee. Fase 1 en de gratis dinsdagoefening werken voor elke bestemming, ook als je blijft waar je bent. Stap 4 tot 8 richten zich op Portugal.</p></details>
+    <details id="faq-do-you-give-legal-or-tax-advice"><summary>Geef je juridisch of fiscaal advies?</summary><p>Nee. Regels en prijzen veranderen, dus ik laat altijd de bron en de datum van controle zien. Voor juridische, fiscale en geldbesluiten helpen de workbooks je de juiste professional en de juiste vragen te vinden.</p></details>
+    <details id="faq-do-you-ask-for-feedback"><summary>Vraag je om feedback?</summary><p>Ja. Ik vraag om eerlijke feedback terwijl je de stappen doorloopt: wat duidelijk is, wat ontbreekt en wat hielp. Een review geven is vrijwillig en ik gebruik die alleen met je schriftelijke toestemming.</p></details>
+    </div><!--/faq-extra-->
+    <div class="faq-toggle" hidden><button type="button" class="btn btn-ghost" aria-expanded="false" aria-controls="faq-extra"><span class="t-all">Toon alle vragen</span><span class="t-less" hidden>Toon minder vragen</span></button></div><!--/faq-toggle-->
   </div>
 </section>
 
-<!-- 10 CONTACT -->
+<!-- 10 FINAL STEP -->
 <section class="on-dark contact" id="contact">
   <div class="wrap split">
-    <div>
+    <div class="fs-head">
       <p class="eyebrow">Je volgende stap</p>
       <h2>Klaar om te kiezen, of nog niet zeker?</h2>
+    </div>
+    <div class="fs-boxes">
+      <div class="fnote">
+            <picture><source type="image/avif" srcset="/images/mwata-portrait-240.avif"><source type="image/webp" srcset="/images/mwata-portrait-240.webp"><img src="/images/mwata-portrait-240.jpg" alt="Mwata, de maker van The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
+            <p>Ergens diep van binnen is er een gevoel dat er iets moet veranderen. Ik leerde ernaar te luisteren, zette een helder beeld van het leven dat ik wilde op papier en bouwde mijn leven daaruit op. Ik help je graag het jouwe te horen en echt te maken, waar dat ook blijkt te zijn. Mwata</p>
+          </div>
+      <div class="final-buy">
+        <p class="fb-price">€99 <small>inclusief btw, eenmalig. Geen abonnement.</small></p>
+        <a class="btn btn-ochre" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Koop Fase 1 · €99</a>
+        <p class="fb-note"><b>30 dagen geld-terug-garantie.</b> Betaal met kaart, PayPal of de andere methoden die bij het afrekenen staan. Veilig betalen via Lemon Squeezy. <a href="/terms.html">Algemene voorwaarden (Engels)</a>.</p>
+      </div>
+    </div>
+    <p class="fs-alt">Nog niet klaar om te kopen? <a href="#free">Probeer de dinsdagoefening gratis</a>.</p>
+    <div class="contact-direct">
       <p class="lead">Stuur me gerust eerst een bericht. Ik lees elk bericht zelf en antwoord zo snel ik kan.</p>
       <p>Vertel me kort waar je nu staat. "Ik weet het nog niet" is een prima begin.</p>
-      <p style="margin-top:28px">Nog niet klaar om te kopen? <a href="#free">Probeer de dinsdagoefening gratis</a>.</p>
-      <p>Volg me op <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> en <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a>.</p>
-    </div>
-    <div class="contact-direct">
       <p>Schrijf me op dit adres, of stuur me een bericht via WhatsApp.</p>
       <p class="cd-mail"><a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a></p>
-      <p>Je mag vertellen waar je nu staat, of gewoon je vraag stellen. Ik gebruik je e-mailadres en je bericht alleen om je te antwoorden. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de cursus en de aankoop zijn in het Engels.</p>
+      <p>Je mag vertellen waar je nu staat, of gewoon je vraag stellen. Ik gebruik je e-mailadres en je bericht alleen om je te antwoorden. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de voorwaarden, de werkboeken, de app en de informatie bij het afrekenen zijn in het Engels.</p>
       <div class="form-buttons"><a class="btn btn-primary" href="mailto:info@maderealblueprint.com?subject=Een%20vraag%20over%20The%20Made%20Real%20Blueprint">Mail me</a><a class="btn btn-ghost btn-wa" href="https://wa.me/31657930469" target="_blank" rel="noopener">Liever WhatsApp?</a></div>
+      <p>Volg me op <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> en <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a>.</p>
     </div>
   </div>
 </section>
@@ -1112,7 +1243,7 @@ footer .links{margin:10px 0 0}
     <div class="cols">
       <p class="fine">The Made Real Blueprint geeft praktische begeleiding op basis van persoonlijke ervaring. Het is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven. Controleer actuele regels altijd bij de officiële bron of een gekwalificeerde professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Maatschappelijk kapitaal €10.000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Ingeschreven in het Portugese handelsregister (Conservatória do Registo Comercial)</p>
-      <p class="links">© 2026 The Life You Choose · <a href="#stand">Waar ik voor sta</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="https://app.maderealblueprint.com/withdraw">Hier de overeenkomst ontbinden</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/mijn-verhaal/">Mijn verhaal</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="https://app.maderealblueprint.com/withdraw">Hier de overeenkomst ontbinden</a></p>
     </div>
   </div>
 </footer>
@@ -1128,7 +1259,7 @@ footer .links{margin:10px 0 0}
     <input type="hidden" name="ml-submit" value="1">
     <input type="hidden" name="anticsrf" value="true">
     <button class="btn btn-primary" type="submit">Laat het me weten</button>
-    <p class="wl-small">Je krijgt eerst één e-mail om je adres te bevestigen. Ik gebruik het alleen hiervoor en elke e-mail heeft een afmeldlink. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de cursus en de aankoop zijn in het Engels.</p>
+    <p class="wl-small">Je krijgt eerst één e-mail om je adres te bevestigen. Ik gebruik het alleen hiervoor en elke e-mail heeft een afmeldlink. Zie de <a href="/privacy.html">privacyverklaring</a>. De privacyverklaring, de voorwaarden, de werkboeken, de app en de informatie bij het afrekenen zijn in het Engels.</p>
     <div class="wl-ok" role="status">Dank je. Kijk in je inbox en bevestig je e-mailadres.</div>
     <div class="wl-err" role="alert"></div>
   </form>
@@ -1143,6 +1274,7 @@ function track(name) { try { if (window.goatcounter && window.goatcounter.count)
 document.addEventListener('click', function (e) {
   const w = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (w) track('whatsapp-click');
   const m = e.target.closest && e.target.closest('a[href^="mailto:"]'); if (m) track('email-click');
+  /*gr:track*/const grl = e.target.closest && e.target.closest('.gr-strip a'); if (grl) track('gratis-link-click-nl');/*/gr:track*/
   const c = e.target.closest && e.target.closest('a[data-checkout]'); if (c) track('checkout-click-' + c.dataset.checkout);
   const g = e.target.closest && e.target.closest('a[href="#free"]'); if (g) track('free-cta-click-nl');
 });
@@ -1152,6 +1284,14 @@ const menu = document.getElementById('menu');
 menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); if (open) { const f = menu.querySelector('a'); if (f) f.focus(); } });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
+
+/*s7:faq*/(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
+function set(o){b.setAttribute('aria-expanded',o?'true':'false');a.hidden=o;l.hidden=!o;if(o)x.removeAttribute('hidden');else x.setAttribute('hidden','until-found')}
+t.hidden=false;set(false);
+b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});
+x.addEventListener('beforematch',function(){set(true)});
+function fromHash(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var e=document.getElementById(id);if(e&&x.contains(e)){set(true);if(e.tagName==='DETAILS')e.open=true;setTimeout(function(){e.scrollIntoView()},0)}}
+fromHash();window.addEventListener('hashchange',fromHash)})();/*/s7:faq*/
 
 // Gentle reveal on scroll
 if ('IntersectionObserver' in window) {
@@ -1181,15 +1321,10 @@ if(wbd&&typeof wbd.showModal==='function'){
   wbd.querySelector('.wl-close').addEventListener('click',()=>wbd.close());
   wbd.addEventListener('click',(e)=>{if(e.target===wbd)wbd.close();});
 }
-// Open "What I stand for" when linked to
-function openStand(){ const d=document.getElementById('stand'); if(d){ d.open=true; setTimeout(()=>d.scrollIntoView({block:'start'}),50); } }
-document.querySelectorAll('a[href="#stand"]').forEach((a)=>a.addEventListener('click',openStand));
-if(location.hash==='#stand') openStand();
-
 // Waiting-list pop-up (MailerLite)
 const WAITLISTS = {
-  full: { action: 'https://assets.mailerlite.com/jsonp/2693532/forms/200744843056514169/subscribe', eyebrow: 'De hele Blueprint · komt later', title: 'Laat het me weten wanneer hij opengaat',
-    text: 'Stap 4 tot 8 worden afgemaakt. Laat je e-mailadres achter en ik laat het je weten als de hele Blueprint opengaat.' },
+  full: { action: 'https://assets.mailerlite.com/jsonp/2693532/forms/200744843056514169/subscribe', eyebrow: 'De hele Blueprint · komt later', title: 'Laat me weten wanneer de volledige cursus beschikbaar is',
+    text: 'Stap 4 tot en met 8 zijn in ontwikkeling voor de Portugal-editie. Laat je e-mailadres achter en ik laat je weten wanneer de volledige cursus beschikbaar is.' },
 };
 const wl = document.getElementById('waitlist');
 if (wl && typeof wl.showModal === 'function') {
@@ -1215,7 +1350,7 @@ if (wl && typeof wl.showModal === 'function') {
       const res = await fetch(wf.action, { method: 'POST', body: new FormData(wf) });
       const data = await res.json(); if (!data.success) throw new Error();
       wBtn.style.display = 'none'; wOk.style.display = 'block'; track('waitlist-signup-full-nl');
-    } catch { wErr.textContent = 'Er ging iets mis. Probeer het opnieuw, of stuur me hieronder een bericht.'; wErr.style.display = 'block'; }
+    } catch { wErr.textContent = 'Er ging iets mis. Probeer het opnieuw of mail naar info@maderealblueprint.com.'; wErr.style.display = 'block'; }
     finally { wBtn.disabled = false; wBtn.textContent = 'Laat het me weten'; }
   });
   // maderealblueprint.com/#notify opens the pop-up directly (links in emails and bios)

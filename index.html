@@ -91,14 +91,14 @@ header.top{position:sticky;top:0;z-index:20;background:rgba(243,236,224,.94);bac
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--pine);font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
 .logo svg{width:40px;height:30px;flex:none}
-nav.links{display:flex;gap:30px;font-size:16px;font-weight:500}
-nav.links a{text-decoration:none;color:var(--granite)}
+nav.links{display:flex;gap:clamp(14px,2.2vw,30px);font-size:16px;font-weight:500}
+nav.links a{text-decoration:none;color:var(--granite);white-space:nowrap}
 nav.links a:hover{color:var(--ochre)}
 .head-actions{display:flex;align-items:center;gap:10px}
 .btn-small{padding:9px 18px;font-size:15px;white-space:nowrap}
 .menu-btn{display:none;width:42px;height:42px;border:1px solid var(--rule);background:var(--white);border-radius:3px;cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
 .menu-btn span{display:block;width:20px;height:2px;background:var(--pine)}
-@media (max-width:820px){
+@media (max-width:980px){
   nav.links{display:none}
   .menu-btn{display:flex}
   nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px}
@@ -168,11 +168,6 @@ section.routes .wrap{padding-top:26px;padding-bottom:26px}
 /* RECOGNITION */
 .thought{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1.2;color:var(--pine);max-width:24em;margin:0 0 20px}
 .thought em{color:var(--ochre)}
-.problems{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.problem{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:28px 26px;display:flex;flex-direction:column}
-.problem .says{font-family:var(--serif);font-size:23px;line-height:1.3;color:var(--granite);margin-bottom:18px}
-.problem .fix{margin-top:auto;font-size:16px;color:var(--pine);border-left:3px solid var(--moss);padding-left:14px;margin-bottom:0}
-@media (max-width:900px){ .problems{grid-template-columns:1fr} }
 details.more{margin-top:24px;border-top:1px solid var(--rule);padding-top:6px}
 details.more>summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:22px;color:var(--pine);padding:14px 0;display:flex;justify-content:space-between;gap:16px}
 details.more>summary::-webkit-details-marker{display:none}
@@ -181,13 +176,41 @@ details.more[open]>summary::after{content:"–"}
 .turn{margin-top:36px;font-size:clamp(19px,2vw,22px);color:var(--pine);border-left:3px solid var(--ochre);padding-left:20px;max-width:46em}
 
 /* FREE START */
+/*gr:css*/.gr-strip{background:var(--sand);border-bottom:1px solid var(--rule);padding:16px 0}
+.gr-card{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr) auto;align-items:center;gap:0 20px;background:var(--white);border:1px solid var(--rule);border-left:3px solid var(--ochre);border-radius:0 8px 8px 0;padding:10px 18px 10px 12px}
+.gr-card img{display:block;width:120px;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:top center;border-radius:6px;background:var(--sage)}
+.gr-card p{margin:0}
+.gr-strip .gr-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin:0 0 4px;line-height:1.3}
+.gr-meta{display:flex;flex-wrap:wrap;align-items:center;gap:2px 10px;font-size:14px;line-height:1.5;color:var(--stone);margin-bottom:2px!important}
+.gr-type{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre)}
+.gr-card h3{font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.2vw,22px);line-height:1.2;color:var(--pine);margin:0 0 2px}
+.gr-card h3 a{text-decoration:none;color:inherit}
+.gr-card h3 a::after{content:"";position:absolute;inset:0}
+.gr-card h3 a:focus{outline:none}
+.gr-card:focus-within{outline:3px solid var(--ochre);outline-offset:-3px}
+.gr-short{font-size:15px;line-height:1.4}
+.gr-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.gr-go{font-weight:600;font-size:15px;color:var(--pine);border:2px solid var(--pine);border-radius:3px;padding:7px 14px;white-space:nowrap}
+.gr-card:hover .gr-go,.gr-card:focus-within .gr-go{background:var(--pine);color:var(--sand)}
+.gr-all{position:relative;z-index:1;font-weight:600;font-size:14px;color:var(--pine);white-space:nowrap}
+@media (max-width:640px){
+  .gr-strip{padding:12px 0}
+  .gr-card{grid-template-columns:minmax(0,1fr);gap:6px 0;padding:12px 14px;align-items:start}
+  .gr-card img{display:none}
+  .gr-meta{font-size:13px;gap:0 8px}
+  .gr-card h3{font-size:17px}
+  .gr-short{font-size:14px}
+  .gr-side{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;align-items:center;gap:8px 16px}
+  .gr-go{padding:6px 12px;font-size:14px}
+  .gr-all{white-space:normal}
+}/*/gr:css*/
 .free{background:var(--white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:clamp(40px,6vw,64px) 0}
 .free .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,64px);align-items:center}
 .free h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
 .free h2 em{color:var(--ochre)}
 .free .prev{display:block;border-radius:4px;overflow:hidden;box-shadow:0 14px 40px rgba(28,30,27,.14);transition:transform .25s;transform:rotate(1.5deg)}
 .free .prev:hover{transform:rotate(0) translateY(-3px)}
-@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev{order:-1;max-width:420px} }
+@media (max-width:760px){ .free .wrap{grid-template-columns:1fr} .free .prev-col{order:-1;max-width:420px} }
 
 /* METHOD: three equal panels on a rising line */
 .method{background:var(--white)}
@@ -563,6 +586,103 @@ footer .links{margin:10px 0 0}
 .wl-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px;font-size:16px}
 .wl-err{display:none;color:#9B2C1F;margin-top:10px;font-size:15px}
 
+/*s7:css*/
+/* round 7: menu fits at 981-1040px */
+@media (min-width:981px) and (max-width:1040px){nav.links{font-size:15px;gap:16px}}
+/* round 7: slim proof strip */
+.strip ul{grid-template-columns:repeat(3,1fr);gap:0}
+.strip li,.strip li+li{padding:12px 16px 11px 0;border:0}
+.strip li+li{padding-left:24px;border-left:1px solid var(--rule)}
+.strip b{font-size:18px;line-height:1.25}
+.strip span{font-size:13px;line-height:1.35;display:block}
+@media (max-width:760px){.strip ul{display:flex;flex-wrap:wrap;gap:0 22px;padding:6px 0}.strip li,.strip li+li{padding:5px 0;border:0}.strip b{font-size:15px}.strip li span{display:none}}
+/* recognition + two routes */
+section.routes .wrap{padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(36px,5vw,56px)}
+.routes .thought{font-size:clamp(24px,3vw,34px);margin:0 0 20px}
+.says-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.says-row li{background:var(--white);border:1px solid var(--rule);border-radius:4px;padding:16px 18px;font-family:var(--serif);font-size:20px;line-height:1.3;color:var(--granite)}
+.routes .turn{margin:26px 0 0}
+.routes h2{margin-top:clamp(28px,4vw,40px)}
+@media (max-width:900px){.says-row{grid-template-columns:1fr;gap:10px}}
+.free .free-res{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--pine)}
+/* what you finish with */
+.sample-pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,36px);margin:26px 0 8px}
+.sample-col .eyebrow{margin-bottom:0}
+.sample-pair .rcards{display:grid;grid-template-columns:1fr;overflow:visible;margin:10px 0 0;padding:0}
+.sample-pair .rcard{flex:none;max-width:none}
+.sample-pair .rcard button{display:grid;grid-template-columns:minmax(110px,38%) 1fr;grid-template-rows:auto auto 1fr;column-gap:18px;align-content:start;padding:14px}
+.sample-pair .rimg{grid-row:1/4;margin:0}
+.steps-results{margin-top:20px}
+.steps-results .rcards{grid-template-columns:repeat(3,1fr);margin-top:12px}
+.steps-results .sample-col+.sample-col{margin-top:22px}
+@media (max-width:760px){.sample-pair{grid-template-columns:1fr}.sample-pair .rcard button{grid-template-columns:minmax(96px,34%) 1fr}}
+/* how Phase 1 works */
+.three-steps{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.three-steps li{background:var(--sand);border:1px solid var(--rule);border-radius:4px;padding:22px 24px}
+.three-steps .n{font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ochre);margin:0 0 4px}
+.three-steps h3{font-size:clamp(28px,2.8vw,34px)}
+.three-steps p:last-child{margin:0;font-size:16px}
+@media (max-width:820px){.three-steps{grid-template-columns:1fr;gap:12px}}
+.method .app-line{max-width:46em;margin:0}
+.xbox{padding:6px 0 4px}
+.xbox>:first-child{margin-top:0}
+.xbox .object-sub{margin-top:clamp(28px,4vw,44px)}
+.xbox .stages{margin-bottom:0}
+.xbox .phases{margin-top:8px}
+/* founder intro */
+.intro .intro-stand{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.2vw,24px);line-height:1.35;color:var(--pine);margin:6px 0 0;padding-left:16px;border-left:3px solid var(--ochre)}
+/* final step */
+.contact .fnote{margin:22px 0 0;max-width:30em}
+.free .fx-more{font-size:14px;line-height:1.5;margin:16px 0 0;color:var(--stone)}
+.free .fx-more a{color:var(--pine)}
+.intro .intro-more{margin-top:20px}
+.final-buy{margin:22px 0 22px;padding:24px 26px;border:1px solid rgba(243,236,224,.3);border-radius:4px;background:rgba(243,236,224,.06);max-width:30em}
+.final-buy .fb-price{font-family:var(--serif);font-size:clamp(44px,5vw,60px);line-height:1;color:var(--sand);margin:0 0 16px}
+.final-buy .fb-price small{display:block;font-family:var(--sans);font-size:14px;color:#CFC7B8;margin-top:6px}
+.final-buy .btn{display:block;width:100%}
+.final-buy .fb-note{font-size:14px;color:#CFC7B8;margin:12px 0 0}
+.final-buy .fb-note a{color:var(--sand)}
+/* round 7d: spacing under "Ask me a question first", tidy final step */
+.o-buy .assure{margin:20px 0 6px}
+.contact h2{text-wrap:balance}
+/* round 7h: logo block on top, the text column below it at full width, so the links line fits on one row and shares the left edge of the paragraphs and the logo */
+footer .wrap{flex-direction:column;align-items:flex-start}
+footer .cols{flex:none;width:100%;min-width:0}
+footer .cols .links{max-width:none}
+@media (min-width:761px) and (max-width:1100px){footer .cols .links{font-size:13px}}
+.faq-extra details:first-of-type{border-top:0}
+.faq-toggle{margin-top:26px}
+.faq-toggle .btn:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.contact .fs-alt{margin:22px 0 0}
+.contact .fs-alt a{font-weight:600}
+.contact .fs-boxes{margin-top:22px;display:flex;flex-direction:column}
+.contact .fs-boxes .fnote{margin:0}
+.contact .fs-boxes .final-buy{margin:22px 0 0;flex:1;display:flex;flex-direction:column;justify-content:center}
+.contact .contact-direct{display:flex;flex-direction:column}
+.contact .contact-direct .form-buttons+p{margin-top:auto;padding-top:20px}
+@media (min-width:861px){
+  .contact .split{align-items:stretch;row-gap:0;grid-template-rows:auto 1fr auto;grid-template-areas:"head ." "boxes card" "alt ."}
+  .contact .fs-head{grid-area:head}
+  .contact .fs-boxes{grid-area:boxes}
+  .contact .fs-alt{grid-area:alt}
+  .contact .contact-direct{grid-area:card;margin-top:22px}
+  .contact .contact-direct .cd-mail{font-size:clamp(18px,2.1vw,26px)}
+}
+@media (max-width:860px){.contact .split{row-gap:0}.contact .contact-direct{margin-top:32px}}
+.contact .contact-direct{border:1px solid rgba(243,236,224,.28);border-radius:4px;padding:clamp(22px,3vw,32px);background:rgba(243,236,224,.04)}
+.contact .contact-direct>:first-child{margin-top:0}
+.contact .contact-direct p{margin:0 0 14px}
+.contact .contact-direct .cd-mail{margin:2px 0 14px}
+.contact .contact-direct .form-buttons{margin:4px 0 0}
+.contact .contact-direct .form-buttons+p{font-size:15px}
+.contact-direct{font-size:16px}
+.contact-direct .lead{font-size:18px}
+.contact .form-buttons{justify-content:flex-start}
+.contact .form-buttons+p{margin-top:20px}
+.contact .form-buttons .btn-primary{background:transparent;border-color:rgba(243,236,224,.55);color:var(--sand)}
+.contact .form-buttons .btn-primary:hover{background:var(--sand);color:var(--pine)}
+/*/s7:css*/
+
 /* gentle reveal */
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
 .rv.in{opacity:1;transform:none}
@@ -578,8 +698,68 @@ footer .links{margin:10px 0 0}
 .fx-small{font-size:14px;color:var(--stone);margin:12px 0 0}
 .fx-ok{display:none;background:var(--sage);border-left:3px solid var(--moss);padding:12px 14px;margin-top:14px}
 .fx-err{display:none;color:#9B2C1F;margin-top:12px;font-size:15px}
-@media (max-width:760px){ .free .prev{order:2;max-width:360px} }
+@media (max-width:760px){ .free .prev-col{order:2;max-width:360px} }
 @media (max-width:560px){ .fx .btn{width:100%} }
+/*s8:css*/
+/* spacing scale: ordinary sections --y (88px desktop, 52px phone), related sections --y-tight, the offer and the final step keep --y-major (the former 112px) */
+:root{--y:clamp(52px,7vw,88px);--y-tight:clamp(40px,5vw,56px);--y-major:clamp(64px,9vw,112px)}
+.object{padding-bottom:var(--y-tight)}
+.method{padding-top:var(--y-tight);padding-bottom:var(--y-tight)}
+.offers{padding-top:var(--y-major);padding-bottom:calc(var(--y-major) + 8px)}
+section.contact{padding:var(--y-major) 0}
+/* free exercise: each label sits with its field (7px), field groups 22px apart; no extra grid gap */
+.free .fx{gap:0}
+.free .fx label:not(.fx-check){margin:0 0 7px}
+.free .fx input[type=text],.free .fx input[type=email]{margin:0 0 22px}
+.free .fx .fx-check{margin:0}
+.free .fx .btn{margin-top:22px}
+.free .fx .fx-small{margin-top:14px}
+/* menu with the longer label "Free resources" / "Gratis materiaal": up to 1040px the burger menu is used (the round 7 menu no longer fits there);
+   between 1041 and 1180px the language link shows its short form and the gaps get tighter, so logo, menu and buttons stay on one row */
+@media (min-width:981px) and (max-width:1040px){
+  nav.links{display:none}
+  .menu-btn{display:flex}
+  nav.links.open{display:flex;flex-direction:column;gap:0;position:absolute;top:64px;left:0;right:0;background:var(--sand);border-bottom:1px solid var(--rule);padding:8px var(--gutter) 16px;font-size:16px}
+  nav.links.open a{padding:13px 0;border-bottom:1px solid var(--rule);font-size:18px}
+}
+@media (min-width:1041px) and (max-width:1180px){
+  nav.links{font-size:15px;gap:14px}
+  .lang-sw .lg-d{display:none}.lang-sw .lg-m{display:inline}.lang-sw{margin-right:6px}
+  header.top .wrap{gap:16px}
+  .head-actions .btn-small{padding:9px 14px}
+}
+/* free exercise, desktop: two independent columns (left: head, form; right: .prev-col with the picture and the "Prefer to start straight away?" line, starting level with the heading).
+   The right column spans both rows, so it never stretches the left one. Phone: one column in DOM order (text, browser alternative, form); the decorative picture is hidden there. */
+.free .wrap{align-items:start;row-gap:0}
+.free .fx-more{font-size:16px;margin:18px 0 0}
+.free .fx{margin-top:22px}
+@media (min-width:761px){
+  .free .fx-head{grid-column:1;grid-row:1}
+  .free .fx{grid-column:1;grid-row:2}
+  .free .prev-col{grid-column:2;grid-row:1/3;margin-top:34px;align-self:start}
+}
+@media (max-width:760px){.free .prev-col{order:0;max-width:none;margin-top:6px}.free .prev-col .prev{display:none}.free .fx-more{margin-top:0}}
+/* hero crop: below 900px the picture is a short band, so the focus moves up to keep the head and shoulders of the person in frame (desktop keeps 50% 88%) */
+@media (max-width:899.98px){.hero-img img{object-position:50% 12%}}
+@media (max-width:560px){.hero-img img{object-position:50% 22%}}
+/* round 8b: the eyebrow sits over the lower part of the photo below 900px; a deeper pine overlay there keeps it at 4.5:1 or better (pine only, the top of the photo stays as it was) */
+@media (max-width:899.98px){.hero-img{background:var(--pine)}.hero-img img{height:calc(100% - 1px)}.hero-img::after{background:linear-gradient(180deg,rgba(44,59,47,0) 20%,rgba(44,59,47,.5) 48%,rgba(44,59,47,.92) 64%,var(--pine) 80%)}}
+/* round 8b: between 900 and 1199px the copy column reaches into the photo; the pine fade is deeper there too (1200px and up unchanged) */
+@media (min-width:900px){.hero-img{background:var(--pine)}.hero-img img{margin-left:2px;width:calc(100% - 2px)}}
+@media (min-width:900px) and (max-width:1199px){.hero-img::after{background:linear-gradient(90deg,var(--pine) 0,rgba(44,59,47,.95) 24%,rgba(44,59,47,0) 52%)}}
+/* round 9e: the footer links line has one more link (Recommended / Aanbevolen); on the narrow desktop range it still has to fit one row */
+@media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
+/* reading width and supporting text */
+.legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
+.not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
+.hero .founding-line{font-size:16px}
+.offer .after{font-size:16px}
+.final-buy .fb-note{font-size:16px}
+.inc p{font-size:16px}
+.rblurb{font-size:15px}
+.strip span{font-size:14px}
+.fx-small{font-size:15px}
+/*/s8:css*/
 </style>
 </head>
 <body>
@@ -591,10 +771,10 @@ footer .links{margin:10px 0 0}
       <span>The Life You <em>Choose</em></span>
     </a>
     <nav class="links" id="menu" aria-label="Main">
+      <a href="/free/">Free resources</a>
       <a href="#inside">What you get</a>
       <a href="#options">Phase 1</a>
-      <a href="#story">My story</a>
-      <a href="/guides/">Guides</a>
+      <a href="/my-story/">My story</a>
       <a href="#faq">Questions</a>
     </nav>
     <div class="head-actions">
@@ -616,52 +796,13 @@ footer .links{margin:10px 0 0}
     <div class="hero-copy">
       <p class="eyebrow" style="color:var(--ochre-light)">For people unsure about moving abroad, or wanting a different life where they are</p>
       <h1>Work out the <em>life you want</em>, and what needs to change.</h1>
-      <p class="lead">Perhaps you want to move. Perhaps you mainly want more calm, different work or more time for yourself. The Made Real Blueprint helps you put it into words, work out what it takes and choose your next step.</p>
+      <p class="lead">You might want to move abroad, change jobs or simply have more time to yourself. The Made Real Blueprint helps you put it into words, work out what it takes and choose your next step.</p>
       <div class="btn-row">
         <a class="btn btn-ochre" href="#free">Get the free exercise</a>
-        <a class="textlink" href="#options">See what you work through in Phase 1 →</a>
+        <a class="textlink" href="#options">See what's included in Phase 1 →</a>
       </div>
       <p class="founding-line"><b>Free:</b> a 3-page exercise, by email or in your browser. <b>Phase 1:</b> €99 including VAT, paid once. Workbooks and app in English.</p>
     </div>
-  </div>
-</section>
-
-<!-- TWO ROUTES -->
-<section class="routes" aria-labelledby="routes-h">
-  <div class="wrap">
-    <h2 id="routes-h">Two routes, one process</h2>
-    <div class="two">
-      <a class="route" href="#free"><b>Change your life where you are.</b><span>Picture the life you want, test what you could change, and finish with a plan and a first step.</span></a>
-      <a class="route" href="#free"><b>Build it somewhere new.</b><span>Picture the life you want, explore places against it, and finish with a decision and the checks still to run.</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- FREE START (moved under the hero) -->
-<section class="free" id="free">
-  <div class="wrap">
-    <div>
-      <p class="eyebrow">Start here · free</p>
-      <h2>An ordinary <em>Tuesday</em>.</h2>
-      <p>Picture one normal day in the life you want, in enough detail to test it. A short exercise from Step 1 of the Blueprint: a 3-page PDF to print or fill in on screen. You can use it wherever you want to live, including where you are now. It makes the life specific. Phase 1 then helps you decide what to change, what to check and what to do next.</p>
-      <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
-        <label for="fx-name">Your first name (optional)</label>
-        <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
-        <label for="fx-email">Your email</label>
-        <input type="email" id="fx-email" name="fields[email]" autocomplete="email" required>
-        <label class="fx-check"><input type="checkbox" name="fields[updates]" value="yes"> Also send me a short series of emails about choosing your life, including information about The Made Real Blueprint course. You can stop at any time.</label>
-        <input type="hidden" name="fields[language]" value="en">
-        <input type="hidden" name="fields[consent_version]" value="series-offer-2026-10-24">
-        <input type="hidden" name="ml-submit" value="1">
-        <input type="hidden" name="anticsrf" value="true">
-        <button class="btn btn-primary" type="submit">Get the exercise</button>
-        <p class="fx-small">Belgrave Management, Unipessoal Lda is responsible for your data. I only use your email to send you a copy of the exercise, and the short series of emails only if you tick the box. If you tick it, I will ask you to confirm by email first. See the <a href="privacy.html">privacy note</a>.</p>
-        <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
-        <div class="fx-err" role="alert" id="fx-err"></div>
-      </form>
-      <p class="fx-more" style="font-size:15px;margin-top:14px"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span></p>
-    </div>
-    <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
   </div>
 </section>
 
@@ -676,147 +817,122 @@ footer .links{margin:10px 0 0}
   </div>
 </div>
 
-<!-- 3 RECOGNITION -->
-<section id="familiar">
+<!-- 3 RECOGNITION AND TWO ROUTES -->
+<section class="routes" id="familiar" aria-labelledby="routes-h">
   <div class="wrap">
     <p class="eyebrow">Sound familiar?</p>
-    <h2>The thought keeps coming back.</h2>
     <p class="thought rv">On Monday morning, on the last day of a holiday, or during a late-night scroll through houses online, the thought returns: <em>what if I just did it?</em></p>
-    <p class="lead muted rv" style="max-width:40em;margin-bottom:36px">On paper, your life looks fine. And yet something is missing. You want things to change, but you don't know where to start. Giving up a steady income and the life you know feels risky, and you cannot see a way back if it goes wrong.</p>
-    <div class="problems">
-      <div class="problem rv"><p class="says">"What if the money runs out?"</p><p class="fix">Do an honest first money check: what the change costs, and how long your savings would last.</p></div>
-      <div class="problem rv"><p class="says">"My weeks are full, but little of the time is mine."</p><p class="fix">See where your hours go, decide how you want to spend them, and find what you can change, sometimes without moving at all.</p></div>
-      <div class="problem rv"><p class="says">"My partner isn't as sure as I am, and I wonder what family and friends will say."</p><p class="fix">Each of you does the exercises on your own first. Then you compare what each of you needs, and talk about it together.</p></div>
-    </div>
-    <details class="more">
-      <summary>Other things that may be holding you back</summary>
-      <div class="problems" style="margin-top:12px">
-        <div class="problem"><p class="says">"Someday. After this project. When we have saved more."</p><p class="fix">Take one step at a time, each with a clear result, until you reach a considered decision: go, not yet, or no.</p></div>
-        <div class="problem"><p class="says">"I save houses and watch videos online, but I can't tell what fits me."</p><p class="fix">Write down what you really want first, so you can judge every option against it.</p></div>
-        <div class="problem"><p class="says">"Every forum says something different about visas, taxes and costs."</p><p class="fix">Work with information that shows its source and date, and know which professional to ask.</p></div>
+    <ul class="says-row">
+      <li>"What if the money runs out?"</li>
+      <li>"My weeks are full, but little of the time is mine."</li>
+      <li>"My partner isn't as sure as I am, and I wonder what family and friends will say."</li>
+    </ul>
+    <p class="turn">You may decide to move, or you may find that a different job, working week or use of your time gives you what you need where you already live. The exercises help you compare those options.</p>
+    <h2 id="routes-h">Two routes, one process</h2>
+      <div class="two">
+        <a class="route" href="#free"><b>Change your life where you are.</b><span>Picture the life you want, test what you could change, and finish with a plan and a first step.</span></a>
+        <a class="route" href="#free"><b>Build it somewhere new.</b><span>Describe the life you want, see which places could suit it, and decide what to do next and what still needs checking.</span></a>
       </div>
-    </details>
-    <p class="turn">Moving is not the only good answer. Sometimes the best choice is a real change right where you are. What counts is that you choose, instead of drifting. Sometimes the answer is a move. Sometimes it is a different week, a different way of working or a different use of your time where you already live.</p>
-    <p class="muted" style="margin-top:14px;max-width:46em">Wondering whether to move abroad? <a href="/guides/moving-abroad-or-not/">Read: Moving abroad or not? Start with an ordinary day.</a> Or read: <a href="/guides/more-time-for-yourself/">More time for yourself? Start with who decides your week.</a></p>
   </div>
 </section>
 
-<!-- 5 METHOD -->
-<section class="method" id="method">
+<!-- 4 FREE EXERCISE -->
+<section class="free" id="free">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">The route</p>
-      <h2>Three phases. Eight steps. One blueprint.</h2>
-      <p class="lead">Steps 1 to 3 work whether you change your life where you are or build it somewhere new. Each step answers one big question and gives you a result you can use. Phase 1 is complete on its own.</p>
+    <div class="fx-head">
+      <p class="eyebrow">Start here · free</p>
+      <h2>An ordinary <em>Tuesday</em>.</h2>
+      <p>Picture one normal day in the life you want, in enough detail to test it. A short exercise from Step 1 of the Blueprint: a three-page PDF to print, or an online version you can complete in your browser. You can use it wherever you want to live, including where you are now. It helps you describe what an ordinary day would actually look like. Phase 1 then helps you decide what to change, what to check and what to do next.</p>
+      <p class="free-res">The free exercise is a first step. Below you can see what you can work out in Phase 1.</p>
     </div>
-    <div class="phases">
-      <div class="ph now rv"><span class="avail">Available now</span><p class="n">Phase 1 · Steps 1–3</p><h3>Choose it</h3><p>Decide honestly what you want to change, and where. Deciding not to move is a real choice too.</p><p class="range">Picture · Explore · Decide</p></div>
-      <div class="ph rv"><span class="avail">Coming later</span><p class="n">Steps 4–7</p><h3>Build it</h3><p>Put the practical foundations in place, then build your own version of life on them.</p><p class="range">Prepare · Arrive · Settle · Build</p></div>
-      <div class="ph rv"><span class="avail">Coming later</span><p class="n">Step 8</p><h3>Live it</h3><p>Settle into the ordinary days that follow. And perhaps, one day, help someone who is where you are now.</p><p class="range">Thrive</p></div>
+    <div class="prev-col">
+      <a class="prev" href="#free" tabindex="-1" aria-hidden="true"><img src="images/tuesday-preview-720.jpg" alt="" width="720" height="540" loading="lazy"></a>
+      <p class="fx-more"><a href="tuesday/exercise/">Prefer to start straight away? Do the exercise in your browser</a> <span style="color:var(--stone)">Your answers stay on your device.</span> <span style="color:var(--stone)">Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>.</span></p>
     </div>
-
-    <details class="more stepsbox">
-      <summary>See all eight steps</summary>
-      <figure class="route-fig"><img src="img/route-8-steps.png" alt="The route in eight steps. Steps 1 to 3, Picture, Explore and Decide, are Choose it and work for any place or for staying. Steps 4 to 8, Prepare, Arrive, Settle, Build and Thrive, are built for Portugal. A staying route leaves after Step 3 for changing your life where you are." width="1600" height="1189" loading="lazy"></figure>
-    </details>
-    <div class="callout"><p><b>Two good outcomes.</b> Steps 1 to 3 work for any destination, including staying where you are. If you decide to stay, Step 3 ends with your staying route: a plan to change your life where you are. That completes your Blueprint. If you decide to move, Steps 4 to 8 (coming later) will guide you through building your life in Portugal.</p></div>
+    <form class="fx" id="fx" action="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-download="https://assets.mailerlite.com/jsonp/2693532/forms/201597617855006054/subscribe" data-updates="https://assets.mailerlite.com/jsonp/2693532/forms/200690713467291435/subscribe" method="post" novalidate>
+        <label for="fx-name">Your first name (optional)</label>
+        <input type="text" id="fx-name" name="fields[name]" autocomplete="given-name">
+        <label for="fx-email">Your email</label>
+        <input type="email" id="fx-email" name="fields[email]" autocomplete="email" required>
+        <label class="fx-check"><input type="checkbox" name="fields[updates]" value="yes"> Also send me a short series of emails about choosing your life, including information about The Made Real Blueprint course. You can stop at any time.</label>
+        <input type="hidden" name="fields[language]" value="en">
+        <input type="hidden" name="fields[consent_version]" value="series-offer-2026-10-24">
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn btn-primary" type="submit">Get the exercise</button>
+        <p class="fx-small">Belgrave Management, Unipessoal Lda is responsible for your data. I only use your email to send you a copy of the exercise, and the short series of emails only if you tick the box. If you tick it, I will ask you to confirm by email first. See the <a href="privacy.html">privacy note</a>.</p>
+        <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
+        <div class="fx-err" role="alert" id="fx-err"></div>
+      </form>
   </div>
 </section>
 
-<!-- 5b FOUNDER INTRO -->
-<section class="intro">
-  <div class="wrap intro-grid">
-    <img class="photo rv" src="img/mwata-terrace.jpg" alt="Mwata smiling on the terrace of his house in Portugal, with granite boulders and trees behind him." loading="lazy" width="800" height="1122">
-    <div class="rv">
-      <p class="eyebrow">Who made this</p>
-      <h2>Hello, I'm Mwata.</h2>
-      <p class="lead">I built a life in Bali, then another in rural Portugal. Along the way, I got help with individual parts, but nobody guided me through the whole journey. I created this Blueprint to share what I learned and help you make your own picture real. <a href="#story">Read my story →</a></p>
+<!--gr:strip--><section class="gr-strip" id="free-new" aria-labelledby="gr-h">
+  <div class="wrap">
+    <div class="gr-card">
+      <img src="/images/gratis/guide-moving.svg" width="720" height="540" alt="" loading="lazy" decoding="async">
+      <div class="gr-text">
+        <h2 class="gr-label" id="gr-h">New and free</h2>
+        <p class="gr-meta"><span class="gr-type">Guide</span><time datetime="2026-10-23">23 October 2026</time></p>
+        <h3><a href="/guides/moving-abroad-or-not/">Moving abroad or not? Start with an ordinary day.</a></h3>
+        <p class="gr-short">Five questions and a free exercise to see whether you need to move at all.</p>
+      </div>
+      <div class="gr-side"><span class="gr-go" aria-hidden="true">Read the guide →</span><a class="gr-all" href="/free/">All free resources →</a></div>
     </div>
   </div>
-</section>
+</section><!--/gr:strip-->
 
-<!-- 6 THE PRODUCT -->
+<!-- 5 WHAT YOU FINISH WITH -->
 <section class="object" id="inside">
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">What you get</p>
-      <h2>Your answers become your personal Blueprint.</h2>
-      <p class="lead">Work through each step, answer the questions about your own life, and reach a decision about what to change, why, what to check and what to do next.</p>
+      <h2>A result after every step. Your Blueprint after Phase 1.</h2>
+      <p class="lead">After each step, you save or print a clear summary of your own answers. When you finish Phase 1, they come together in your personal Blueprint. Tap below to see an example.</p>
     </div>
 
-    <ol class="stages">
-      <li class="rv"><span class="sn">1</span><h3>Work through the course</h3><p>Understand each idea and see an example before you apply it.</p></li>
-      <li class="rv"><span class="sn">2</span><h3>Apply it to your life</h3><p>Answer the questions in the app, in your own words, at your own pace.</p></li>
-      <li class="rv"><span class="sn">3</span><h3>Bring it together</h3><p>Finish the phase with your personal Blueprint to review and download. Whether you stay or move.</p></li>
-    </ol>
+    
 
     <div class="results">
-      <p class="eyebrow">What you finish with</p>
-      <h3 class="results-h">A result after every step. Your Blueprint after Phase 1.</h3>
-      <p class="lead" style="max-width:44em">After each step, you save or print a clear summary of your own answers. When you finish Phase 1, they come together in your personal Blueprint. Tap below to see an example.</p>
-      <details class="sample-set" open>
-      <summary class="eyebrow">Sample A: build it somewhere new (Anna)</summary>
-      <ul class="rcards">
-        <li class="rcard rv"><button type="button" data-open="1" aria-label="View sample: My Working Direction"><span class="rimg"><img src="img/results/step1-working-direction-p1.jpg" alt="Sample result My Working Direction, page 1: the life picture and what the person is choosing between." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">The life you want, in your own words, and what you are choosing between.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="2" aria-label="View sample: My Explore Summary"><span class="rimg"><img src="img/results/step2-explore-summary-p1.jpg" alt="Sample result My Explore Summary, page 1: the place and the distances around the house." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">The place you are exploring, what you know about it, and what is still to check.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="3" aria-label="View sample: My Decision"><span class="rimg"><img src="img/results/step3-decision-p1.jpg" alt="Sample result My Decision, page 1: the decision (Go and move) and the five lights, money, papers, people, place and Plan B." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 3</span><span class="rtitle">My Decision</span><span class="rblurb">Go, not yet or no, with your five green lights and the conditions that still matter.</span></button></li>
-        <li class="rcard rv final"><button type="button" data-open="4" aria-label="View sample: My Blueprint"><span class="rimg"><img src="img/results/phase1-blueprint-p1.jpg" alt="Sample My Blueprint, page 1: the decision at a glance, with the three steps and their dates." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Phase 1</span><span class="rtitle">My Blueprint</span><span class="rblurb">Everything together on four pages: your decision, the money and your next chapter.</span></button></li>
-      </ul>
-      </details>
-      <details class="sample-set" open>
-      <summary class="eyebrow">Sample B: change your life where you are</summary>
-      <ul class="rcards">
-        <li class="rcard rv"><button type="button" data-open="5" aria-label="View sample B: My Working Direction"><span class="rimg"><img src="img/results/b-step1-working-direction-p1.jpg" alt="Sample B result My Working Direction: a person who decides to stay in their town and change the week." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">The life picture, what to keep, and a working direction: stay and change the week.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="6" aria-label="View sample B: My Explore Summary"><span class="rimg"><img src="img/results/b-step2-explore-summary-p1.jpg" alt="Sample B result My Explore Summary: the town where the person lives, checked against the picture." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">The changes you could make where you live, checked against your picture.</span></button></li>
-        <li class="rcard rv"><button type="button" data-open="7" aria-label="View sample B: My Decision"><span class="rimg"><img src="img/results/b-step3-decision-p1.jpg" alt="Sample B result My Decision: go and change where I am, with the five lights." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 3</span><span class="rtitle">My Decision</span><span class="rblurb">What to change, the five lights, what is still open and the first step.</span></button></li>
-        <li class="rcard rv final"><button type="button" data-open="8" aria-label="View sample B: My Change Plan"><span class="rimg"><img src="img/results/b-step3-change-plan-p1.jpg" alt="Sample B My Change Plan, page 1: the steps from the first week to the fourth month, with the money and the hours." width="1000" height="1415" loading="lazy"></span><span class="rtag">If you stay</span><span class="rtitle">My Change Plan</span><span class="rblurb">The steps month by month, the money, the people and Plan B.</span></button></li>
-      </ul>
-      </details>
       <div class="btn-row"><a class="textlink" href="#options">See Phase 1 and pricing →</a></div>
-      <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you.</p>
-      <p class="legend">The decision names what to change and what to check next. It is not only a yes or no to moving.</p>
+      <div class="sample-pair">
+        <div class="sample-col">
+          <p class="eyebrow">Sample A: preparing to move (Anna)</p>
+          <ul class="rcards">
+            <li class="rcard rv final"><button type="button" data-open="4" aria-label="View sample: My Blueprint"><span class="rimg"><img src="img/results/phase1-blueprint-p1.jpg" alt="Fictional sample My Blueprint, page 1: Anna's decision, Not yet, at a glance, with the three steps dated 20 October 2026, 14 March 2027 and 1 May 2027." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Phase 1</span><span class="rtitle">My Blueprint</span><span class="rblurb">Everything together on four pages: your decision, the money and your next chapter.</span></button></li>
+          </ul>
+        </div>
+        <div class="sample-col">
+          <p class="eyebrow">Sample B: change your life where you are</p>
+          <ul class="rcards">
+            <li class="rcard rv final"><button type="button" data-open="8" aria-label="View sample B: My Change Plan"><span class="rimg"><img src="img/results/b-step3-change-plan-p1.jpg" alt="Fictional sample B, My Change Plan, page 1: four days a week with Friday outdoors, in place by 1 February 2027, and the small test Sam has already done." width="1000" height="1415" loading="lazy"></span><span class="rtag">If you stay</span><span class="rtitle">My Change Plan</span><span class="rblurb">The steps month by month, the money, the people and Plan B.</span></button></li>
+          </ul>
+        </div>
+      </div>
+      <details class="more steps-results">
+        <summary>See the results after each step</summary>
+        <div class="sample-col">
+          <p class="eyebrow">Sample A: preparing to move (Anna)</p>
+          <ul class="rcards">
+            <li class="rcard rv"><button type="button" data-open="1" aria-label="View sample: My Working Direction"><span class="rimg"><img src="img/results/step1-working-direction-p1.jpg" alt="Fictional sample My Working Direction, page 1: Anna's picture of a small house with land, and the two options she is choosing between." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">The life you want, in your own words, and what you are choosing between.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="2" aria-label="View sample: My Explore Summary"><span class="rimg"><img src="img/results/step2-explore-summary-p1.jpg" alt="Fictional sample My Explore Summary, page 1: the rented house in the Serra do Açor and the travel times around it." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">The place you are exploring, what you know about it, and what is still to check.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="3" aria-label="View sample: My Decision"><span class="rimg"><img src="img/results/step3-decision-p1.jpg" alt="Fictional sample My Decision, page 1: Anna's decision is Not yet. Money and people are amber, both due 31 May 2027; papers, place and Plan B are green." width="1000" height="1415" loading="lazy"></span><span class="rtag">After Step 3</span><span class="rtitle">My Decision</span><span class="rblurb">Your decision, the status of five checks, and any conditions you still need to meet.</span></button></li>
+          </ul>
+        </div>
+        <div class="sample-col">
+          <p class="eyebrow">Sample B: change your life where you are</p>
+          <ul class="rcards">
+            <li class="rcard rv"><button type="button" data-open="5" aria-label="View sample B: My Working Direction"><span class="rimg"><img src="img/results/b-step1-working-direction-p1.jpg" alt="Fictional sample B, My Working Direction, page 1: Sam wants to stay in the town they know, work four days and spend Friday outdoors." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 1</span><span class="rtitle">My Working Direction</span><span class="rblurb">The life you want, what you want to keep, and the option you will explore: staying and changing your weekly routine.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="6" aria-label="View sample B: My Explore Summary"><span class="rimg"><img src="img/results/b-step2-explore-summary-p1.jpg" alt="Fictional sample B, My Explore Summary, page 1: Sam checks the four-day week: what it gives, what it does not give, and the money after the change." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 2</span><span class="rtitle">My Explore Summary</span><span class="rblurb">The changes you could make where you live and how well they fit the life you want.</span></button></li>
+            <li class="rcard rv"><button type="button" data-open="7" aria-label="View sample B: My Decision"><span class="rimg"><img src="img/results/b-step3-decision-p1.jpg" alt="Fictional sample B, My Decision, page 1: Sam's decision is Go and change where I am. Money and papers are amber; people, place and Plan B are green." width="764" height="1152" loading="lazy"></span><span class="rtag">After Step 3</span><span class="rtitle">My Decision</span><span class="rblurb">What to change, the status of five checks, what is still open and the first step.</span></button></li>
+          </ul>
+        </div>
+      </details>
+      <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you. The decision names what to change and what to check next. It is not only a yes or no to moving. The five checks are money, papers, people, place and Plan B. In your result each one shows as a light: green when it is in place, amber or red when it still needs attention.</p>
       <p class="legend"><a href="samples/text/">Read the sample results as text (English)</a></p>
     </div>
 
-    <div class="object-sub">
-      <p class="eyebrow">The app</p>
-      <h3 style="font-size:clamp(28px,3.4vw,38px);margin-bottom:12px">One place to learn, do and decide.</h3>
-      <p class="lead" style="max-width:44em;margin-bottom:28px">The app is part of your Phase 1 package, in addition to the PDF workbooks. Do the exercises, print or save your results after each step, and ask the AI partner when you want to think something through, all on one platform.</p>
-      <div class="shots">
-        <div class="shots-text rv">
-          <ul class="app-list">
-            <li><b>Start</b> from the course overview. A short welcome video is free in the app, with English subtitles. Videos for the steps are planned; everything you need is in the workbooks and the app.</li>
-            <li><b>Do</b> the exercises: each one explains the idea, gives you an example, and helps you apply it to your own situation. Your progress is saved, so you can stop and return when it suits you. After each step you can print or save your results, and finishing Phase 1 gives you your personal Blueprint.</li>
-            <li><b>Think it through</b> with your AI partner. It helps you reflect on what you wrote. It does not make decisions for you or check real-world facts.</li>
-          </ul>
-          <p class="muted" style="font-size:15px;margin-top:14px">Want a look inside first? You can also <a href="https://app.maderealblueprint.com/free?from=website">try some free exercises in the app</a>.</p>
-        </div>
-        <figure class="rv"><img src="img/app-welcome.png" alt="The app on a phone: a welcome screen with the introduction and Phase 1 Choose it, each with a progress bar." width="390" height="844" loading="lazy"><figcaption><b>Follow the route.</b> See where you are in each phase.</figcaption></figure>
-        <figure class="rv"><img src="img/app-exercise-step1.png" alt="The app on a phone: exercise 1.2, A normal day in the life you want, with a progress bar for Step 1 Picture at the top." width="390" height="844" loading="lazy"><figcaption><b>Do the exercises.</b> Each one explains the idea first, with an example.</figcaption></figure>
-      </div>
-    </div>
-
-    <div class="object-sub paper">
-      <div>
-        <p class="eyebrow">Prefer to work on paper?</p>
-        <h3 style="font-size:clamp(26px,3vw,34px)">The PDF workbooks.</h3>
-        <p style="margin-bottom:16px">You can complete the PDF workbooks on paper or on screen. To create your downloadable personal Blueprint, you enter your answers in the app.</p>
-        <button class="btn btn-ghost" type="button" id="open-wb">Look inside a workbook</button>
-      </div>
-      <div class="covers rv" role="img" aria-label="The three Phase 1 workbooks: Step 1 Picture, Step 2 Explore, Step 3 Decide">
-        <div class="cover c1"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 1</span><span class="t">Picture</span><span class="s">What life do I really want?</span></div>
-        <div class="cover c2"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 2</span><span class="t">Explore</span><span class="s">Where, or how, can this life happen?</span></div>
-        <div class="cover c3"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 3</span><span class="t">Decide</span><span class="s">Am I ready for this option?</span></div>
-      </div>
-    </div>
-
-    <div class="inc">
-      <div><h4>Conversations with the people involved</h4><p>Prompts help you talk through your plans with your partner, family and friends.</p></div>
-      <div><h4>Information you can check</h4><p>Rules and prices change. I show my sources and when I checked them, and which professional to ask about legal or tax matters.</p></div>
-      <div><h4>Begin where you are</h4><p>A short check helps you choose your starting point. Plan on about two to three hours a week.</p></div>
-    </div>
-
-    <p class="not-this">The Blueprint is a route through working out the life you want, and building and living it, written by someone who has done it twice. It does not coach you, and it does not arrange your move for you.</p>
+    <p class="not-this">I wrote the Blueprint to help you work out what you want to change and plan your next steps, using what I learned from building a life abroad twice. It does not coach you, and it does not arrange your move for you.</p>
   </div>
 </section>
 
@@ -825,54 +941,56 @@ footer .links{margin:10px 0 0}
   <div class="rtabs" role="tablist"><button type="button" role="tab" data-tab="1" aria-selected="true">Step 1 · My Working Direction</button><button type="button" role="tab" data-tab="2" aria-selected="false">Step 2 · My Explore Summary</button><button type="button" role="tab" data-tab="3" aria-selected="false">Step 3 · My Decision</button><button type="button" role="tab" data-tab="4" aria-selected="false">Phase 1 · My Blueprint</button><button type="button" role="tab" data-tab="5" aria-selected="false">Sample B · Step 1</button><button type="button" role="tab" data-tab="6" aria-selected="false">Sample B · Step 2</button><button type="button" role="tab" data-tab="7" aria-selected="false">Sample B · Step 3</button><button type="button" role="tab" data-tab="8" aria-selected="false">Sample B · My Change Plan</button></div>
   <div class="sample-body">
     <div class="rpanel" data-panel="1">
-      <div class="rsum"><p><b>After Step 1 · My Working Direction.</b> Your life picture in your own words, the options you are choosing between with what is still unsure, what you want to protect, your values, and your working direction.</p><p class="rlinks"><a href="samples/my-working-direction-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/step1-working-direction-p1.jpg" alt="Sample result My Working Direction, page 1: the life picture and what the person is choosing between." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step1-working-direction-p2.jpg" alt="Page 2: the time the person decides for themselves, and what they need." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step1-working-direction-p3.jpg" alt="Page 3 of the sample My Working Direction." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>After Step 1 · My Working Direction.</b> Your life picture in your own words, the options you are considering and what is still uncertain, what you want to protect, your values, and your working direction.</p><p class="rlinks"><a href="samples/my-working-direction-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/step1-working-direction-p1.jpg" alt="Fictional sample My Working Direction, page 1: Anna's picture of a small house with land, and the two options she is choosing between." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step1-working-direction-p2.jpg" alt="Page 2: Anna's scores for six life areas, and the time she decides for herself: 32 of 112 waking hours (29%) now, 54% wanted." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step1-working-direction-p3.jpg" alt="Page 3: Anna's first money picture, with €2,245 of costs against €1,650 of income she can count on, and her next small step: an eight-day visit in February." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="2" hidden>
       <div class="rsum"><p><b>After Step 2 · My Explore Summary.</b> The place you are exploring, the life around the house (distances to a hospital, doctor, shops and airport, with what you checked and what is still an estimate), and whether to go further with this place.</p><p class="rlinks"><a href="samples/my-explore-summary-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/step2-explore-summary-p1.jpg" alt="Sample result My Explore Summary, page 1: the place and the distances around the house." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step2-explore-summary-p2.jpg" alt="Page 2 of the sample My Explore Summary." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step2-explore-summary-p3.jpg" alt="Page 3 of the sample My Explore Summary." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step2-explore-summary-p1.jpg" alt="Fictional sample My Explore Summary, page 1: the rented house in the Serra do Açor and the travel times around it." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step2-explore-summary-p2.jpg" alt="Page 2: what Anna learned on an eight-day visit in February, and her scores for three countries out of 20." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step2-explore-summary-p3.jpg" alt="Page 3: Anna's costs, €2,360 a month found against €2,245 guessed, her shortfall of €710 a month, and a second visit planned for 12 to 21 April 2027." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="3" hidden>
-      <div class="rsum"><p><b>After Step 3 · My Decision.</b> Your decision (go, not yet, or no) with the question it answers, your five green lights as you recorded them, the conditions that still matter and your first step. If you decide to stay, Step 3 ends with My Change Plan.</p><p class="rlinks"><a href="samples/my-decision-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/step3-decision-p1.jpg" alt="Sample result My Decision, page 1: the decision (Go and move) and the five lights, money, papers, people, place and Plan B." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step3-decision-p2.jpg" alt="Page 2 of the sample My Decision." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step3-decision-p3.jpg" alt="Page 3 of the sample My Decision." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step3-decision-p4.jpg" alt="Page 4 of the sample My Decision." width="1000" height="1415" loading="lazy">
-      <img src="img/results/step3-decision-p5.jpg" alt="Page 5 of the sample My Decision: what I come back to, with the date to look again." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>After Step 3 · My Decision.</b> Your decision (Go and move, Go and change where I am, Not yet, or No) with the question it answers, the status of your five checks (money, papers, people, place and Plan B), the conditions you still need to meet and your first step. In this sample, Anna's decision is Not yet: money and people are still amber, both due 31 May 2027. If you decide to stay, Step 3 ends with My Change Plan.</p><p class="rlinks"><a href="samples/my-decision-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/step3-decision-p1.jpg" alt="Fictional sample My Decision, page 1: Anna's decision is Not yet. Money and people are amber, both due 31 May 2027; papers, place and Plan B are green." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step3-decision-p2.jpg" alt="Page 2: Anna's budget: costs of €2,360, income of €1,650, €710 short each month, and €42,000 of savings that becomes €16,100 to live on, about 22 months against the 18 she wants." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step3-decision-p3.jpg" alt="Page 3: what Anna will watch, with three risks and their warning signs, her way back, and the alternative still on the table." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step3-decision-p4.jpg" alt="Page 4: the order of Anna's actions, from moving the bookkeeping online by 7 May 2027 to applying for residency by 30 September 2027." width="1000" height="1415" loading="lazy">
+      <img src="img/results/step3-decision-p5.jpg" alt="Page 5: what Anna comes back to, with the date to look again: 1 April 2028." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="4" hidden>
-      <div class="rsum"><p><b>After Phase 1 · My Blueprint.</b> Page 1 shows your decision at a glance. Page 2 shows what you are choosing, the time you decide for yourself and your needs. Page 3 shows the money and your runway. Page 4 shows your next chapter: open conditions, first action, your way back and the date you look at the decision again.</p><p class="rlinks"><a href="samples/my-blueprint-phase-1-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/phase1-blueprint-p1.jpg" alt="Sample My Blueprint, page 1: the decision at a glance, with the three steps and their dates." width="1000" height="1415" loading="lazy">
-      <img src="img/results/phase1-blueprint-p2.jpg" alt="Page 2: what I am choosing, with time, needs, what I protect and what I accept." width="1000" height="1415" loading="lazy">
-      <img src="img/results/phase1-blueprint-p3.jpg" alt="Page 3: the money, what the numbers can carry, with the runway." width="1000" height="1415" loading="lazy">
-      <img src="img/results/phase1-blueprint-p4.jpg" alt="Page 4: my next chapter, with the lights, open conditions, first action and the way back." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>After Phase 1 · My Blueprint.</b> Page 1 shows your decision at a glance. Page 2 shows what you are choosing, the time you decide for yourself and your needs. Page 3 shows your budget and how long your available savings could cover a monthly shortfall. Page 4 shows your next chapter: the status of your five checks, open conditions, first action, your way back and the date you look at the decision again.</p><p class="rlinks"><a href="samples/my-blueprint-phase-1-example.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/phase1-blueprint-p1.jpg" alt="Fictional sample My Blueprint, page 1: Anna's decision, Not yet, at a glance, with the three steps dated 20 October 2026, 14 March 2027 and 1 May 2027." width="1000" height="1415" loading="lazy">
+      <img src="img/results/phase1-blueprint-p2.jpg" alt="Page 2: what Anna is choosing: the time she decides for herself, what she needs, what she protects and what she accepts." width="1000" height="1415" loading="lazy">
+      <img src="img/results/phase1-blueprint-p3.jpg" alt="Page 3: Anna's money: €710 short a month, €16,100 to live on, enough for about 22 months." width="1000" height="1415" loading="lazy">
+      <img src="img/results/phase1-blueprint-p4.jpg" alt="Page 4: Anna's next chapter: the five checks, the two open conditions, the first action and the way back." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="5" hidden>
       <div class="rsum"><p><b>Sample B · After Step 1 · My Working Direction.</b> Made-up answers from someone who wants more time outdoors and fewer work evenings, and chooses to stay and change the week.</p><p class="rlinks"><a href="samples/sample-b-my-working-direction.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/b-step1-working-direction-p1.jpg" alt="Sample B, My Working Direction, page 1." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step1-working-direction-p2.jpg" alt="Page 2 of the Sample B My Working Direction." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step1-working-direction-p3.jpg" alt="Page 3 of the Sample B My Working Direction." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step1-working-direction-p1.jpg" alt="Fictional sample B, My Working Direction, page 1: Sam wants to stay in the town they know, work four days and spend Friday outdoors." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step1-working-direction-p2.jpg" alt="Page 2: Sam's scores for six life areas, and the time Sam can choose how to spend: 16 of 112 waking hours (14%) now, 26 hours (23%) after the change." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step1-working-direction-p3.jpg" alt="Page 3: Sam's first money picture, with costs of €2,210, income of €2,360 and €150 left over each month, and the four-week test from 22 September to 15 October 2026." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="6" hidden>
-      <div class="rsum"><p><b>Sample B · After Step 2 · My Explore Summary.</b> For someone who stays, this checks the change itself: what it rests on, what it does not give, what is still unknown, the money after the change and the week.</p><p class="rlinks"><a href="samples/sample-b-my-explore-summary.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/b-step2-explore-summary-p1.jpg" alt="Sample B, My Explore Summary, page 1." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step2-explore-summary-p2.jpg" alt="Page 2 of the Sample B My Explore Summary." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Sample B · After Step 2 · My Explore Summary.</b> For someone who stays, this checks the change itself: what needs to be in place, what the change will and will not give you, what is still unknown, and how it affects your budget and weekly routine.</p><p class="rlinks"><a href="samples/sample-b-my-explore-summary.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/b-step2-explore-summary-p1.jpg" alt="Fictional sample B, My Explore Summary, page 1: Sam checks the four-day week: what it gives, what it does not give, and the money after the change." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step2-explore-summary-p2.jpg" alt="Page 2: the rules at work, the people involved and what Sam's test showed." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="7" hidden>
-      <div class="rsum"><p><b>Sample B · After Step 3 · My Decision.</b> "Go and change where I am": the five lights as recorded, the condition still open, the first step and the plan behind it. The decision names what to change and what to check next.</p><p class="rlinks"><a href="samples/sample-b-my-decision.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/b-step3-decision-p1.jpg" alt="Sample B, My Decision, page 1." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step3-decision-p2.jpg" alt="Page 2 of the Sample B My Decision." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step3-decision-p3.jpg" alt="Page 3 of the Sample B My Decision." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step3-decision-p4.jpg" alt="Page 4 of the Sample B My Decision." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Sample B · After Step 3 · My Decision.</b> "Go and change where I am": the status of five checks (money and papers are still amber), the conditions still open, the first step and the plan behind it. The decision names what to change and what to check next.</p><p class="rlinks"><a href="samples/sample-b-my-decision.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/b-step3-decision-p1.jpg" alt="Fictional sample B, My Decision, page 1: Sam's decision is Go and change where I am. Money and papers are amber; people, place and Plan B are green." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-decision-p2.jpg" alt="Page 2: Sam's budget: costs of €2,210, income of €2,360, €150 left over each month, and €14,000 of savings that becomes €6,710 to live on." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-decision-p3.jpg" alt="Page 3: what Sam will watch, with three risks and their warning signs, and the way back." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-decision-p4.jpg" alt="Page 4: the order of Sam's actions, from a first conversation with the manager in early November 2026 to the first Friday outdoors on 5 February 2027." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-decision-p5.jpg" alt="Page 5: what Sam comes back to, with the date to look again: 28 December 2026." width="1000" height="1415" loading="lazy">
     </div>
     <div class="rpanel" data-panel="8" hidden>
-      <div class="rsum"><p><b>Sample B · If you stay · My Change Plan.</b> The steps month by month, the money and the buffer, the hours you decide, who it rests on, and Plan B.</p><p class="rlinks"><a href="samples/sample-b-my-change-plan.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
-      <img src="img/results/b-step3-change-plan-p1.jpg" alt="Sample B, My Change Plan, page 1." width="1000" height="1415" loading="lazy">
-      <img src="img/results/b-step3-change-plan-p2.jpg" alt="Page 2 of the Sample B My Change Plan." width="1000" height="1415" loading="lazy">
+      <div class="rsum"><p><b>Sample B · If you stay · My Change Plan.</b> The steps month by month, the money and the buffer, the time you can choose how to spend, the people involved and your backup plan.</p><p class="rlinks"><a href="samples/sample-b-my-change-plan.pdf" target="_blank" rel="noopener">Open this sample as a PDF</a></p></div>
+      <img src="img/results/b-step3-change-plan-p1.jpg" alt="Fictional sample B, My Change Plan, page 1: four days a week with Friday outdoors, in place by 1 February 2027, and the small test Sam has already done." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-change-plan-p2.jpg" alt="Page 2: the steps in order, the money and the buffer, and the hours Sam can choose how to spend." width="1000" height="1415" loading="lazy">
+      <img src="img/results/b-step3-change-plan-p3.jpg" alt="Page 3: who Sam tells, the first 90 days, what is still uncertain and Sam's Plan B." width="1000" height="1415" loading="lazy">
     </div>
   </div>
 </dialog>
@@ -896,7 +1014,94 @@ footer .links{margin:10px 0 0}
   </div>
 </dialog>
 
-<!-- 8 OFFERS -->
+<!-- 6 HOW PHASE 1 WORKS -->
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">Phase 1 · Steps 1–3</p>
+      <h2>How Phase 1 works</h2>
+      <p class="lead">Steps 1 to 3 work whether you change your life where you are or build it somewhere new. Each step answers one big question and gives you a result you can use. Phase 1 is complete on its own.</p>
+    </div>
+    <ol class="three-steps">
+      <li class="rv"><p class="n">Step 1</p><h3>Picture</h3><p><b>What you want.</b> How your ordinary days could look, and what matters in them.</p></li>
+      <li class="rv"><p class="n">Step 2</p><h3>Explore</h3><p><b>What you still need to investigate.</b> Which options fit, which assumptions to check, and what looks practical and affordable.</p></li>
+      <li class="rv"><p class="n">Step 3</p><h3>Decide</h3><p><b>What you choose now.</b> Investigate further, change something where you are, prepare a move, or not go ahead for now, with conditions and a first step.</p></li>
+    </ol>
+    <p class="lead app-line">The app is part of your Phase 1 package, in addition to the PDF workbooks. Do the exercises, print or save your results after each step, and ask the AI partner when you want to think something through, all on one platform.</p>
+    <details class="more">
+      <summary>See the app and the workbooks</summary>
+      <div class="xbox">
+        <ol class="stages">
+              <li class="rv"><span class="sn">1</span><h3>Work through the course</h3><p>Understand each idea and see an example before you apply it.</p></li>
+              <li class="rv"><span class="sn">2</span><h3>Apply it to your life</h3><p>Answer the questions in the app, in your own words, at your own pace.</p></li>
+              <li class="rv"><span class="sn">3</span><h3>Bring it together</h3><p>Finish the phase with your personal Blueprint to review and download. Whether you stay or move.</p></li>
+            </ol>
+        <div class="object-sub">
+          <p class="eyebrow">The app</p>
+          <h3 style="font-size:clamp(28px,3.4vw,38px);margin-bottom:12px">One place to learn, do and decide.</h3>
+          <div class="shots">
+            <div class="shots-text rv">
+              <ul class="app-list">
+                <li><b>Start</b> from the course overview. A short welcome video is free in the app, with English subtitles. Videos for the steps are planned; everything you need is in the workbooks and the app.</li>
+                <li><b>Do</b> the exercises: each one explains the idea, gives you an example, and helps you apply it to your own situation. Your progress is saved, so you can stop and return when it suits you. After each step you can print or save your results, and finishing Phase 1 gives you your personal Blueprint.</li>
+                <li><b>Think it through</b> with your AI partner. It helps you reflect on what you wrote. It does not make decisions for you or check real-world facts.</li>
+              </ul>
+              <p class="muted" style="font-size:15px;margin-top:14px">Want a look inside first? You can also <a href="https://app.maderealblueprint.com/free?from=website">try the Ordinary Tuesday exercise in the app for free</a>.</p>
+            </div>
+            <figure class="rv"><img src="img/app-welcome.png" alt="The app on a phone: Phase 1 Choose it, with Step 1 Picture complete and progress bars for Step 2 Explore and Step 3 Decide." width="390" height="844" loading="lazy"><figcaption><b>Follow the route.</b> See where you are in each phase.</figcaption></figure>
+            <figure class="rv"><img src="img/app-exercise-step1.png" alt="The app on a phone: exercise 1.2, A normal day in the life you want, with a progress bar for Step 1 Picture at the top." width="390" height="844" loading="lazy"><figcaption><b>Do the exercises.</b> Each one explains the idea first, with an example.</figcaption></figure>
+          </div>
+        </div>
+        <div class="object-sub paper">
+          <div>
+            <p class="eyebrow">Prefer to work on paper?</p>
+            <h3 style="font-size:clamp(26px,3vw,34px)">The PDF workbooks.</h3>
+            <p style="margin-bottom:16px">You can complete the PDF workbooks on paper or on screen. To create your downloadable personal Blueprint, you enter your answers in the app.</p>
+            <button class="btn btn-ghost" type="button" id="open-wb">Look inside a workbook</button>
+          </div>
+          <div class="covers rv" role="img" aria-label="The three Phase 1 workbooks: Step 1 Picture, Step 2 Explore, Step 3 Decide">
+            <div class="cover c1"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 1</span><span class="t">Picture</span><span class="s">What life do I really want?</span></div>
+            <div class="cover c2"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 2</span><span class="t">Explore</span><span class="s">Where, or how, can this life happen?</span></div>
+            <div class="cover c3"><svg viewBox="-10 0 100 74" aria-hidden="true"><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span class="k">Step 3</span><span class="t">Decide</span><span class="s">Am I ready for this option?</span></div>
+          </div>
+        </div>
+        <div class="inc">
+          <div><h4>Conversations with the people involved</h4><p>Prompts help you talk through your plans with your partner, family and friends.</p></div>
+          <div><h4>Information you can check</h4><p>Rules and prices change. I show my sources and when I checked them, and which professional to ask about legal or tax matters.</p></div>
+          <div><h4>Begin where you are</h4><p>A short check helps you choose your starting point. Plan on about two to three hours a week.</p></div>
+        </div>
+      </div>
+    </details>
+    <details class="more">
+      <summary>See the wider roadmap</summary>
+      <div class="xbox">
+        <div class="phases">
+          <div class="ph now rv"><span class="avail">Available now</span><p class="n">Phase 1 · Steps 1–3</p><h3>Choose it</h3><p>Decide honestly what you want to change, and where. Deciding not to move is a real choice too.</p><p class="range">Picture · Explore · Decide</p></div>
+          <div class="ph rv"><span class="avail">Coming later</span><p class="n">Steps 4–7</p><h3>Build it</h3><p>Prepare for the move and work through the practical steps of settling in Portugal.</p><p class="range">Prepare · Arrive · Settle · Build</p></div>
+          <div class="ph rv"><span class="avail">Coming later</span><p class="n">Step 8</p><h3>Live it</h3><p>Settle into the ordinary days that follow. And perhaps, one day, help someone who is where you are now.</p><p class="range">Thrive</p></div>
+        </div>
+        <figure class="route-fig"><img src="img/route-8-steps.png" alt="The route in eight steps. Steps 1 to 3, Picture, Explore and Decide, are Choose it and work for any place or for staying. Steps 4 to 8, Prepare, Arrive, Settle, Build and Thrive, are built for Portugal. A staying route leaves after Step 3 for changing your life where you are." width="1600" height="1189" loading="lazy"></figure>
+        <div class="callout"><p><b>Two good outcomes.</b> Steps 1 to 3 work for any destination, including staying where you are. If you decide to stay, Step 3 ends with your staying route: a plan to change your life where you are. That completes your Blueprint. If you decide to move, Steps 4 to 8 (coming later) will guide you through building your life in Portugal.</p></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- 7 FOUNDER INTRO -->
+<section class="intro">
+  <div class="wrap intro-grid">
+    <img class="photo rv" src="img/mwata-terrace.jpg" alt="Mwata smiling on the terrace of his house in Portugal, with granite boulders and trees behind him." loading="lazy" width="800" height="1122">
+    <div class="rv">
+      <p class="eyebrow">Who made this</p>
+      <h2>Hello, I'm Mwata.</h2>
+      <p class="lead">I built a life in Bali, then another in rural Portugal. Along the way, I got help with individual parts, but nobody guided me through the whole journey. I created this Blueprint to share what I learned and help you make your own picture real.</p>
+      <p class="intro-stand">A life is chosen and built, not inherited or drifted into.</p>
+      <div class="btn-row intro-more"><a class="btn btn-ghost" href="/my-story/">Read my story →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 PHASE 1 OFFER -->
 <section class="on-dark offers" id="options">
   <div class="offers-art" aria-hidden="true"></div>
   <div class="wrap">
@@ -910,7 +1115,7 @@ footer .links{margin:10px 0 0}
         <p class="tag">Available now · Phase 1 · Choose it</p>
         <h3>From wanting a different life to a decision you can explain</h3>
         <p class="for">For you if you want something different and need to work out what to change.</p>
-        <p class="price">€99 <small>including VAT, paid once. No subscription.</small></p>
+        <p class="price">€99 <small>including VAT. One-off payment, no subscription.</small></p>
         <ul class="three">
           <li><b>What you want.</b> How your ordinary days could look, and what matters in them.</li>
           <li><b>What you still need to investigate.</b> Which options fit, which assumptions to check, and what looks practical and affordable.</li>
@@ -919,16 +1124,12 @@ footer .links{margin:10px 0 0}
         <div class="actions"><a class="btn btn-primary" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a><a class="textlink" href="#contact">Ask me a question first</a></div>
         <p class="after assure"><b>30-day money-back guarantee.</b> Pay by card, PayPal or the other methods shown at checkout. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
         <p class="after">The workbooks and the app are in English. <a href="#inside">Look at a sample first.</a></p>
-        <div class="fnote">
-          <picture><source type="image/avif" srcset="images/mwata-portrait-240.avif"><source type="image/webp" srcset="images/mwata-portrait-240.webp"><img src="images/mwata-portrait-240.jpg" alt="Mwata, the author of The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
-          <p>Somewhere inside, there is a feeling that something needs to change. I learned to listen to it, put a clear picture of the life I wanted on paper, and build my life from it. I want to help you hear yours and make it real, wherever that turns out to be. Mwata</p>
-        </div>
         </div>
         <div class="o-what">
         <div class="peek">
-          <button type="button" class="pk" data-open="3" aria-label="View sample: My Decision (Anna, who decides to move)"><img src="img/results/step3-decision-p1.jpg" alt="First page of a finished My Decision, Anna decides to move." width="1000" height="1415" loading="lazy"></button>
-          <button type="button" class="pk" data-open="7" aria-label="View sample: My Decision (Sam, who decides to stay and change something)"><img src="img/results/b-step3-decision-p1.jpg" alt="First page of a finished My Decision, Sam decides to stay and change something." width="1000" height="1415" loading="lazy"></button>
-          <p><b>See what a finished result looks like.</b> Two examples from two different people: one decides to move, the other decides to stay and change something. Tap a page to open it.</p>
+          <button type="button" class="pk" data-open="3" aria-label="View sample: My Decision (Anna, with the decision Not yet)"><img src="img/results/step3-decision-p1.jpg" alt="First page of a fictional My Decision: Anna's decision is Not yet, with money and people still amber." width="1000" height="1415" loading="lazy"></button>
+          <button type="button" class="pk" data-open="7" aria-label="View sample: My Decision (Sam, who decides to stay and change something)"><img src="img/results/b-step3-decision-p1.jpg" alt="First page of a fictional My Decision: Sam's decision is Go and change where I am, with money and papers still amber." width="1000" height="1415" loading="lazy"></button>
+          <p><b>See what a finished result looks like.</b> Two fictional examples: Anna is preparing to move abroad, while Sam plans changes to life at home. Tap a page to open it.</p>
         </div>
         <div class="cols">
           <div>
@@ -940,9 +1141,9 @@ footer .links{margin:10px 0 0}
             <ul><li>My Working Direction</li><li>My Explore Summary</li><li>My First Money Picture</li><li>My Decision: go, not yet, or no</li><li>If you stay: My Change Plan, your staying route</li><li>A downloadable personal Blueprint</li></ul>
           </div>
         </div>
-        <p class="after"><b>Where to start.</b> Begin with the First Picture in Step 1. You do not need to open all the workbooks at once. It works on your phone or laptop.</p>
+        <p class="after"><b>Not sure where to start?</b> Begin with Your First Picture in Step 1. You can work through the exercises one at a time in the app on your phone or laptop.</p>
         <p class="after">Steps 4 to 8 are in development and are not part of this purchase.</p>
-        <p class="after">Some of the practical examples and sources are about Portugal. For your own destination, use official information and a suitable adviser. <a href="/other-destination/">Thinking of another country?</a></p>
+        <p class="after">Some practical examples and sources relate to Portugal. For another destination, check the relevant official sources and consult an adviser with expertise in the country and subject you are researching. <a href="/other-destination/">Thinking of another country?</a></p>
         <details class="more notfor"><summary>Who this is not for</summary>
           <p>This is probably not for you if you mainly want someone to arrange your move, answer a visa or tax question, or tell you what to choose. You work on your own, and personal coaching is not included.</p>
           <p>Already sure you want to move and only need practical country information? A specialist source or adviser may fit better.</p>
@@ -968,136 +1169,66 @@ footer .links{margin:10px 0 0}
   </div>
 </section>
 
-<!-- 7 STORY -->
-<section class="story" id="story">
-  <div class="wrap">
-    <div class="story-top">
-      <img class="photo" src="images/mwata.jpg" srcset="images/mwata-420.jpg 420w, images/mwata.jpg 720w" sizes="(max-width: 760px) 100vw, 380px" alt="Mwata smiling in a safety helmet and visor, clearing brush on his land in Portugal." width="720" height="960" loading="lazy">
-      <!-- TODO: add a second, approachable portrait without equipment and use it here; keep this one as the working-life image. -->
-      <div class="txt">
-        <p class="eyebrow">Who I am</p>
-        <h2>I'm Mwata. I have built a new life abroad twice.</h2>
-        <p class="lead">I had a good job and a comfortable home in the Netherlands, but something felt missing. A course helped me clarify the life I really wanted, and in 2021 I moved to Bali with only two bags. I built a life there from the ground up: a consultancy company, a newly built house and a local inspection business. After three years, however, my picture changed. That led me to build my second life in rural central Portugal.</p>
-        <p>I made this Blueprint because, although I had help with individual parts, nobody guided me from the first idea through all the decisions that followed. I did not need someone to decide what my life should be. I needed someone to tell me what to check first, based on real experience. That is what I wrote down in this Blueprint.</p>
-      </div>
-    </div>
-
-    <div class="ba">
-      <figure class="rv"><img src="images/ruin-before.jpg" alt="The granite main house in 2024: roofless, overgrown and in ruins, next to a large boulder." loading="lazy" width="1100" height="1467"><figcaption><b>April 2024</b>The main house, in ruins.</figcaption></figure>
-      <figure class="rv"><img src="images/ruin-after.jpg" alt="The same granite house in 2026: fully renovated, with a new dark roof, under a deep blue sky." loading="lazy" width="1100" height="1467"><figcaption><b>April 2026</b></figcaption></figure>
-    </div>
-    <div class="gallery">
-      <img class="photo" src="images/cabin.jpg" alt="A timber cabin with a terracotta roof behind a small pool, with olive trees." loading="lazy" width="640" height="853">
-      <img class="photo" src="images/outdoor.jpg" alt="An outdoor area under pine trees, with wooden pergolas, a deck and a fire bowl between granite boulders." loading="lazy" width="640" height="853">
-      <img class="photo" src="images/garden.jpg" alt="Raised vegetable beds in the new garden." loading="lazy" width="640" height="853">
-      <img class="photo" src="images/harvest-fruit.jpg" alt="A bowl of fresh blueberries, strawberries and cherries held up in front of the view." loading="lazy" width="640" height="853">
-    </div>
-    <p class="cap">Still a work in progress, but the idea from two years ago is now real.</p>
-
-    <div class="lesson">
-      <p class="eyebrow">From my life into the workbook</p>
-      <div class="lesson-grid">
-        <p><b>What I faced:</b> which region of Portugal, and which piece of land?</p>
-        <p><b>What I did:</b> I travelled for two months in a campervan and viewed 25 plots. I felt connected to one region, and not at all to another.</p>
-        <p><b>What I learned:</b> you only find out on the ground. Go as a tester, not a tourist.</p>
-        <p><b>In the Blueprint:</b> Step 2, Explore: test it in real life before you decide.</p>
-      </div>
-    </div>
-
-    <details class="more fullstory" style="margin-top:32px">
-      <summary>Read my full story</summary>
-      <div class="split" style="margin-top:28px">
-        <ol class="timeline" style="margin-top:0">
-          <li><span class="when">2020</span><h3>Selling the house</h3><p>I sold my house in the Netherlands to travel the world. Then COVID stopped those plans. A course helped me clarify what I really wanted.</p></li>
-          <li><span class="when">Bali</span><h3>Two bags, a new life</h3><p>During a two-month sabbatical in Bali, I finally had room to think. I wrote down a life near the sea, in a warm climate, where I could run my own business and help people. Back home, I left my job, sold what I still owned and moved to Bali with two bags. I started a consultancy, bought a house, and later started my own inspection business.</p><figure style="margin:12px 0 0"><picture><source type="image/avif" srcset="images/bali-volcano-600.avif"><source type="image/webp" srcset="images/bali-volcano-600.webp"><img src="images/bali-volcano-600.jpg" alt="Mwata on a green ridge in Bali, looking out over a volcano rising above the morning mist." loading="lazy" width="600" height="800" style="width:100%;height:auto;border-radius:4px"></picture><figcaption class="cap" style="margin-top:6px">Bali, a few weeks after I arrived.</figcaption></figure></li>
-          <li><span class="when">Three years later</span><h3>A new picture</h3><p>Bali changed, and so did I. I missed being creative: building things and working in a garden. A YouTube channel about living more self-sufficiently set me thinking about another move.</p></li>
-          <li><span class="when">April 2024</span><h3>The third plot</h3><p>I travelled through Portugal in a campervan, exploring the regions and visiting plots I had shortlisted. I had not planned to buy on that trip. But when I saw the third plot, I knew it was the one.</p></li>
-          <li><span class="when">August 2024</span><h3>Signing</h3><p>I signed the purchase agreement. My money plan was already in place, so I was not afraid to commit. By the end of that year, the land was officially mine.</p></li>
-          <li class="now"><span class="when">Today</span><h3>Living it</h3><p>I live on my own plot of land in the countryside of central Portugal, with enough projects to keep me creative for years. It is not finished, and it does not have to be. It is real.</p></li>
-        </ol>
-        <div class="story-photos">
-          <img class="a" src="images/nl-house.jpg" alt="Aerial view of Mwata's former house in the Netherlands, with a curved thatched roof and a garden." loading="lazy" width="1100" height="618">
-          <div class="pair">
-            <img src="images/bali-desk.jpg" alt="A laptop and building floor plans on a wooden desk in Bali." loading="lazy" width="640" height="1053">
-            <img src="images/campervan.jpg" alt="A campervan parked on a cliff above the Atlantic Ocean in Portugal." loading="lazy" width="640" height="480">
-          </div>
-          <p class="cap">My house in the Netherlands, sold in 2020 · inspection work in Bali · the campervan trip through Portugal.</p>
-        </div>
-      </div>
-    </details>
-
-    <div class="why-share">
-      <picture class="ws-pic"><source type="image/avif" srcset="images/mwata-portrait-240.avif"><source type="image/webp" srcset="images/mwata-portrait-240.webp"><img src="images/mwata-portrait-240.jpg" alt="Mwata smiling, with a lake and mountains behind him." width="84" height="84" loading="lazy"></picture>
-      <div class="ws-text">
-      <p class="eyebrow">Why I share this</p>
-      <p>When I stopped ignoring my feelings and started listening to them, my life began to move. I began by putting a clear picture of the life I wanted on paper. I took one step, then the next, and I built a life in two countries that I can honestly call real. The journey was not easy, and I learned a lot along the way. But I can truly say how good it feels to see your own picture become real. Now it is my turn to pass on what I was given. That is why I wrote this Blueprint: to guide you, patiently and practically, in making your own life real.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- 8b WHAT I STAND FOR -->
-<section class="band-pine" id="stand">
-  <div class="wrap">
-    <p class="eyebrow" style="color:var(--ochre-light)">What I stand for</p>
-    <p class="statement">A life is chosen and built, not inherited or drifted into.</p>
-    <p class="lead" style="color:#E6DECF">Much of the life you live now came from choices, some made on purpose and some made by drifting. You can choose again. Health, money and the people you care for set real limits. Inside those limits, you can decide what matters, make a plan and build it, one step at a time.</p>
-    <div class="pvm2">
-      <div><h3>My picture <small>(my vision)</small></h3><p>I build a life where I am present, dependable, and true to my values. I have the freedom to shape most of my days, spend time in nature, explore, and work on meaningful projects with the people I love.</p></div>
-      <div><h3>Why I do this <small>(my purpose)</small></h3><p>To inspire and help people realise the life they truly want by sharing my experience, practical knowledge and the tools that help them make it happen.</p></div>
-      <div><h3>What I am building <small>(my mission)</small></h3><p>To develop and share a Blueprint that helps people clarify the life they want, explore realistic ways to create it, and turn their choices into action, whether where they live now or somewhere new. Phase 1 is available now. Later phases are planned for people building a life in Portugal.</p></div>
-    </div>
-    <p class="warm warm-wide">My biggest lesson was learning to truly hear what I wanted. Now I want to help you hear what you want.</p>
-  </div>
-</section>
-
 <!-- 9 FAQ -->
 <section id="faq">
   <div class="wrap faq">
     <p class="eyebrow">Good to know</p>
     <h2>Questions people ask</h2>
-    <details><summary>Is this a course?</summary><p>Yes. A course in steps, with PDF workbooks and an app for the exercises. Phase 1 (Steps 1 to 3) is available now; Steps 4 to 8 are coming later. After each step you can print or save your results in the app, and when you finish Phase 1 you get your personal Blueprint: your own written plan.</p></details>
-    <details><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. Giving a review is voluntary, and I only use your words with your written permission.</p></details>
-    <details><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal and other places, but also for real changes at home. Already sure about Portugal? The whole Blueprint starts with Phase 1 as well, because a clear picture of the life you want helps you judge every choice that follows.</p></details>
-    <details><summary>Is this only for people who want to move?</summary><p>No. Phase 1 starts with the life you want. You can finish with a plan to change your life where you are, a decision to look elsewhere, or a decision to wait. Later phases are planned for people building a life in Portugal.</p></details>
-    <details><summary>What do I have at the end of Phase 1?</summary><p>A written direction, the checks to run, and a decision about what to change, why, what to check and what to do next. You save or print a summary after every step.</p></details>
-    <details><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal because that is where I live now and where I built a life.</p></details>
-    <details><summary>What if I decide to stay where I am?</summary><p>That is a real result. The option you test in Step 3 can also be a change where you live, such as working fewer days, a new job, your own business, more space or another region in your own country. If you decide to stay, Step 3 ends with your staying route: My Change Plan, with a date, a first step and a check-in. That completes your Blueprint.</p></details>
-    <details><summary>Do I need the app, or can I use the PDF workbooks on paper?</summary><p>You can complete the PDF workbooks on paper or on screen. To print or save your results after each step, and to get your personal Blueprint when you finish Phase 1, you enter your answers in the app.</p></details>
-    <details><summary>Is the free Tuesday exercise only for people who choose Portugal?</summary><p>No. Phase 1 and the free Tuesday exercise work for any destination, including staying where you are. Steps 4 to 8 focus on Portugal.</p></details>
-    <details><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the Introduction and the Phase 1 workbooks as PDF downloads, plus the app with the exercises. In the app you can print or save your results after each step, and when you finish Phase 1 you get your personal Blueprint. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
-    <details><summary>Is the course in Dutch?</summary><p>The Dutch pages, the free exercise and the follow-up emails are in Dutch. The workbooks and the app are in English. The welcome video in the app has English subtitles. Videos for the course steps are planned, and we plan Dutch subtitles for them.</p></details>
-    <details><summary>How long do I keep access?</summary><p>According to our terms, at least three years from your purchase. You can download the PDFs. If we ever close the app, we give at least 12 months notice by email, and you can first download your answers and your personal Blueprint.</p></details>
-    <details><summary>What if it is not for me?</summary><p>You can ask for a full refund within 30 days of purchase, by email with your order number. A line or two about what did not work is welcome but not required. Your legal rights stay as they are.</p></details>
-    <details><summary>Do I have to use the AI partner?</summary><p>No. The AI partner is optional, and you can do the exercises without it. AI answers can contain mistakes, so check important information with a reliable source or a professional.</p></details>
-    <details><summary>Is this personal coaching?</summary><p>No. You work on your own and at your own pace. You can email questions about how things work, but personal coaching is not included. The Blueprint is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result.</p></details>
-    <details><summary>Can my partner and I work on it together?</summary><p>Yes, without a second purchase. In the app you invite your partner, who signs in with their own email and gets their own access. Some pages are shared: you write one answer together. Others you each write alone, and you see each other's answer once you have both written. A few personal pages can stay private. If you are refunded, both accesses end.</p></details>
-    <details><summary>How does access work after I pay?</summary><p>You receive a link to download the PDF workbooks, and a separate email with how to open the app. You sign in with the email address you paid with and a code sent to that address. If something does not arrive, use "Bought but no access?" in the app or email us.</p></details>
-    <details><summary>Can I start with Phase 1 and get the whole Blueprint later?</summary><p>Yes. When the whole Blueprint opens, I intend to credit what you paid for Phase 1, and I will confirm how before it opens.</p></details>
-    <details><summary>I already know what I want. Can I skip ahead?</summary><p>You can. The short check in the Introduction helps you choose where to start, from Step 1 to Step 3. Even if you start later, read Step 1 briefly: your picture of the life you want helps you judge every later choice.</p></details>
-    <details><summary>How much time does it take?</summary><p>Plan on about two to three hours a week. Short, regular blocks of time tend to suit this kind of work better than one long weekend.</p></details>
-    <details><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so I always show the source and the date I checked. For legal, tax and money decisions, the workbooks help you find the right professional and the right questions to ask.</p></details>
-    <details><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. It explains every Portuguese or official word the first time. The workbooks and the app are in English. Questions before you buy? You can send me a message in English or Dutch.</p></details>
+    <details id="faq-what-exactly-do-i-receive-and-how"><summary>What exactly do I receive, and how?</summary><p>Right after payment, you receive the Introduction and the Phase 1 workbooks as PDF downloads, plus the app with the exercises. In the app you can print or save your results after each step, and when you finish Phase 1 you get your personal Blueprint. Each workbook explains the ideas, gives made-up examples, and has space for your own answers.</p></details>
+    <details id="faq-what-do-i-have-at-the-end-of-phase-1"><summary>What do I have at the end of Phase 1?</summary><p>A written plan for what you want to change, what still needs checking and the next step you will take. You save or print a summary after every step.</p></details>
+    <details id="faq-is-this-a-course"><summary>Is this a course?</summary><p>Yes. A course in steps, with PDF workbooks and an app for the exercises. Phase 1 (Steps 1 to 3) is available now; Steps 4 to 8 are coming later. After each step you can print or save your results in the app, and when you finish Phase 1 you get your personal Blueprint: your own written plan.</p></details>
+    <details id="faq-which-option-is-right-for-me"><summary>Which option is right for me?</summary><p>Not sure yet what you want, or where? Start with Phase 1. It works for Portugal and other places, but also for real changes at home. Already sure about Portugal? The whole Blueprint starts with Phase 1 as well, because a clear picture of the life you want helps you judge every choice that follows.</p></details>
+    <details id="faq-is-this-only-for-people-who-want-to-move"><summary>Is this only for people who want to move?</summary><p>No. Phase 1 starts with the life you want. You can finish with a plan to change your life where you are, a decision to look elsewhere, or a decision to wait. Later phases are planned for people building a life in Portugal.</p></details>
+    <details id="faq-do-i-have-to-move-to-portugal"><summary>Do I have to move to Portugal?</summary><p>No. Phase 1 works for any destination, and for staying where you are. Steps 4 to 8 focus on Portugal because that is where I live now and where I built a life. <a href="/other-destination/">Thinking of another country?</a></p></details>
+    <details id="faq-what-if-i-decide-to-stay-where-i-am"><summary>What if I decide to stay where I am?</summary><p>That is a real result. The option you test in Step 3 can also be a change where you live, such as working fewer days, a new job, your own business, more space or another region in your own country. If you decide to stay, Step 3 ends with your staying route: My Change Plan, with a date, a first step and a check-in. That completes your Blueprint.</p></details>
+    <details id="faq-is-the-course-in-dutch"><summary>Is the course in Dutch?</summary><p>The Dutch pages, the free exercise and the follow-up emails are in Dutch. The workbooks and the app are in English. The welcome video in the app has English subtitles. Videos for the course steps are planned, and we plan Dutch subtitles for them.</p></details>
+    <div class="faq-extra" id="faq-extra">
+    <details id="faq-is-my-english-good-enough"><summary>Is my English good enough?</summary><p>The Blueprint is written in short, simple sentences for people who speak English as a second language. Portuguese terms and specialist terminology are explained when they first appear. The workbooks and the app are in English. Questions before you buy? You can send me a message in English or Dutch.</p></details>
+    <details id="faq-how-much-time-does-it-take"><summary>How much time does it take?</summary><p>Plan on about two to three hours a week. Short, regular blocks of time tend to suit this kind of work better than one long weekend.</p></details>
+    <details id="faq-do-i-need-the-app-or-can-i-use-the-pdf-workbooks-on-paper"><summary>Do I need the app, or can I use the PDF workbooks on paper?</summary><p>You can complete the PDF workbooks on paper or on screen. To print or save your results after each step, and to get your personal Blueprint when you finish Phase 1, you enter your answers in the app.</p></details>
+    <details id="faq-how-does-access-work-after-i-pay"><summary>How does access work after I pay?</summary><p>You receive a link to download the PDF workbooks, and a separate email explaining how to access the app. You sign in with the email address you paid with and a code sent to that address. If something does not arrive, email info@maderealblueprint.com from the address you paid with. If you paid with one email and signed in with another, use the sign-in help in the app, headed "Paid with one email, signed in with another?"</p></details>
+    <details id="faq-how-long-do-i-keep-access"><summary>How long do I keep access?</summary><p>According to our terms, at least three years from your purchase. You can download the PDFs. If we ever close the app, we give at least 12 months' notice by email, and you can first download your answers and your personal Blueprint.</p></details>
+    <details id="faq-what-if-it-is-not-for-me"><summary>What if it is not for me?</summary><p>You can ask for a full refund within 30 days of purchase, by email with your order number. A line or two about what did not work is welcome but not required. Your legal rights stay as they are.</p></details>
+    <details id="faq-can-my-partner-and-i-work-on-it-together"><summary>Can my partner and I work on it together?</summary><p>Yes, without a second purchase. In the app you invite your partner, who signs in with their own email and gets their own access. Some pages are shared: you write one answer together. Others you each write alone, and you see each other's answer once you have both written. A few personal pages can stay private. If you receive a refund, access ends for you and your partner. Timing follows section 6A of the <a href="terms.html">terms</a> (3-day grace, same-day notice to your partner, download of their answers, deletion after 30 days).</p></details>
+    <details id="faq-do-i-have-to-use-the-ai-partner"><summary>Do I have to use the AI partner?</summary><p>No. The AI partner is optional, and you can do the exercises without it. AI answers can contain mistakes, so check important information with a reliable source or a professional.</p></details>
+    <details id="faq-is-this-personal-coaching"><summary>Is this personal coaching?</summary><p>No. You work on your own and at your own pace. You can email questions about how things work, but personal coaching is not included. The Blueprint is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result.</p></details>
+    <details id="faq-i-already-know-what-i-want-can-i-skip-ahead"><summary>I already know what I want. Can I skip ahead?</summary><p>You can. The short check in the Introduction helps you choose where to start, from Step 1 to Step 3. Even if you start later, read Step 1 briefly: your picture of the life you want helps you judge every later choice.</p></details>
+    <details id="faq-can-i-start-with-phase-1-and-get-the-whole-blueprint-later"><summary>Can I start with Phase 1 and get the whole Blueprint later?</summary><p>Yes. When the whole Blueprint opens, I intend to credit what you paid for Phase 1, and I will confirm how before it opens.</p></details>
+    <details id="faq-is-the-free-tuesday-exercise-only-for-people-who-choose-port"><summary>Is the free Tuesday exercise only for people who choose Portugal?</summary><p>No. Phase 1 and the free Tuesday exercise work for any destination, including staying where you are. Steps 4 to 8 focus on Portugal.</p></details>
+    <details id="faq-do-you-give-legal-or-tax-advice"><summary>Do you give legal or tax advice?</summary><p>No. Rules and prices change, so I always show the source and the date I checked. For legal, tax and money decisions, the workbooks help you find the right professional and the right questions to ask.</p></details>
+    <details id="faq-do-you-ask-for-feedback"><summary>Do you ask for feedback?</summary><p>Yes. I ask for honest feedback as you work through the steps: what is clear, what is missing, and what helped. Giving a review is voluntary, and I only use your words with your written permission.</p></details>
+    </div><!--/faq-extra-->
+    <div class="faq-toggle" hidden><button type="button" class="btn btn-ghost" aria-expanded="false" aria-controls="faq-extra"><span class="t-all">Show all questions</span><span class="t-less" hidden>Show fewer questions</span></button></div><!--/faq-toggle-->
   </div>
 </section>
 
-<!-- 10 CONTACT -->
+<!-- 10 FINAL STEP -->
 <section class="on-dark contact" id="contact">
   <div class="wrap split">
-    <div>
+    <div class="fs-head">
       <p class="eyebrow">Your next step</p>
       <h2>Ready to choose, or not sure yet?</h2>
+    </div>
+    <div class="fs-boxes">
+      <div class="fnote">
+            <picture><source type="image/avif" srcset="images/mwata-portrait-240.avif"><source type="image/webp" srcset="images/mwata-portrait-240.webp"><img src="images/mwata-portrait-240.jpg" alt="Mwata, the author of The Made Real Blueprint." width="52" height="52" loading="lazy"></picture>
+            <p>Somewhere inside, there is a feeling that something needs to change. I learned to listen to it, put a clear picture of the life I wanted on paper, and build my life from it. I want to help you hear yours and make it real, wherever that turns out to be. Mwata</p>
+          </div>
+      <div class="final-buy">
+        <p class="fb-price">€99 <small>including VAT. One-off payment, no subscription.</small></p>
+        <a class="btn btn-ochre" href="https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8" data-checkout="phase1">Get Phase 1 · €99</a>
+        <p class="fb-note"><b>30-day money-back guarantee.</b> Pay by card, PayPal or the other methods shown at checkout. Secure payment through Lemon Squeezy. <a href="terms.html">Terms and conditions</a>.</p>
+      </div>
+    </div>
+    <p class="fs-alt">Not ready to buy? <a href="#free">Try the Tuesday exercise free</a>.</p>
+    <div class="contact-direct">
       <p class="lead">Send me a message first if you like. I read every message myself and reply as soon as I can.</p>
       <p>Tell me a little about where you are now. "I don't know yet" is a good place to start.</p>
-      <p style="margin-top:28px">Not ready to buy? <a href="#free">Try the Tuesday exercise free</a>.</p>
-      <p>Follow along on <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a>.</p>
-    </div>
-    <div class="contact-direct">
       <p>Write to me at this address, or message me on WhatsApp.</p>
       <p class="cd-mail"><a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a></p>
       <p>You can say where you are now, or just ask your question. I use your email address and your message only to reply to you. See the <a href="privacy.html">privacy note</a>.</p>
       <div class="form-buttons"><a class="btn btn-primary" href="mailto:info@maderealblueprint.com?subject=A%20question%20about%20The%20Made%20Real%20Blueprint">Email me</a><a class="btn btn-ghost btn-wa" href="https://wa.me/31657930469" target="_blank" rel="noopener">Prefer WhatsApp?</a></div>
+      <p>Follow along on <a href="https://www.instagram.com/the.life_you.choose/" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/profile.php?id=61595278371843" target="_blank" rel="noopener">Facebook</a>.</p>
     </div>
   </div>
 </section>
@@ -1113,7 +1244,7 @@ footer .links{margin:10px 0 0}
     <div class="cols">
       <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result. Always check current rules with the official source or a qualified professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Share capital €10,000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Registered in the Commercial Registry (Conservatória do Registo Comercial)</p>
-      <p class="links">© 2026 The Life You Choose · <a href="#stand">What I stand for</a> · <a href="tuesday/">Free exercise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">My story</a> · <a href="tuesday/">Free exercise</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="https://app.maderealblueprint.com/withdraw">Withdraw from contract here</a></p>
     </div>
   </div>
 </footer>
@@ -1144,6 +1275,7 @@ function track(name) { try { if (window.goatcounter && window.goatcounter.count)
 document.addEventListener('click', function (e) {
   const w = e.target.closest && e.target.closest('a[href*="wa.me/"]'); if (w) track('whatsapp-click');
   const m = e.target.closest && e.target.closest('a[href^="mailto:"]'); if (m) track('email-click');
+  /*gr:track*/const grl = e.target.closest && e.target.closest('.gr-strip a'); if (grl) track('gratis-link-click');/*/gr:track*/
   const c = e.target.closest && e.target.closest('a[data-checkout]'); if (c) track('checkout-click-' + c.dataset.checkout);
   const g = e.target.closest && e.target.closest('a[href="#free"]'); if (g) track('free-cta-click');
 });
@@ -1153,6 +1285,14 @@ const menu = document.getElementById('menu');
 menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); if (open) { const f = menu.querySelector('a'); if (f) f.focus(); } });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
+
+/*s7:faq*/(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
+function set(o){b.setAttribute('aria-expanded',o?'true':'false');a.hidden=o;l.hidden=!o;if(o)x.removeAttribute('hidden');else x.setAttribute('hidden','until-found')}
+t.hidden=false;set(false);
+b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});
+x.addEventListener('beforematch',function(){set(true)});
+function fromHash(){var id=decodeURIComponent(location.hash.slice(1));if(!id)return;var e=document.getElementById(id);if(e&&x.contains(e)){set(true);if(e.tagName==='DETAILS')e.open=true;setTimeout(function(){e.scrollIntoView()},0)}}
+fromHash();window.addEventListener('hashchange',fromHash)})();/*/s7:faq*/
 
 // Gentle reveal on scroll
 if ('IntersectionObserver' in window) {
@@ -1182,15 +1322,10 @@ if(wbd&&typeof wbd.showModal==='function'){
   wbd.querySelector('.wl-close').addEventListener('click',()=>wbd.close());
   wbd.addEventListener('click',(e)=>{if(e.target===wbd)wbd.close();});
 }
-// Open "What I stand for" when linked to
-function openStand(){ const d=document.getElementById('stand'); if(d){ d.open=true; setTimeout(()=>d.scrollIntoView({block:'start'}),50); } }
-document.querySelectorAll('a[href="#stand"]').forEach((a)=>a.addEventListener('click',openStand));
-if(location.hash==='#stand') openStand();
-
 // Waiting-list pop-up (MailerLite)
 const WAITLISTS = {
   full: { action: 'https://assets.mailerlite.com/jsonp/2693532/forms/200744843056514169/subscribe', eyebrow: 'The whole Blueprint · coming later', title: 'Get notified when it opens',
-    text: 'Steps 4 to 8 are being finished. Leave your email address and I will let you know when the whole Blueprint opens.' },
+    text: 'Steps 4 to 8 are in development for the Portugal edition. Leave your email address and I will let you know when the complete course is available.' },
 };
 const wl = document.getElementById('waitlist');
 if (wl && typeof wl.showModal === 'function') {
@@ -1216,7 +1351,7 @@ if (wl && typeof wl.showModal === 'function') {
       const res = await fetch(wf.action, { method: 'POST', body: new FormData(wf) });
       const data = await res.json(); if (!data.success) throw new Error();
       wBtn.style.display = 'none'; wOk.style.display = 'block'; track('waitlist-signup-full');
-    } catch { wErr.textContent = 'Something went wrong. Please try again, or send me a message below.'; wErr.style.display = 'block'; }
+    } catch { wErr.textContent = 'Something went wrong. Please try again or email info@maderealblueprint.com.'; wErr.style.display = 'block'; }
     finally { wBtn.disabled = false; wBtn.textContent = 'Let me know'; }
   });
   // maderealblueprint.com/#notify opens the pop-up directly (links in emails and bios)
@@ -1235,7 +1370,7 @@ if (OLD[location.hash]) { const t = document.querySelector(OLD[location.hash]); 
   var started = false; f.addEventListener('focusin', function () { if (!started) { started = true; count('tuesday-form-start-home', 'Tuesday form started (home)'); } });
   f.addEventListener('submit', function (e) {
     e.preventDefault(); err.style.display = 'none';
-    if (!f.checkValidity()) { err.textContent = 'Please fill in a valid email address.'; err.style.display = 'block'; return; }
+    if (!f.checkValidity()) { err.textContent = 'Please enter a valid email address.'; err.style.display = 'block'; return; }
     var ticked = f.querySelector('input[name="fields[updates]"]').checked, url = ticked ? f.getAttribute('data-updates') : f.getAttribute('data-download');
     fetch(url, { method: 'POST', body: new FormData(f) })
       .then(function (r) { return r.json(); })
