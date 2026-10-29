@@ -70,6 +70,7 @@ footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:28px 0}
 footer a{color:#E6DECF}
 @media (max-width:820px){ .hero .in{grid-template-columns:1fr} .preview{max-width:520px} .hero .in>div{display:flex;flex-direction:column} .hero .in>div>*{order:4} .hero .in>div>.eyebrow,.hero .in>div>h1,.hero .in>div>.lead{order:0} .hero .in>div>.signup{order:1;margin-top:8px} .hero .in>div>.alt-now{order:2} .hero .in>div>.fmt{order:3} }
 @media (max-width:560px){ .about .in{grid-template-columns:1fr} .about img{width:110px;height:110px} .btn{width:100%;text-align:center} }
+/*pn:css*/.pn-link{color:var(--pine);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}.pn-link:hover,.pn-link:focus-visible{text-decoration-thickness:2.5px}/*/pn:css*/
 /*s8:hdr*/
 header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
 header .logo svg{width:40px;height:30px;flex:none}
@@ -123,7 +124,7 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn" type="submit">Get the exercise</button>
-        <p class="small">Belgrave Management, Unipessoal Lda is responsible for your data. I only use your email to send you a copy of the exercise, and the short series of emails only if you tick the box. If you tick it, I will ask you to confirm by email first. See the <a href="../privacy.html">privacy note</a>.</p>
+        <p class="small">Belgrave Management, Unipessoal Lda is responsible for your data. I use your email only to send you a copy of the exercise and a short series of emails if you tick the box. If you tick the box, you will receive a confirmation email first. For more information, see the <a class="pn-link" href="../privacy.html">privacy note</a>.</p>
         <div class="ok" role="status" id="ok"><p style="margin:0">Your exercise is ready.</p><a class="btn" id="dl" href="../downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a><p style="margin:12px 0 0">Or <a href="/tuesday/exercise/">do the exercise in your browser</a>.</p></div>
         <div class="err" role="alert" id="err"></div>
       </form>
