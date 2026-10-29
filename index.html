@@ -740,8 +740,13 @@ section.contact{padding:var(--y-major) 0}
 }
 @media (max-width:760px){.free .prev-col{order:0;max-width:none;margin-top:6px}.free .prev-col .prev{display:none}.free .fx-more{margin-top:0}}
 /* hero crop: below 900px the picture is a short band, so the focus moves up to keep the head and shoulders of the person in frame (desktop keeps 50% 88%) */
-@media (max-width:899px){.hero-img img{object-position:50% 12%}}
+@media (max-width:899.98px){.hero-img img{object-position:50% 12%}}
 @media (max-width:560px){.hero-img img{object-position:50% 22%}}
+/* round 8b: the eyebrow sits over the lower part of the photo below 900px; a deeper pine overlay there keeps it at 4.5:1 or better (pine only, the top of the photo stays as it was) */
+@media (max-width:899.98px){.hero-img{background:var(--pine)}.hero-img img{height:calc(100% - 1px)}.hero-img::after{background:linear-gradient(180deg,rgba(44,59,47,0) 20%,rgba(44,59,47,.5) 48%,rgba(44,59,47,.92) 64%,var(--pine) 80%)}}
+/* round 8b: between 900 and 1199px the copy column reaches into the photo; the pine fade is deeper there too (1200px and up unchanged) */
+@media (min-width:900px){.hero-img{background:var(--pine)}.hero-img img{margin-left:2px;width:calc(100% - 2px)}}
+@media (min-width:900px) and (max-width:1199px){.hero-img::after{background:linear-gradient(90deg,var(--pine) 0,rgba(44,59,47,.95) 24%,rgba(44,59,47,0) 52%)}}
 /* reading width and supporting text */
 .legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
 .not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
