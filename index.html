@@ -30,7 +30,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://maderealblueprint.com/#website","url":"https://maderealblueprint.com/","name":"The Made Real Blueprint","alternateName":"The Life You Choose","inLanguage":"en","publisher":{"@id":"https://maderealblueprint.com/#org"}},{"@type":"Organization","@id":"https://maderealblueprint.com/#org","name":"The Life You Choose","legalName":"Belgrave Management, Unipessoal Lda","url":"https://maderealblueprint.com/","logo":{"@type":"ImageObject","url":"https://maderealblueprint.com/images/logo-512.png","width":512,"height":512},"email":"info@maderealblueprint.com","sameAs":["https://www.instagram.com/the.life_you.choose/","https://www.facebook.com/profile.php?id=61595278371843"],"founder":{"@id":"https://maderealblueprint.com/#mwata"}},{"@type":"Person","@id":"https://maderealblueprint.com/#mwata","name":"Mwata Belgrave","jobTitle":"Founder","image":"https://maderealblueprint.com/images/mwata.jpg","worksFor":{"@id":"https://maderealblueprint.com/#org"}},{"@type":"WebPage","@id":"https://maderealblueprint.com/#webpage","url":"https://maderealblueprint.com/","name":"Work out the life you want, and what needs to change · The Made Real Blueprint","description":"Wondering whether to move abroad, or to change something where you live first? Start with a free exercise. Phase 1 of The Made Real Blueprint, by Mwata.","inLanguage":"en","isPartOf":{"@id":"https://maderealblueprint.com/#website"},"about":{"@id":"https://maderealblueprint.com/#org"},"author":{"@id":"https://maderealblueprint.com/#mwata"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://maderealblueprint.com/images/og-image-v4.jpg","width":1200,"height":630}},{"@type":"Product","@id":"https://maderealblueprint.com/#phase1","name":"The Made Real Blueprint, Phase 1","description":"Steps 1 to 3 of The Made Real Blueprint: PDF workbooks and an app for self-guided reflection and planning, in English. Work out the life you want, what to change, what to check and what to do next.","image":"https://maderealblueprint.com/images/og-image-v4.jpg","url":"https://maderealblueprint.com/","brand":{"@id":"https://maderealblueprint.com/#org"},"offers":{"@type":"Offer","url":"https://mystore.maderealblueprint.com/checkout/buy/776b68da-e3ee-4566-8c9c-103339ed42c8","price":"99.00","priceCurrency":"EUR","availability":"https://schema.org/InStock","seller":{"@id":"https://maderealblueprint.com/#org"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"99.00","priceCurrency":"EUR","valueAddedTaxIncluded":true}}}]}</script>
 <link rel="icon" href="images/mark.svg" type="image/svg+xml">
 <meta name="theme-color" content="#2C3B2F">
-<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 899px)" imagesrcset="images/hero-everyday-m-480.avif 480w, images/hero-everyday-m-720.avif 720w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(max-width: 899px)" imagesrcset="images/hero-everyday-m2-480.avif 480w, images/hero-everyday-m2-720.avif 720w" imagesizes="100vw">
 <link rel="preload" as="image" type="image/avif" fetchpriority="high" media="(min-width: 900px)" imagesrcset="images/hero-everyday-600.avif 600w, images/hero-everyday-900.avif 900w" imagesizes="54vw">
 <link rel="preload" href="fonts/newsreader-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/hankengrotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -751,6 +751,16 @@ section.contact{padding:var(--y-major) 0}
 @media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
 /* reading width and supporting text */
 .legend{font-size:15px;line-height:1.55;max-width:44em;margin-top:16px}
+.legend.legend-wide{max-width:none}
+/* 29 Oct 2026 (owner): comfortable space between the price line and the first bullet of the Phase 1 box */
+.o-buy .price+ul{margin-top:20px}
+/* 29 Oct 2026 (perf): sections below the hero are not laid out until they come near the viewport (LCP and style/layout cost on phones) */
+main>section:not(.hero),footer{content-visibility:auto;contain-intrinsic-size:auto 900px}
+html.nocv main>section,html.nocv footer{content-visibility:visible}
+#familiar{contain-intrinsic-size:auto 1162px}#free{contain-intrinsic-size:auto 1383px}#free-new{contain-intrinsic-size:auto 218px}#inside{contain-intrinsic-size:auto 1471px}#method{contain-intrinsic-size:auto 1480px}.intro{contain-intrinsic-size:auto 777px}#options{contain-intrinsic-size:auto 3018px}#faq{contain-intrinsic-size:auto 991px}#contact{contain-intrinsic-size:auto 1672px}footer{contain-intrinsic-size:auto 430px}
+@media (min-width:900px){#familiar{contain-intrinsic-size:auto 723px}#free{contain-intrinsic-size:auto 1056px}#free-new{contain-intrinsic-size:auto 146px}#inside{contain-intrinsic-size:auto 1232px}#method{contain-intrinsic-size:auto 925px}.intro{contain-intrinsic-size:auto 513px}#options{contain-intrinsic-size:auto 1638px}#faq{contain-intrinsic-size:auto 944px}#contact{contain-intrinsic-size:auto 976px}footer{contain-intrinsic-size:auto 252px}}
+html[lang=nl] #familiar{contain-intrinsic-size:auto 1323px}html[lang=nl] #free{contain-intrinsic-size:auto 1513px}html[lang=nl] #free-new{contain-intrinsic-size:auto 218px}html[lang=nl] #inside{contain-intrinsic-size:auto 1622px}html[lang=nl] #method{contain-intrinsic-size:auto 1454px}html[lang=nl] .intro{contain-intrinsic-size:auto 835px}html[lang=nl] #options{contain-intrinsic-size:auto 3397px}html[lang=nl] #faq{contain-intrinsic-size:auto 991px}html[lang=nl] #contact{contain-intrinsic-size:auto 1761px}html[lang=nl] footer{contain-intrinsic-size:auto 452px}
+@media (min-width:900px){html[lang=nl] #familiar{contain-intrinsic-size:auto 758px}html[lang=nl] #free{contain-intrinsic-size:auto 1128px}html[lang=nl] #free-new{contain-intrinsic-size:auto 146px}html[lang=nl] #inside{contain-intrinsic-size:auto 1232px}html[lang=nl] #method{contain-intrinsic-size:auto 961px}html[lang=nl] .intro{contain-intrinsic-size:auto 535px}html[lang=nl] #options{contain-intrinsic-size:auto 1766px}html[lang=nl] #faq{contain-intrinsic-size:auto 944px}html[lang=nl] #contact{contain-intrinsic-size:auto 1027px}html[lang=nl] footer{contain-intrinsic-size:auto 252px}}
 .not-this{font-size:clamp(18px,1.6vw,20px);line-height:1.5}
 .hero .founding-line{font-size:16px}
 .offer .after{font-size:16px}
@@ -760,6 +770,7 @@ section.contact{padding:var(--y-major) 0}
 .strip span{font-size:14px}
 .fx-small{font-size:15px}
 /*/s8:css*/
+/*pn:css*/.pn-link{color:var(--pine);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}.pn-link:hover,.pn-link:focus-visible{text-decoration-thickness:2.5px}/*/pn:css*/
 </style>
 </head>
 <body>
@@ -790,7 +801,7 @@ section.contact{padding:var(--y-major) 0}
 <!-- 1 HERO -->
 <section class="hero">
   <div class="hero-img">
-    <picture><source media="(max-width: 899px)" type="image/avif" srcset="images/hero-everyday-m-480.avif 480w, images/hero-everyday-m-720.avif 720w" sizes="100vw"><source media="(max-width: 899px)" type="image/webp" srcset="images/hero-everyday-m-480.webp 480w, images/hero-everyday-m-720.webp 720w" sizes="100vw"><source type="image/avif" srcset="images/hero-everyday-600.avif 600w, images/hero-everyday-900.avif 900w" sizes="(max-width: 899px) 100vw, 54vw"><source type="image/webp" srcset="images/hero-everyday-600.webp 600w, images/hero-everyday-900.webp 900w" sizes="(max-width: 899px) 100vw, 54vw"><img src="images/hero-everyday-900.jpg" alt="Mwata sitting on a granite boulder, seen from behind, looking out over green hills under a blue sky." width="900" height="1600" fetchpriority="high"></picture>
+    <picture><source media="(max-width: 899px)" type="image/avif" srcset="images/hero-everyday-m2-480.avif 480w, images/hero-everyday-m2-720.avif 720w" sizes="100vw"><source media="(max-width: 899px)" type="image/webp" srcset="images/hero-everyday-m-480.webp 480w, images/hero-everyday-m-720.webp 720w" sizes="100vw"><source type="image/avif" srcset="images/hero-everyday-600.avif 600w, images/hero-everyday-900.avif 900w" sizes="(max-width: 899px) 100vw, 54vw"><source type="image/webp" srcset="images/hero-everyday-600.webp 600w, images/hero-everyday-900.webp 900w" sizes="(max-width: 899px) 100vw, 54vw"><img src="images/hero-everyday-900.jpg" alt="Mwata sitting on a granite boulder, seen from behind, looking out over green hills under a blue sky." width="900" height="1600" fetchpriority="high"></picture>
   </div>
   <div class="wrap">
     <div class="hero-copy">
@@ -860,7 +871,7 @@ section.contact{padding:var(--y-major) 0}
         <input type="hidden" name="ml-submit" value="1">
         <input type="hidden" name="anticsrf" value="true">
         <button class="btn btn-primary" type="submit">Get the exercise</button>
-        <p class="fx-small">Belgrave Management, Unipessoal Lda is responsible for your data. I only use your email to send you a copy of the exercise, and the short series of emails only if you tick the box. If you tick it, I will ask you to confirm by email first. See the <a href="privacy.html">privacy note</a>.</p>
+        <p class="fx-small">Belgrave Management, Unipessoal Lda is responsible for your data. I use your email only to send you a copy of the exercise and a short series of emails if you tick the box. If you tick the box, you will receive a confirmation email first. For more information, see the <a class="pn-link" href="privacy.html">privacy note</a>.</p>
         <div class="fx-ok" role="status" id="fx-ok"><p style="margin:0">Your exercise is ready.</p><a class="btn btn-primary" id="fx-dl" href="downloads/ordinary-tuesday.pdf" download>Download the exercise (PDF)</a></div>
         <div class="fx-err" role="alert" id="fx-err"></div>
       </form>
@@ -928,8 +939,7 @@ section.contact{padding:var(--y-major) 0}
           </ul>
         </div>
       </details>
-      <p class="legend">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you. The decision names what to change and what to check next. It is not only a yes or no to moving. The five checks are money, papers, people, place and Plan B. In your result each one shows as a light: green when it is in place, amber or red when it still needs attention.</p>
-      <p class="legend"><a href="samples/text/">Read the sample results as text (English)</a></p>
+      <p class="legend legend-wide">Illustrative examples using fictional answers. Your results are made from your own answers, and nothing in them is chosen for you. The decision names what to change and what to check next. It is not only a yes or no to moving. The five checks are money, papers, people, place and Plan B. In your result each one shows as a light: green when it is in place, amber or red when it still needs attention. <a href="samples/text/">Read the sample results as text (English)</a></p>
     </div>
 
     <p class="not-this">I wrote the Blueprint to help you work out what you want to change and plan your next steps, using what I learned from building a life abroad twice. It does not coach you, and it does not arrange your move for you.</p>
@@ -1286,7 +1296,8 @@ menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('op
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
 
-/*s7:faq*/(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
+/*s7:faq*/(function(){var d=document.documentElement;function f(){d.classList.add('nocv')}if(location.hash)f();window.addEventListener('hashchange',f);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(a&&a.hash&&a.pathname===location.pathname)f()},true)})();
+(function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
 function set(o){b.setAttribute('aria-expanded',o?'true':'false');a.hidden=o;l.hidden=!o;if(o)x.removeAttribute('hidden');else x.setAttribute('hidden','until-found')}
 t.hidden=false;set(false);
 b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true')});
