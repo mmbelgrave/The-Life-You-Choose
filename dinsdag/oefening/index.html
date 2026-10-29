@@ -111,6 +111,34 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
 @media (max-width:440px){header .hl{display:none}}
 @media (max-width:360px){header .logo{font-size:17px;gap:6px}header .logo svg{width:30px;height:23px}}
 /*/s8:hdr*/
+/*s11:frame*/
+:root{--fr-g:clamp(20px,6vw,88px);--fr-c:1180px;--serif:'Newsreader', Georgia, 'Times New Roman', serif;--sans:'Hanken Grotesk', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif}
+header{border-bottom:1px solid var(--rule)}
+header .in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+header .logo{display:flex;align-items:center;text-decoration:none;color:var(--pine);font-family:var(--serif);font-weight:500}
+header .hs a{text-decoration:none}
+header .hs a:hover{text-decoration:underline}
+header .in,footer .wrap{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin:0 auto;padding:0 var(--fr-g)}
+main.reading,main.frame{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin-left:auto;margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+main.reading>*{max-width:720px}
+main.reading{font-size:18px;line-height:1.7}
+main.reading h1{font-size:clamp(36px,6vw,52px);line-height:1.1;margin:0 0 14px}
+main .in{max-width:calc(var(--fr-c) + 2*var(--fr-g));margin-left:max(0px, calc((100% - (var(--fr-c) + 2*var(--fr-g)))/2));margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+main>.in:only-child{padding-top:40px;padding-bottom:40px}
+main .about .in,main .sec .in{max-width:calc(780px + 2*var(--fr-g))}
+main>.wrap{max-width:calc(720px + 2*var(--fr-g));margin-left:max(0px, calc((100% - (var(--fr-c) + 2*var(--fr-g)))/2));margin-right:auto;padding-left:var(--fr-g);padding-right:var(--fr-g)}
+footer{background:var(--granite);color:#BDB6A9;font-size:14px;padding:26px 0}
+footer .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+footer .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--sand);font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
+footer .logo svg{width:40px;height:30px;flex:none}
+footer p{max-width:60ch;margin:8px 0 0}
+footer a{color:#E6DECF}
+footer .cols{width:100%}
+footer .fine{font-size:12.5px;line-height:1.55;color:#A49D91;max-width:none;margin:0 0 6px}
+footer .links{margin:10px 0 0;max-width:none}
+@media (min-width:761px) and (max-width:1100px){footer .cols .links{font-size:13px}}
+@media (min-width:981px) and (max-width:1100px){footer .cols .links{font-size:12px}}
+/*/s11:frame*/
 </style>
 </head>
 <body>
@@ -188,7 +216,17 @@ header .hl{font-size:15px;font-weight:600;text-decoration:none;white-space:nowra
 </div>
 </main>
 <footer>
-  <div class="in">© 2026 The Life You Choose · <a href="/nl/">Home</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek (Livro de Reclamações)</a></div>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="/nl/"><svg viewBox="-10 0 100 74" aria-hidden="true"><rect x="-10" y="0" width="100" height="74" rx="10" fill="#2C3B2F"/><path d="M6 58 H74" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M17 45 H63" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><path d="M28 32 H52" stroke="#F3ECE0" stroke-width="5" stroke-linecap="round"/><circle cx="40" cy="18" r="5.5" fill="#D9A55A"/></svg><span>The Life You <em>Choose</em></span></a>
+      <p>Choose it. Build it. Live it.</p>
+    </div>
+    <div class="cols">
+      <p class="fine">The Made Real Blueprint geeft praktische begeleiding op basis van persoonlijke ervaring. Het is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven. Controleer actuele regels altijd bij de officiële bron of een gekwalificeerde professional.</p>
+      <p class="fine">Belgrave Management, Unipessoal Lda · NIPC 518428338 · Maatschappelijk kapitaal €10.000 · Rua Doutora Maria Adelaide Moura Ferreira, s/n, Passarela, 6290-093 Lagarinhos, Gouveia, Portugal · Ingeschreven in het Portugese handelsregister (Conservatória do Registo Comercial)</p>
+      <p class="links">© 2026 The Life You Choose · <a href="/mijn-verhaal/">Mijn verhaal</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="https://app.maderealblueprint.com/withdraw">Hier de overeenkomst ontbinden</a></p>
+    </div>
+  </div>
 </footer>
 <script>
 (function () {
