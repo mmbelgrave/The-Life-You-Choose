@@ -204,7 +204,7 @@ footer .links{margin:10px 0 0;max-width:none}
     <button class="btn alt2" type="button" id="b-dl">Download als tekstbestand</button>
     <button class="btn alt2" type="button" id="b-copy">Kopieer tekst</button>
     <button class="btn alt2" type="button" id="b-clear">Wis alles</button>
-    <p class="saved" id="saved" role="status" aria-live="polite">Automatisch bewaard op dit apparaat.</p>
+    <p class="saved" id="saved" role="status" aria-live="polite">Automatisch bewaard in deze browser.</p>
   </div>
 
   <section class="next">
@@ -224,7 +224,7 @@ footer .links{margin:10px 0 0;max-width:none}
     <div class="cols">
       <p class="fine">The Made Real Blueprint geeft praktische begeleiding op basis van persoonlijke ervaring. Het is zelfstudie. Het is geen coaching, therapie of juridisch, fiscaal, immigratie-, financieel, medisch of psychologisch advies, en het kan geen resultaat beloven. Controleer actuele regels altijd bij de officiële bron of een gekwalificeerde professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · Gouveia, Portugal · NIPC 518428338</p>
-      <p class="links">© 2026 The Life You Choose · <a href="/mijn-verhaal/">Mijn verhaal</a> · <a href="/dinsdag/">Gratis oefening</a> · <a href="/aanbevolen/">Aanbevolen</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="/nl/">← Terug naar de hoofdwebsite</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/dinsdag/">Gratis oefening</a> · <a href="/aanbevolen/">Aanbevolen</a> · <a href="/privacy.html">Privacy (Engels)</a> · <a href="/terms.html">Voorwaarden (Engels)</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Klachtenboek</a> · <a href="/nl/">← Terug naar de hoofdwebsite</a></p>
     </div>
   </div>
 </footer>
@@ -235,7 +235,7 @@ footer .links{margin:10px 0 0;max-width:none}
   function ev(n,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:t,event:true,referrer:ref()})}catch(e){}}
   function grow(t){t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
   function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
-  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Bewaard op dit apparaat.'}catch(e){saved.textContent='Bewaren in je browser lukt hier niet. Kopieer je tekst of print de pagina.'}}
+  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Bewaard in deze browser.'}catch(e){saved.textContent='Bewaren in je browser lukt hier niet. Kopieer je tekst of print de pagina.'}}
   function text(){var out='Een gewone dinsdag\n\n';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
   fields.forEach(function(t){t.addEventListener('input',function(){grow(t);save();if(!started){started=true;ev('oefening-start-nl','Browser exercise started')}})});
   load();

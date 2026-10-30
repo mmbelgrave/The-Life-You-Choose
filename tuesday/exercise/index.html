@@ -203,7 +203,7 @@ footer .links{margin:10px 0 0;max-width:none}
     <button class="btn alt2" type="button" id="b-dl">Download as text file</button>
     <button class="btn alt2" type="button" id="b-copy">Copy text</button>
     <button class="btn alt2" type="button" id="b-clear">Clear everything</button>
-    <p class="saved" id="saved" role="status" aria-live="polite">Saved automatically on this device.</p>
+    <p class="saved" id="saved" role="status" aria-live="polite">Saved automatically in this browser.</p>
   </div>
 
   <section class="next">
@@ -223,7 +223,7 @@ footer .links{margin:10px 0 0;max-width:none}
     <div class="cols">
       <p class="fine">The Made Real Blueprint gives practical guidance based on personal experience. It is self-study. It is not coaching, therapy, or legal, tax, immigration, financial, medical or psychological advice, and it cannot promise any result. Always check current rules with the official source or a qualified professional.</p>
       <p class="fine">Belgrave Management, Unipessoal Lda · Gouveia, Portugal · NIPC 518428338</p>
-      <p class="links">© 2026 The Life You Choose · <a href="/my-story/">My story</a> · <a href="/tuesday/">Free exercise</a> · <a href="/recommended/">Recommended</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="/">← Back to the main website</a></p>
+      <p class="links">© 2026 The Life You Choose · <a href="/tuesday/">Free exercise</a> · <a href="/recommended/">Recommended</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Complaints book</a> · <a href="/">← Back to the main website</a></p>
     </div>
   </div>
 </footer>
@@ -234,7 +234,7 @@ footer .links{margin:10px 0 0;max-width:none}
   function ev(n,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:t,event:true,referrer:ref()})}catch(e){}}
   function grow(t){t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
   function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
-  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Saved on this device.'}catch(e){saved.textContent='Saving in your browser does not work here. Copy your text or print the page.'}}
+  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Saved in this browser.'}catch(e){saved.textContent='Saving in your browser does not work here. Copy your text or print the page.'}}
   function text(){var out='An ordinary Tuesday\n\n';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
   fields.forEach(function(t){t.addEventListener('input',function(){grow(t);save();if(!started){started=true;ev('exercise-start-en','Browser exercise started')}})});
   load();
