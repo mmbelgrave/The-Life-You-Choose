@@ -85,6 +85,7 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 .btn.alt2{background:transparent;color:var(--pine)}
 .btn.alt2:hover{background:var(--sage)}
 .saved{font-size:14px;color:var(--stone);margin:0}.tools{justify-content:center}.saved{flex:1 1 100%;text-align:center}footer .in{text-align:center}
+fieldset.pick{border:0;padding:0;margin:18px 0 0}fieldset.pick legend{font-size:15px;font-weight:600;color:var(--pine);padding:0}fieldset.pick .small{margin:2px 0 6px}.cb{display:flex;gap:10px;align-items:flex-start;margin:6px 0}.cb input{margin-top:7px;flex:none;width:18px;height:18px}.cb label{margin:0;font-weight:400;color:var(--granite);font-size:17px}.sec input[type=text]{margin-bottom:2px}
 .vague{width:100%;border-collapse:collapse;font-size:16px;margin:10px 0}
 .vague th,.vague td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
 .vague th{background:var(--sage);font-weight:600}
@@ -97,6 +98,8 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   body{background:#fff;font-size:12pt}
   .sec{border:none;padding:0;margin:14px 0;break-inside:avoid}
   textarea{border:1px solid #bbb;min-height:0;overflow:visible;resize:none}
+  textarea,input[type=text]{border:1px solid #bbb}
+  input[type=text]{min-height:1.6em}
 }
 /*s8:hdr*/
 header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
@@ -156,7 +159,7 @@ footer .links{margin:10px 0 0;max-width:none}
 <div class="wrap">
   <p class="eyebrow">Gratis oefening · uit Stap 1 van The Made Real Blueprint</p>
   <h1>Een gewone <em>dinsdag</em>, in je browser.</h1>
-  <p class="lead">Stel je een gewone dinsdag voor in het leven dat je wilt, met werk, huishoudelijke taken en vrije tijd. Zoek een rustig moment en schrijf hieronder.</p>
+  <p class="lead">Beschrijf wat je anders wilt, wat je wilt behouden en welke kleine stap je kunt zetten om iets uit te zoeken. Het werkt ook voor een verandering van je huidige woonplaats. Zoek een rustig moment en schrijf hieronder.</p>
   <p class="small noprint"><b>Je antwoorden blijven op dit apparaat.</b> Ze worden alleen in je eigen browser bewaard en nergens naartoe gestuurd. Als je de opgeslagen gegevens van deze browser wist, verdwijnen je antwoorden. Op een ander apparaat of in een andere browser zijn ze niet beschikbaar. Download of print daarom een kopie als je klaar bent. Doe de oefening hier zonder account. Wil je je antwoorden in een account bewaren? Probeer dan <a href="https://app.maderealblueprint.com/free?from=website">de gratis oefening in de app (Engels)</a>. Liever op papier? <a href="/dinsdag/">Ontvang de pdf per e-mail</a>.</p>
 
   <section class="sec">
@@ -169,8 +172,9 @@ footer .links{margin:10px 0 0;max-width:none}
   <section class="sec">
     <p class="tag">De oefening</p>
     <h2>Een gewone dag in het leven dat je wilt</h2>
-    <p>Nu maak je van die ingrediënten een dag. We nemen een gewone dag, omdat het grootste deel van je leven daaruit bestaat. Dat voelt misschien minder spannend dan dromen over een grote verandering, maar het geeft je een nuttige vraag: zou ik genieten van het dagelijks leven dat erbij hoort?</p>
+    <p>Nu maak je van die ingrediënten een dag. We nemen een gewone dag, omdat het grootste deel van je leven daaruit bestaat. Dat voelt misschien minder spannend dan dromen over een grote verandering, maar het stelt je een nuttige vraag: zou ik genieten van het dagelijks leven dat erbij hoort?</p>
     <p>Een gewone dag kun je ook testen. Je kunt een plek bezoeken, of één dag van je week veranderen waar je nu woont, en zo een gewone dinsdag uitproberen. Een woord als "geluk" is veel moeilijker te testen.</p>
+    <p>Lukt het je nog niet om een hele dag voor te stellen? Begin met één moment in je week dat je anders zou willen.</p>
     <p>Hoeveel detail? Zoveel dat iemand anders het zou kunnen filmen. Kijk naar het verschil:</p>
     <table class="vague">
       <tr><th>Te vaag om te plannen</th><th>Concreet genoeg om te plannen</th></tr>
@@ -181,11 +185,12 @@ footer .links{margin:10px 0 0;max-width:none}
     <p>Met de details in de rechterkolom kun je beoordelen of een woning, baan of woonplaats bij je wensen past.</p>
     <h3 style="font-family:var(--serif);font-weight:500;font-size:21px;color:var(--pine);margin:22px 0 6px">Nu jij</h3>
     <p>Beschrijf deze dag van de ochtend tot de avond. Neem ook een gewoon detail op dat je niet in een vakantiefolder zou zetten: huishouden, regen, of een uur waarin er weinig gebeurt. Deze vragen helpen je:</p>
-    <ul class="prompts"><li>Waar word je wakker? Wat zie je uit je raam?</li><li>Wat doe je 's ochtends? En 's middags?</li><li>Wat is je werk, of hoe besteed je je tijd?</li><li>Wie is er bij je? Hoe eindigt de dag?</li></ul>
+    <ul class="prompts"><li>Waar word je wakker? Wat zie je uit je raam?</li><li>Wat doe je 's ochtends? En 's middags?</li><li>Wat is je werk, of hoe breng je je tijd door?</li><li>Wie is er bij je? Hoe eindigt de dag?</li></ul>
     <label for="day">Ik word wakker…</label><textarea id="day" data-f rows="12" placeholder=""></textarea>
-    <details class="ex"><summary><b>Verzonnen voorbeeld (Maria, 46)</b></summary><p>Ik word om 7 uur wakker, zonder wekker. Uit mijn raam zie ik olijfbomen. Ik drink mijn koffie buiten. 's Ochtends werk ik vier uur online voor mijn klanten. 's Middags werk ik in de tuin of ga ik naar de markt in het dorp. Mijn partner en ik koken samen. Twee keer per week komen er vrienden eten. Twee middagen per week zijn voor administratie en schoonmaken, en daar geniet ik niet van. Ik ga moe, maar gelukkig naar bed.</p></details>
+    <details class="ex"><summary><b>Verzonnen voorbeeld 1 (Maria, 46), verhuizen</b></summary><p>Ik word om 7 uur wakker, zonder wekker. Uit mijn raam zie ik olijfbomen. Ik drink mijn koffie buiten. 's Ochtends werk ik vier uur online voor mijn klanten, 's middags werk ik in de tuin of ga ik naar de markt. Twee middagen per week zijn bestemd voor administratie en schoonmaken, en daar geniet ik niet van. Ik ga moe, maar gelukkig naar bed.</p></details>
+    <details class="ex"><summary><b>Verzonnen voorbeeld 2 (Jeroen, 52), blijven</b></summary><p>Ik werk fulltime en help elke woensdag mijn moeder. Dat blijft zo, en mijn inkomen moet gelijk blijven. Op een gewone dinsdag zit ik nu al anderhalf uur in de auto. Ik wil één ochtend per week zonder reistijd, met koffie aan de keukentafel en een rustig begin. Mijn kleine test: ik vraag mijn leidinggevende of ik donderdag vier weken thuis mag werken. Ik vraag niets over uren of salaris. Als het niet kan, probeer ik één ochtend per week buiten de spits te reizen.</p></details>
     <h3 style="font-family:var(--serif);font-weight:500;font-size:21px;color:var(--pine);margin:22px 0 6px">De behoefte achter het beeld</h3>
-    <p>Olijfbomen kunnen staan voor rust, natuur of ruimte. Welke twee of drie behoeften zitten er achter jouw gewone dag?</p>
+    <p>Olijfbomen kunnen staan voor rust, natuur of ruimte. Welke twee of drie behoeften zitten er achter jouw gewone dag? Kun je dezelfde behoeften ook op een andere manier vervullen, misschien dichter bij huis?</p>
     <label for="needs">Mijn behoeften</label><textarea id="needs" data-f rows="5" placeholder=""></textarea>
   </section>
 
@@ -200,6 +205,27 @@ footer .links{margin:10px 0 0;max-width:none}
     <div class="watch">Sommige ideeën komen misschien uit een leven dat je online hebt gezien. Schrijf ze gerust op. Later kun je onderzoeken welke onderdelen echt bij jou passen.</div>
   </section>
 
+  <section class="sec" id="closing">
+    <p class="tag">Van beeld naar stap</p>
+    <h2>Van dit beeld naar één kleine stap</h2>
+    <label for="keep">Wat wil ik uit mijn huidige leven behouden?</label><textarea id="keep" data-f rows="4"></textarea>
+    <label for="first">Welke vraag wil ik eerst onderzoeken?</label><textarea id="first" data-f rows="3"></textarea>
+    <fieldset class="pick"><legend id="hard-q">Wat maakt beginnen nu moeilijk?</legend><p class="small">Je mag meer dan één kiezen:</p>
+      <div class="cb"><input type="checkbox" id="hs1" data-f data-grp="hard-q"><label for="hs1">Ik weet nog niet goed wat ik wil</label></div>
+      <div class="cb"><input type="checkbox" id="hs2" data-f data-grp="hard-q"><label for="hs2">Ik weet niet of het werkt</label></div>
+      <div class="cb"><input type="checkbox" id="hs3" data-f data-grp="hard-q"><label for="hs3">Ik kan het nu niet betalen of regelen</label></div>
+      <div class="cb"><input type="checkbox" id="hs4" data-f data-grp="hard-q"><label for="hs4">Andere dingen gaan nu voor</label></div>
+      <div class="cb"><input type="checkbox" id="hs5" data-f data-grp="hard-q"><label for="hs5">Iets anders</label></div>
+    </fieldset>
+    <label for="test">Mijn kleine test is:</label><textarea id="test" data-f rows="4"></textarea>
+    <label for="start">Ik begin op:</label><input type="text" id="start" data-f autocomplete="off">
+    <label for="back">Ik kijk terug op:</label><input type="text" id="back" data-f autocomplete="off">
+    <label for="ifnot">Als dit niet lukt, dan:</label><textarea id="ifnot" data-f rows="3"></textarea>
+    <p>Een test mag ook uitwijzen dat je blijft, iets anders probeert of voorlopig wacht.</p>
+    <p><b>Wat is een kleine test?</b> Een test hoeft geen reis, uitgave of grote beslissing te zijn. Het kan een gesprek zijn, het opzoeken van één betrouwbare bron of een korte proef van een paar dagen.</p>
+    <p>Past er nu geen haalbare stap in je leven? Dan mag wachten ook. Schrijf op wat er moet veranderen en kies een datum om er opnieuw naar te kijken. Die datum betekent niet dat het probleem dan weg is.</p>
+  </section>
+
   <div class="tools noprint" role="group" aria-label="Bewaren">
     <button class="btn" type="button" id="b-print">Print of bewaar als pdf</button>
     <button class="btn alt2" type="button" id="b-dl">Download als tekstbestand</button>
@@ -210,9 +236,9 @@ footer .links{margin:10px 0 0;max-width:none}
 
   <section class="next">
     <h2>Hoe nu verder</h2>
-    <p>Deze oefening is één onderdeel van Stap 1, Picture. In de volledige stap kijk je naar je leven van nu, maak je een eerste budget en vergelijk je je mogelijkheden. Zo kies je een richting die je verder kunt onderzoeken en testen.</p>
+    <p>Deze oefening is onderdeel van Stap 1, Picture. In de volledige stap vergelijk je je mogelijkheden uitgebreider, doe je onderzoek, maak je een eerste geldcheck en leg je je beslissing vast.</p>
     <p><a href="/nl/#options">Bekijk wat Fase 1 inhoudt</a> (werkboeken en app in het Engels). Of lees eerst een gids: <a href="/wel-of-niet-emigreren/">Wel of niet emigreren?</a> en <a href="/meer-tijd-voor-jezelf/">Meer tijd voor jezelf?</a></p>
-    <p style="margin:0">Vragen, of wil je me over je dinsdag vertellen? Stuur me een bericht via <a href="https://wa.me/31657930469">WhatsApp</a> of mail naar <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
+    <p style="margin:0">Vragen over de oefening? Stuur me een bericht via <a href="https://wa.me/31657930469">WhatsApp</a> of mail naar <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
   </section>
 </div>
 </main>
@@ -234,16 +260,16 @@ footer .links{margin:10px 0 0;max-width:none}
   var KEY = 'tlyc-dinsdag-v1', fields = [].slice.call(document.querySelectorAll('[data-f]')), saved = document.getElementById('saved'), started = false;
   function ref(){try{var q=new URLSearchParams(location.search),r=q.get('ref'),s=q.get('utm_source'),m=q.get('utm_medium');return r||(s?s+(m?'-'+m:''):undefined)}catch(e){return undefined}}
   function ev(n,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:t,event:true,referrer:ref()})}catch(e){}}
-  function grow(t){t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
-  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
-  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Bewaard in deze browser.'}catch(e){saved.textContent='Bewaren in je browser lukt hier niet. Kopieer je tekst of print de pagina.'}}
-  function text(){var out='Een gewone dinsdag\n\n';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
-  fields.forEach(function(t){t.addEventListener('input',function(){grow(t);save();if(!started){started=true;ev('oefening-start-nl','Browser exercise started')}})});
+  function grow(t){if(t.tagName!=='TEXTAREA')return;t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(t.type==='checkbox'){t.checked=d[t.id]===true}else if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
+  function save(){try{var d={};fields.forEach(function(t){d[t.id]=(t.type==='checkbox')?t.checked:t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Bewaard in deze browser.'}catch(e){saved.textContent='Bewaren in je browser lukt hier niet. Kopieer je tekst of print de pagina.'}}
+  function text(){var out='Een gewone dinsdag\n\n',g='';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');if(t.type==='checkbox'){var gid=t.getAttribute('data-grp');if(gid!==g){g=gid;out+=document.getElementById(gid).textContent+'\n'}out+=(t.checked?'[x] ':'[ ] ')+(l?l.textContent:t.id)+'\n';var nx=fields[fields.indexOf(t)+1];if(!nx||nx.getAttribute('data-grp')!==gid)out+='\n';return}g='';out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
+  fields.forEach(function(t){t.addEventListener(t.type==='checkbox'?'change':'input',function(){grow(t);save();if(!started){started=true;ev('oefening-start-nl','Browser exercise started')}})});
   load();
   document.getElementById('b-print').addEventListener('click',function(){fields.forEach(grow);ev('oefening-print-nl','Browser exercise printed');window.print()});
   document.getElementById('b-dl').addEventListener('click',function(){ev('oefening-download-nl','Browser exercise downloaded');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text()],{type:'text/plain;charset=utf-8'}));a.download='een-gewone-dinsdag.txt';document.body.appendChild(a);a.click();a.remove()});
   document.getElementById('b-copy').addEventListener('click',function(){var done=function(){saved.textContent='Gekopieerd.'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text()).then(done,function(){saved.textContent='Kopiëren lukt niet. Download het tekstbestand.'})}else{saved.textContent='Kopiëren lukt niet. Download het tekstbestand.'}});
-  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Al je antwoorden in deze browser wissen? Dit kun je niet ongedaan maken.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Alles gewist.'});
+  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Al je antwoorden in deze browser wissen? Dit kun je niet ongedaan maken.'))return;fields.forEach(function(t){if(t.type==='checkbox'){t.checked=false}else{t.value=''};grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Alles gewist.'});
 })();
 </script>
 </body>

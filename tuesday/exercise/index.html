@@ -84,6 +84,7 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
 .btn.alt2{background:transparent;color:var(--pine)}
 .btn.alt2:hover{background:var(--sage)}
 .saved{font-size:14px;color:var(--stone);margin:0}.tools{justify-content:center}.saved{flex:1 1 100%;text-align:center}footer .in{text-align:center}
+fieldset.pick{border:0;padding:0;margin:18px 0 0}fieldset.pick legend{font-size:15px;font-weight:600;color:var(--pine);padding:0}fieldset.pick .small{margin:2px 0 6px}.cb{display:flex;gap:10px;align-items:flex-start;margin:6px 0}.cb input{margin-top:7px;flex:none;width:18px;height:18px}.cb label{margin:0;font-weight:400;color:var(--granite);font-size:17px}.sec input[type=text]{margin-bottom:2px}
 .vague{width:100%;border-collapse:collapse;font-size:16px;margin:10px 0}
 .vague th,.vague td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
 .vague th{background:var(--sage);font-weight:600}
@@ -96,6 +97,8 @@ textarea:focus{outline:2px solid var(--moss);outline-offset:1px}
   body{background:#fff;font-size:12pt}
   .sec{border:none;padding:0;margin:14px 0;break-inside:avoid}
   textarea{border:1px solid #bbb;min-height:0;overflow:visible;resize:none}
+  textarea,input[type=text]{border:1px solid #bbb}
+  input[type=text]{min-height:1.6em}
 }
 /*s8:hdr*/
 header .logo{flex:none;font-size:22px;gap:10px;white-space:nowrap}
@@ -155,7 +158,7 @@ footer .links{margin:10px 0 0;max-width:none}
 <div class="wrap">
   <p class="eyebrow">Free exercise · from Step 1 of The Made Real Blueprint</p>
   <h1>An ordinary <em>Tuesday</em>, in your browser.</h1>
-  <p class="lead">Imagine an ordinary Tuesday in the life you want, including work, chores and downtime. Find a quiet moment and write below.</p>
+  <p class="lead">Describe what you want to be different, what you want to keep and which small step you could take to find something out. It also works for a change where you already live. Find a quiet moment and write below.</p>
   <p class="small noprint"><b>Your answers stay on this device.</b> They are saved only in your own browser and are not sent anywhere. Clearing this browser's saved data deletes your answers. They will not appear on another device or in another browser, so download or print a copy when you finish. Do the exercise here without an account. To save your answers in an account, <a href="https://app.maderealblueprint.com/free?from=website">try the free exercise in the app</a>. Prefer paper? <a href="/tuesday/">Get the PDF by email</a>.</p>
 
   <section class="sec">
@@ -168,8 +171,9 @@ footer .links{margin:10px 0 0;max-width:none}
   <section class="sec">
     <p class="tag">The exercise</p>
     <h2>A normal day in the life you want</h2>
-    <p>Now you turn those ingredients into a day. We use an ordinary day because that is what most of your life will be. It can feel less exciting than imagining a big change, but it gives you a useful question: would I enjoy the everyday life that comes with it?</p>
+    <p>Now you turn those ingredients into a day. We use an ordinary day because most of your life will be ordinary. It can feel less exciting than imagining a big change, but it gives you a useful question: would I enjoy the everyday life that comes with it?</p>
     <p>An ordinary day also gives you something to test. You can visit a place, or change one day of your week where you live, and try living a normal Tuesday. It is much harder to test a word like "happiness".</p>
+    <p>Is a whole day too much for now? Start with one moment in your week you would like to change.</p>
     <p>How much detail? Enough that someone else could film it. Look at the difference:</p>
     <table class="vague">
       <tr><th>Too vague to plan</th><th>Detailed enough to plan</th></tr>
@@ -182,9 +186,10 @@ footer .links{margin:10px 0 0;max-width:none}
     <p>Describe this day from morning to evening. Include an ordinary detail you would not put in a holiday brochure: housework, rain, or an hour when nothing much happens. Use these questions to help you:</p>
     <ul class="prompts"><li>Where do you wake up? What do you see from your window?</li><li>What do you do in the morning? And in the afternoon?</li><li>What is your work, or how do you spend your time?</li><li>Who is with you? How does the day end?</li></ul>
     <label for="day">I wake up…</label><textarea id="day" data-f rows="12"></textarea>
-    <details class="ex"><summary><b>Made-up example (Maria, 46)</b></summary><p>I wake up at 7, without an alarm. From my window, I see olive trees. I drink coffee outside. In the morning, I work online for my clients for four hours. In the afternoon, I work in the garden or go to the market in the village. My partner and I cook together. Twice a week, friends come for dinner. Two afternoons a week are for paperwork and cleaning, and I don't enjoy them. I go to bed tired, but happy.</p></details>
+    <details class="ex"><summary><b>Made-up example 1 (Maria, 46), moving</b></summary><p>I wake up at 7, without an alarm. From my window, I see olive trees. I drink coffee outside. In the morning, I work online for my clients for four hours. In the afternoon, I work in the garden or go to the market. Two afternoons a week are for paperwork and cleaning, and I don't enjoy them. I go to bed tired, but happy.</p></details>
+    <details class="ex"><summary><b>Made-up example 2 (Jeroen, 52), staying</b></summary><p>I work full-time and help my mother every Wednesday. That stays, and my income must stay the same. On an ordinary Tuesday, I now spend an hour and a half in the car. I want one morning a week without travel time, with coffee at the kitchen table and a calm start. My small test: I ask my manager whether I can work from home on Thursdays for four weeks. I ask nothing about hours or salary. If that is not possible, I try to travel outside rush hour one morning a week.</p></details>
     <h3 style="font-family:var(--serif);font-weight:500;font-size:21px;color:var(--pine);margin:22px 0 6px">The need behind the picture</h3>
-    <p>Olive trees might mean calm, nature or space. What are the two or three needs behind your normal day?</p>
+    <p>Olive trees might mean calm, nature, or space. What two or three needs does your ordinary day meet? Could you meet the same needs another way, perhaps closer to home?</p>
     <label for="needs">My needs</label><textarea id="needs" data-f rows="5"></textarea>
   </section>
 
@@ -199,6 +204,27 @@ footer .links{margin:10px 0 0;max-width:none}
     <div class="watch">Some ideas may come from lives you have seen online. Write them down too. Later, you can ask which parts actually matter to you.</div>
   </section>
 
+  <section class="sec" id="closing">
+    <p class="tag">From picture to step</p>
+    <h2>From this picture to one small step</h2>
+    <label for="keep">What do I want to keep from my current life?</label><textarea id="keep" data-f rows="4"></textarea>
+    <label for="first">Which question do I want to look into first?</label><textarea id="first" data-f rows="3"></textarea>
+    <fieldset class="pick"><legend id="hard-q">What makes starting hard right now?</legend><p class="small">You can pick more than one:</p>
+      <div class="cb"><input type="checkbox" id="hs1" data-f data-grp="hard-q"><label for="hs1">I don't yet know what I want</label></div>
+      <div class="cb"><input type="checkbox" id="hs2" data-f data-grp="hard-q"><label for="hs2">I don't know if it will work</label></div>
+      <div class="cb"><input type="checkbox" id="hs3" data-f data-grp="hard-q"><label for="hs3">I can't afford or arrange it right now</label></div>
+      <div class="cb"><input type="checkbox" id="hs4" data-f data-grp="hard-q"><label for="hs4">Other things come first right now</label></div>
+      <div class="cb"><input type="checkbox" id="hs5" data-f data-grp="hard-q"><label for="hs5">Something else</label></div>
+    </fieldset>
+    <label for="test">My small test is:</label><textarea id="test" data-f rows="4"></textarea>
+    <label for="start">I start on:</label><input type="text" id="start" data-f autocomplete="off">
+    <label for="back">I look back on:</label><input type="text" id="back" data-f autocomplete="off">
+    <label for="ifnot">If this does not work, then:</label><textarea id="ifnot" data-f rows="3"></textarea>
+    <p>A test can also show that you should stay, try something else, or wait for now.</p>
+    <p><b>What is a small test?</b> A test does not have to be a trip, a cost, or a big decision. It can be a conversation, looking up one reliable source, or a small trial of a few days.</p>
+    <p>If no workable step fits your life right now, waiting is also fine. Write down what would need to change and pick a date to look again. That date does not mean the problem will be gone by then.</p>
+  </section>
+
   <div class="tools noprint" role="group" aria-label="Save">
     <button class="btn" type="button" id="b-print">Print or save as PDF</button>
     <button class="btn alt2" type="button" id="b-dl">Download as text file</button>
@@ -209,9 +235,9 @@ footer .links{margin:10px 0 0;max-width:none}
 
   <section class="next">
     <h2>What comes next</h2>
-    <p>This exercise is one part of Step 1, Picture. In the full step, you look at your life as it is now, make an initial budget and compare your options. You finish with a direction to explore and test.</p>
+    <p>This exercise is one part of Step 1, Picture. In the full step, you compare your options in more depth, research them, do an initial money check, and write down your decision.</p>
     <p><a href="/#options">See what's included in Phase 1</a> (workbooks and app in English). Or read a guide first: <a href="/guides/moving-abroad-or-not/">Moving abroad or not?</a> and <a href="/guides/more-time-for-yourself/">More time for yourself?</a></p>
-    <p style="margin:0">Questions, or want to tell me about your Tuesday? Send me a message on <a href="https://wa.me/31657930469">WhatsApp</a> or email <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
+    <p style="margin:0">Questions about the exercise? Send me a message on <a href="https://wa.me/31657930469">WhatsApp</a> or email <a href="mailto:info@maderealblueprint.com">info@maderealblueprint.com</a>. Mwata</p>
   </section>
 </div>
 </main>
@@ -233,16 +259,16 @@ footer .links{margin:10px 0 0;max-width:none}
   var KEY = 'tlyc-tuesday-v1', fields = [].slice.call(document.querySelectorAll('[data-f]')), saved = document.getElementById('saved'), started = false;
   function ref(){try{var q=new URLSearchParams(location.search),r=q.get('ref'),s=q.get('utm_source'),m=q.get('utm_medium');return r||(s?s+(m?'-'+m:''):undefined)}catch(e){return undefined}}
   function ev(n,t){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:n,title:t,event:true,referrer:ref()})}catch(e){}}
-  function grow(t){t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
-  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
-  function save(){try{var d={};fields.forEach(function(t){d[t.id]=t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Saved in this browser.'}catch(e){saved.textContent='Saving in your browser does not work here. Copy your text or print the page.'}}
-  function text(){var out='An ordinary Tuesday\n\n';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
-  fields.forEach(function(t){t.addEventListener('input',function(){grow(t);save();if(!started){started=true;ev('exercise-start-en','Browser exercise started')}})});
+  function grow(t){if(t.tagName!=='TEXTAREA')return;t.style.height='auto';t.style.height=Math.max(t.scrollHeight+2,96)+'px'}
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY)||'{}');fields.forEach(function(t){if(t.type==='checkbox'){t.checked=d[t.id]===true}else if(d[t.id])t.value=d[t.id]})}catch(e){}fields.forEach(grow)}
+  function save(){try{var d={};fields.forEach(function(t){d[t.id]=(t.type==='checkbox')?t.checked:t.value});localStorage.setItem(KEY,JSON.stringify(d));saved.textContent='Saved in this browser.'}catch(e){saved.textContent='Saving in your browser does not work here. Copy your text or print the page.'}}
+  function text(){var out='An ordinary Tuesday\n\n',g='';fields.forEach(function(t){var l=document.querySelector('label[for='+t.id+']');if(t.type==='checkbox'){var gid=t.getAttribute('data-grp');if(gid!==g){g=gid;out+=document.getElementById(gid).textContent+'\n'}out+=(t.checked?'[x] ':'[ ] ')+(l?l.textContent:t.id)+'\n';var nx=fields[fields.indexOf(t)+1];if(!nx||nx.getAttribute('data-grp')!==gid)out+='\n';return}g='';out+=(l?l.textContent:t.id)+'\n'+(t.value||'')+'\n\n'});return out}
+  fields.forEach(function(t){t.addEventListener(t.type==='checkbox'?'change':'input',function(){grow(t);save();if(!started){started=true;ev('exercise-start-en','Browser exercise started')}})});
   load();
   document.getElementById('b-print').addEventListener('click',function(){fields.forEach(grow);ev('exercise-print-en','Browser exercise printed');window.print()});
   document.getElementById('b-dl').addEventListener('click',function(){ev('exercise-download-en','Browser exercise downloaded');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text()],{type:'text/plain;charset=utf-8'}));a.download='an-ordinary-tuesday.txt';document.body.appendChild(a);a.click();a.remove()});
   document.getElementById('b-copy').addEventListener('click',function(){var done=function(){saved.textContent='Copied.'};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text()).then(done,function(){saved.textContent='Copying does not work. Download the text file instead.'})}else{saved.textContent='Copying does not work. Download the text file instead.'}});
-  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Delete all your answers in this browser? This cannot be undone.'))return;fields.forEach(function(t){t.value='';grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Everything cleared.'});
+  document.getElementById('b-clear').addEventListener('click',function(){if(!confirm('Delete all your answers in this browser? This cannot be undone.'))return;fields.forEach(function(t){if(t.type==='checkbox'){t.checked=false}else{t.value=''};grow(t)});try{localStorage.removeItem(KEY)}catch(e){}saved.textContent='Everything cleared.'});
 })();
 </script>
 </body>
