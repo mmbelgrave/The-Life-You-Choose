@@ -771,6 +771,54 @@ html[lang=nl] #familiar{contain-intrinsic-size:auto 1323px}html[lang=nl] #free{c
 .fx-small{font-size:15px}
 /*/s8:css*/
 /*pn:css*/.pn-link{color:var(--pine);font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:2px}.pn-link:hover,.pn-link:focus-visible{text-decoration-thickness:2.5px}/*/pn:css*/
+/*s16:polish*/
+/* 441-599px: logo + language + CTA + burger no longer fit one row (35px overflow). The CTA hides (as it already does up to 440px; the hero carries the same button) and the language link takes its short form. Up to 440px and from 600px nothing changes. */
+@media (min-width:441px) and (max-width:599.98px){header.top .btn-small{display:none}.lang-sw .lg-d{display:none}.lang-sw .lg-m{display:inline}}
+/* shared tokens (from the redesign prototype, scaled down): corners, soft shadows, warm paper ground, field border (3:1 on white and paper) */
+:root{--paper:#FBF7EF;--r:12px;--r-s:8px;--btn-r:999px;--shadow-s:0 1px 2px rgba(28,30,27,.05),0 4px 14px rgba(28,30,27,.06);--shadow-m:0 2px 4px rgba(28,30,27,.05),0 14px 32px rgba(28,30,27,.10);--field:#857D6E;--ink-2:#3a3d37}
+:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--ochre-light)}
+/* 5. buttons and cards: one corner language */
+.btn{border-radius:var(--btn-r)}
+.menu-btn{border-radius:var(--r-s)}
+.says-row li,.three-steps li,.stages li,.rcard button,.fnote,.route-fig,.gr-card,.peek{border-radius:var(--r);box-shadow:var(--shadow-s)}
+.rcard button:hover,.rcard button:focus-visible{box-shadow:var(--shadow-m)}
+.rcard .rimg img{border-radius:var(--r-s)}
+.offer{border-radius:var(--r)}.offer.main{box-shadow:0 0 0 3px var(--ochre-light),var(--shadow-m)}
+.final-buy{border-radius:var(--r)}
+.dg-home{border-radius:var(--r-s)!important}
+.gr-card{border-left-width:1px;border-left-color:var(--rule)}
+.gr-card img{border-radius:var(--r-s)}
+.btn:hover{box-shadow:var(--shadow-s)}
+/* 1. step cards: white, pine top bar, softer corners, clearer hierarchy */
+.method{background:var(--paper)}
+.three-steps li{position:relative;overflow:hidden;background:var(--white);padding:26px 24px 22px}
+.three-steps li::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--pine),var(--moss))}
+.three-steps .n{letter-spacing:.12em;margin:0 0 6px}
+.three-steps h3{margin-bottom:10px}
+.three-steps p:last-child{color:var(--ink-2)}
+/* 2. free exercise form: white panel, rounded fields (compact) */
+.free{background:var(--paper)}
+form.fx{background:var(--white);border:1px solid var(--rule);border-radius:var(--r);padding:22px 24px 20px;box-shadow:var(--shadow-m)}
+.free .fx input[type=text],.free .fx input[type=email]{border:1.5px solid var(--field);border-radius:var(--r-s);padding:11px 14px;background:var(--paper);margin-bottom:18px}
+.free .fx input[type=text]:focus,.free .fx input[type=email]:focus{outline:3px solid var(--ochre);outline-offset:2px;border-color:var(--pine)}
+.free .fx .btn{margin-top:20px}
+.free .prev{border-radius:var(--r)}
+/* 3. two routes: whole card is the link (the <a> is the card), arrow, equal weight */
+.routes .two{gap:20px}
+.routes a.route{position:relative;border-left:1px solid var(--rule);border-radius:var(--r);padding:18px 52px 18px 22px;box-shadow:var(--shadow-s)}
+.routes a.route::after{content:"\2192";content:"\2192"/"";position:absolute;right:20px;top:16px;font-size:24px;line-height:1.2;color:var(--ochre)}
+.routes a.route:hover{border-color:var(--ochre);box-shadow:var(--shadow-m)}
+.routes a.route:focus-visible{outline:3px solid var(--ochre);outline-offset:3px}
+.routes .route b{font-size:22px}
+.routes .route span{color:var(--ink-2)}
+/* 4. nav: current section in gold (ochre, 5:1 on sand) with an underline; no layout shift */
+nav.links a[aria-current]{color:var(--ochre);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px}
+/* 6. Hello, I'm Mwata: warm ground, curved photo corner */
+.intro{background:var(--sand)}
+.intro-grid img{border-radius:var(--r) var(--r) clamp(64px,16vw,120px) var(--r);box-shadow:var(--shadow-m)}
+@media (prefers-reduced-motion:reduce){.btn,.rcard button,.gr-card,.routes a.route,.free .prev,.free .fx input,nav.links a,.three-steps li{transition:none!important;animation:none!important}.btn:hover,.rcard button:hover,.rcard button:focus-visible{transform:none}}
+/*/s16:polish*/
 </style>
 <style>/*s15:a11y*/
 .skip-link{position:fixed;left:-9999px;top:0;z-index:1000;padding:12px 18px;background:#2C3B2F;color:#F3ECE0;font:600 16px/1.3 'Hanken Grotesk',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;text-decoration:none;border-radius:0 0 4px 0}
@@ -1310,6 +1358,18 @@ const menu = document.getElementById('menu');
 menuBtn.addEventListener('click', () => { const open = menu.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', open); if (open) { const f = menu.querySelector('a'); if (f) f.focus(); } });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('open')) { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.focus(); } });
 menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => { menu.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }));
+
+/*s16:spy*/(function(){var links=[].slice.call(document.querySelectorAll('nav.links a[href^="#"]')),items=[];
+links.forEach(function(a){var t=document.getElementById(a.getAttribute('href').slice(1));if(t)items.push({a:a,t:t})});
+if(!items.length||!('IntersectionObserver' in window))return;
+var cur=null,lock=0,timer=0;
+function mark(a){if(a===cur)return;cur=a;links.forEach(function(l){if(l===a)l.setAttribute('aria-current','location');else l.removeAttribute('aria-current')})}
+function pick(){var vh=window.innerHeight,hit=null;items.forEach(function(it){var r=it.t.getBoundingClientRect();if(r.top<=vh*.4&&r.bottom>72)hit=it.a});mark(hit)}
+var io=new IntersectionObserver(function(){if(Date.now()>lock)pick()},{rootMargin:'-72px 0px -60% 0px',threshold:[0,1]});
+items.forEach(function(it){io.observe(it.t)});
+links.forEach(function(a){a.addEventListener('click',function(){mark(a);lock=Date.now()+1200;clearTimeout(timer);timer=setTimeout(pick,1300)})});
+window.addEventListener('hashchange',function(){var a=links.filter(function(l){return l.getAttribute('href')===location.hash})[0];if(a){mark(a);lock=Date.now()+1200;clearTimeout(timer);timer=setTimeout(pick,1300)}});
+pick()})();/*/s16:spy*/
 
 /*s7:faq*/(function(){var d=document.documentElement;function f(){d.classList.add('nocv')}if(location.hash)f();window.addEventListener('hashchange',f);document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="#"]');if(a&&a.hash&&a.pathname===location.pathname)f()},true)})();
 (function(){var x=document.getElementById('faq-extra'),t=document.querySelector('.faq-toggle');if(!x||!t)return;var b=t.querySelector('button'),a=b.querySelector('.t-all'),l=b.querySelector('.t-less');
