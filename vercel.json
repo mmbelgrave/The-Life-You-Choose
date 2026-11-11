@@ -3,6 +3,16 @@
   "cleanUrls": false,
   "redirects": [
     {
+      "source": "/downloads/samenwerken-eenpager-nl.pdf",
+      "destination": "/downloads/samenwerkingsvoorstel.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/downloads/partnership-onepager-en.pdf",
+      "destination": "/downloads/partnership-proposal.pdf",
+      "permanent": true
+    },
+    {
       "source": "/terms/",
       "destination": "/terms.html",
       "permanent": true
